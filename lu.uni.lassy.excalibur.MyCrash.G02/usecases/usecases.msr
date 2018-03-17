@@ -29,13 +29,109 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-	use case system subfunction oeLogout() {
+		use case system subfunction oeLogout() {
 		
 			actor actAuthenticated[primary, active]
 			
 			returned messages {
 				
 				ieLoggedOut returned to actAuthenticated
+			}
+		}
+	
+		use case system subfunction oeGetAllRequestsFromCoordinator() {
+		
+			actor actAdministrator[primary, active]
+			actor actCoordinator[secondary, passive]
+		}
+		
+		use case system subfunction oeGetRequest(ARequestID:dtRequestID) {
+		
+			actor actAdministrator[primary, active]
+			actor actCoordinator[secondary, passive]
+		}
+		
+		use case system subfunction oeTreatRequest(ARequestID:dtRequestID) {
+		
+			actor actAdministrator[primary, active]
+		}
+		
+		use case system subfunction oeSolveRequest(ARequestID:dtRequestID) {
+		
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				
+				ieRequestSolved returned to actAdministrator
+				ieRequestSolved returned to actPerson
+				//iePIRequestedAdded returned to actPerson
+			}
+		}
+		
+		use case system subfunction oeAddPI(APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory) {
+		
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				
+				iePIAdded returned to actAdministrator
+			}
+		}
+		
+		use case system subfunction oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory) {
+		
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				
+				iePIUpToDate returned to actAdministrator
+			}
+		}
+		
+		use case system subfunction oeDeletePI(APIID:dtPIID) {
+		
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				
+				iePIDeleted returned to actAdministrator
+			}
+		}
+		
+		use case system subfunction oeGetAllRequests() {
+		
+			actor actCoordinator[primary, active]
+			actor actPerson[secondary, passive]
+		}
+		
+		use case system subfunction oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtRequestName, ARequestCity:dtRequestCity) {
+		
+			actor actCoordinator[primary, active]
+			actor actPerson[secondary, passive]
+			
+			returned messages {
+			
+				ieIsPIAvailable returned to actCoordinator	
+			}
+		}
+		
+		use case system subfunction oeDeliverRequest(ARequestID:dtRequestID) {
+		
+			actor actCoordinator[primary, active]
+			
+			returned messages {
+			
+				ieRequestDelivered returned to actCoordinator	
+			}
+		}
+		
+		use case system subfunction oeDeliverAllRequests() {
+		
+			actor actCoordinator[primary, active]
+			
+			returned messages {
+			
+				ieAllRequestsDelivered returned to actCoordinator	
 			}
 		}
 	}

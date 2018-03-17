@@ -70,9 +70,9 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeTreatRequest(ARequestID:dtRequestID):ptBoolean
 				operation oeSolveRequest(ARequestID:dtRequestID):ptBoolean
 				
-				operation AddPI(APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
-				operation UpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
-				operation DeletePI(APIID:dtPIID):ptBoolean
+				operation oeAddPI(APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
+				operation oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
+				operation oeDeletePI(APIID:dtPIID):ptBoolean
 			}
 		}
 		
@@ -85,7 +85,7 @@ import lu.uni.lassy.messir.libraries.string
 				//PI variant
 				operation ieIsPIAvailable():ptBoolean
 				operation ieRequestDelivered():ptBoolean
-				operation ieRequestsDelivered():ptBoolean
+				operation ieAllRequestsDelivered():ptBoolean
 				
 				operation ieSendRequest(ARequest:ctRequest):ptBoolean
 			}
@@ -107,13 +107,14 @@ import lu.uni.lassy.messir.libraries.string
 			input interface inactPerson {
 				
 				//PI variant
-				operation ieSignedIn():ptBoolean
+				//operation ieSignedIn():ptBoolean
+				operation iePIRequestedAdded():ptBoolean
 			}
 			
 			output interface outactPerson {
 				
 				//PI variant
-				operation oeSignIn(ALogin:dtLogin, APassword:dtPassword, ASamePassword:dtPassword):ptBoolean
+				//operation oeSignIn(ALogin:dtLogin, APassword:dtPassword, ASamePassword:dtPassword):ptBoolean
 				
 				operation oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				operation oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
