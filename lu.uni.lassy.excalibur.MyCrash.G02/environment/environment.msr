@@ -10,62 +10,98 @@ import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.string
 
-Environment Model {
+	Environment Model {
 			
-	actor actMsrCreator role rnactMsrCreator cardinality[1 .. 1] {
+		actor actMsrCreator role rnactMsrCreator cardinality[1 .. 1] {
+	
+			operation init():ptBoolean
 	
 			input interface inactMsrCreator {
 				
-				
+				operation ieSystemCreated():ptBoolean
 			}
 			
 			output interface outactMsrCreator {
 				
-				
+				operation oeCreateSystemAndEnvironment():ptBoolean
 			}
 		}
 		
-	actor actAuthenticated role rnactAuthenticated cardinality[0 .. *] {
-		
+		actor actAuthenticated role rnactAuthenticated cardinality[0 .. *] {
+			
+			operation init():ptBoolean
+			
 			input interface inactAuthenticated {
 				
-				
+				operation ieLoggedIn():ptBoolean
+				operation ieLoggedOut():ptBoolean
 			}
 			
 			output interface outactAuthenticated {
 				
-				
+				operation oeLogin(ALogin:dtLogin, APassword:dtPassword):ptBoolean
+				operation oeLogout():ptBoolean
 			}
 		}
 		
-	actor actAdministrator role rnactAdministrator cardinality[1 .. 1] {
-		
+		actor actAdministrator role rnactAdministrator cardinality[1 .. 1] extends actAuthenticated {
+			
+			operation init():ptBoolean
+			
 			input interface inactAdministrator {
 				
+				operation ieRequestBeingTreated():ptBoolean
+				operation ieRequestSolved():ptBoolean
 				
+				operation iePIAdded():ptBoolean
+				operation iePIUpToDate():ptBoolean
+				operation iePIDeleted():ptBoolean
+				
+				operation ieSendRequest(ARequest:ctRequest):ptBoolean
+				operation ieSendPI(API:ctPI):ptBoolean
 			}
 			
 			output interface outactAdministrator {
 				
+				// PI variant
+				operation oeGetAllRequestsFromCoordinator():ptBoolean
+				operation oeGetRequest(ARequestID:dtRequestID):ptBoolean
+				operation oeTreatRequest(ARequestID:dtRequestID):ptBoolean
+				operation oeSolveRequest(ARequestID:dtRequestID):ptBoolean
 				
+				operation AddPI(APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
+				operation UpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
+				operation DeletePI(APIID:dtPIID):ptBoolean
 			}
 		}
 		
-	actor actCoordinator role rnactCoordinator cardinality[0 .. *] {
-		
+		actor actCoordinator role rnactCoordinator cardinality[0 .. *] extends actAuthenticated {
+			
+			operation init():ptBoolean
+			
 			input interface inactCoordinator {
 				
+				operation ieIsPIAvailable():ptBoolean
+				operation ieRequestDelivered():ptBoolean
+				operation ieRequestsDelivered():ptBoolean
 				
+				operation ieSendRequest(ARequest:ctRequest):ptBoolean
 			}
 			
 			output interface outactCoordinator {
 				
-				
+				//PI variant
+				operation oeGetAllRequests():ptBoolean
+				operation oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtRequestName, ARequestCity:dtCity):ptBoolean
+				operation oeDeliverRequest(ARequestID:dtRequestID):ptBoolean
+				operation oeDeliverAllRequests():ptBoolean
 			}
 		}
 		
-	actor actPerson role rnactPerson cardinality[0 .. *] {
-		
+		actor actPerson role rnactPerson cardinality[0 .. *] extends actAuthenticated {
+			
+			operation init():ptBoolean
+			
 			input interface inactPerson {
 				
 				
@@ -73,33 +109,15 @@ Environment Model {
 			
 			output interface outactPerson {
 				
+				//PI variant
+				operation oeSignIn(ALogin:dtLogin, APassword:dtPassword, ASamePassword:dtPassword):ptBoolean
 				
-			}
-		}
-		
-	actor actDriver role rnactDriver cardinality[0 .. *] {
-		
-			input interface inactDriver {
+				operation oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
+				operation oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
+				operation oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				
-				
-			}
-			
-			output interface outactDriver {
-				
-				
-			}
-		}
-		
-	actor actPedestrian role rnactPedestrian cardinality[0 .. *] {
-		
-			input interface inactPedestrian {
-				
-				
-			}
-			
-			output interface outactPedestrian {
-				
-				
+				operation oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
+				operation oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
 			}
 		}
 	}
