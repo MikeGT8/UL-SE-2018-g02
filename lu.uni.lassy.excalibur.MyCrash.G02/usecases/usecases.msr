@@ -43,22 +43,26 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		
 			actor actAdministrator[primary, active]
 			actor actCoordinator[secondary, passive]
+			actor actPerson[secondary, multiple]
 		}
 		
 		use case system subfunction oeGetRequest(ARequestID:dtRequestID) {
 		
 			actor actAdministrator[primary, active]
 			actor actCoordinator[secondary, passive]
+			actor actPerson[secondary, passive]
 		}
 		
 		use case system subfunction oeTreatRequest(ARequestID:dtRequestID) {
 		
 			actor actAdministrator[primary, active]
+			actor actPerson[secondary, passive]
 		}
 		
 		use case system subfunction oeSolveRequest(ARequestID:dtRequestID) {
 		
 			actor actAdministrator[primary, active]
+			actor actPerson[secondary, passive]
 			
 			returned messages {
 				
@@ -101,7 +105,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		use case system subfunction oeGetAllRequests() {
 		
 			actor actCoordinator[primary, active]
-			actor actPerson[secondary, passive]
+			actor actPerson[secondary, multiple]
 		}
 		
 		use case system subfunction oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtRequestName, ARequestCity:dtRequestCity) {
@@ -118,10 +122,24 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		use case system subfunction oeDeliverRequest(ARequestID:dtRequestID) {
 		
 			actor actCoordinator[primary, active]
+			actor actPerson[secondary, passive]
+			actor actAdministrator[secondary, passive]
 			
 			returned messages {
 			
 				ieRequestDelivered returned to actCoordinator	
+			}
+		}
+		
+		use case system subfunction oeDeliverAllRequests() {
+		
+			actor actCoordinator[primary, active]
+			actor actPerson[secondary, multiple]
+			actor actAdministrator[secondary, passive]
+			
+			returned messages {
+			
+				ieAllRequestsDelivered returned to actCoordinator	
 			}
 		}
 		
@@ -140,31 +158,35 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		use case system subfunction oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
+			actor actAdministrator[secondary, passive]
 		}
 		
 		use case system subfunction oeSendNewRequest(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
+			actor actCoordinator[secondary, passive]
 		}
 		
 		use case system subfunction oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
+			actor actAdministrator[secondary, passive]
 		}
 		
 		use case system subfunction oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
+			actor actAdministrator[secondary, passive]
 		}
 		
 		use case system subfunction oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
 		
-			actor actPerson[primary, active]
+			actor actPerson[primary, proactive]
 		}
 		
 		use case system subfunction oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
 		
-			actor actPerson[primary, active]
+			actor actPerson[primary, proactive]
 		}
 	}
 }
