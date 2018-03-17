@@ -10,17 +10,94 @@ import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.string
 
-
-
 Environment Model {
 			
-actor actMsrCreator role rnactMsrCreator cardinality[0 .. *] {
+	actor actMsrCreator role rnactMsrCreator cardinality[1 .. 1] {
 	
 			input interface inactMsrCreator {
 				
 				
 			}
+			
 			output interface outactMsrCreator {
+				
+				
+			}
+		}
+		
+	actor actAuthenticated role rnactAuthenticated cardinality[0 .. *] {
+		
+			input interface inactAuthenticated {
+				
+				
+			}
+			
+			output interface outactAuthenticated {
+				
+				
+			}
+		}
+		
+	actor actAdministrator role rnactAdministrator cardinality[1 .. 1] {
+		
+			input interface inactAdministrator {
+				
+				
+			}
+			
+			output interface outactAdministrator {
+				
+				
+			}
+		}
+		
+	actor actCoordinator role rnactCoordinator cardinality[0 .. *] {
+		
+			input interface inactCoordinator {
+				
+				
+			}
+			
+			output interface outactCoordinator {
+				
+				
+			}
+		}
+		
+	actor actPerson role rnactPerson cardinality[0 .. *] {
+		
+			input interface inactPerson {
+				
+				
+			}
+			
+			output interface outactPerson {
+				
+				
+			}
+		}
+		
+	actor actDriver role rnactDriver cardinality[0 .. *] {
+		
+			input interface inactDriver {
+				
+				
+			}
+			
+			output interface outactDriver {
+				
+				
+			}
+		}
+		
+	actor actPedestrian role rnactPedestrian cardinality[0 .. *] {
+		
+			input interface inactPedestrian {
+				
+				
+			}
+			
+			output interface outactPedestrian {
 				
 				
 			}
