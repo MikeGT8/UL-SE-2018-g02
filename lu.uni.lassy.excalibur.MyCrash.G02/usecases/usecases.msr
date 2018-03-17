@@ -10,10 +10,33 @@ import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.string
 
-
+import lu.uni.lassy.excalibur.MyCrash.G02.environment
 
 	Use Case Model {
 		
+		use case system subfunction oeCreateSystemAndEnvironment() {
+		
+			actor actMsrCreator[primary, active]
+		}
+		
+		use case system subfunction oeLogin(ALogin:dtLogin, APassword:dtPassword) {
+		
+			actor actAuthenticated[primary, active]
+			
+			returned messages {
+				
+				ieLoggedIn returned to actAuthenticated
+			}
+		}
+		
+	use case system subfunction oeLogout() {
+		
+			actor actAuthenticated[primary, active]
+			
+			returned messages {
+				
+				ieLoggedOut returned to actAuthenticated
+			}
+		}
 	}
-
 }
