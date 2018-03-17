@@ -50,6 +50,7 @@ import lu.uni.lassy.messir.libraries.string
 			
 			input interface inactAdministrator {
 				
+				//PI variant
 				operation ieRequestBeingTreated():ptBoolean
 				operation ieRequestSolved():ptBoolean
 				
@@ -81,6 +82,7 @@ import lu.uni.lassy.messir.libraries.string
 			
 			input interface inactCoordinator {
 				
+				//PI variant
 				operation ieIsPIAvailable():ptBoolean
 				operation ieRequestDelivered():ptBoolean
 				operation ieRequestsDelivered():ptBoolean
@@ -104,7 +106,8 @@ import lu.uni.lassy.messir.libraries.string
 			
 			input interface inactPerson {
 				
-				
+				//PI variant
+				operation ieSignedIn():ptBoolean
 			}
 			
 			output interface outactPerson {
