@@ -125,14 +125,46 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeDeliverAllRequests() {
+		/*
+		use case system subfunction oeSignIn(ALogin:dtLogin, APassword:dtPassword, ASamePassword:dtPassword) {
 		
-			actor actCoordinator[primary, active]
+			actor actPerson[primary, active]
 			
 			returned messages {
 			
-				ieAllRequestsDelivered returned to actCoordinator	
+				ieSignedIn returned to actPerson	
 			}
+		}
+		*/
+		
+		use case system subfunction oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		
+			actor actPerson[primary, active]
+		}
+		
+		use case system subfunction oeSendNewRequest(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		
+			actor actPerson[primary, active]
+		}
+		
+		use case system subfunction oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		
+			actor actPerson[primary, active]
+		}
+		
+		use case system subfunction oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		
+			actor actPerson[primary, active]
+		}
+		
+		use case system subfunction oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
+		
+			actor actPerson[primary, active]
+		}
+		
+		use case system subfunction oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
+		
+			actor actPerson[primary, active]
 		}
 	}
 }

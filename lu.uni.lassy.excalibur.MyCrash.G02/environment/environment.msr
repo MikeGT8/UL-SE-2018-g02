@@ -108,7 +108,8 @@ import lu.uni.lassy.messir.libraries.string
 				
 				//PI variant
 				//operation ieSignedIn():ptBoolean
-				operation iePIRequestedAdded():ptBoolean
+				//operation iePIRequestedAdded():ptBoolean
+				operation ieRequestSolved():ptBoolean
 			}
 			
 			output interface outactPerson {
@@ -117,6 +118,7 @@ import lu.uni.lassy.messir.libraries.string
 				//operation oeSignIn(ALogin:dtLogin, APassword:dtPassword, ASamePassword:dtPassword):ptBoolean
 				
 				operation oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
+				operation oeSendNewRequest(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity):ptBoolean
 				operation oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				operation oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				
