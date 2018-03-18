@@ -1,0 +1,10 @@
+/*
+@author excalibur
+@date Sun Mar 18 15:36:55 CET 2018
+*/
+
+
+@@view uci-ucioeThirdLoginWrong
+@instance Use-Case usecases.uci.ucioeThirdLoginWrong 
+@description "Bob wanted to access the server a third time but failed again, system sent him a captcha String to authenticate that he is not a robot."
+@caption ""

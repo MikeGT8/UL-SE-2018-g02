@@ -35,12 +35,17 @@ import lu.uni.lassy.messir.libraries.string
 				
 				operation ieLoggedIn(AMessage:ptString):ptBoolean
 				operation ieLoggedOut(AMessage:ptString):ptBoolean
+				operation ieUsrPwWrong(AMessage:ptString):ptBoolean
+				operation ieLoginWrongSendCaptcha(ACaptcha:dtCaptcha):ptBoolean
 			}
 			
 			output interface outactAuthenticated {
 				
 				operation oeLogin(ALogin:dtLogin, APassword:dtPassword):ptBoolean
 				operation oeLogout():ptBoolean
+				operation oeLoginWrong(ALogin:dtLogin, APassword:dtPassword):ptBoolean
+				operation oeThirdLoginWrong(ALogin:dtLogin, APassword:dtPassword):ptBoolean
+				operation oeLoginWitchCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha):ptBoolean
 			}
 		}
 		
