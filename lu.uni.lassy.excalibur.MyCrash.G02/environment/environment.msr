@@ -37,6 +37,7 @@ import lu.uni.lassy.messir.libraries.string
 				operation ieLoggedOut(AMessage:ptString):ptBoolean
 				operation ieUsrPwWrong(AMessage:ptString):ptBoolean
 				operation ieLoginWrongSendCaptcha(ACaptcha:dtCaptcha):ptBoolean
+				operation ieMessage(AMessage:dtMessage):ptBoolean
 			}
 			
 			output interface outactAuthenticated {
@@ -65,6 +66,9 @@ import lu.uni.lassy.messir.libraries.string
 				
 				operation ieSendRequest(ARequest:ctRequest):ptBoolean
 				operation ieSendPI(API:ctPI):ptBoolean
+				
+				//Access rights variant
+				operation ieCoordinatorAdded():ptBoolean
 			}
 			
 			output interface outactAdministrator {
@@ -78,6 +82,9 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeAddPI(APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
 				operation oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
 				operation oeDeletePI(APIID:dtPIID):ptBoolean
+				
+				//Access rights
+				operation oeAddCoordinator(Cid:dtID, CName:dtName, CPassword:dtPassword, CAccessRights:dtAccessRights):ptBoolean
 			}
 		}
 		
@@ -102,6 +109,9 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtRequestName, ARequestCity:dtCity):ptBoolean
 				operation oeDeliverRequest(ARequestID:dtRequestID):ptBoolean
 				operation oeDeliverAllRequests():ptBoolean
+				
+				//Access rights variant
+				operation oeHandelAlert(AId:dtId):ptBoolean
 			}
 		}
 		
@@ -129,6 +139,18 @@ import lu.uni.lassy.messir.libraries.string
 				
 				operation oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
 				operation oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
+			}
+		}
+	actor actComCompany role rnactComCompany cardinality[0 .. *] {
+			input interface inactComCompany {
+				
+				//Access rights variant
+				operation ieSmsSend(PhoneNumber:dtPhoneNumber, SMSText:dtText):ptBoolean
+			}
+			output interface outactComCompany {
+				
+				//Access rights variant
+				operation oeAlert(AWitness:dtPerson, ADate:dtDate, ATime:dtTime, PhoneNumber:dtPhoneNumber, ALocation:dtLocation, ADescription:dtDescription, ALevel:dtLevel):ptBoolean
 			}
 		}
 	}

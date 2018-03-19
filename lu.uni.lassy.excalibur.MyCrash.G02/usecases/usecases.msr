@@ -218,5 +218,26 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				ieLoggedIn returned to actAuthenticated
 			}
 		}
+	use case system subfunction oeAddCoordinator(Cid:dtID, CName:dtName, CPassword:dtPassword, CAccessRights:dtAccessRights) {
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				ieCoordinatorAdded returned to actAdministrator
+			}
+		}
+	use case system subfunction oeHandelAlert(AId:dtId) {
+			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage returned to actCoordinator
+			}
+		}
+	use case system subfunction oeAlert(AWitness:dtPerson, ADate:dtDate, ATime:dtTime, PhoneNumber:dtPhoneNumber, ALocation:dtLocation, ADescription:dtDescription, ALevel:dtLevel) {
+			actor actComCompany[primary, active]
+			
+			returned messages {
+				ieSmsSend returned to actComCompany
+			}
+		}
 	}
 }
