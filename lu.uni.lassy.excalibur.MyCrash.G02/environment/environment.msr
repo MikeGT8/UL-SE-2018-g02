@@ -100,6 +100,9 @@ import lu.uni.lassy.messir.libraries.string
 				operation ieAllRequestsDelivered():ptBoolean
 				
 				operation ieSendRequest(ARequest:ctRequest):ptBoolean
+				
+				//Access rights variant
+				operation ieRequestedAlertList():ptBoolean
 			}
 			
 			output interface outactCoordinator {
@@ -112,6 +115,7 @@ import lu.uni.lassy.messir.libraries.string
 				
 				//Access rights variant
 				operation oeHandelAlert(AId:dtId):ptBoolean
+				operation oeRequestAlertList():ptBoolean
 			}
 		}
 		

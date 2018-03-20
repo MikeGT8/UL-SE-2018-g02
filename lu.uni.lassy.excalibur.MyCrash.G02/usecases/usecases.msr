@@ -239,5 +239,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				ieSmsSend returned to actComCompany
 			}
 		}
+	use case system subfunction oeRequestAlertList() {
+			actor actCoordinator[primary, active]
+			returned messages {
+				ieRequestedAlertList returned to actCoordinator
+			}
+		}
 	}
 }
