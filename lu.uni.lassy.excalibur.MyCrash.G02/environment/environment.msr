@@ -27,7 +27,7 @@ import lu.uni.lassy.messir.libraries.string
 			}
 		}
 		
-		actor actAuthenticated role rnactAuthenticated cardinality[0 .. *] {
+		actor actAuthenticated role rnactAuthenticated cardinality[1 .. *] {
 			
 			operation init():ptBoolean
 			
@@ -79,8 +79,8 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeTreatRequest(ARequestID:dtRequestID):ptBoolean
 				operation oeSolveRequest(ARequestID:dtRequestID):ptBoolean
 				
-				operation oeAddPI(APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
-				operation oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory):ptBoolean
+				operation oeAddPI(APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:dtPICategory):ptBoolean
+				operation oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:dtPICategory):ptBoolean
 				operation oeDeletePI(APIID:dtPIID):ptBoolean
 				
 				//Access rights
@@ -88,14 +88,13 @@ import lu.uni.lassy.messir.libraries.string
 			}
 		}
 		
-		actor actCoordinator role rnactCoordinator cardinality[0 .. *] extends actAuthenticated {
+		actor actCoordinator role rnactCoordinator cardinality[1 .. *] extends actAuthenticated {
 			
 			operation init():ptBoolean
 			
 			input interface inactCoordinator {
 				
 				//PI variant
-				operation ieIsPIAvailable():ptBoolean
 				operation ieRequestDelivered():ptBoolean
 				operation ieAllRequestsDelivered():ptBoolean
 				
@@ -119,33 +118,33 @@ import lu.uni.lassy.messir.libraries.string
 			}
 		}
 		
-		actor actPerson role rnactPerson cardinality[0 .. *] extends actAuthenticated {
+		actor actPerson role rnactPerson cardinality[1 .. *] extends actAuthenticated {
 			
 			operation init():ptBoolean
 			
 			input interface inactPerson {
 				
 				//PI variant
-				//operation ieSignedIn():ptBoolean
-				//operation iePIRequestedAdded():ptBoolean
 				operation ieRequestSolved():ptBoolean
+				operation ieSmsSent():ptBoolean
 			}
 			
 			output interface outactPerson {
 				
 				//PI variant
-				//operation oeSignIn(ALogin:dtLogin, APassword:dtPassword, ASamePassword:dtPassword):ptBoolean
-				
 				operation oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				operation oeSendNewRequest(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity):ptBoolean
+				
 				operation oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				operation oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
+				operation oeSendSms(APIName:dtPIName, APIGPSLocation:dtGPSLocation, AProblemDescription:dtDescription, APhoneNumber:dtPhoneNumber):ptBoolean
 				
+				//not sure if needed, to ask Mr. Capozucca
 				operation oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
 				operation oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
 			}
 		}
-	actor actComCompany role rnactComCompany cardinality[0 .. *] {
+	actor actComCompany role rnactComCompany cardinality[1 .. *] {
 			input interface inactComCompany {
 				
 				//Access rights variant

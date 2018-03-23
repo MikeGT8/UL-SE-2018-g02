@@ -67,11 +67,10 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				
 				ieRequestSolved returned to actAdministrator
 				ieRequestSolved returned to actPerson
-				//iePIRequestedAdded returned to actPerson
 			}
 		}
 		
-		use case system subfunction oeAddPI(APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory) {
+		use case system subfunction oeAddPI(APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:dtPICategory) {
 		
 			actor actAdministrator[primary, active]
 			
@@ -81,7 +80,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtPIDescription, APICategory:dtPICategory) {
+		use case system subfunction oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:dtPICategory) {
 		
 			actor actAdministrator[primary, active]
 			
@@ -114,7 +113,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			
 			returned messages {
 			
-				ieIsPIAvailable returned to actCoordinator	
+				ieMessage returned to actCoordinator	
 			}
 		}
 		
@@ -142,50 +141,80 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		/*
-		use case system subfunction oeSignIn(ALogin:dtLogin, APassword:dtPassword, ASamePassword:dtPassword) {
-		
-			actor actPerson[primary, active]
-			
-			returned messages {
-			
-				ieSignedIn returned to actPerson	
-			}
-		}
-		*/
-		
 		use case system subfunction oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]
+			
+			returned messages {
+				
+				ieMessage returned to actPerson
+			}
 		}
 		
 		use case system subfunction oeSendNewRequest(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
 			actor actCoordinator[secondary, passive]
+			
+			returned messages {
+				
+				ieMessage returned to actPerson
+			}
 		}
 		
 		use case system subfunction oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]
+			
+			returned messages {
+				
+				ieMessage returned to actPerson
+			}
 		}
 		
 		use case system subfunction oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]
+			
+			returned messages {
+				
+				ieMessage returned to actPerson
+			}
 		}
 		
+		use case system subfunction oeSendSms(APIName:dtPIName, APIGPSLocation:dtGPSLocation, AProblemDescription:dtDescription, APhoneNumber:dtPhoneNumber) {
+			
+			actor actPerson[primary, active]
+			actor actComCompany[secondary, passive]
+			
+			returned messages {
+				
+				ieSmsSent returned to actPerson
+			}
+		}
+		
+		//not sure if needed, to ask Mr. Capozucca
 		use case system subfunction oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
 		
 			actor actPerson[primary, proactive]
+			
+			returned messages {
+				
+				ieMessage returned to actPerson
+			}
 		}
 		
 		use case system subfunction oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
 		
 			actor actPerson[primary, proactive]
+			
+			returned messages {
+				
+				ieMessage returned to actPerson
+			}
 		}
 		
 		use case system subfunction oeLoginWrong(ALogin:dtLogin, APassword:dtPassword) {
