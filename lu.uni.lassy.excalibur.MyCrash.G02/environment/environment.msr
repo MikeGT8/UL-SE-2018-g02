@@ -69,6 +69,7 @@ import lu.uni.lassy.messir.libraries.string
 				
 				//Access rights variant
 				operation ieCoordinatorAdded():ptBoolean
+				operation ieCrisisCreated():ptBoolean
 			}
 			
 			output interface outactAdministrator {
@@ -84,7 +85,8 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeDeletePI(APIID:dtPIID):ptBoolean
 				
 				//Access rights
-				operation oeAddCoordinator(Cid:dtID, CName:dtName, CPassword:dtPassword, CAccessRights:dtAccessRights):ptBoolean
+				operation oeAddCoordinator(CoordinatorId:dtCoordinatorId, CoordinatorName:dtCoordinatorName, CoordinatorLogin:dtLogin, CoordinatorPassword:dtPassword, CoordinatorAccessRights:dtAccessRights):ptBoolean
+				operation oeCreateCrisis(CrisisId:dtCrisisId, CrisisDescription:dtCrisisDescription, CrisisAccessRights:dtAccessRights)ptBoolean
 			}
 		}
 		
@@ -101,7 +103,7 @@ import lu.uni.lassy.messir.libraries.string
 				operation ieSendRequest(ARequest:ctRequest):ptBoolean
 				
 				//Access rights variant
-				operation ieRequestedAlertList():ptBoolean
+				operation ieRequestedCrisisList():ptBoolean
 			}
 			
 			output interface outactCoordinator {
@@ -113,8 +115,8 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeDeliverAllRequests():ptBoolean
 				
 				//Access rights variant
-				operation oeHandelAlert(AId:dtId):ptBoolean
-				operation oeRequestAlertList():ptBoolean
+				operation oeHandelCrisis(CrisisId:dtCrisisId):ptBoolean
+				operation oeRequestCrisisList():ptBoolean
 			}
 		}
 		
@@ -153,7 +155,7 @@ import lu.uni.lassy.messir.libraries.string
 			output interface outactComCompany {
 				
 				//Access rights variant
-				operation oeAlert(AWitness:dtPerson, ADate:dtDate, ATime:dtTime, PhoneNumber:dtPhoneNumber, ALocation:dtLocation, ADescription:dtDescription, ALevel:dtLevel):ptBoolean
+				operation oeAlert(AlertWitness:dtPerson, AlertDate:dtDate, AlertTime:dtTime, PhoneNumber:dtPhoneNumber, AlertLocation:dtGPSLocation, AlertDescription:dtAlertDescription):ptBoolean
 			}
 		}
 	}

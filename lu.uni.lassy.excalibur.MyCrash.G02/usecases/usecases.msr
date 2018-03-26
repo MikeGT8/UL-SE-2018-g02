@@ -247,31 +247,37 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				ieLoggedIn returned to actAuthenticated
 			}
 		}
-	use case system subfunction oeAddCoordinator(Cid:dtID, CName:dtName, CPassword:dtPassword, CAccessRights:dtAccessRights) {
+	use case system subfunction oeAddCoordinator(CoordinatorId:dtCoordinatorId, CoordinatorName:dtCoordinatorName, CoordinatorLogin:dtLogin, CoordinatorPassword:dtPassword, CoordinatorAccessRights:dtAccessRights) {
 			actor actAdministrator[primary, active]
 			
 			returned messages {
 				ieCoordinatorAdded returned to actAdministrator
 			}
 		}
-	use case system subfunction oeHandelAlert(AId:dtId) {
+	use case system subfunction oeHandelCrisis(CrisisId:dtCrisisId) {
 			actor actCoordinator[primary, active]
 			
 			returned messages {
 				ieMessage returned to actCoordinator
 			}
 		}
-	use case system subfunction oeAlert(AWitness:dtPerson, ADate:dtDate, ATime:dtTime, PhoneNumber:dtPhoneNumber, ALocation:dtLocation, ADescription:dtDescription, ALevel:dtLevel) {
+	use case system subfunction oeAlert(AlertWitness:dtPerson, AlertDate:dtDate, AlertTime:dtTime, PhoneNumber:dtPhoneNumber, AlertLocation:dtGPSLocation, AlertDescription:dtAlertDescription) {
 			actor actComCompany[primary, active]
 			
 			returned messages {
 				ieSmsSend returned to actComCompany
 			}
 		}
-	use case system subfunction oeRequestAlertList() {
+	use case system subfunction oeRequestCrisisList() {
 			actor actCoordinator[primary, active]
 			returned messages {
-				ieRequestedAlertList returned to actCoordinator
+				ieRequestedCrisisList returned to actCoordinator
+			}
+		}
+	use case system subfunction oeCreateCrisis(CrisisId:dtCrisisId, CrisisDescription:dtCrisisDescription, CrisisAccessRights:dtAccessRights) {
+			actor actAdministrator[primary, active]
+			returned messages {
+				ieCrisisCreated returned to actAdministrator
 			}
 		}
 	}
