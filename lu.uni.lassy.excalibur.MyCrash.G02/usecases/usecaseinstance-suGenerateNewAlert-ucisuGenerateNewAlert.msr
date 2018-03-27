@@ -1,0 +1,57 @@
+package usecaseinstances.uci {
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+
+	Use Case Model {
+
+		use case instance ucisuGenerateNewAlert : suGenerateNewAlert {
+			
+			actors {
+				
+				theCreator:actMsrCreator
+				patrick:actPerson
+				orange:actComCompany
+			}
+			
+			use case steps {
+			
+				theCreator
+				executed instanceof subfunction oeCreateSystemAndEnvironment() {
+					
+					ieSystemCreated() returned to theCreator
+				}
+				
+				patrick
+				executed instanceof subfunction oeLogin("014092450D", "6543210") {
+					
+					ieLoggedIn("You are logged in, 014092450D") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeSearchPI("Cactus", "Supermarket", "Esch/Alzette") {
+					
+					ieMessage("The point of interest is in the system. How to proceed?") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeGetGPSLocation("Cactus", "Supermarket", "Esch/Alzette") {
+					
+					ieMessage("The GPS location of the PI is: 56.8989/46.7878.") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeSendSms("Cactus", "56.8989/46.7878", "The supermarket is on fire!", "661777777") {
+					
+					ieSmsSent("Your message has been sent.") returned to patrick
+					ieSmsSend("661777777", "The supermarket is on fire!") returned to orange
+				}
+				
+				patrick
+				executed instanceof subfunction oeLogout() {
+					
+					ieLoggedOut("You are logged out!") returned to patrick
+				}
+			}
+		}
+	}
+}

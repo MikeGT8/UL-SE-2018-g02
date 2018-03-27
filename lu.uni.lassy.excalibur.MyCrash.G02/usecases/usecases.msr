@@ -16,6 +16,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		use case system subfunction oeCreateSystemAndEnvironment() {
 		
 			actor actMsrCreator[primary, active]
+			
+			returned messages {
+				
+				ieSystemCreated returned to actMsrCreator
+			}
 		}
 		
 		use case system subfunction oeLogin(ALogin:dtLogin, APassword:dtPassword) {
@@ -43,13 +48,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			actor actAdministrator[primary, active]
 			actor actCoordinator[secondary, passive]
 			actor actPerson[secondary, multiple]
-		}
-		
-		use case system subfunction oeGetRequest(ARequestID:dtRequestID) {
-		
-			actor actAdministrator[primary, active]
-			actor actCoordinator[secondary, passive]
-			actor actPerson[secondary, passive]
+			
+			returned messages {
+				
+				ieRequestList returned to actAdministrator
+			}
 		}
 		
 		use case system subfunction oeTreatRequest(ARequestID:dtRequestID) {
@@ -66,17 +69,18 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			returned messages {
 				
 				ieRequestSolved returned to actAdministrator
-				ieRequestSolved returned to actPerson
 			}
 		}
 		
 		use case system subfunction oeAddPI(APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:dtPICategory) {
 		
 			actor actAdministrator[primary, active]
+			actor actPerson[secondary, passive]
 			
 			returned messages {
 				
 				iePIAdded returned to actAdministrator
+				iePIAdded returned to actPerson
 			}
 		}
 		
@@ -104,6 +108,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		
 			actor actCoordinator[primary, active]
 			actor actPerson[secondary, multiple]
+			
+			returned messages {
+				
+				ieRequestListToCheck returned to actCoordinator
+			}
 		}
 		
 		use case system subfunction oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtRequestName, ARequestCity:dtRequestCity) {
@@ -126,18 +135,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			returned messages {
 			
 				ieRequestDelivered returned to actCoordinator	
-			}
-		}
-		
-		use case system subfunction oeDeliverAllRequests() {
-		
-			actor actCoordinator[primary, active]
-			actor actPerson[secondary, multiple]
-			actor actAdministrator[secondary, passive]
-			
-			returned messages {
-			
-				ieAllRequestsDelivered returned to actCoordinator	
 			}
 		}
 		
@@ -193,6 +190,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			returned messages {
 				
 				ieSmsSent returned to actPerson
+				ieSmsSend returned to actComCompany
 			}
 		}
 		
@@ -279,6 +277,144 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			returned messages {
 				ieCrisisCreated returned to actAdministrator
 			}
+		}
+		
+		use case system usergoal ugSecurelyUseSystem() {
+			
+			actor actAuthenticated[primary, active]
+			
+			reuse oeLogin[1..1]
+			reuse oeLogout[1..1]
+			
+			step a: actAuthenticated executes oeLogin
+			step b: actAuthenticated executes oeLogout
+			
+			ordering constraint
+				"step (a) must always precede step (b)."
+		}
+		
+		use case system usergoal ugCheckRequest() {
+			
+			actor actCoordinator[primary, active]
+			
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeGetAllRequests[1..1]
+			reuse oeCheckAvailability[1..*]
+			reuse oeDeliverRequest[1..*]
+			
+			step a: actCoordinator executes ugSecurelyUseSystem
+			step b: actCoordinator executes oeGetAllRequests
+			step c: actCoordinator executes oeCheckAvailability
+			step d: actCoordinator executes oeDeliverRequest
+			
+			ordering constraint
+				"step (a) must always be performed before all the other steps."
+				
+			ordering constraint
+				"Subsequently, all the steps follow after step (a) is performed."
+		}
+	
+		use case system usergoal ugManageRequest() {
+			
+			actor actAdministrator[primary, active]
+			
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeGetAllRequestsFromCoordinator[1..1]
+			reuse oeTreatRequest[1..*]
+			reuse oeSolveRequest[1..*]
+			
+			step a: actAdministrator executes ugSecurelyUseSystem
+			step b: actAdministrator executes oeGetAllRequestsFromCoordinator
+			step c: actAdministrator executes oeTreatRequest
+			step d: actAdministrator executes oeSolveRequest
+			
+			ordering constraint
+				"step (a) must always be performed before all the other steps."
+				
+			ordering constraint
+				"Subsequently, all the steps follow after step (a) is performed."
+		}
+		
+		use case system usergoal ugSendAlert() {
+			
+			actor actPerson[primary, active]
+			
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeSearchPI[1..*]
+			reuse oeGetGPSLocation[1..*]
+			reuse oeSendSms[1..*]
+			
+			step a: actPerson executes ugSecurelyUseSystem
+			step b: actPerson executes oeSearchPI
+			step c: actPerson executes oeGetGPSLocation
+			step d: actPerson executes oeSendSms
+			
+			ordering constraint
+				"step (a) must always be performed before all the other steps."
+				
+			ordering constraint
+				"Subsequently, all the steps follow after step (a) is performed."
+		}
+		
+		use case system summary suAddNewPI() {
+		
+			actor actPerson[primary, active]
+			actor actMsrCreator[secondary, active]
+			actor actCoordinator[secondary, proactive]
+			actor actAdministrator[secondary, proactive]
+			
+			reuse oeCreateSystemAndEnvironment[1..1]
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeSearchPI[1..*]
+			
+			reuse ugCheckRequest[1..*]
+			reuse ugManageRequest[1..*]
+			reuse oeAddPI[1..*]
+			
+			step a: actMsrCreator executes oeCreateSystemAndEnvironment
+			step b: actPerson executes ugSecurelyUseSystem
+			step c: actPerson executes oeSearchPI
+			step d: actCoordinator executes ugSecurelyUseSystem
+			step e: actCoordinator executes ugCheckRequest
+			step f: actCoordinator executes ugSecurelyUseSystem
+			step g: actAdministrator executes ugManageRequest
+			step h: actAdministrator executes oeAddPI
+				
+			ordering constraint
+				"step (a) is the first step to perform."
+				
+			ordering constraint
+				"step (b), (d) and (f) must always be performed before (c), (e) and (g)."
+				
+			ordering constraint
+				"Subsequently, all the steps follow after step (a) is performed."
+		}
+		
+		use case system summary suGenerateNewAlert() {
+		
+			actor actPerson[primary, active, multiple]
+			actor actMsrCreator[secondary, active]
+			
+			reuse oeCreateSystemAndEnvironment[1..1]
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeSearchPI[1..*]
+			reuse oeGetGPSLocation[1..*]
+			reuse oeSendSms[1..*]
+			
+			step a: actMsrCreator executes oeCreateSystemAndEnvironment
+			step b: actPerson executes ugSecurelyUseSystem
+			step c: actPerson executes oeSearchPI
+			step d: actPerson executes oeGetGPSLocation
+			step e: actPerson executes oeSendSms
+			
+			ordering constraint
+				"step (a) and (b) must always be performed before all the other steps."
+				
+			ordering constraint
+				"step (a) is the first step to perform."
+				
+			ordering constraint
+				"Subsequently, all the steps follow after step (a) is performed."
 		}
 	}
 }

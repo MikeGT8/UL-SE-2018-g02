@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Tue Mar 27 17:09:02 CEST 2018
+*/
+
+
+@@view uci-ucisuAddNewPI
+@instance Use-Case usecases.ucisuAddNewPI.ucisuAddNewPI 
+@description "The person searches for a specific PI which is not in the system. 
+The coordinator checks if the problem is really true and sends it to the administrator. 
+The administrator treats the request and adds the new PI to the system."
+@caption "suAddNewPI summary use case instance"

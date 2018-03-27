@@ -1,0 +1,10 @@
+/*
+@author ribby
+@date Tue Mar 27 14:48:03 CEST 2018
+*/
+
+
+@@view uc-ugCheckRequest
+@model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugCheckRequest 
+@description "The coordinator checks if the requested point of interest is not already in the system."
+@caption "ugCheckRequest user goal use case"

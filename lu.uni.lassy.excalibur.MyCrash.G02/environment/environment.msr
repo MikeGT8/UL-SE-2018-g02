@@ -57,6 +57,7 @@ import lu.uni.lassy.messir.libraries.string
 			input interface inactAdministrator {
 				
 				//PI variant
+				operation ieRequestList():ptBoolean
 				operation ieRequestBeingTreated():ptBoolean
 				operation ieRequestSolved():ptBoolean
 				
@@ -76,7 +77,6 @@ import lu.uni.lassy.messir.libraries.string
 				
 				// PI variant
 				operation oeGetAllRequestsFromCoordinator():ptBoolean
-				operation oeGetRequest(ARequestID:dtRequestID):ptBoolean
 				operation oeTreatRequest(ARequestID:dtRequestID):ptBoolean
 				operation oeSolveRequest(ARequestID:dtRequestID):ptBoolean
 				
@@ -97,9 +97,8 @@ import lu.uni.lassy.messir.libraries.string
 			input interface inactCoordinator {
 				
 				//PI variant
-				operation ieRequestDelivered():ptBoolean
-				operation ieAllRequestsDelivered():ptBoolean
-				
+				operation ieRequestListToCheck():ptBoolean
+				operation ieRequestDelivered():ptBoolean				
 				operation ieSendRequest(ARequest:ctRequest):ptBoolean
 				
 				//Access rights variant
@@ -112,7 +111,6 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeGetAllRequests():ptBoolean
 				operation oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtRequestName, ARequestCity:dtCity):ptBoolean
 				operation oeDeliverRequest(ARequestID:dtRequestID):ptBoolean
-				operation oeDeliverAllRequests():ptBoolean
 				
 				//Access rights variant
 				operation oeHandelCrisis(CrisisId:dtCrisisId):ptBoolean
@@ -127,8 +125,8 @@ import lu.uni.lassy.messir.libraries.string
 			input interface inactPerson {
 				
 				//PI variant
-				operation ieRequestSolved():ptBoolean
-				operation ieSmsSent():ptBoolean
+				operation iePIAdded():ptBoolean
+				operation ieSmsSent(AMessage:dtMessage):ptBoolean
 			}
 			
 			output interface outactPerson {

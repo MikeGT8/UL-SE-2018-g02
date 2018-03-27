@@ -1,0 +1,10 @@
+/*
+@author ribby
+@date Tue Mar 27 15:04:38 CEST 2018
+*/
+
+
+@@view uc-ugSendAlert
+@model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugSendAlert 
+@description "The person searches for a PI, gets the GPS location of the certain point of interest and then sends a Sms to the actComCompany."
+@caption "ugSendAlert user goal use case"

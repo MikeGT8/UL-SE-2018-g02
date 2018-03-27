@@ -1,0 +1,10 @@
+/*
+@author ribby
+@date Tue Mar 27 16:15:48 CEST 2018
+*/
+
+
+@@view uci-ucisuGenerateNewAlert
+@instance Use-Case usecaseinstances.uci.ucisuGenerateNewAlert 
+@description "The person sends a Sms to the communication company about a possible alert to handle."
+@caption "suGenerateNewAlert summary use case instance"

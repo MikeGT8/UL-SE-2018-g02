@@ -1,0 +1,10 @@
+/*
+@author ribby
+@date Tue Mar 27 14:41:06 CEST 2018
+*/
+
+
+@@view uc-ugSecurelyUseSystem
+@model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugSecurelyUseSystem 
+@description "All the users of the system can log in and out."
+@caption "ugSecurelyUseSystem user goal use case"

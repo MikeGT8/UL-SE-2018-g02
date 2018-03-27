@@ -1,0 +1,108 @@
+package usecases.ucisuAddNewPI {
+	
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+	
+	Use Case Model {
+
+		use case instance ucisuAddNewPI : suAddNewPI{
+			
+			actors {
+			
+				theCreator:actMsrCreator
+				patrick:actPerson
+				bob:actAdministrator
+				carl:actCoordinator
+			}
+			
+			use case steps {
+				
+				theCreator
+				executed instanceof subfunction oeCreateSystemAndEnvironment() {
+					
+					ieSystemCreated() returned to theCreator
+				}
+				
+				patrick
+				executed instanceof subfunction oeLogin("014092450D", "6543210") {
+					
+					ieLoggedIn("You are logged in, 014092450D") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeSearchPI("Cactus", "Hobby", "Esch/Alzette") {
+					
+					ieMessage("The point of interest is NOT in the system! We will handle the problem.") returned to patrick
+				}
+				
+				carl
+				executed instanceof subfunction oeLogin("coordin", "coordinChecks") {
+					
+					ieLoggedIn("You are logged in, coordin") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeGetAllRequests() {
+					
+					ieRequestListToCheck() returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeCheckAvailability("1001") {
+					
+					ieMessage("The PI is NOT available!") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeDeliverRequest("1001") {
+					
+					ieRequestDelivered() returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeLogout() {
+					
+					ieLoggedOut("You are logged out!") returned to carl
+				}
+				
+				bob
+				executed instanceof subfunction oeLogin("admin", "adminHandles") {
+					
+					ieLoggedIn("You are logged in, admin") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeGetAllRequestsFromCoordinator() {
+					
+					ieRequestList() returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeTreatRequest("1001") {
+					
+					ieRequestBeingTreated() returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeSolveRequest("1001") {
+					
+					ieRequestSolved() returned to bob
+					ieRequestSolved() returned to patrick
+					
+				}
+				bob
+				executed instanceof subfunction oeAddPI("Cactus", "Esch/Alzette", "78.8888/89.6565", "Cactus Hobby is a market for garden activities.", "Hobby") {
+					
+					iePIAdded returned to bob
+					iePIAdded returned to patrick
+				}
+				
+				bob
+				executed instanceof subfunction oeLogout() {
+					
+					ieLoggedOut("You are logged out!") returned to bob
+				}
+			}
+		}
+	}
+}
