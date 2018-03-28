@@ -194,27 +194,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		//not sure if needed, to ask Mr. Capozucca
-		use case system subfunction oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
-		
-			actor actPerson[primary, proactive]
-			
-			returned messages {
-				
-				ieMessage returned to actPerson
-			}
-		}
-		
-		use case system subfunction oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation) {
-		
-			actor actPerson[primary, proactive]
-			
-			returned messages {
-				
-				ieMessage returned to actPerson
-			}
-		}
-		
 		use case system subfunction oeLoginWrong(ALogin:dtLogin, APassword:dtPassword) {
 			
 			actor actAuthenticated[primary, active]

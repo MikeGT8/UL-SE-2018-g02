@@ -138,10 +138,6 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				operation oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				operation oeSendSms(APIName:dtPIName, APIGPSLocation:dtGPSLocation, AProblemDescription:dtDescription, APhoneNumber:dtPhoneNumber):ptBoolean
-				
-				//not sure if needed, to ask Mr. Capozucca
-				operation oeGetDistance(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
-				operation oeGetRoute(APersonType:etPersonType, APIGPSLocation:dtGPSLocation, ACurrentLocation:dtGPSLocation):ptBoolean
 			}
 		}
 	actor actComCompany role rnactComCompany cardinality[1 .. *] {
