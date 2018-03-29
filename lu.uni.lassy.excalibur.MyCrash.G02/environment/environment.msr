@@ -161,7 +161,7 @@ import lu.uni.lassy.messir.libraries.string
 			output interface outactComCompany {
 				
 				//Access rights variant
-				operation oeAlert(ActHumanKind:dtHumanKind, AdtDate:dtDate, AdtTime:dtTime, AdtPhoneNumber:dtPhoneNumber, AdtGPSLocation:dtGPSLocation, AdtComment:dtComment, AdtAlertType:dtAlertType):ptBoolean
+				operation oeAlert(APersonType:etPersonType, APIName:dtPIName, APIGPSLocation:dtGPSLocation, AdtDate:dtDate, AdtTime:dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber, AdtAlertType:dtAlertType):ptBoolean
 			}
 		}
 	}
