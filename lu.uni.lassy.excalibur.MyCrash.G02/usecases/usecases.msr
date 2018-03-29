@@ -224,39 +224,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				ieLoggedIn returned to actAuthenticated
 			}
 		}
-	use case system subfunction oeAddCoordinator(CoordinatorId:dtCoordinatorId, CoordinatorName:dtCoordinatorName, CoordinatorLogin:dtLogin, CoordinatorPassword:dtPassword, CoordinatorAccessRights:dtAccessRights) {
-			actor actAdministrator[primary, active]
-			
-			returned messages {
-				ieCoordinatorAdded returned to actAdministrator
-			}
-		}
-	use case system subfunction oeHandelCrisis(CrisisId:dtCrisisId) {
-			actor actCoordinator[primary, active]
-			
-			returned messages {
-				ieMessage returned to actCoordinator
-			}
-		}
-	use case system subfunction oeAlert(AlertWitness:dtPerson, AlertDate:dtDate, AlertTime:dtTime, PhoneNumber:dtPhoneNumber, AlertLocation:dtGPSLocation, AlertDescription:dtAlertDescription) {
-			actor actComCompany[primary, active]
-			
-			returned messages {
-				ieSmsSend returned to actComCompany
-			}
-		}
-	use case system subfunction oeRequestCrisisList() {
-			actor actCoordinator[primary, active]
-			returned messages {
-				ieRequestedCrisisList returned to actCoordinator
-			}
-		}
-	use case system subfunction oeCreateCrisis(CrisisId:dtCrisisId, CrisisDescription:dtCrisisDescription, CrisisAccessRights:dtAccessRights) {
-			actor actAdministrator[primary, active]
-			returned messages {
-				ieCrisisCreated returned to actAdministrator
-			}
-		}
+	
+	
+	
+	
+	
 		
 		use case system usergoal ugSecurelyUseSystem() {
 			
@@ -394,6 +366,154 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				
 			ordering constraint
 				"Subsequently, all the steps follow after step (a) is performed."
+		}
+	
+		use case system subfunction oeAlert(ActHumanKind:dtHumanKind, AdtDate:dtDate, AdtTime:dtTime, AdtPhoneNumber:dtPhoneNumber, AdtGPSLocation:dtGPSLocation, AdtComment:dtComment, AdtAlertType:dtAlertType) {
+			actor actComCompany[primary, active]
+			
+			returned messages {
+				ieSmsSend returned to actComCompany
+			}
+		}
+
+
+		use case system subfunction oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:dtAccessRights) {
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				ieCoordinatorAdded returned to actAdministrator
+			}
+		}
+
+
+		use case system subfunction oeDeleteCoordinator(AdtCoordinatorID:dtCoordinatorID) {
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				ieCoordinatorDeleted returned to actAdministrator
+			}
+		}
+		
+
+		use case system subfunction oeUpdateCoordinatorAccessRights(CoordinatorAccessRights:dtAccessRights) {
+			actor actAdministrator[primary, active]
+			
+			returned messages {
+				ieCoordinatorUpdated returned to actAdministrator
+			}
+		}
+
+
+		use case system usergoal ugAdministrateTheSystem() {
+			actor actAdministrator[primary, active]
+			
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeAddCoordinator[1..*]
+			reuse oeDeleteCoordinator[1..*]
+			reuse oeUpdateCoordinatorAccessRights[1..*]
+			
+			step a: actAdministrator executes ugSecurelyUseSystem
+			step b: actAdministrator executes oeAddCoordinator
+			step c: actAdministrator executes oeDeleteCoordinator
+			step d: actAdministrator executes oeUpdateCoordinatorAccessRights
+			
+			ordering constraint 
+				"Step a must be executed before all other step"
+				
+			ordering constraint
+				"Step b must be executed before executing steps c or d"
+		}
+			
+		use case system subfunction oeGetCrisisSet(AetCrisisStatus:etCrisisStatus, AdtCrisisType:dtCrisisType) {
+			actor actCoordinator[primary, active]
+		}
+
+
+		use case system subfunction oeGetAlertSet(AetAlertStatus:etAlertSatus, AdtAlertType:dtAlertType) {
+			actor actCoordinator[primary, active]
+		}
+
+
+		use case system usergoal ugMonitor() {
+			actor actCoordinator[primary, active]
+			
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeGetCrisisSet[1..*]
+			reuse oeGetAlertSet[1..*]
+			
+			step a: actCoordinator executes ugSecurelyUseSystem
+			step b: actCoordinator executes oeGetCrisisSet
+			step c: actCoordinator executes oeGetAlertSet
+			
+			ordering constraint 
+				"Step a must be executed before all other step"
+		}
+		
+		
+		use case system subfunction oeValidateAlert(AdtAlertID:dtAlertID) {
+			actor actCoordinator[primary, active]
+		}
+		
+		
+		use case system subfunction oeInvalidateAlert(AdtAlertID:dtAlertID) {
+			actor actCoordinator[primary, active]
+		}
+		
+		
+		use case system subfunction oeSetCrisisStatus(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus) {
+			actor actCoordinator[primary, active]
+		}
+		
+		
+		use case system subfunction oeSetCrisisType(AdtCrisisID:dtCrisisID, AetCrisisType:etCrisisType) {
+			actor actCoordinator[primary, active]
+		}
+		
+		
+		use case system subfunction oeSetCrisisHandler(AdtCrisisID:dtCrisisID) {
+			actor actCoordinator[primary, active]
+		}
+		
+		
+		use case system subfunction oeReportOnCrisis(AdtCrisisID:dtCrisisID, AdtComment:dtComment) {
+			actor actCoordinator[primary, active]
+		}
+		
+		
+		use case system subfunction oeCloseCrisis(AdtCrisisID:dtCrisisID) {
+			actor actCoordinator[primary, active]
+		}
+		
+		
+		use case system usergoal ugManageCrisis() {
+			actor actCoordinator[primary, active]
+			
+			reuse ugSecurelyUseSystem[1..1]
+			reuse oeValidateAlert[1..*]
+			reuse oeInvalidateAlert[1..*]
+			reuse oeSetCrisisStatus[1..*]
+			reuse oeSetCrisisType[1..*]
+			reuse oeSetCrisisHandler[1..*]
+			reuse oeReportOnCrisis[1..*]
+			reuse oeCloseCrisis[1..*]
+			
+			step a: actCoordinator executes ugSecurelyUseSystem
+			step b: actCoordinator executes oeValidateAlert
+			step c: actCoordinator executes oeInvalidateAlert
+			step d: actCoordinator executes oeSetCrisisHandler
+			step e: actCoordinator executes oeSetCrisisStatus
+			step f: actCoordinator executes oeSetCrisisType
+			step g: actCoordinator executes oeReportOnCrisis
+			step h: actCoordinator executes oeCloseCrisis
+			
+			ordering constraint 
+				"Step a must be executed before executing all other step"
+			
+			ordering constraint
+				"Step b must be executed before executing step d"
+				
+			ordering constraint
+				"Step d must executed before executing steps e, f, g and h"
 		}
 	}
 }

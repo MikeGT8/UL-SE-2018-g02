@@ -71,6 +71,7 @@ import lu.uni.lassy.messir.libraries.string
 				//Access rights variant
 				operation ieCoordinatorAdded():ptBoolean
 				operation ieCoordinatorDeleted():ptBoolean
+				operation ieCoordinatorUpdated():ptBoolean
 			}
 			
 			output interface outactAdministrator {
@@ -87,6 +88,7 @@ import lu.uni.lassy.messir.libraries.string
 				//Access rights
 				operation oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:dtAccessRights):ptBoolean
 				operation oeDeleteCoordinator(AdtCoordinatorID:dtCoordinatorID):ptBoolean
+				operation oeUpdateCoordinatorAccessRights(CoordinatorAccessRights:dtAccessRights):ptBoolean
 				
 			}
 		}
@@ -117,10 +119,10 @@ import lu.uni.lassy.messir.libraries.string
 				//Access rights variant
 				operation oeInvalidateAlert(AdtAlertID:dtAlertID):ptBoolean
 				operation oeValidateAlert(AdtAlertID:dtAlertID):ptBoolean
-				operation oeGetAlertSet(AetAlertStatus:etAlertSatus):ptBoolean
+				operation oeGetAlertSet(AetAlertStatus:etAlertSatus, AdtAlertType:dtAlertType):ptBoolean
 				
 				operation oeCloseCrisis(AdtCrisisID:dtCrisisID):ptBoolean
-				operation oeGetCrisisSet(AetCrisisStatus:etCrisisStatus):ptBoolean
+				operation oeGetCrisisSet(AetCrisisStatus:etCrisisStatus, AdtCrisisType:dtCrisisType):ptBoolean
 				operation oeSetCrisisHandler(AdtCrisisID:dtCrisisID):ptBoolean
 				operation oeReportOnCrisis(AdtCrisisID:dtCrisisID, AdtComment:dtComment):ptBoolean
 				operation oeSetCrisisStatus(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus):ptBoolean
@@ -159,7 +161,7 @@ import lu.uni.lassy.messir.libraries.string
 			output interface outactComCompany {
 				
 				//Access rights variant
-				operation oeAlert(ActHumanKind:dtHumanKind, AdtDate:dtDate, AdtTime:dtTime, AdtPhoneNumber:dtPhoneNumber, AdtGPSLocation:dtGPSLocation, AdtComment:dtComment):ptBoolean
+				operation oeAlert(ActHumanKind:dtHumanKind, AdtDate:dtDate, AdtTime:dtTime, AdtPhoneNumber:dtPhoneNumber, AdtGPSLocation:dtGPSLocation, AdtComment:dtComment, AdtAlertType:dtAlertType):ptBoolean
 			}
 		}
 	}
