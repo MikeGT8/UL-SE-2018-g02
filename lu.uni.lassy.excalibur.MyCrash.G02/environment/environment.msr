@@ -86,9 +86,9 @@ import lu.uni.lassy.messir.libraries.string
 				operation oeDeletePI(APIID:dtPIID):ptBoolean
 				
 				//Access rights
-				operation oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:dtAccessRights):ptBoolean
+				operation oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:etAccessRights):ptBoolean
 				operation oeDeleteCoordinator(AdtCoordinatorID:dtCoordinatorID):ptBoolean
-				operation oeUpdateCoordinatorAccessRights(CoordinatorAccessRights:dtAccessRights):ptBoolean
+				operation oeUpdateCoordinatorAccessRights(CoordinatorAccessRights:etAccessRights):ptBoolean
 				
 			}
 		}
@@ -119,7 +119,7 @@ import lu.uni.lassy.messir.libraries.string
 				//Access rights variant
 				operation oeInvalidateAlert(AdtAlertID:dtAlertID):ptBoolean
 				operation oeValidateAlert(AdtAlertID:dtAlertID):ptBoolean
-				operation oeGetAlertSet(AetAlertStatus:etAlertSatus, AdtAlertType:dtAlertType):ptBoolean
+				operation oeGetAlertSet(AetAlertStatus:etAlertSatus, AdtAlertType:etAlertType):ptBoolean
 				
 				operation oeCloseCrisis(AdtCrisisID:dtCrisisID):ptBoolean
 				operation oeGetCrisisSet(AetCrisisStatus:etCrisisStatus, AdtCrisisType:dtCrisisType):ptBoolean
@@ -161,7 +161,7 @@ import lu.uni.lassy.messir.libraries.string
 			output interface outactComCompany {
 				
 				//Access rights variant
-				operation oeAlert(APersonType:etPersonType, APIName:dtPIName, APIGPSLocation:dtGPSLocation, AdtDate:dtDate, AdtTime:dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber, AdtAlertType:dtAlertType):ptBoolean
+				operation oeAlert(APersonType:etPersonType, APIName:dtPIName, APIGPSLocation:dtGPSLocation, AdtDate:dtDate, AdtTime:dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber, AdtAlertType:etAlertType):ptBoolean
 			}
 		}
 	}
