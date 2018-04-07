@@ -1,0 +1,10 @@
+/*
+@author mikel
+@date Sat Apr 07 16:24:44 CEST 2018
+*/
+
+
+@@view uc-ugMonitor
+@model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugMonitor 
+@description ""
+@caption ""

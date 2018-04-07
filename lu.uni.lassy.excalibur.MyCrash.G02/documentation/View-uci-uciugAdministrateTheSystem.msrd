@@ -1,0 +1,10 @@
+/*
+@author mikel
+@date Sat Apr 07 16:26:29 CEST 2018
+*/
+
+
+@@view uci-uciugAdministrateTheSystem
+@instance Use-Case usecases.uciugAdministrateTheSystem.uciugAdministrateTheSystem 
+@description ""
+@caption ""

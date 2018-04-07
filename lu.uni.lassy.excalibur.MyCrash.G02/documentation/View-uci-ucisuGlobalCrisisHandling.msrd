@@ -1,0 +1,10 @@
+/*
+@author mikel
+@date Sat Apr 07 16:27:01 CEST 2018
+*/
+
+
+@@view uci-ucisuGlobalCrisisHandling
+@instance Use-Case usecases.ucisuGlobalCrisisHandling.ucisuGlobalCrisisHandling 
+@description ""
+@caption ""
