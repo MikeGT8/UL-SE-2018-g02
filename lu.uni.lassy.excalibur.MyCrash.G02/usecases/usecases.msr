@@ -395,7 +395,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			step d: actAdministrator executes oeUpdateCoordinatorAccessRights
 			
 			ordering constraint 
-				"Step a must be executed before all other step"
+				"Step a must be executed before all other steps"
 				
 			ordering constraint
 				"Step b must be executed before executing steps c or d"
@@ -484,13 +484,29 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			step h: actCoordinator executes oeCloseCrisis
 			
 			ordering constraint 
-				"Step a must be executed before executing all other step"
+				"Step a must be executed before executing all other steps"
 			
 			ordering constraint
 				"Step b must be executed before executing step d"
 				
 			ordering constraint
 				"Step d must executed before executing steps e, f, g and h"
+		}
+		
+		
+		use case system summary suGlobalCrisisHandling() {
+			actor actCoordinator[primary, active]
+			
+			reuse ugSecurelyUseSystem
+			reuse ugManageCrisis
+			reuse ugMonitor
+			
+			step a: actCoordinator executes ugSecurelyUseSystem
+			step b: actCoordinator executes ugManageCrisis
+			step c: actCoordinator executes ugMonitor
+			
+			ordering constraint 
+				"Step a must be executed before executing all other steps"
 		}
 	}
 }
