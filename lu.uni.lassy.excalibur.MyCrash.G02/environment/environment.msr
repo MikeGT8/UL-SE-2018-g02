@@ -88,7 +88,7 @@ import lu.uni.lassy.messir.libraries.string
 				//Access rights
 				operation oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:etAccessRights):ptBoolean
 				operation oeDeleteCoordinator(AdtCoordinatorID:dtCoordinatorID):ptBoolean
-				operation oeUpdateCoordinatorAccessRights(CoordinatorAccessRights:etAccessRights):ptBoolean
+				operation oeUpdateCoordinatorAccessRights(AdtCoordinatorID:dtCoordinatorID, CoordinatorAccessRights:etAccessRights):ptBoolean
 				
 			}
 		}
