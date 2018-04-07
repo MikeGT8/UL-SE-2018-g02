@@ -1,0 +1,40 @@
+package usecases.uciugAdministrateTheSystem {
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+
+	Use Case Model {
+
+		use case instance uciugAdministrateTheSystem : ugAdministrateTheSystem{
+			actors {
+				admin:actAdministrator
+			}
+			use case steps {
+				
+				admin
+				executed instanceof subfunction oeLogin("icrashadmin", "7WXC1359") {
+					ieLogin("You successfully logged in!") returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeAddCoordinator("1", "bob", "password", "1") {
+					ieCoordinatorAdded() returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeUpdateCoordinatorAccessRights("1", "2") {
+					ieCoordinatorUpdated() returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeDeleteCoordinator("1") {
+					ieCoordinatorDeleted() returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeLogout() {
+					ieLogout("You successfully logged out!") returned to admin
+				}
+			}
+		}
+	}
+}
