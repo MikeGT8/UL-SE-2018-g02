@@ -37,19 +37,20 @@ package usecaseinstances.uci {
 				executed instanceof subfunction oeGetGPSLocation("Cactus", "Supermarket", "Esch/Alzette") {
 					
 					ieMessage("The GPS location of the PI is: 56.8989/46.7878.") returned to patrick
-				}
-				
-				patrick
-				executed instanceof subfunction oeSendSms("Cactus", "56.8989/46.7878", "The supermarket is on fire!", "661777777") {
-					
-					ieSmsSent("Your message has been sent.") returned to patrick
-					ieSmsSend("661777777", "The supermarket is on fire!") returned to orange
+					ieMessage("Your Sms has been sent to your communication operator.") returned to patrick
+					ieSmsSend("Cactus", "Supermarket", "Esch/Alzette", "661777777", "Supermarket on fire!") returned to orange
 				}
 				
 				patrick
 				executed instanceof subfunction oeLogout() {
 					
 					ieLoggedOut("You are logged out!") returned to patrick
+				}
+				
+				orange
+				executed instanceof subfunction oeAlert("Witness", "Cactus", "Esch/Alzette", "27/03/2018", "10:00", "Supermarket on fire!", "661777777", "High") {
+					
+					ieMessage("Alert has been sent. It will be handled!") returned to orange
 				}
 			}
 		}

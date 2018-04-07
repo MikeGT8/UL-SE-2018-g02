@@ -224,11 +224,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				ieLoggedIn returned to actAuthenticated
 			}
 		}
-	
-	
-	
-	
-	
 		
 		use case system usergoal ugSecurelyUseSystem() {
 			
@@ -286,27 +281,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				"Subsequently, all the steps follow after step (a) is performed."
 		}
 		
-		use case system usergoal ugSendAlert() {
-			
-			actor actPerson[primary, active]
-			
-			reuse ugSecurelyUseSystem[1..1]
-			reuse oeSearchPI[1..*]
-			reuse oeGetGPSLocation[1..*]
-			reuse oeSendSms[1..*]
-			
-			step a: actPerson executes ugSecurelyUseSystem
-			step b: actPerson executes oeSearchPI
-			step c: actPerson executes oeGetGPSLocation
-			step d: actPerson executes oeSendSms
-			
-			ordering constraint
-				"step (a) must always be performed before all the other steps."
-				
-			ordering constraint
-				"Subsequently, all the steps follow after step (a) is performed."
-		}
-		
 		use case system summary suAddNewPI() {
 		
 			actor actPerson[primary, active]
@@ -317,6 +291,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			reuse oeCreateSystemAndEnvironment[1..1]
 			reuse ugSecurelyUseSystem[1..1]
 			reuse oeSearchPI[1..*]
+			reuse oeSendNewRequest[1..*]
 			
 			reuse ugCheckRequest[1..*]
 			reuse ugManageRequest[1..*]
@@ -325,11 +300,12 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			step a: actMsrCreator executes oeCreateSystemAndEnvironment
 			step b: actPerson executes ugSecurelyUseSystem
 			step c: actPerson executes oeSearchPI
-			step d: actCoordinator executes ugSecurelyUseSystem
-			step e: actCoordinator executes ugCheckRequest
-			step f: actCoordinator executes ugSecurelyUseSystem
-			step g: actAdministrator executes ugManageRequest
-			step h: actAdministrator executes oeAddPI
+			step d: actPerson executes oeSendNewRequest
+			step e: actCoordinator executes ugSecurelyUseSystem
+			step f: actCoordinator executes ugCheckRequest
+			step g: actCoordinator executes ugSecurelyUseSystem
+			step h: actAdministrator executes ugManageRequest
+			step i: actAdministrator executes oeAddPI
 				
 			ordering constraint
 				"step (a) is the first step to perform."
@@ -344,19 +320,20 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		use case system summary suGenerateNewAlert() {
 		
 			actor actPerson[primary, active, multiple]
+			actor actComCompany[primary, active, multiple]
 			actor actMsrCreator[secondary, active]
 			
 			reuse oeCreateSystemAndEnvironment[1..1]
 			reuse ugSecurelyUseSystem[1..1]
 			reuse oeSearchPI[1..*]
 			reuse oeGetGPSLocation[1..*]
-			reuse oeSendSms[1..*]
+			reuse oeAlert[1..*]
 			
 			step a: actMsrCreator executes oeCreateSystemAndEnvironment
 			step b: actPerson executes ugSecurelyUseSystem
 			step c: actPerson executes oeSearchPI
 			step d: actPerson executes oeGetGPSLocation
-			step e: actPerson executes oeSendSms
+			step e: actComCompany executes oeAlert
 			
 			ordering constraint
 				"step (a) and (b) must always be performed before all the other steps."

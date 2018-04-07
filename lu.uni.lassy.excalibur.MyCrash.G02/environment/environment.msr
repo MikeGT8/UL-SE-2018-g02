@@ -138,7 +138,6 @@ import lu.uni.lassy.messir.libraries.string
 				
 				//PI variant
 				operation iePIAdded():ptBoolean
-				operation ieSmsSent(AMessage:dtMessage):ptBoolean
 			}
 			
 			output interface outactPerson {
@@ -149,14 +148,13 @@ import lu.uni.lassy.messir.libraries.string
 				
 				operation oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
 				operation oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtCity):ptBoolean
-				operation oeSendSms(APIName:dtPIName, APIGPSLocation:dtGPSLocation, AProblemDescription:dtDescription, APhoneNumber:dtPhoneNumber):ptBoolean
 			}
 		}
 	actor actComCompany role rnactComCompany cardinality[1 .. *] {
 			input interface inactComCompany {
 				
 				//Access rights variant
-				operation ieSmsSend(AdtPhoneNumber:dtPhoneNumber, AdtSMS:dtSMS):ptBoolean
+				operation ieSmsSend(APIName:dtPIName, APICategory:dtPICategory, ACity:dtCity, AdtPhoneNumber:dtPhoneNumber, AdtSMS:dtSMS):ptBoolean
 			}
 			output interface outactComCompany {
 				

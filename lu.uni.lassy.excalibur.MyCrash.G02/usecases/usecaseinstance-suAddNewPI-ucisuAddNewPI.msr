@@ -32,7 +32,13 @@ package usecases.ucisuAddNewPI {
 				patrick
 				executed instanceof subfunction oeSearchPI("Cactus", "Hobby", "Esch/Alzette") {
 					
-					ieMessage("The point of interest is NOT in the system! We will handle the problem.") returned to patrick
+					ieMessage("The point of interest is NOT in the system!") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeSendNewRequest("Cactus", "Hobby", "Esch/Alzette") {
+					
+					ieMessage("We will handle your request.") returned to patrick
 				}
 				
 				carl
