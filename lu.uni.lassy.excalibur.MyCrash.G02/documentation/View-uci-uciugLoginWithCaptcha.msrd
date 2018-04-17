@@ -1,0 +1,10 @@
+/*
+@author excalibur
+@date Tue Apr 17 18:25:08 CEST 2018
+*/
+
+
+@@view uci-uciugLoginWithCaptcha
+@instance Use-Case usecases.uciugLoginWithCaptcha.uciugLoginWithCaptcha 
+@description "Logging in using the captcha. You first need to fail to login three times in a row."
+@caption ""

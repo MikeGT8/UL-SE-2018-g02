@@ -535,5 +535,22 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				ieResetPassword returned to actAuthenticated
 			}
 		}
+		use case system usergoal ugLoginWithCaptcha() {
+			actor actAuthenticated[primary, active]
+			
+			reuse oeLogin[3..*]
+			reuse oeLoginWithCaptcha[1..*]
+			
+			step a: actAuthenticated executes oeLogin
+			step b: actAuthenticated executes oeLogin
+			step c: actAuthenticated executes oeLogin
+			step d: actAuthenticated executes oeLoginWithCaptcha
+			
+			ordering constraint 
+				"Step a to c must be executed before executing all other steps"
+				
+			ordering constraint
+				"Step d must be the last step"
+		}
 	}
 }
