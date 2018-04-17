@@ -158,23 +158,13 @@ package usecases.ucisuScenarioPresentation {
 				}
 				
 				bob
-				executed instanceof subfunction oeGetAlertSet("pending", "medium") {
+				executed instanceof subfunction oeGetAlertSet("pending") {
 					ieMessage("AlertList") returned to bob
 				}
 				
-				bob 
+				bob
 				executed instanceof subfunction oeValidateAlert("1") {
-					ieMessage("Permission denied! Your access rights are to low to validate this alert!") returned to bob
-				}
-				
-				carl
-				executed instanceof subfunction oeGetAlertSet("pending", "medium") {
-					ieMessage("AlertList") returned to carl
-				}
-				
-				carl
-				executed instanceof subfunction oeValidateAlert("1") {
-					ieMessage("Alert validated") returned to carl
+					ieMessage("Alert validated") returned to bob
 				}
 				
 				bob
@@ -188,7 +178,7 @@ package usecases.ucisuScenarioPresentation {
 				}
 				
 				carl
-				executed instanceof subfunction oeGetCrisisSet("pending", "1") {
+				executed instanceof subfunction oeGetCrisisSet("pending", "medium") {
 					ieMessage("Crisis List") returned to carl
 				}
 				

@@ -508,5 +508,44 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			ordering constraint 
 				"Step a must be executed before executing all other steps"
 		}
+	use case system summary suScenarioPresentation() {
+			actor actMsrCreator[primary, active]
+			actor actAdministrator[primary, active]
+			actor actCoordinator[primary, active]
+			actor actPerson[primary, active]
+			actor actComCompany[primary, active]
+			
+			reuse oeCreateSystemAndEnvironment[1..1]
+			reuse oeLoginWitchCaptcha[1..*]
+			reuse oeSearchPI[1..*]
+			reuse oeSendNewRequest[1..*]
+			reuse ugCheckRequest[1..*]
+			reuse ugManageRequest[1..*]
+			reuse oeSearchPI[1..*]
+			reuse oeGetGPSLocation[1..*]
+			reuse oeAlert[1..*]
+			reuse ugAdministrateTheSystem[1..*]
+			reuse ugMonitor[1..*]
+			reuse ugManageCrisis[1..*]
+			
+			step a: actMsrCreator executes oeCreateSystemAndEnvironment
+			step b: actAdministrator executes ugAdministrateTheSystem
+			step c: actCoordinator executes oeLoginWitchCaptcha
+			step d: actPerson executes oeSearchPI
+			step e: actPerson executes oeSendNewRequest
+			step f: actCoordinator executes ugCheckRequest
+			step g: actAdministrator executes ugManageRequest
+			step h: actPerson executes oeSearchPI
+			step i: actPerson executes oeGetGPSLocation
+			step j: actComCompany executes oeAlert
+			step k: actCoordinator executes ugMonitor
+			step l: actCoordinator executes ugManageCrisis
+			
+			ordering constraint 
+				"Step a must be executed before executing all other steps"
+				
+			ordering constraint 
+				"Step b must follow step a"
+		}
 	}
 }
