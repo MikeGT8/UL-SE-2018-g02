@@ -527,5 +527,13 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			ordering constraint 
 				"Step b must follow step a"
 		}
+		use case system subfunction oeResetPassword(ALogin:dtLogin) {
+			actor actAuthenticated[primary, active]
+			
+			returned messages {
+				
+				ieResetPassword returned to actAuthenticated
+			}
+		}
 	}
 }
