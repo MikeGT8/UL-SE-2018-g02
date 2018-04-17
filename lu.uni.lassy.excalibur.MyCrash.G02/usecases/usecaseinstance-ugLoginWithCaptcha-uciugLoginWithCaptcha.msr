@@ -23,6 +23,8 @@ package usecases.uciugLoginWithCaptcha {
 				bob
 				executed instanceof subfunction oeLogin("bob", "なんでもない") {
 					ieLogin("Wrong Password, try again.") returned to bob
+					ieLogin("Login with captcha required.") returned to bob
+					//ieLoginWrongSendCaptcha("C4p7cha") returned to bob
 				}
 				
 				bob
