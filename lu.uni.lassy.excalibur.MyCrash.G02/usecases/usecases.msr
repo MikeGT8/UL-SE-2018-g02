@@ -29,7 +29,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			
 			returned messages {
 				
-				ieLoggedIn returned to actAuthenticated
+				ieLogin returned to actAuthenticated
 			}
 		}
 		
@@ -194,34 +194,14 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeLoginWrong(ALogin:dtLogin, APassword:dtPassword) {
+		
+		use case system subfunction oeLoginWithCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha) {
 			
 			actor actAuthenticated[primary, active]
 			
 			returned messages {
 				
-				ieUsrPwWrong returned to actAuthenticated
-			}
-		}
-		
-		use case system subfunction oeThirdLoginWrong(ALogin:dtLogin, APassword:dtPassword) {
-			
-			actor actAuthenticated[primary, active]
-			
-			returned messages {
-				
-				ieLoginWrongSendCaptcha returned to actAuthenticated
-			}
-		}
-		
-		
-		use case system subfunction oeLoginWitchCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha) {
-			
-			actor actAuthenticated[primary, active]
-			
-			returned messages {
-				
-				ieLoggedIn returned to actAuthenticated
+				ieLogin returned to actAuthenticated
 			}
 		}
 		
@@ -516,7 +496,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			actor actComCompany[primary, active]
 			
 			reuse oeCreateSystemAndEnvironment[1..1]
-			reuse oeLoginWitchCaptcha[1..*]
+			reuse oeLoginWithCaptcha[1..*]
 			reuse oeSearchPI[1..*]
 			reuse oeSendNewRequest[1..*]
 			reuse ugCheckRequest[1..*]
@@ -530,7 +510,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			
 			step a: actMsrCreator executes oeCreateSystemAndEnvironment
 			step b: actAdministrator executes ugAdministrateTheSystem
-			step c: actCoordinator executes oeLoginWitchCaptcha
+			step c: actCoordinator executes oeLoginWithCaptcha
 			step d: actPerson executes oeSearchPI
 			step e: actPerson executes oeSendNewRequest
 			step f: actCoordinator executes ugCheckRequest

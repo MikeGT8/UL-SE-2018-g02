@@ -4,10 +4,5 @@ package usecases.uci {
 
 	Use Case Model {
 
-		use case instance ucioeThirdLoginWrong : subfunction oeThirdLoginWrong{
-			actors {
-				bob : actAuthenticated
-			} ieLoginWrongSendCaptcha("ARI4D") returned to bob
-		}
 	}
 }

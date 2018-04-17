@@ -33,9 +33,8 @@ import lu.uni.lassy.messir.libraries.string
 			
 			input interface inactAuthenticated {
 				
-				operation ieLoggedIn(AMessage:ptString):ptBoolean
+				operation ieLogin(AMessage:ptString):ptBoolean
 				operation ieLoggedOut(AMessage:ptString):ptBoolean
-				operation ieUsrPwWrong(AMessage:ptString):ptBoolean
 				operation ieLoginWrongSendCaptcha(ACaptcha:dtCaptcha):ptBoolean
 				operation ieMessage(AMessage:dtMessage):ptBoolean
 			}
@@ -44,9 +43,7 @@ import lu.uni.lassy.messir.libraries.string
 				
 				operation oeLogin(ALogin:dtLogin, APassword:dtPassword):ptBoolean
 				operation oeLogout():ptBoolean
-				operation oeLoginWrong(ALogin:dtLogin, APassword:dtPassword):ptBoolean
-				operation oeThirdLoginWrong(ALogin:dtLogin, APassword:dtPassword):ptBoolean
-				operation oeLoginWitchCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha):ptBoolean
+				operation oeLoginWithCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha):ptBoolean
 			}
 		}
 		

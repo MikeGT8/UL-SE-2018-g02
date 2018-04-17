@@ -52,7 +52,7 @@ package usecases.ucisuScenarioPresentation {
 				}
 				
 				bob
-				executed instanceof subfunction oeLoginWitchCaptcha("bob", "password", "267324") {
+				executed instanceof subfunction oeLoginWithCaptcha("bob", "password", "267324") {
 					ieLogin("You successfully logged in!") returned to bob
 				}
 				
