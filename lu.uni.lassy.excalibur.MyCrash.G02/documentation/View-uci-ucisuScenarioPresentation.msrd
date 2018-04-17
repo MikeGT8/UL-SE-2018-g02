@@ -1,0 +1,10 @@
+/*
+@author mikel
+@date Tue Apr 17 14:16:04 CEST 2018
+*/
+
+
+@@view uci-ucisuScenarioPresentation
+@instance Use-Case usecases.ucisuScenarioPresentation.ucisuScenarioPresentation 
+@description "Present the collaboration of the three variants."
+@caption "uci-suScenarioPresentation-uciSceanrioPresentation use case instance sequence diagram"

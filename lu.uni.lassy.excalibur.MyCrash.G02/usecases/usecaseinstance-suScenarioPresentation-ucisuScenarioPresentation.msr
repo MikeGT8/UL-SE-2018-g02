@@ -1,0 +1,227 @@
+package usecases.ucisuScenarioPresentation {
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+
+	Use Case Model {
+
+		use case instance ucisuScenarioPresentation : suScenarioPresentation{
+			actors {
+				theCreator:actMsrCreator
+				patrick:actPerson
+				admin:actAdministrator
+				carl:actCoordinator
+				bob:actCoordinator
+				orange:actComCompany
+			}
+			use case steps {
+				theCreator
+				executed instanceof subfunction oeCreateSystemAndEnvironment() {
+					
+					ieSystemCreated() returned to theCreator
+				}
+				
+				admin
+				executed instanceof subfunction oeLogin("icrashadmin", "7WXC1359") {
+					ieLogin("You successfully logged in!") returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeAddCoordinator("1", "bob", "password", "low") {
+					ieCoordinatorAdded() returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeAddCoordinator("2", "carl", "password", "medium") {
+					ieCoordinatorAdded() returned to admin
+				}
+				
+				bob
+				executed instanceof subfunction oeLogin("bob", "pass") {
+					ieLogin("Wrong password! Tries left: 2") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeLogin("bob", "pass") {
+					ieLogin("Wrong password! Tries left: 1") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeLogin("bob", "pass") {
+					ieLogin("Wrong password! Tries left: 0.") returned to bob
+					ieLogin("Login with captcha required!") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeLoginWitchCaptcha("bob", "password", "267324") {
+					ieLogin("You successfully logged in!") returned to bob
+				}
+				
+				patrick
+				executed instanceof subfunction oeLogin("014092450D", "6543210") {
+					
+					ieLoggedIn("You are logged in, 014092450D") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeSearchPI("Cactus", "Hobby", "Esch/Alzette") {
+					
+					ieMessage("The point of interest is NOT in the system!") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeSendNewRequest("Cactus", "Hobby", "Esch/Alzette") {
+					
+					ieMessage("We will handle your request.") returned to patrick
+				}
+				
+				carl
+				executed instanceof subfunction oeLogin("carl", "password") {
+					
+					ieLoggedIn("You are logged in, carl") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeGetAllRequests() {
+					
+					ieRequestListToCheck() returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeCheckAvailability("1001") {
+					
+					ieMessage("The PI is NOT available!") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeDeliverRequest("1001") {
+					
+					ieRequestDelivered() returned to carl
+				}
+				
+				admin
+				executed instanceof subfunction oeGetAllRequestsFromCoordinator() {
+					
+					ieRequestList() returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeTreatRequest("1001") {
+					
+					ieRequestBeingTreated() returned to admin
+				}
+				
+				admin
+				executed instanceof subfunction oeSolveRequest("1001") {
+					
+					ieRequestSolved() returned to admin
+					ieRequestSolved() returned to patrick
+					
+				}
+				
+				admin
+				executed instanceof subfunction oeAddPI("Cactus", "Esch/Alzette", "78.8888/89.6565", "Cactus Hobby is a market for garden activities.", "Hobby") {
+					
+					iePIAdded returned to admin
+					iePIAdded returned to patrick
+				}
+				
+				admin
+				executed instanceof subfunction oeLogout() {
+					
+					ieLoggedOut("You are logged out!") returned to admin
+				}
+				
+				patrick
+				executed instanceof subfunction oeSearchPI("Cactus", "Supermarket", "Esch/Alzette") {
+					
+					ieMessage("The point of interest is in the system. How to proceed?") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeGetGPSLocation("Cactus", "Supermarket", "Esch/Alzette") {
+					
+					ieMessage("The GPS location of the PI is: 56.8989/46.7878.") returned to patrick
+					ieMessage("Your Sms has been sent to your communication operator.") returned to patrick
+					ieSmsSend("Cactus", "Supermarket", "Esch/Alzette", "661777777", "Supermarket on fire!") returned to orange
+				}
+				
+				patrick
+				executed instanceof subfunction oeLogout() {
+					
+					ieLoggedOut("You are logged out!") returned to patrick
+				}
+				
+				orange
+				executed instanceof subfunction oeAlert("Witness", "Cactus", "Esch/Alzette", "27/03/2018", "10:00", "Supermarket on fire!", "661777777", "Medium") {
+					
+					ieMessage("Alert has been sent. It will be handled!") returned to orange
+				}
+				
+				bob
+				executed instanceof subfunction oeGetAlertSet("pending", "medium") {
+					ieMessage("AlertList") returned to bob
+				}
+				
+				bob 
+				executed instanceof subfunction oeValidateAlert("1") {
+					ieMessage("Permission denied! Your access rights are to low to validate this alert!") returned to bob
+				}
+				
+				carl
+				executed instanceof subfunction oeGetAlertSet("pending", "medium") {
+					ieMessage("AlertList") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeValidateAlert("1") {
+					ieMessage("Alert validated") returned to carl
+				}
+				
+				bob
+				executed instanceof subfunction oeGetCrisisSet("pending", "medium") {
+					ieMessage("Crisis List") returned to bob
+				}
+				
+				bob 
+				executed instanceof subfunction oeSetCrisisHandler("1") {
+					ieMessage("Permission denied! Your access rights are to low to handle this crisis!") returned to bob
+				}
+				
+				carl
+				executed instanceof subfunction oeGetCrisisSet("pending", "1") {
+					ieMessage("Crisis List") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeSetCrisisHandler("1") {
+					ieMessage("Crisis handler set to carl") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeSetCrisisStatus("1", "in progression") {
+					ieMessage("Crisis status set to in progression") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeReportOnCrisis("1", "Crisis handled") {
+					ieMessage("Report added to the crisis") returned to carl
+				}
+				
+				carl
+				executed instanceof subfunction oeCloseCrisis("1") {
+					ieMessage("Crisis closed") returned to carl
+				}
+				
+				bob
+				executed instanceof subfunction oeLogout() {
+					ieLogout("You successfully logged out!") returned to bob
+				}
+				
+				carl
+				executed instanceof subfunction oeLogout() {
+					ieLogout("You successfully logged out!") returned to carl
+				}
+			}
+		}
+	}
+}
