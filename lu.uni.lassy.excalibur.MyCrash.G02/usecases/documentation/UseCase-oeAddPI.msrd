@@ -1,0 +1,30 @@
+/*
+@author ribby
+@date Fri Apr 20 10:30:18 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI
+@description ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APIName ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APICity ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APIGPSLocation ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APIDescription ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APICategory ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

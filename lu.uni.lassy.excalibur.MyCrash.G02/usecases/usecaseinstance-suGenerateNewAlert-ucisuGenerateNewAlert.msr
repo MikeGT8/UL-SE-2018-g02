@@ -34,7 +34,7 @@ package usecaseinstances.uci {
 				}
 				
 				patrick
-				executed instanceof subfunction oeGetGPSLocation("Cactus", "Supermarket", "Esch/Alzette") {
+				executed instanceof subfunction oeGetGPSLocation("1001") {
 					
 					ieMessage("The GPS location of the PI is: 56.8989/46.7878.") returned to patrick
 					ieMessage("Your Sms has been sent to your communication operator.") returned to patrick

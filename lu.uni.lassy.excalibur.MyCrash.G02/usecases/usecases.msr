@@ -10,6 +10,9 @@ import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.string
 
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
+
 import lu.uni.lassy.excalibur.MyCrash.G02.environment
 
 	Use Case Model {	
@@ -72,7 +75,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeAddPI(APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:dtPICategory) {
+		use case system subfunction oeAddPI(APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
 		
 			actor actAdministrator[primary, active]
 			actor actPerson[secondary, passive]
@@ -84,7 +87,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeUpdatePI(APIID:dtPIID, APIName:dtPIName, APICity:dtPICity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:dtPICategory) {
+		use case system subfunction oeUpdatePI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
 		
 			actor actAdministrator[primary, active]
 			
@@ -115,7 +118,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtRequestName, ARequestCity:dtRequestCity) {
+		use case system subfunction oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtName, ARequestCity:dtCity) {
 		
 			actor actCoordinator[primary, active]
 			actor actPerson[secondary, passive]
@@ -138,7 +141,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeSearchPI(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		use case system subfunction oeSearchPI(APIName:dtName, APICategory:etCategory, APICity:dtCity) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]
@@ -149,7 +152,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeSendNewRequest(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		use case system subfunction oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity) {
 		
 			actor actPerson[primary, active]
 			actor actCoordinator[secondary, passive]
@@ -160,7 +163,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeGetGPSLocation(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		use case system subfunction oeGetGPSLocation(APIID:dtPIID) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]
@@ -171,7 +174,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeGetDescription(APIName:dtPIName, APICategory:dtPICategory, APICity:dtPICity) {
+		use case system subfunction oeGetDescription(APIID:dtPIID) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]
@@ -180,20 +183,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				
 				ieMessage returned to actPerson
 			}
-		}
-		
-		use case system subfunction oeSendSms(APIName:dtPIName, APIGPSLocation:dtGPSLocation, AProblemDescription:dtDescription, APhoneNumber:dtPhoneNumber) {
-			
-			actor actPerson[primary, active]
-			actor actComCompany[secondary, passive]
-			
-			returned messages {
-				
-				ieSmsSent returned to actPerson
-				ieSmsSend returned to actComCompany
-			}
-		}
-		
+		}		
 		
 		use case system subfunction oeLoginWithCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha) {
 			
@@ -325,7 +315,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				"Subsequently, all the steps follow after step (a) is performed."
 		}
 	
-		use case system subfunction oeAlert(ActHumanKind:dtHumanKind, AdtDate:dtDate, AdtTime:dtTime, AdtPhoneNumber:dtPhoneNumber, AdtGPSLocation:dtGPSLocation, AdtComment:dtComment, AdtAlertType:dtAlertType) {
+		use case system subfunction oeAlert(APersonType:etPersonType, APIName:dtName, APIGPSLocation:dtGPSLocation, AdtDate:dtDate, AdtTime:dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber) {
+			
 			actor actComCompany[primary, active]
 			
 			returned messages {

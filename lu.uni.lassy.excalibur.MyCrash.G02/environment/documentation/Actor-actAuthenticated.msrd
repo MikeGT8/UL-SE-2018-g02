@@ -1,0 +1,41 @@
+/*
+@author ribby
+@date Fri Apr 20 09:56:01 CEST 2018
+*/
+
+
+@@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated
+@description ""
+//input events
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLogin
+""
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLoggedOut
+""
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLoginWrongSendCaptcha
+""
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieMessage
+""
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieResetPassword
+""
+
+@endInputEvents
+//output events
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogin
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogout
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLoginWithCaptcha
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeResetPassword
+""
+
+@endOutputEvents

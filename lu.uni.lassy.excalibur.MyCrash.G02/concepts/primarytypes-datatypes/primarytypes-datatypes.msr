@@ -10,12 +10,137 @@ import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.string
 
-
-
-Concept Model {
-
-	Primary Types {
-   
+	Concept Model {
+	
+		Primary Types {
+	   
+			datatype dtPIID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtRequestID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtAdministratorID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtCoordinatorID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtPersonID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtAlertID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtLogin extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtPassword extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtCaptcha extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtName extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtCity extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtLatitude extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtLongitude extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtGPSLocation extends dtString {
+			
+				attribute latitude:dtLatitude
+				attribute longitude:dtLongitude
+				
+				operation is():ptBoolean
+			}
+			
+			datatype dtDescription extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			enum etCategory {
+				
+				constants["supermarket", "market", "hobby", "petrolstation", "building", "university", "school", "hospital"]
+				operation is():ptBoolean
+			}
+			
+			datatype dtPhoneNumber extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtMessage extends dtString {
+				
+				operation is():ptBoolean
+			}
+			
+			datatype dtDate extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtTime extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			enum etAccessRights {
+				
+				constants["low", "medium", "high"]
+				operation is():ptBoolean
+			}
+			
+			enum etPersonType {
+				
+				constants["witness", "victim", "anonymous"]
+				operation is():ptBoolean
+			}
+			
+			enum etAlertStatus {
+				
+				constants["pending", "handling", "solved"]
+				operation is():ptBoolean
+			}	
+			
+			enum etCrisisType {
+				
+				constants["low", "medium", "high"]
+				operation is():ptBoolean
+			}	
+		}
 	}
-}
 }

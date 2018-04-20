@@ -1,0 +1,75 @@
+/*
+@author ribby
+@date Fri Apr 20 09:19:51 CEST 2018
+*/
+
+
+@@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator
+@description "PI variant: The actor Administrator is in charge of treating requested points of interests and 
+			adding, updating or deleting points of interests. The Administrator receives a request to add a 
+			new PI from a Person which the actor Coordinator checks before delivering them to the actor 
+			Administrator."
+//input events
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieRequestList
+"The input event ieRequestList returns a list of checked requests from the actor Coordinator 
+to the actor Administrator."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieRequestBeingTreated
+"The input event ieRequestBeingTreated specifies that the request is being treated."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieRequestSolved
+"The input event ieRequestSolved confirms that the request was solved."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.iePIAdded
+"The input event iePIAdded confirms that the requested point of interest has been added."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.iePIUpToDate
+"The input event iePIUpToDate confirms that the requested point of interest has been updated."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.iePIDeleted
+"The input event iePIDeleted confirms that the requested point of interest has been deleted."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieSendRequest
+"The input event ieSendRequest returns a request object."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieCoordinatorAdded
+""
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieCoordinatorDeleted
+""
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieCoordinatorUpdated
+""
+
+@endInputEvents
+//output events
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeGetAllRequestsFromCoordinator
+"The output event oeGetAllRequestsFromCoordinator retrieves a list of requests which the actor Coordinator checked."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeTreatRequest
+"The output event oeTreatRequest modifies the request status to treated."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeSolveRequest
+"The output event oeTreatRequest modifies the request status to solved."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI
+"The output event oeAddPI adds a new point of interest requested by the actor Person."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeUpdatePI
+"The output event oeUpdatePI updates a point of interest."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeDeletePI
+"The output event oeDeletePI deletes a point of interest."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddCoordinator
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeUpdateCoordinatorAccessRights
+""
+
+@endOutputEvents

@@ -1,0 +1,34 @@
+/*
+@author ribby
+@date Fri Apr 20 10:12:41 CEST 2018
+*/
+
+
+@@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson
+@description "PI variant: The actor Person is in charge of searching for a point 
+			of interest, get the exact GPS location and send a Sms to the communication 
+			company with a specific problem description. If the the PI is not available, 
+			the actor Person has the possibility to send a request to the system to add 
+			a new PI."
+//input events
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.inactPerson.iePIAdded
+"The input event iePIAdded confirms that the requested point of interest has been added 
+to the system."
+
+@endInputEvents
+//output events
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSearchPI
+"The output event oeSearchPI returns a point of interest."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSendNewRequest
+"The output event oeSendNewRequest adds a new requested PI to the system."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeGetGPSLocation
+"The output event oeGetGPSLocation retrieves the exact GPS location of a searched PI."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeGetDescription
+"The output event oeGetDescription retrieves a description of a searched PI."
+
+@endOutputEvents

@@ -1,0 +1,68 @@
+/*
+@author ribby
+@date Fri Apr 20 09:56:23 CEST 2018
+*/
+
+
+@@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator
+@description "PI variant: The actor Coordinator is in charge of checking the requested points of
+			 interest of their existence in the system and to deliver the non-existing requested
+			 points of interest to the actor Administrator."
+//input events
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieRequestListToCheck
+"The input event ieRequestListToCheck returns a list of requests which have to be checked from the 
+actor Person to the actor Coordinator."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieRequestDelivered
+"The input event ieRequestDelivered specifies that the request has been delivered to the actor 
+Coordinator."
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieSendAnAlert
+""
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieSendACrisis
+""
+
+@endInputEvents
+//output events
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeGetAllRequests
+"The output event oeGetAllRequests retrieves a list of requests sent by the actor Person."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability
+"The output event oeCheckAvailability confirms that a requested point of interest sent by the actor 
+Person exists already in the system or not and sets the request ignored attribute to the 
+corresponding value."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeDeliverRequest
+"The output event oeDeliverRequest sends a checked request sent by the actor Person to the actor Administrator."
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeInvalidateAlert
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeValidateAlert
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeGetAlertSet
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCloseCrisis
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeGetCrisisSet
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeSetCrisisHandler
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeReportOnCrisis
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeSetCrisisStatus
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeSetCrisisType
+""
+
+@endOutputEvents

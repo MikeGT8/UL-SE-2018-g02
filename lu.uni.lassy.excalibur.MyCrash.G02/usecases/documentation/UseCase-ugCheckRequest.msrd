@@ -1,0 +1,24 @@
+/*
+@author ribby
+@date Fri Apr 20 10:27:42 CEST 2018
+*/
+
+
+@@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugCheckRequest
+@description ""
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

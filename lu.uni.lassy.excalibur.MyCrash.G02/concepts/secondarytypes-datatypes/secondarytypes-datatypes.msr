@@ -12,11 +12,15 @@ import lu.uni.lassy.messir.libraries.string
 
 
 
-Concept Model {
-
-	Secondary Types {
-
+	Concept Model {
+	
+		Secondary Types {
+	
+			datatype dtSMS {
+				
+				attribute value:ptString
+				operation is():ptBoolean
+			}
+		}
 	}
-
-}
 }
