@@ -38,7 +38,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				
 				operation ieLogin(AMessage:dtMessage):ptBoolean
 				operation ieLoggedOut(AMessage:dtMessage):ptBoolean
-				operation ieLoginWrongSendCaptcha(ACaptcha:dtCaptcha):ptBoolean
 				operation ieMessage(AMessage:dtMessage):ptBoolean
 				operation ieResetPassword():ptBoolean
 			}
