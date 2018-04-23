@@ -163,5 +163,15 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				operation oeAlert(APersonType:etPersonType, APIName:dtName, APIGPSLocation:dtGPSLocation, AdtDate:dtDate, AdtTime:dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber):ptBoolean
 			}
 		}
+		
+	actor actActivator role rnactActivator cardinality[1 .. 1] {
+			input interface inactActivator {
+			}
+			output interface outactActivator {
+				
+				operation oeSollicitateCrisisHandling():ptBoolean
+				operation oeSetClock(AcurrentTime:dtDateandTime):ptBoolean
+			}
+		}
 	}
 }
