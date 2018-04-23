@@ -325,7 +325,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		}
 
 
-		use case system subfunction oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:dtAccessRights) {
+		use case system subfunction oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:etCrisisType) {
 			actor actAdministrator[primary, active]
 			
 			returned messages {
@@ -343,7 +343,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		}
 		
 
-		use case system subfunction oeUpdateCoordinatorAccessRights(CoordinatorAccessRights:dtAccessRights) {
+		use case system subfunction oeUpdateCoordinatorAccessRights(AdtCoordinatorID:dtCoordinatorID, CoordinatorAccessRights:etCrisisType) {
 			actor actAdministrator[primary, active]
 			
 			returned messages {
@@ -372,13 +372,21 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				"Step b must be executed before executing steps c or d"
 		}
 			
-		use case system subfunction oeGetCrisisSet(AetCrisisStatus:etCrisisStatus, AdtCrisisType:dtCrisisType) {
+		use case system subfunction oeGetCrisisSet(AetCrisisStatus:etCrisisStatus, AdtCrisisType:etCrisisType) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieCrisisSet() returned to actCoordinator
+			}
 		}
 
 
-		use case system subfunction oeGetAlertSet(AetAlertStatus:etAlertSatus, AdtAlertType:dtAlertType) {
+		use case system subfunction oeGetAlertSet(AetAlertStatus:etAlertStatus) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieAlertSet() returned to actCoordinator
+			}
 		}
 
 
@@ -400,36 +408,64 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 		
 		use case system subfunction oeValidateAlert(AdtAlertID:dtAlertID) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage() returned to actCoordinator
+			}
 		}
 		
 		
 		use case system subfunction oeInvalidateAlert(AdtAlertID:dtAlertID) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage() returned to actCoordinator
+			}
 		}
 		
 		
 		use case system subfunction oeSetCrisisStatus(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage() returned to actCoordinator
+			}
 		}
 		
 		
 		use case system subfunction oeSetCrisisType(AdtCrisisID:dtCrisisID, AetCrisisType:etCrisisType) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage() returned to actCoordinator
+			}
 		}
 		
 		
 		use case system subfunction oeSetCrisisHandler(AdtCrisisID:dtCrisisID) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage() returned to actCoordinator
+			}
 		}
 		
 		
 		use case system subfunction oeReportOnCrisis(AdtCrisisID:dtCrisisID, AdtComment:dtComment) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage() returned to actCoordinator
+			}
 		}
 		
 		
 		use case system subfunction oeCloseCrisis(AdtCrisisID:dtCrisisID) {
 			actor actCoordinator[primary, active]
+			
+			returned messages {
+				ieMessage() returned to actCoordinator
+			}
 		}
 		
 		
