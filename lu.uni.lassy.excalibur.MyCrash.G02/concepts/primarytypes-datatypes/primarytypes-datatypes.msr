@@ -44,6 +44,11 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
+			datatype dtCrisisID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
 			datatype dtLogin extends dtString {
 			
 				operation is():ptBoolean
@@ -92,6 +97,11 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
+			datatype dtComment extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
 			enum etCategory {
 				
 				constants["supermarket", "market", "hobby", "petrolstation", "building", "university", "school", "hospital"]
@@ -118,12 +128,6 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
-			enum etAccessRights {
-				
-				constants["low", "medium", "high"]
-				operation is():ptBoolean
-			}
-			
 			enum etPersonType {
 				
 				constants["witness", "victim", "anonymous"]
@@ -132,7 +136,7 @@ import lu.uni.lassy.messir.libraries.string
 			
 			enum etAlertStatus {
 				
-				constants["pending", "handling", "solved"]
+				constants["pending", "valid", "invalid"]
 				operation is():ptBoolean
 			}	
 			
@@ -140,6 +144,10 @@ import lu.uni.lassy.messir.libraries.string
 				
 				constants["low", "medium", "high"]
 				operation is():ptBoolean
+			}
+			
+			enum etCrisisStatus {
+				constants["pending", "handled", "solved", "closed"]
 			}	
 		}
 	}
