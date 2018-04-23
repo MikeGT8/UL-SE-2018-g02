@@ -195,6 +195,26 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
+		use case system subfunction oeSollicitateCrisisHandling() {
+			
+			actor actActivator[primary, proactive]
+			
+			returned messages {
+				
+				ieMessage returned to actActivator
+			}
+		}
+		
+		use case system subfunction oeSetClock(AcurrentTime:dtDateandTime) {
+			
+			actor actActivator[primary, proactive]
+			
+			returned messages {
+				
+				ieMessage returned to actActivator
+			}
+		}
+		
 		use case system usergoal ugSecurelyUseSystem() {
 			
 			actor actAuthenticated[primary, active]
