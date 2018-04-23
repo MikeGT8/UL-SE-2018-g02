@@ -5,37 +5,37 @@
 
 
 @@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated
-@description ""
+@description "Authentication variant: The abstract actor authenticated is getting implemented by multiple other actors.
+				It is needed to perform simple task, like login/logout. You can also request to reset your password."
 //input events
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLogin
-""
+"The returned message from a positive or negative login. This input field is used when a use tries to login in any form.
+(Captcha or normal login)"
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLoggedOut
-""
-@inputEvent
-lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLoginWrongSendCaptcha
-""
+"The input event ieLoggedOut confirms that the logout has been completed."
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieMessage
-""
+"The input event ieMessage returns a message from the system that tells you useful things."
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieResetPassword
-""
+"The input event ieResetPassword specifies that the request is being treated. Also tells you what you need to provide next."
 
 @endInputEvents
 //output events
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogin
-""
+"The output event oeLogin sends the username and password to the system, used to authenticate the user trying to login."
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogout
-""
+"The output event oeLogout sends a logout request, from the currently logged in user, to the system."
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLoginWithCaptcha
-""
+"The output event oeLoginWithCaptcha sends the username, password and captcha to the system, used to authenticate the user and
+to confirm that the user is not a robot."
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeResetPassword
-""
+"The output event oeResetPassword requests a password request of any given user."
 
 @endOutputEvents

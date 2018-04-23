@@ -35,6 +35,9 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				attribute login:dtLogin
 				attribute pwd:dtPassword
 				attribute vpIsLogged:ptBoolean
+				attribute tries:dtInteger
+				attribute lastAccess:dtInteger
+				attribute capReq:ptBoolean
 				
 				operation init(Alogin:dtLogin, Apwd:dtPassword):ptBoolean
 			
