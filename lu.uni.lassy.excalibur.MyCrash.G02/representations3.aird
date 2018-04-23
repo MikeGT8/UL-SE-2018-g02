@@ -469,6 +469,9 @@
     <semanticResources>usecases/documentation/UseCase-ugCheckRequest.msrd</semanticResources>
     <semanticResources>usecases/documentation/UseCase-suAddNewPI.msrd</semanticResources>
     <semanticResources>usecases/documentation/UseCase-oeAddPI.msrd</semanticResources>
+    <semanticResources>documentation/View-PrimaryTypes-Classes%20view.msrd</semanticResources>
+    <semanticResources>documentation/View-PrimaryTypes-Classes%20local%20view.msrd</semanticResources>
+    <semanticResources>documentation/View-uc-ugManageCrisis.msrd</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_T1JlcCkHEeioBqQh-5IRZQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_HZkqsDG8EeijabPupqXTFQ" name="uc-ugSecurelyUseSystem" repPath="#_HZWoQDG8EeijabPupqXTFQ">
@@ -490,6 +493,10 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_Y5NB0ERpEeiaAZ95Ct0ENw" name="uci-ucisuGenerateNewAlert" repPath="#_Y5J-gERpEeiaAZ95Ct0ENw">
         <description xmi:type="description_2:SequenceDiagramDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']"/>
         <target xmi:type="messir:UseCaseInstance" href="usecases/usecaseinstance-suGenerateNewAlert-ucisuGenerateNewAlert.msr#usecaseinstances.uci.ucisuGenerateNewAlert"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_G79xdUbgEeizYJkOopE6dg" name="PrimaryTypes-Classes local view 01" repPath="#_G79xcEbgEeizYJkOopE6dg">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']"/>
+        <target xmi:type="messir:PackageDeclaration" href=".views.msr#uuid5703615e7218493bb67cdc3f6b2e26dc"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -4118,4 +4125,18 @@
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Use%20Case%20Instance%20Sequence%20Diagram']/@defaultLayer"/>
     <target xmi:type="messir:UseCaseInstance" href="usecases/usecaseinstance-suGenerateNewAlert-ucisuGenerateNewAlert.msr#usecaseinstances.uci.ucisuGenerateNewAlert"/>
   </sequence:SequenceDDiagram>
+  <diagram:DSemanticDiagram xmi:id="_G79xcEbgEeizYJkOopE6dg" name="PrimaryTypes-Classes local view 01">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_G79xcUbgEeizYJkOopE6dg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_G79xckbgEeizYJkOopE6dg"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_G79xdkbgEeizYJkOopE6dg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_G79xd0bgEeizYJkOopE6dg" type="Sirius" element="_G79xcEbgEeizYJkOopE6dg" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_G79xeEbgEeizYJkOopE6dg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_G79xdEbgEeizYJkOopE6dg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']/@ownedRepresentations[name='Messir%20Diagram']/@defaultLayer"/>
+    <target xmi:type="messir:PackageDeclaration" href=".views.msr#uuid5703615e7218493bb67cdc3f6b2e26dc"/>
+  </diagram:DSemanticDiagram>
 </xmi:XMI>

@@ -113,7 +113,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				
 				//PI variant
 				operation oeGetAllRequests():ptBoolean
-				operation oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtName, ARequestCity:dtCity):ptBoolean
+				operation oeCheckAvailability(ARequestName:dtName, ARequestCity:dtCity, ARequestCategory:etCategory):ptBoolean
 				operation oeDeliverRequest(ARequestID:dtRequestID):ptBoolean
 				
 				//Access rights variant

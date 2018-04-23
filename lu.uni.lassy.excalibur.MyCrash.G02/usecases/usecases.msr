@@ -118,7 +118,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeCheckAvailability(ARequestID:dtRequestID, ARequestName:dtName, ARequestCity:dtCity) {
+		use case system subfunction oeCheckAvailability(ARequestName:dtName, ARequestCity:dtCity, ARequestCategory:etCategory) {
 		
 			actor actCoordinator[primary, active]
 			actor actPerson[secondary, passive]

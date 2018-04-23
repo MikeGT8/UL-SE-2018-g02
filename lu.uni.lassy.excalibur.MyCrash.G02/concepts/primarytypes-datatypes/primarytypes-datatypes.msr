@@ -102,12 +102,6 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
-			enum etCategory {
-				
-				constants["supermarket", "market", "hobby", "petrolstation", "building", "university", "school", "hospital"]
-				operation is():ptBoolean
-			}
-			
 			datatype dtPhoneNumber extends dtString {
 			
 				operation is():ptBoolean
@@ -128,11 +122,28 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
+			datatype dtIgnored extends dtBoolean {
+			
+				operation is():ptBoolean
+			}
+			
+			enum etCategory {
+				
+				constants["supermarket", "market", "hobby", "petrolstation", "building", "university", "school", "hospital"]
+				operation is():ptBoolean
+			}
+			
 			enum etPersonType {
 				
 				constants["witness", "victim", "anonymous"]
 				operation is():ptBoolean
 			}
+			
+			enum etRequestStatus {
+				
+				constants["pending", "treated", "solved"]
+				operation is():ptBoolean
+			}	
 			
 			enum etAlertStatus {
 				

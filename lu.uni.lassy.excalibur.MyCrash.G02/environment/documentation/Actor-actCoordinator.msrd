@@ -17,12 +17,6 @@ actor Person to the actor Coordinator."
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieRequestDelivered
 "The input event ieRequestDelivered specifies that the request has been delivered to the actor 
 Coordinator."
-@inputEvent
-lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieSendAnAlert
-""
-@inputEvent
-lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieSendACrisis
-""
 
 @endInputEvents
 //output events
