@@ -7,7 +7,10 @@
 @@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator
 @description "PI variant: The actor Coordinator is in charge of checking the requested points of
 			 interest of their existence in the system and to deliver the non-existing requested
-			 points of interest to the actor Administrator."
+			 points of interest to the actor Administrator.
+			 Access Rights variant: The actor Coordinator is in charge of managing and monitoring alerts and crisis.
+			 This means he has the overview of over all alerts and crisis. He decides weather a alert should be validated
+			 or not. All the crisis managed by him, which means he is the only actor interacting and handling crisis."
 //input events
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.inactCoordinator.ieRequestListToCheck

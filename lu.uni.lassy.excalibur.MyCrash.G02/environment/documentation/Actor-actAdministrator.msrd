@@ -8,7 +8,9 @@
 @description "PI variant: The actor Administrator is in charge of treating requested points of interests and 
 			adding, updating or deleting points of interests. The Administrator receives a request to add a 
 			new PI from a Person which the actor Coordinator checks before delivering them to the actor 
-			Administrator."
+			Administrator.
+			Access Rights variant: The actor Administrator is in charge of managing coordinators. This includes creating
+			and deleting them and updating their access rights."
 //input events
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieRequestList
