@@ -36,13 +36,13 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrat
 "The input event ieSendRequest returns a request object."
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieCoordinatorAdded
-""
+"The input event ieCoordinatorAdded confirms if a coordinator was successfully added to the system."
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieCoordinatorDeleted
-""
+"The input event ieCoordinatorDeleted confirms if a coordinator was successfully deleted in the system."
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieCoordinatorUpdated
-""
+"The input event ieCoordinatorUpdated confirms if a coordinator's access rights were successfully updated in the system."
 
 @endInputEvents
 //output events
@@ -66,12 +66,12 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministra
 "The output event oeDeletePI deletes a point of interest."
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddCoordinator
-""
+"The output event oeAddCoordinator creates a new coordinator in the system."
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator
-""
+"The output event oeDeleteCoordinator deletes a coordinator in the system."
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeUpdateCoordinatorAccessRights
-""
+"The output event oeUpdateCoordinatorAccessRights updates a coordinator's access rights in the system."
 
 @endOutputEvents
