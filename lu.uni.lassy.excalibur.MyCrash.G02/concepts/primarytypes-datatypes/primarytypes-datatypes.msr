@@ -122,8 +122,8 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
-			datatype dtIgnored extends dtBoolean {
-			
+			datatype dtIgnored  {
+				attribute attValue:ptBoolean
 				operation is():ptBoolean
 			}
 			
