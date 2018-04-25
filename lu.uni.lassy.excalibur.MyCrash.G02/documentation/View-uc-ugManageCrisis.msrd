@@ -1,0 +1,10 @@
+/*
+@author mikel
+@date Wed Apr 25 13:34:15 CEST 2018
+*/
+
+
+@@view uc-ugManageCrisis
+@model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugManageCrisis
+@description ""
+@caption ""
