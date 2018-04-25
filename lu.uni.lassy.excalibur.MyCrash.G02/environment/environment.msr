@@ -121,7 +121,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				operation oeGetAlertSet(AetAlertStatus:etAlertStatus):ptBoolean
 				
 				operation oeCloseCrisis(AdtCrisisID:dtCrisisID):ptBoolean
-				operation oeGetCrisisSet(AetCrisisStatus:etCrisisStatus, AdtCrisisType:dtCrisisType):ptBoolean
+				operation oeGetCrisisSet(AetCrisisStatus:etCrisisStatus):ptBoolean
 				operation oeSetCrisisHandler(AdtCrisisID:dtCrisisID):ptBoolean
 				operation oeReportOnCrisis(AdtCrisisID:dtCrisisID, AdtComment:dtComment):ptBoolean
 				operation oeSetCrisisStatus(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus):ptBoolean

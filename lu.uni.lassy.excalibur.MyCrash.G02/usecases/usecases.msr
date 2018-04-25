@@ -392,7 +392,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				"Step b must be executed before executing steps c or d"
 		}
 			
-		use case system subfunction oeGetCrisisSet(AetCrisisStatus:etCrisisStatus, AdtCrisisType:etCrisisType) {
+		use case system subfunction oeGetCrisisSet(AetCrisisStatus:etCrisisStatus) {
 			actor actCoordinator[primary, active]
 			
 			returned messages {
