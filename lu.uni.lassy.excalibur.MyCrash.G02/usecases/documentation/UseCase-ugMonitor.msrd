@@ -1,0 +1,25 @@
+/*
+@author mikel
+@date Wed Apr 25 10:41:15 CEST 2018
+*/
+
+
+@@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugMonitor
+@description "the actCoordinator’s goal is to get the detailed list of existing crisis or alerts to decide on next actions
+to undertake."
+@protocolCondition
+"the iCrash system has been deployed
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

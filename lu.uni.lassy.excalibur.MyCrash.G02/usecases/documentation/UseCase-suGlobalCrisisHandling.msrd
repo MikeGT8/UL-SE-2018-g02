@@ -1,0 +1,28 @@
+/*
+@author mikel
+@date Wed Apr 25 10:41:52 CEST 2018
+*/
+
+
+@@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.suGlobalCrisisHandling
+@description "the actCoordinator’s goal is to monitor the alerts received and the corresponding crisis in order to act
+as necessary to handle the crisis."
+@protocolCondition
+"1 the iCrash system has been deployed
+2 the coordinator actor involved in the use case has been declared by the actor
+actAdministrator
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"modifications have been made by the coordinator on existing alerts or crisis OR the
+coordinator requested an updated status on existing alerts or crisis.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

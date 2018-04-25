@@ -1,0 +1,24 @@
+/*
+@author mikel
+@date Wed Apr 25 10:41:08 CEST 2018
+*/
+
+
+@@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugManageCrisis
+@description "The goal is to do an action that makes the handling of a crisis or an alert progress."
+@protocolCondition
+"the iCrash system has been deployed
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"
