@@ -98,6 +98,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				attribute comment:dtComment
 				
 				operation init(Aid:dtAlertID, Astatus:etAlertStatus, Alocation:dtGPSLocation, Ainstant:dtDateAndTime, Acomment:dtComment):ptBoolean
+				operation isSentToCoordinator(AactCoordinator:actCoordinator):ptBoolean
 			}
 			
 			class ctCrisis role rnctCrisis cardinality[0 .. *] {

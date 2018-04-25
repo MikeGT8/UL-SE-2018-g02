@@ -1,0 +1,12 @@
+/*
+@author mikel
+@date Wed Apr 25 11:16:01 CEST 2018
+*/
+
+
+@@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAdministrator
+@description "used to caracterize internally the entity that is responsible of administrating the iCrash system."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAdministrator.init
+"used to initialize the current object as a new instance of the ctAdministrator type."
+@endOperations

@@ -1,0 +1,17 @@
+/*
+@author mikel
+@date Wed Apr 25 11:26:31 CEST 2018
+*/
+
+
+@@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCoordinator
+@description "used to model system’s representation about the actors that have the responsibility to handle alerts
+and crisis."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCoordinator.id
+"a unique identification information."
+@endAttributes
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCoordinator.init
+"used to initialize the current object as a new instance of the ctCoordinator type."
+@endOperations

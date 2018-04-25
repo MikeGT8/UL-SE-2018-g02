@@ -1,0 +1,34 @@
+/*
+@author mikel
+@date Wed Apr 25 11:16:47 CEST 2018
+*/
+
+
+@@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert
+@description "Used to model crisis alerts sent by any human having communication capability using communication
+companies belonging to the system’s environment"
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.id
+"the alert unique identification information."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.status
+"the alert validation status"
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.location
+"the position of the alert provided by the space-based satellite navigation system used
+by the human using the communication company to inform the iCrash system of a
+crisis."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.instant
+"the date and time at which the alert notification has been sent."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.comment
+"a textual description providing unstructured information on the alert."
+@endAttributes
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.init
+"used to initialize the current object as a new instance of the ctAlert type."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.isSentToCoordinator
+"used to provide a given coordinator with current alert information."
+@endOperations

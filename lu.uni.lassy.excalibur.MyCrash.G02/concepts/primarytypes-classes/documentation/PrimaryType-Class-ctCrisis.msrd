@@ -1,0 +1,33 @@
+/*
+@author mikel
+@date Wed Apr 25 11:27:57 CEST 2018
+*/
+
+
+@@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis
+@description "Used to model crisis that are infered from the reception of at least one alert message. Crisis aer entities
+that are handled by the iCrash system."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.id
+"the crisis unique identification information."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.type
+"an indication of the gravity of the crisis."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.status
+"the crisis handling status."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.location
+"the position of the crisis equal by the one of the first alert received and associated to
+the crisis."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.instant
+"the date and time at which the first related alert notification has been sent."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.comment
+"a textual description providing unstructured information on the crisis handling."
+@endAttributes
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init
+"used to initialize the current object as a new instance of the ctAlert type."
+@endOperations
