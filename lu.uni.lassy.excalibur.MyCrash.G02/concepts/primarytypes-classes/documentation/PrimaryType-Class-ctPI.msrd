@@ -1,0 +1,32 @@
+/*
+@author ribby
+@date Wed Apr 25 10:44:11 CEST 2018
+*/
+
+
+@@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI
+@description "Used to model points of interest that are introduced from the reception of at 
+least one request. PIs are handled by the actor Administrator."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.id
+"the PIs unique identification information."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.name
+"represents the name of a point of interest."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.city
+"represents the location at the specific point of interest."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.category
+"classifies the PI in a sort of groups."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.location
+"represents the location of the PI as GPS coordinates."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.description
+"a textual description providing information of the point of interest."
+@endAttributes
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init
+"used to initialise the current object as a new instance of the ctPI type."
+@endOperations

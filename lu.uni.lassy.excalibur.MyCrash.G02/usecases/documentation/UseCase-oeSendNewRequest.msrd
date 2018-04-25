@@ -1,0 +1,33 @@
+/*
+@author ribby
+@date Wed Apr 25 11:37:49 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSendNewRequest
+@description "The person's goal is to request a new point of interest to be added to 
+the system."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSendNewRequest.APIName ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSendNewRequest.APICategory ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSendNewRequest.APICity ""
+@endParameters
+@protocolCondition
+"
+the iCrash system has been deployed.
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+a new request is created.
+a message is returned to the person that the request has been sent.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

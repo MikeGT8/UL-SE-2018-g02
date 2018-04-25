@@ -1,0 +1,33 @@
+/*
+@author ribby
+@date Wed Apr 25 10:56:24 CEST 2018
+*/
+
+
+@@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest
+@description "Used to model requests that are introduced from the actor Person as a new potential 
+point of interest."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.id
+"the request's unique identification information."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.name
+"represents the potential name of the new point of interest."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.city
+"represents the location at the new potential point of interest."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.category
+"classifies the new potential PI in a sort of groups."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.status
+"the request handling status."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.ignored
+"represents the fact that the new to add point of interest already exists or not. 
+Shall be ignored if yes."
+@endAttributes
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init
+"used to initialise the current object as a new instance of the ctRequest type."
+@endOperations

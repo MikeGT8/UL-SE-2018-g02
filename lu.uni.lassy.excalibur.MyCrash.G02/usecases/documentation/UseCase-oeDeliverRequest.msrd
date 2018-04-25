@@ -1,0 +1,32 @@
+/*
+@author ribby
+@date Wed Apr 25 11:37:01 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeDeliverRequest
+@description "The coordinator's goal is to change the status of the request an hand 
+it over to the administrator."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeDeliverRequest.ARequestID ""
+@endParameters
+@protocolCondition
+"
+the iCrash system has been deployed.
+a request must exist in the system.
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+the request status is changed to pending.
+the coordinator gets a message that the request has been delivered to the administrator.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

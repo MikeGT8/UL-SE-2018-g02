@@ -1,0 +1,29 @@
+/*
+@author ribby
+@date Wed Apr 25 11:03:33 CEST 2018
+*/
+
+
+@@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugSecurelyUseSystem
+@description "the actAdministrator’s goal is to follow an identification 
+procedure to be allowed to add or delete the necessary crisis coordinators 
+that will be granted the responsibility to handle alerts and crisis."
+@protocolCondition
+"
+the iCrash system has been deployed
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+the actAuthenticated is known by the system not to be logged.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

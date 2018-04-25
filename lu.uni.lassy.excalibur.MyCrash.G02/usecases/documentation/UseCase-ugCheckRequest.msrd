@@ -5,17 +5,21 @@
 
 
 @@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugCheckRequest
-@description ""
+@description "The goal is to compare the new potential point of interest 
+to the existing PIs in the system."
 @protocolCondition
 "
+the iCrash system has been deployed
 "
 @endProtocolConditions
 @preCondition
 "
+none
 "
 @endPreConditions
 @postCondition
 "
+there exist one request whose ignored information has been changed.
 "
 @endPostConditions
 @additionalInformation

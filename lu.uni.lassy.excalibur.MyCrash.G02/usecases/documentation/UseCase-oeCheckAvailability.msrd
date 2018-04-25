@@ -1,0 +1,32 @@
+/*
+@author ribby
+@date Wed Apr 25 11:36:43 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability
+@description "The coordinator's goal is to check whether the requested PI exists already."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability.ARequestName ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability.ARequestCity ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability.ARequestCategory ""
+@endParameters
+@protocolCondition
+"
+the iCrash system has been deployed.
+a request must exist in the system.
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+the ignored attribute of the request is modified.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

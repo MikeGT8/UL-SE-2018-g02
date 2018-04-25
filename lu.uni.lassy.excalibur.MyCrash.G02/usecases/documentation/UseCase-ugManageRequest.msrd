@@ -1,0 +1,28 @@
+/*
+@author ribby
+@date Wed Apr 25 11:06:47 CEST 2018
+*/
+
+
+@@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugManageRequest
+@description "The goal is to do an action that makes the handling of a 
+request progress."
+@protocolCondition
+"
+the iCrash system has been deployed
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+there exist one request whose related information has been changed.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

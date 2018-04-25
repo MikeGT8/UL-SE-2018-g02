@@ -1,0 +1,31 @@
+/*
+@author ribby
+@date Wed Apr 25 11:37:28 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetDescription
+@description "The person's goal is to get an exact description of the selected point 
+of interest."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetDescription.APIID ""
+@endParameters
+@protocolCondition
+"
+the iCrash system has been deployed.
+the point of interest must figure between the PIs in the system.
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+a message with the exact description of the PI is sent to the person.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

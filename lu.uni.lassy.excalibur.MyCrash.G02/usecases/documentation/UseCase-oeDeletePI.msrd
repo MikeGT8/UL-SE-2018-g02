@@ -1,0 +1,31 @@
+/*
+@author ribby
+@date Wed Apr 25 11:36:56 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeDeletePI
+@description "The administrator's goal is to delete an existing point of interest."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeDeletePI.APIID ""
+@endParameters
+@protocolCondition
+"
+the iCrash system has been deployed.
+the to be deleted point of interest exists in the system.
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+the point of interest is deleted.
+a message is returned to the administrator that the PI was successfully deleted.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

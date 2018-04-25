@@ -1,0 +1,9 @@
+/*
+@author ribby
+@date Wed Apr 25 11:18:47 CEST 2018
+*/
+
+
+@@Instance Use Case usecaseinstances.uci.ucisuGenerateNewAlert
+@description "Represents the instance of alert the system of a 
+potential crisis."

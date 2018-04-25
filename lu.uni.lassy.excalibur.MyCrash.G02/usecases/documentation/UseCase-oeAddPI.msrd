@@ -5,7 +5,8 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI
-@description ""
+@description "The administrator's goal is to add a new requested point of 
+interest."
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APIName ""
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APICity ""
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APIGPSLocation ""
@@ -14,14 +15,20 @@
 @endParameters
 @protocolCondition
 "
+the iCrash system has been deployed.
+the requested PI exists among the requests.
+the requested PI must have the status as solved.
 "
 @endProtocolConditions
 @preCondition
 "
+none
 "
 @endPreConditions
 @postCondition
 "
+the requested PI is successfully added.
+a message is returned to the administrator and the person that the PI has been added.
 "
 @endPostConditions
 @additionalInformation

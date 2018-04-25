@@ -5,17 +5,29 @@
 
 
 @@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.suAddNewPI
-@description ""
+@description "The goal is the check the requested point of interest 
+from the actor Person, treat the request and add the new PI to the 
+system."
 @protocolCondition
 "
+the iCrash system has never been deployed
+the coordinator actor involved in the use case has been declared by the actor
+actAdministrator
 "
 @endProtocolConditions
 @preCondition
 "
+none
 "
 @endPreConditions
 @postCondition
 "
+modifications have been made by the coordinator on existing requests (ignored attribute)
+the administrator has modified the status of the requests
+message solved request has been sent to the administrator
+the administrator added the new PI
+message added PI has been sent to the administrator and the person
+
 "
 @endPostConditions
 @additionalInformation

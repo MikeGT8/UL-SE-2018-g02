@@ -1,0 +1,33 @@
+/*
+@author ribby
+@date Wed Apr 25 11:15:22 CEST 2018
+*/
+
+
+@@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.suGenerateNewAlert
+@description "The goal is that the person searches for a point of interest, 
+retrieves the GPS location and sends an Sms to the communication company with 
+the needed information."
+@protocolCondition
+"
+the iCrash system has never been deployed
+the point of interest already exists
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+the actor person gets a match after searching for a PI
+the person gets a message with the GPS location of the PI
+a message that the Sms has been sent, is sent to the person
+the communication company gets a message with the detailed information of a potential crisis
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

@@ -1,0 +1,37 @@
+/*
+@author ribby
+@date Wed Apr 25 11:38:18 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI
+@description "The administrator's goal is to update the existing point of interest 
+information."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APIID ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APIName ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APICity ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APIGPSLocation ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APIDescription ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APICategory ""
+@endParameters
+@protocolCondition
+"
+the iCrash system has been deployed.
+there exists already the point of interest which has to be updated.
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+the point of interest has its new values.
+a message is returned to the administrator that the PI is up to date.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

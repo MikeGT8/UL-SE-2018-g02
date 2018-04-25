@@ -1,0 +1,31 @@
+/*
+@author ribby
+@date Wed Apr 25 11:38:07 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeTreatRequest
+@description "The administrator's goal is to treat a pending request."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeTreatRequest.ARequestID ""
+@endParameters
+@protocolCondition
+"
+the iCrash system has been deployed.
+a pending request must exist in the system.
+"
+@endProtocolConditions
+@preCondition
+"
+none
+"
+@endPreConditions
+@postCondition
+"
+the request status is changed to treated.
+a message request being treated is sent to the administrator.
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

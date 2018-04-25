@@ -1,0 +1,23 @@
+/*
+@author ribby
+@date Wed Apr 25 10:52:58 CEST 2018
+*/
+
+
+@@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson
+@description "Used to model system’s representation about the indirect actors that has alerted 
+of potential crisis, but also perform requests for new potential points of interest."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.id
+"the person's unique identification information."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.personType
+"the person type."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.phoneNumber
+"the number of the communication device used to send an alert to iCrash system."
+@endAttributes
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.init
+"used to initialise the current object as a new instance of the ctPerson type."
+@endOperations
