@@ -1,0 +1,26 @@
+/*
+@author mikel
+@date Wed Apr 25 09:43:51 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeInvalidateAlert
+@description "goal is to set an alerts status to invalid"
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeInvalidateAlert.AdtAlertID ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

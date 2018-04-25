@@ -1,0 +1,27 @@
+/*
+@author mikel
+@date Wed Apr 25 09:44:25 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisStatus
+@description "goal is to change the status of a crisis"
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisStatus.AdtCrisisID ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisStatus.AetCrisisStatus ""
+@endParameters
+@protocolCondition
+"1
+"
+@endProtocolConditions
+@preCondition
+"1
+"
+@endPreConditions
+@postCondition
+"1
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

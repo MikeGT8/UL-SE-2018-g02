@@ -1,0 +1,29 @@
+/*
+@author mikel
+@date Wed Apr 25 09:14:43 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddCoordinator
+@description "goal is to add a new coordinator to the system"
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddCoordinator.AdtCoordinatorID ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddCoordinator.AdtLogin ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddCoordinator.AdtPassword ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddCoordinator.CoordinatorAccessRights ""
+@endParameters
+@protocolCondition
+"1
+"
+@endProtocolConditions
+@preCondition
+"1
+"
+@endPreConditions
+@postCondition
+"1
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

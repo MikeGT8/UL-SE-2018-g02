@@ -1,0 +1,27 @@
+/*
+@author mikel
+@date Wed Apr 25 09:44:31 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisType
+@description "goal is to change the type of a crisis"
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisType.AdtCrisisID ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisType.AetCrisisType ""
+@endParameters
+@protocolCondition
+"1
+"
+@endProtocolConditions
+@preCondition
+"1
+"
+@endPreConditions
+@postCondition
+"1
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

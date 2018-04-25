@@ -1,0 +1,26 @@
+/*
+@author mikel
+@date Wed Apr 25 09:44:17 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisHandler
+@description "goal is to declare himself as been the handler of a crisis having a specified id"
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetCrisisHandler.AdtCrisisID ""
+@endParameters
+@protocolCondition
+"1
+"
+@endProtocolConditions
+@preCondition
+"1
+"
+@endPreConditions
+@postCondition
+"1
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

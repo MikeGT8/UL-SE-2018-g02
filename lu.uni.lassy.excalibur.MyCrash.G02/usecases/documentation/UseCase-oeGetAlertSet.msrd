@@ -1,0 +1,26 @@
+/*
+@author mikel
+@date Wed Apr 25 09:43:39 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetAlertSet
+@description "goal is to request a list with every existing alert in the system matching the given parameters"
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetAlertSet.AetAlertStatus ""
+@endParameters
+@protocolCondition
+"1
+"
+@endProtocolConditions
+@preCondition
+"1
+"
+@endPreConditions
+@postCondition
+"1
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"
