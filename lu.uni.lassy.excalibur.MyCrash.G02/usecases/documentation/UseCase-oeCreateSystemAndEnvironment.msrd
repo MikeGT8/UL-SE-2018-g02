@@ -1,0 +1,25 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:40:02 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCreateSystemAndEnvironment
+@description "The goal is to install the iCrash system on its infrastructure and to exploit its capacities related to the
+secure administration and efficient handling of car crash situations depending on alerts received."
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

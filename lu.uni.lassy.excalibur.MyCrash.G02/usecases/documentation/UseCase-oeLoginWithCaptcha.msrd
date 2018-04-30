@@ -1,0 +1,28 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:50:50 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLoginWithCaptcha
+@description "To use by any actor that inherits actAuthenticate to authenticate the actor as not being a robot/machine."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLoginWithCaptcha.ALogin ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLoginWithCaptcha.APassword ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLoginWithCaptcha.ACaptcha ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

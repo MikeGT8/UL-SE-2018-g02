@@ -1,0 +1,27 @@
+/*
+@author excalibur
+@date Mon Apr 23 22:56:15 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLogin
+@description "Used by any actor that is inherited by actAuthenticated to try and authenticate himself."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLogin.ALogin ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLogin.APassword ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

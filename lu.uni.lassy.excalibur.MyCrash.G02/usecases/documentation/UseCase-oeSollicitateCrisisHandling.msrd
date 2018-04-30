@@ -1,0 +1,25 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:44:27 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSollicitateCrisisHandling
+@description "the actActivator’s goal is to decrease the number of unhandled crisis."
+@protocolCondition
+"1. the iCrash system has been deployed.
+2. there exist some crisis still pending and for which no solicitation has been sent to the
+administrator and the coordinators for more than a predefined maximum delay."
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

@@ -1,0 +1,19 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:57:47 CEST 2018
+*/
+
+
+@@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actActivator
+@description ""
+//input events
+
+//output events
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actActivator.outactActivator.oeSollicitateCrisisHandling
+""
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actActivator.outactActivator.oeSetClock
+""
+
+@endOutputEvents

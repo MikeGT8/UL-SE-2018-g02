@@ -1,0 +1,26 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:43:19 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetClock
+@description "Used by actActivator to change the value of the time."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSetClock.AcurrentTime ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

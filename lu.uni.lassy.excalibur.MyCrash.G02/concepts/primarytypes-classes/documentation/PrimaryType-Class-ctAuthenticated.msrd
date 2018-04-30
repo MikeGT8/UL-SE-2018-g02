@@ -18,13 +18,13 @@ lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated
 "used to determine the access status."
 @attribute
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.tries
-""
+"used to determine how many tries the actor tried to login."
 @attribute
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.lastAccess
-""
+"used to determine the last time the actor tried to login."
 @attribute
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.capReq
-""
+"used to determine if the actor needs to solve a captcha."
 @endAttributes
 @operation
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.init

@@ -1,0 +1,32 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:38:16 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert
+@description "Used by actor actComCompany to create a new alert."
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert.APersonType ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert.APIName ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert.APIGPSLocation ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert.AdtDate ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert.AdtTime ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert.AProblemDescription ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAlert.PhoneNumber ""
+@endParameters
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

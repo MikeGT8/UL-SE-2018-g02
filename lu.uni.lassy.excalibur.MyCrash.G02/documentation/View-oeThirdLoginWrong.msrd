@@ -2,9 +2,3 @@
 @author excalibur
 @date Sun Mar 18 15:27:42 CET 2018
 */
-
-
-@@view oeThirdLoginWrong
-@model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeThirdLoginWrong 
-@description "The user enters the wrong username or password for the third time in a row, within five minutes."
-@caption ""

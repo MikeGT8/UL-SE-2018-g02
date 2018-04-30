@@ -1,0 +1,24 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:41:47 CEST 2018
+*/
+
+
+@@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeLogout
+@description "Used by any actor that is inherited by actAuthenticated to logout of the system."
+@protocolCondition
+"
+"
+@endProtocolConditions
+@preCondition
+"
+"
+@endPreConditions
+@postCondition
+"
+"
+@endPostConditions
+@additionalInformation
+"
+none
+"

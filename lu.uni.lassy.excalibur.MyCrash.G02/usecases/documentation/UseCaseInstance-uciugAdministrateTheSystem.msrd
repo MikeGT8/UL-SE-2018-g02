@@ -1,0 +1,8 @@
+/*
+@author excalibur
+@date Mon Apr 23 22:58:51 CEST 2018
+*/
+
+
+@@Instance Use Case usecases.uciugAdministrateTheSystem.uciugAdministrateTheSystem
+@description "A concrete instance how you can administrate the system."

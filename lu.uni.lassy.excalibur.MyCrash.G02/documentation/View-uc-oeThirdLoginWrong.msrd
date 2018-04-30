@@ -3,8 +3,3 @@
 @date Sun Mar 18 15:26:41 CET 2018
 */
 
-
-@@view uc-oeThirdLoginWrong
-@model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeThirdLoginWrong 
-@description ""
-@caption ""

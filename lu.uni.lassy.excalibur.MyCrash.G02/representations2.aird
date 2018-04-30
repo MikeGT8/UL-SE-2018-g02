@@ -227,6 +227,22 @@
     <semanticResources>platform:/resource/lu.uni.lassy.excalibur.standard.specification.libraries/library/documentation/PrimaryType-Primitive-ptString.msrd</semanticResources>
     <semanticResources>usecases/usecaseinstance-ugLoginWithCaptcha-uciugLoginWithCaptcha.msr</semanticResources>
     <semanticResources>documentation/View-uci-uciugLoginWithCaptcha.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeLogin.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeGetGPSLocation.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeGetAllRequests.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-ugManageCrisis.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCaseInstance-uciugAdministrateTheSystem.msrd</semanticResources>
+    <semanticResources>usecases/usecaseinstance-ugAdministrateTheSystem-uciugAdministrateTheSystem.msr</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-ugLoginWithCaptcha.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeAlert.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeCreateSystemAndEnvironment.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeLogout.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeResetPassword.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeSetClock.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeSollicitateCrisisHandling.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCaseInstance-uciugLoginWithCaptcha.msrd</semanticResources>
+    <semanticResources>usecases/documentation/UseCase-oeLoginWithCaptcha.msrd</semanticResources>
+    <semanticResources>environment/documentation/Actor-actActivator.msrd</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_T01cYCkHEeioBqQh-5IRZQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_5JyEQEJbEeiGpcV0MnNZ3A" name="uci-uciugLoginWithCaptcha" repPath="#_5JuZ4EJbEeiGpcV0MnNZ3A">

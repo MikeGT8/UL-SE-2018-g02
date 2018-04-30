@@ -1,0 +1,8 @@
+/*
+@author excalibur
+@date Mon Apr 30 20:47:29 CEST 2018
+*/
+
+
+@@Instance Use Case usecases.uciugLoginWithCaptcha.uciugLoginWithCaptcha
+@description "A concrete scenario how a coordinator fails to login three times in a row and has to solve the captcha."
