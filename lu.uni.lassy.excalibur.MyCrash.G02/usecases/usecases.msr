@@ -79,7 +79,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeAddPI(APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
+		use case system subfunction oeAddPI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
 		
 			actor actAdministrator[primary, active]
 			actor actPerson[secondary, passive]

@@ -14,7 +14,6 @@ interest."
 @protocolCondition
 "
 the iCrash system has been deployed.
-the point of interest exists among the PIs.
 "
 @endProtocolConditions
 @preCondition
@@ -24,7 +23,7 @@ none
 @endPreConditions
 @postCondition
 "
-a message is returned to the person that the PI has been found.
+a message is returned to the person that the PI has been found, or not.
 "
 @endPostConditions
 @additionalInformation

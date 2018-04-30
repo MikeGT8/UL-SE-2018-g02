@@ -66,8 +66,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				operation iePIUpToDate():ptBoolean
 				operation iePIDeleted():ptBoolean
 				
-				operation ieSendRequest(ARequest:ctRequest):ptBoolean
-				
 				//Access rights variant
 				operation ieCoordinatorAdded():ptBoolean
 				operation ieCoordinatorDeleted():ptBoolean
@@ -81,7 +79,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				operation oeTreatRequest(ARequestID:dtRequestID):ptBoolean
 				operation oeSolveRequest(ARequestID:dtRequestID):ptBoolean
 				
-				operation oeAddPI(APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
+				operation oeAddPI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
 				operation oeUpdatePI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
 				operation oeDeletePI(APIID:dtPIID):ptBoolean
 				

@@ -1,0 +1,352 @@
+/*
+* @author mikel
+* @date Fri Mar 16 11:46:38 CET 2018
+*/
+
+package lu.uni.lassy.excalibur.MyCrash.G02.operations.environment {
+
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.string
+
+import lu.uni.lassy.excalibur.MyCrash.G02.environment
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
+
+	Operation Model {
+		
+		operation: actAdministrator.outactAdministrator.oeAddPI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ColctPI:Bag(ctPI) in
+				let ColctRequest:Bag(ctRequest) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctPI->select(id.eq(APIID)) = ColctPI
+				and ColctPI->IsEmpty() = true
+				
+				/* PreF02 */
+				and TheSystem.rnctRequest->select(id.eq(APIID)/*, status.eq("solved") */) = ColctRequest
+				and ColctRequest->IsEmpty() = false
+			}
+			
+			/* Post Functional: */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ThectPI:ctPI in
+				let ThePerson:actPerson in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				ThectPI.init(APIID, APIName, APICity, APIGPSLocation, APIDescription, APICategory)
+				
+				/* PostF02 */
+				and TheActor.rnInterfaceIN^iePIAdded()
+				
+				/* PostF03 */
+				and ThePerson.rnInterfaceIN^iePIAdded()
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actAdministrator.outactAdministrator.oeUpdatePI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ColctPI:Bag(ctPI) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctPI->select(id.eq(APIID)) = ColctPI
+				and ColctPI->size().eq(1)
+			}
+			
+			/* Post Functional: */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				let APIName:dtName in
+				let APICity:dtCity in
+				let AGPSLocation:dtGPSLocation in
+				let APIDescription:dtDescription in
+				let APICategory:etCategory in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				APIName = APIName
+				and APICity = APIName
+				and AGPSLocation = AGPSLocation
+				and APIDescription = APIDescription
+				and APICategory = APICategory
+				
+				/* PostF02 */
+				and TheActor.rnInterfaceIN^iePIUpToDate()
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actAdministrator.outactAdministrator.oeDeletePI(APIID:dtPIID):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ColctPI:Bag(ctPI) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctPI->select(id.eq(APIID)) = ColctPI
+				and ColctPI->size().eq(1)
+			}
+			
+			/* Post Functional */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ThectPI:ctPI in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				TheSystem.rnctPI->select(id.ed(APIID)) = ThectPI
+				and ThectPI.msrIsKilled
+				
+				/* PostF02 */
+				and TheActor.rnInterfaceIN^iePIDeleted()
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actAdministrator.outactAdministrator.oeGetAllRequestsFromCoordinator():ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ColctRequest:Bag(ctRequest) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctRequest->select(status.eq("pending")) = ColctRequest
+				and ColctRequest->IsEmpty() = false
+			}
+			
+			/* Post Functional */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				TheActor.rnInterfaceIN^ieRequestList()
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actAdministrator.outactAdministrator.oeTreatRequest(ARequestID:dtRequestID):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ColctRequest:Bag(ctRequest) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctRequest->select(ignored.eq(false)) = ColctRequest
+				and ColctRequest->IsEmpty() = false
+			}
+			
+			/* Post Functional */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ARequestStatus:etRequestStatus in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				ARequestStatus = "treated"
+				
+				/* PostF02 */
+				and TheActor.rnInterfaceIN^ieRequestBeingTreated()
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actAdministrator.outactAdministrator.oeSolveRequest():ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ColctRequest:Bag(ctRequest) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctRequest->select(status.eq("treated")) = ColctRequest
+				and ColctRequest->IsEmpty() = false
+			}
+			
+			/* Post Functional */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actAdministrator in
+				let ARequestStatus:etRequestStatus in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				ARequestStatus = "solved"
+				
+				/* PostF02 */
+				and TheActor.rnInterfaceIN^ieRequestSolved()
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+	}
+}
