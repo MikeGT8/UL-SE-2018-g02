@@ -15,6 +15,10 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 
 import lu.uni.lassy.excalibur.MyCrash.G02.environment
 
+import lu.uni.lassy.messir.libraries.primitives
+
+
+
 	Use Case Model {	
 		use case system subfunction oeCreateSystemAndEnvironment() {
 		
@@ -205,7 +209,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 			}
 		}
 		
-		use case system subfunction oeSetClock(AcurrentTime:dtDateandTime) {
+		use case system subfunction oeSetClock(AcurrentTime:dtDateAndTime) {
 			
 			actor actActivator[primary, proactive]
 			
@@ -335,7 +339,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.environment
 				"Subsequently, all the steps follow after step (a) is performed."
 		}
 	
-		use case system subfunction oeAlert(APersonType:etPersonType, APIName:dtName, APIGPSLocation:dtGPSLocation, AdtDate:dtDate, AdtTime:dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber) {
+		use case system subfunction oeAlert(APersonType:etPersonType, APIName:dtName, APIGPSLocation:dtGPSLocation, AdtDate:lu.uni.lassy.messir.libraries.calendar.dtDate, AdtTime:lu.uni.lassy.messir.libraries.calendar.dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber) {
 			
 			actor actComCompany[primary, active]
 			

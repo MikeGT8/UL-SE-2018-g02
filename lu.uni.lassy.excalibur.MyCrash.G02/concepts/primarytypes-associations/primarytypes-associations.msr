@@ -40,6 +40,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			association assctRequestctCoordinator
 				ctRequest(rnChecked)[0..*]
 				ctCoordinator(rnChecker)[0..1]
+				
+			association rel1 ctAuthenticated(rnroleOfC1forC2)[1..*] actAuthenticated(rnroleOfC2forC1)[1..*]
 			
 			association assctRequestctAdministrator
 				ctRequest(rnBeingTreated)[0..*]
@@ -56,8 +58,24 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			// Actors' associations
 			
 			association assctPersonactComCompany
- 				ctPerson(rnctHuman)[0..*]
+ 				ctPerson(rnctPerson)[0..*]
  				actComCompany(rnactComCompany)[1..1]
+ 			
+ 			association assctPersonactPerson
+ 				ctPerson(rnctPerson)[1..1]
+ 				actPerson(rnactPerson)[1..1]
+ 			
+ 			association assctAuthenticatedactAuthenticated
+ 				ctAuthenticated(rnctAuthenticated)[1..1]
+ 				actAuthenticated(rnactAuthenticated)[1..1]
+ 				
+ 			association assctCoordinatoractCoordinator
+ 				ctCoordinator(rnctCoordinator)[1..1]
+ 				actCoordinator(rnactCoordinator)[1..1]
+ 			
+ 			association assctAdministratoractAdministrator
+ 				ctAdministrator(rnctAdministrator)[1..1]
+ 				actAdministrator(rnactAdministrator)[1..1]
 		}
 	}
 }
