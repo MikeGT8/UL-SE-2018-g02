@@ -244,6 +244,7 @@
     <semanticResources>usecases/documentation/UseCase-oeLoginWithCaptcha.msrd</semanticResources>
     <semanticResources>environment/documentation/Actor-actActivator.msrd</semanticResources>
     <semanticResources>operations/environment/environment-actAuthenticated-oeLogin.msr</semanticResources>
+    <semanticResources>operations/environment/environment-actAuthenticated-oeLogout.msr</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_T01cYCkHEeioBqQh-5IRZQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_5JyEQEJbEeiGpcV0MnNZ3A" name="uci-uciugLoginWithCaptcha" repPath="#_5JuZ4EJbEeiGpcV0MnNZ3A">

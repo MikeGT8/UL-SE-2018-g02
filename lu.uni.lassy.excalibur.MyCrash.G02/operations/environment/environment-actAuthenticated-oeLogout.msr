@@ -1,0 +1,53 @@
+package lu.uni.lassy.excalibur.MyCrash.G02.environment.operations.actAuthenticated.outactAuthenticated.oeLogout {
+
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.string
+import lu.uni.lassy.messir.libraries.calendar
+
+import lu.uni.lassy.excalibur.MyCrash.G02.environment
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
+
+	Operation Model {
+
+		operation: lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogout():ptBoolean{
+		// include below the specification information (pre,post or ocl or prolog)
+			/* Pre Protocol:*/
+			preP{let TheSystem: ctState in
+			let TheActor:actAdministrator in
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheActor
+	
+			/* PreP01 */
+			and TheSystem.vpStarted = true
+	 		/* PreP02 */
+			and TheActor.rnctAuthenticated.vpIsLogged = true}
+	
+			/* Pre Functional:*/
+			preF{/* PreF01 */
+			true}
+	
+			/* Post Functional:*/
+			postF{let TheSystem: ctState in
+			let TheactAuthenticated:actAuthenticated in
+			let AptStringMessageForTheactAuthenticated: ptString in
+	
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheactAuthenticated
+	
+			/* PostF01 */
+			AptStringMessageForTheactAuthenticated.eq('You are logged out ! Good Bye ...')
+			and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)}
+	
+			/* Post Protocol:*/
+			postP{ let TheSystem: ctState in
+			let TheactAuthenticated:actAuthenticated in
+	
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheactAuthenticated.asSet
+			/* PostP01 */
+			TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = false}
+		}
+	}
+}
