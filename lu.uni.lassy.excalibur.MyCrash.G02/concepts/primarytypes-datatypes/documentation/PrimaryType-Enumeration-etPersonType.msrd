@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:22:27 CEST 2018
+*/
+
+
+@@Primary Type Enumeration lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.etPersonType
+@description "This type is used to indicate the type of person that informs about a car crash crisis."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.etPersonType.is
+"used to determine which literal belongs to the enumeration."
+@endOperations

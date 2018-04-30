@@ -1,0 +1,20 @@
+/*
+@author ribby
+@date Mon Apr 30 09:59:00 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtGPSLocation
+@description "Used to define coordinates of geographical positions on earth. It is defined a couple made of a latitude
+and a longitude."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtGPSLocation.latitude
+"for the latitude part of the coordinate."
+@attribute
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtGPSLocation.longitude
+"for the longitude part of the coordinate."
+@endAttributes
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtGPSLocation.is
+"used to determine which couples are considered as valid dtGPSLocation values."
+@endOperations

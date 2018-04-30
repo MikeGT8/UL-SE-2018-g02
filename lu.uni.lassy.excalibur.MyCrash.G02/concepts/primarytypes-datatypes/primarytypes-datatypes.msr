@@ -74,12 +74,12 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
-			datatype dtLatitude extends dtString {
+			datatype dtLatitude extends dtReal {
 			
 				operation is():ptBoolean
 			}
 			
-			datatype dtLongitude extends dtString {
+			datatype dtLongitude extends dtReal {
 			
 				operation is():ptBoolean
 			}
@@ -159,6 +159,7 @@ import lu.uni.lassy.messir.libraries.string
 			
 			enum etCrisisStatus {
 				constants["pending", "handled", "solved", "closed"]
+				operation is():ptBoolean
 			}	
 		}
 	}

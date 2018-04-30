@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:09:51 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtLogin
+@description "A login string used to authentify an iCrash user."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtLogin.is
+"used to determine which strings are considered as valid dtLogin."
+@endOperations

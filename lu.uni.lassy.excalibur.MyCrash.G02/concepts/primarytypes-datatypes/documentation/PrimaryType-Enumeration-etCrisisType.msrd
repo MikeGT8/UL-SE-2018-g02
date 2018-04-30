@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:21:33 CEST 2018
+*/
+
+
+@@Primary Type Enumeration lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.etCrisisType
+@description "This type is used to indicate the different types of a crisis."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.etCrisisType.is
+"used to determine which literal belongs to the enumeration."
+@endOperations

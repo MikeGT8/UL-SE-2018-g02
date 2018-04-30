@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:14:49 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtPhoneNumber
+@description "A string used to store the phone number from the person declaring the crisis or the alert."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtPhoneNumber.is
+"used to determine which strings are considered as valid dtPhoneNumber."
+@endOperations

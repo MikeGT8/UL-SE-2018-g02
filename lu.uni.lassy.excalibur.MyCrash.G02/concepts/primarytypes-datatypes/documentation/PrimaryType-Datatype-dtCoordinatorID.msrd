@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:03:44 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCoordinatorID
+@description "A string used to identify coordinators."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCoordinatorID.is
+"used to determine which strings are considered as valid coordinators identifiers."
+@endOperations

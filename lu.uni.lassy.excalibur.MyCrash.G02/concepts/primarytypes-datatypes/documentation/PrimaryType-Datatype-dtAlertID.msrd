@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:05:36 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtAlertID
+@description "A string used to identify alerts."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtAlertID.is
+"used to determine which strings are considered as valid alert identifiers."
+@endOperations

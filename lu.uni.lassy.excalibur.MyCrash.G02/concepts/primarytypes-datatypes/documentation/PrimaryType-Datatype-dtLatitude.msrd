@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:11:21 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtLatitude
+@description "Used to define a latitude value of a geographical positions on earth."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtLatitude.is
+"used to determine which strings are considered as valid dtLatitude."
+@endOperations

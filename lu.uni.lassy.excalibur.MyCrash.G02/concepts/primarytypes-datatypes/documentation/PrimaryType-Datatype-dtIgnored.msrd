@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:32:57 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtIgnored
+@description "A boolean used to store the value considering if the request should be ignored or not."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtIgnored.is
+"used to determine which boolean values are considered as valid dtIgnored."
+@endOperations

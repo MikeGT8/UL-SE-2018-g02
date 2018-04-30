@@ -1,0 +1,13 @@
+/*
+@author ribby
+@date Mon Apr 30 10:25:26 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCaptcha
+@description "A string used to store the Captcha information after the iCrash user failed to log in 
+three times."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCaptcha.is
+"used to determine which strings are considered as valid dtCaptcha."
+@endOperations

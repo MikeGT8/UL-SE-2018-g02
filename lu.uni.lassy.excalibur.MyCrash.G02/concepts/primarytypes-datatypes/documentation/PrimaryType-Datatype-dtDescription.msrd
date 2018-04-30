@@ -1,0 +1,13 @@
+/*
+@author ribby
+@date Mon Apr 30 10:30:08 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtDescription
+@description "A datatype made of a string value used to receive, store and send textual information about 
+a point of interest."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtDescription.is
+"used to determine which strings are considered as valid descriptions."
+@endOperations

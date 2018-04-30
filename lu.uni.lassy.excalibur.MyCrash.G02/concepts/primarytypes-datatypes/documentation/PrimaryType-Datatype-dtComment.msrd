@@ -1,0 +1,13 @@
+/*
+@author ribby
+@date Mon Apr 30 10:25:44 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtComment
+@description "A datatype made of a string value used to receive, store and send textual information 
+about crisis and alerts."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtComment.is
+"used to determine which strings are considered as valid comments."
+@endOperations

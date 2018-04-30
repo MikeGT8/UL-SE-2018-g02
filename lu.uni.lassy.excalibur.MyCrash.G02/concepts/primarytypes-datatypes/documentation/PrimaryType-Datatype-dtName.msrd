@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:51:56 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtName
+@description "A string used to store the names of the points of interest."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtName.is
+"used to determine which strings are considered as valid names."
+@endOperations

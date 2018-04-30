@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:23:25 CEST 2018
+*/
+
+
+@@Primary Type Enumeration lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.etCategory
+@description "This type is used to indicate the different categories of a point of interest."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.etCategory.is
+"used to determine which literal belongs to the enumeration."
+@endOperations

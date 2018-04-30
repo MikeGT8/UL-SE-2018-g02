@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:33:07 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtMessage
+@description "A string used to store the information that will be sent as input event to the actors."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtMessage.is
+"used to determine which strings are considered as valid dtMessage."
+@endOperations

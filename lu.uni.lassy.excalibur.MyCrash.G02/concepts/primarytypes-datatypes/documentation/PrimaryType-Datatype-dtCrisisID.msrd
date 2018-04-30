@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Mon Apr 30 10:02:08 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCrisisID
+@description "A string used to identify crisis."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCrisisID.is
+"used to determine which strings are considered as valid crisis identifiers."
+@endOperations
