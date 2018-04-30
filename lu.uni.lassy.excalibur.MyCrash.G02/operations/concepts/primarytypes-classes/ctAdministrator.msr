@@ -1,0 +1,40 @@
+/*
+* @author mikel
+* @date Fri Mar 16 11:46:38 CET 2018
+*/
+
+package lu.uni.lassy.excalibur.MyCrash.G02.operations.environment {
+
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.string
+
+import lu.uni.lassy.excalibur.MyCrash.G02.environment
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
+
+	Operation Model {
+		
+		operation: actAdministrator.init(Alogin:dtLogin, Apwd:dtPassword,):ptBoolean {
+			
+			/* Post Functional: */
+			postF {
+				if (
+					let Self:ctAdministrator in
+					
+					/* Post F01 */
+			 		Self.login(Alogin)
+			 		and Self.pwd = Apwd
+			 		and Self.vpIsLogged = false
+			
+			 		/* Post F02 */
+			 		and (Self.oclIsNew and self = Self)
+			 	)
+			 	then (result = true)
+			 	else (result = false)
+			   	endif
+		    }
+		}
+	}
+}
