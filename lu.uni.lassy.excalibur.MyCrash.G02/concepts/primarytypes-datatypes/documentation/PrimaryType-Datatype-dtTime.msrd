@@ -3,10 +3,3 @@
 @date Mon Apr 30 10:49:10 CEST 2018
 */
 
-
-@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtTime
-@description "A string used to store the time of an alert."
-@operation
-lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtTime.is
-"used to determine which strings are considered as valid dtTime."
-@endOperations

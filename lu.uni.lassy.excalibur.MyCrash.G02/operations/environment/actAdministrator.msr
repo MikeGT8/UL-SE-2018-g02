@@ -112,23 +112,18 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			/* Post Functional: */
 			postF {
 				let TheSystem:ctState in
+				let ThectPI:ctPI in
 				let TheActor:actAdministrator in
-				
-				let APIName:dtName in
-				let APICity:dtCity in
-				let AGPSLocation:dtGPSLocation in
-				let APIDescription:dtDescription in
-				let APICategory:etCategory in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				APIName = APIName
-				and APICity = APIName
-				and AGPSLocation = AGPSLocation
-				and APIDescription = APIDescription
-				and APICategory = APICategory
+				ThectPI.rnctPI.name = APIName
+				and ThectPI.rnctPI.city = APIName
+				and ThectPI.rnctPI.location = AGPSLocation
+				and ThectPI.rnctPI.description = APIDescription
+				and ThectPI.rnctPI.category = APICategory
 				
 				/* PostF02 */
 				and TheActor.rnInterfaceIN^iePIUpToDate()
@@ -213,6 +208,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			
 			/* Pre Functional: */
 			preF {
+				true
+			}
+			
+			/* Post Functional */
+			postF {
 				let TheSystem:ctState in
 				let TheActor:actAdministrator in
 				let ColctRequest:Bag(ctRequest) in
@@ -220,21 +220,18 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
-				/* PreF01 */
 				TheSystem.rnctRequest->select(status.eq("pending")) = ColctRequest
-				and ColctRequest->IsEmpty() = false
-			}
-			
-			/* Post Functional */
-			postF {
-				let TheSystem:ctState in
-				let TheActor:actAdministrator in
 				
-				self.rnActor.rnSystem = TheSystem
-				and self.rnActor = TheActor
-				
-				/* PostF01 */
-				TheActor.rnInterfaceIN^ieRequestList()
+				if (ColctRequest->IsEmpty() = false)
+				then (
+					/* PostF01 */
+					TheActor.rnInterfaceIN^ieRequestList()
+				)
+				else (
+					/* PostF02 */
+					TheActor.rnInterfaceIN^ieMessage()
+				)
+				endif
 			}
 			
 			/* Post Protocol:*/
@@ -278,13 +275,13 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			postF {
 				let TheSystem:ctState in
 				let TheActor:actAdministrator in
-				let ARequestStatus:etRequestStatus in
+				let ThectRequest:ctRequest in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				ARequestStatus = "treated"
+				ThectRequest.rnctRequest.status = "treated"
 				
 				/* PostF02 */
 				and TheActor.rnInterfaceIN^ieRequestBeingTreated()
@@ -331,13 +328,13 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			postF {
 				let TheSystem:ctState in
 				let TheActor:actAdministrator in
-				let ARequestStatus:etRequestStatus in
+				let ThectRequest:ctRequest in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				ARequestStatus = "solved"
+				ThectRequest.rnctRequest.status = "solved"
 				
 				/* PostF02 */
 				and TheActor.rnInterfaceIN^ieRequestSolved()

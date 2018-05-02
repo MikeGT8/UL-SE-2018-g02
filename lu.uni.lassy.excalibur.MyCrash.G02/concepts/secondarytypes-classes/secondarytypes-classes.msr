@@ -10,12 +10,10 @@ import lu.uni.lassy.messir.libraries.math
 import lu.uni.lassy.messir.libraries.primitives
 import lu.uni.lassy.messir.libraries.string
 
-
-
-Concept Model {
-	
-	Secondary Types {
-	
+	Concept Model {
+		
+		Secondary Types {
+		
+		}
 	}
-}
 }

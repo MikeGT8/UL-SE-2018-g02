@@ -35,6 +35,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 			/* Pre Functional: */
 			preF {
+				true
+			}
+			
+			/* Post Functional */
+			postF {
 				let TheSystem:ctState in
 				let TheActor:actCoordinator in
 				let ColctRequest:Bag(ctRequest) in
@@ -42,21 +47,18 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
-				/* PreF01 */
 				TheSystem.rnctRequest->select(status.eq("")) = ColctRequest
-				and ColctRequest->IsEmpty() = false
-			}
-			
-			/* Post Functional */
-			postF {
-				let TheSystem:ctState in
-				let TheActor:actCoordinator in
 				
-				self.rnActor.rnSystem = TheSystem
-				and self.rnActor = TheActor
-				
-				/* PostF01 */
-				TheActor.rnInterfaceIN^ieRequestListToCheck()
+				if (ColctRequest->IsEmpty() = false)
+				then (
+					/* PostF01 */
+					TheActor.rnInterfaceIN^ieRequestListToCheck()
+				)
+				else (
+					/* PostF02 */
+					TheActor.rnInterfaceIN^ieMessage()
+				)
+				endif
 			}
 			
 			/* Post Protocol:*/
@@ -93,28 +95,33 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				and self.rnActor = TheActor
 				
 				/* PreF01 */
-				TheSystem.rnctPI->select(name.eq(APIName)/*, category.eq(APICategory), city.eq(APICity)*/) = ColctPI
-				and ColctPI->IsEmpty() = true
-				
-				/* PreF02 */
-				TheSystem.rnctRequest->select(name.eq(APIName)/*, category.eq(APICategory), city.eq(APICity)*/) = ColctRequest
-				and ColctRequest->IsEmpty() = true
+				TheSystem.rnctRequest->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctRequest
+				and ColctRequest->size().eq(1)
 			}
 			
 			/* Post Functional */
 			postF {
 				let TheSystem:ctState in
 				let TheActor:actCoordinator in
-				let ARequestIgnored:dtIgnored in
+				let ThectRequest:ctRequest in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
-				/* PostF01 */
-				ARequestIgnored = true
-				or ARequestIgnored = false
+				TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
 				
-				/* PostF02 */
+				if (ColctPI.IsEmpty() = false)
+				then (
+					/* PostF01 */
+					ThectRequest.rnctRequest.ignored = true
+				)
+				else (
+					/* PostF02 */
+					ThectRequest.rnctRequest.ignored = false
+				)
+				endif
+				
+				/* PostF03 */
 				and TheActor.rnInterfaceIN^ieMessage()
 			}
 			
@@ -159,13 +166,13 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			postF {
 				let TheSystem:ctState in
 				let TheActor:actCoordinator in
-				let ARequestStatus:etRequestStatus in
+				let ThectRequest:ctRequest in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				ARequestStatus = "pending"
+				ThectRequest.rnctRequest.status = "pending"
 				
 				/* PostF02 */
 				and TheActor.rnInterfaceIN^ieRequestDelivered()

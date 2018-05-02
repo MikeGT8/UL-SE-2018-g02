@@ -2,11 +2,3 @@
 @author ribby
 @date Mon Apr 30 10:32:46 CEST 2018
 */
-
-
-@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtDate
-@description "A string used to store the date of an alert."
-@operation
-lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtDate.is
-"used to determine which strings are considered as valid dtDate."
-@endOperations

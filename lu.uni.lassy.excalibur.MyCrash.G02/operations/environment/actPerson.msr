@@ -78,7 +78,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				let TheSystem:ctState in
 				let TheActor:actPerson in
 				let ColctPI:Bag(ctPI) in
-				let ColctRequest:Bag(ctRequest) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
