@@ -41,8 +41,6 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				ctRequest(rnChecked)[0..*]
 				ctCoordinator(rnChecker)[0..1]
 				
-			association rel1 ctAuthenticated(rnroleOfC1forC2)[1..*] actAuthenticated(rnroleOfC2forC1)[1..*]
-			
 			association assctRequestctAdministrator
 				ctRequest(rnBeingTreated)[0..*]
 				ctAdministrator(rnTreater)[0..1]

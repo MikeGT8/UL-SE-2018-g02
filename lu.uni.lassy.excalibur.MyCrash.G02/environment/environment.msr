@@ -167,7 +167,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 			output interface outactActivator {
 				
 				operation oeSollicitateCrisisHandling():ptBoolean
-				operation oeSetClock(AcurrentTime:dtDateandTime):ptBoolean
+				operation oeSetClock(AcurrentTime:dtDateAndTime):ptBoolean
 			}
 		}
 	}

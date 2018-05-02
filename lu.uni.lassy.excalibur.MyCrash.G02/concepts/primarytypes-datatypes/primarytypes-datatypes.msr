@@ -112,16 +112,6 @@ import lu.uni.lassy.messir.libraries.string
 				operation is():ptBoolean
 			}
 			
-			datatype dtDate extends dtString {
-			
-				operation is():ptBoolean
-			}
-			
-			datatype dtTime extends dtString {
-			
-				operation is():ptBoolean
-			}
-			
 			datatype dtIgnored  {
 				attribute attValue:ptBoolean
 				operation is():ptBoolean
