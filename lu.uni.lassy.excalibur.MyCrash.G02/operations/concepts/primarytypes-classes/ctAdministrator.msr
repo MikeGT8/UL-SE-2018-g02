@@ -16,7 +16,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 
 	Operation Model {
 		
-		operation: ctAdministrator.init(Alogin:dtLogin, Apwd:dtPassword,):ptBoolean {
+		operation: ctAdministrator.init(Alogin:dtLogin, Apwd:dtPassword):ptBoolean {
 			
 			/* Post Functional: */
 			postF {
