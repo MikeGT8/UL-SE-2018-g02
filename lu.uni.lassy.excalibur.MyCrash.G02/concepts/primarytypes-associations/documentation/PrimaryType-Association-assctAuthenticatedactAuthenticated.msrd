@@ -1,0 +1,9 @@
+/*
+@author mikel
+@date Wed May 02 13:20:21 CEST 2018
+*/
+
+
+@@Primary Type Association lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations.assctAuthenticatedactAuthenticated
+@description "mainly used to determine if the login request of an authenticated actor can be granted based on the
+given credentials and the registered ones."
