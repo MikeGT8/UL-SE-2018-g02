@@ -3,7 +3,7 @@
 * @date Fri Mar 16 11:46:38 CET 2018
 */
 
-package lu.uni.lassy.excalibur.MyCrash.G02.operations.environment {
+package lu.uni.lassy.excalibur.MyCrash.G02.operations.environment.actCoordinator {
 
 import lu.uni.lassy.messir.libraries.calendar
 import lu.uni.lassy.messir.libraries.math

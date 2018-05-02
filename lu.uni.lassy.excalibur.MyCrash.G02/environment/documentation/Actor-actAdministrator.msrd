@@ -32,9 +32,6 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrat
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.iePIDeleted
 "The input event iePIDeleted confirms that the requested point of interest has been deleted."
 @inputEvent
-lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieSendRequest
-"The input event ieSendRequest returns a request object."
-@inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.inactAdministrator.ieCoordinatorAdded
 "The input event ieCoordinatorAdded confirms if a coordinator was successfully added to the system."
 @inputEvent

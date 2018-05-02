@@ -3,7 +3,7 @@
 @date Wed Apr 25 14:45:07 CEST 2018
 */
 
-@@view PrimaryTypes-Classes-local-view-01
+@@view PrimaryTypes-CLV-01
 @model Concept
 @level Local
 @sublevel Primary Class
