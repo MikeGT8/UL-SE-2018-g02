@@ -176,5 +176,274 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				true
 			}
 		}
+		
+		operation: actCoordinator.outactCoordinator.oeValidateAlert(AdtAlertID: dtAlertID):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional */
+			preF {
+				true
+			}
+			
+			/* Post Functional */
+			postF {
+				true
+			}
+			
+			/* Post Protocol */
+			postP {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeInvalidateAlert(AdtAlertID: dtAlertID):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional */
+			preF {
+				true
+			}
+			
+			/* Post Functional */
+			postF {
+				let TheSystem:ctState in
+				let ThectAlert:ctAlert in
+			
+				self.rnActor.rnSystem = TheSystem
+			
+				/* PreF01 */
+				TheSystem.rnctAlert->select(id.eq(AdtAlerID)) = ThectAlert
+				and ThectAlert.status.eq("closed")
+			}
+			
+			/* Post Protocol */
+			postP {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeGetAlertSet(AetAlertStatus: etAlertStatus):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional */
+			preF {
+				true
+			}
+			
+			/* Post Functional */
+			postF {
+				true
+			}
+			
+			/* Post Protocol */
+			postP {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeGetCrisisSet(AetCrisisStatus: etCrisisStatus):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional */
+			preF {
+				true
+			}
+			
+			/* Post Functional */
+			postF {
+				true
+			}
+			
+			/* Post Protocol */
+			postP {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeSetCrisisType(AdtCrisisID: dtCrisisID, AetCrisisType: etCrisisType):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* PreFunctional */
+			preF {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeSetCrisisStatus(AdtCrisisID: dtCrisisID, AetCrisisStatus: etCrisisStatus):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* PreFunctional */
+			preF {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeSetCrisisHandler(AdtCrisisID: dtCrisisID):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* PreFunctional */
+			preF {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeReportOnCrisis(AdtCrisisID: dtCrisisID, AdtComment: dtComment):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* PreFunctional */
+			preF {
+				true
+			}
+		}
+		
+		operation: actCoordinator.outactCoordinator.oeCloseCrisis(AdtCrisisID: dtCrisisID):ptBoolean {
+			/* Pre protocol */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actCoordinator in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = The Actor
+				
+				/* Pre P01 */
+				TheSystem.vpStarted = true
+				
+				/* Pre P02 */
+				TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional */
+			preF {
+				let TheSystem:ctState in
+				let ColctCrisis:Bag(ctCrisis) in
+			
+				self.rnActor.rnSystem = TheSystem
+			
+				/* PreF01 */
+				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ColctCrisis
+				and ColctCrisis->size.eq(1)
+			}
+			
+			/* Post Functional */
+			postF {
+				let TheSystem:ctState in
+				let ThectCrisis:ctCrisis in
+			
+				self.rnActor.rnSystem = TheSystem
+			
+				/* PreF01 */
+				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ThectCrisis
+				and ThectCrisis.AetCrisisStatus.eq("closed")
+			}
+			
+			/* Post Protocol */
+			postP {
+				true
+			}
+		}
 	}
 }

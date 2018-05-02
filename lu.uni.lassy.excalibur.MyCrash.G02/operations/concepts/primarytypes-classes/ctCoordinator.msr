@@ -16,7 +16,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 
 	Operation Model {
 		
-		operation: ctCoordinator.init(Aid:dtCoordinatorID, Alogin:dtLogin, Apwd:dtPassword):ptBoolean {
+		operation: ctCoordinator.init(Aid:dtCoordinatorID, Alogin:dtLogin, Apwd:dtPassword, AaccessRights:etCrisisType):ptBoolean {
 
 			/* Post Functional: */
 			postF {
@@ -28,6 +28,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 					and Self.login = Alogin
 					and Self.pwd = Apwd
 					and Self.vpIsLogged = false
+					and Self.accessRights = AaccessRights
 
 					/* Post F02 */
 					and (Self.oclIsNew and self = Self)
