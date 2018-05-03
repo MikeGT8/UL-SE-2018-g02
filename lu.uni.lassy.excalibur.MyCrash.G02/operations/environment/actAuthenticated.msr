@@ -71,25 +71,25 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			/* PostP01 */
 			int* tries = TheactAuthenticated.rnctAuthenticated@post.tries
 			int* lastAccess = TheactAuthenticated.rnctAuthenticated@post.lastAccess
-			if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
-				and TheactAuthenticated.rnctAuthenticated.login = AdtLogin)
-			then
-				(TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true
-				and tries = 0
-				and lastAccess = -181)
-			else 
-				(lastAccess = ((int)System.currentTimeMillis()/1000) - lastAccess)
-			endif
-			if(lastAccess <= 180)
-			then
-				(tries++)
-			else
-				(tries = 0)
-			endif
-			if (tries > 2)
-			then (TheactAuthenticated.rnctAuthenticated@post.capReq = true)
-			else true
-			endif}
+			
+			if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword and
+			TheactAuthenticated.rnctAuthenticated.login = AdtLogin) then(
+				TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true and
+				tries = 0 and
+				lastAccess = -181
+			)else(
+				lastAccess = ((int)System.currentTimeMillis()/1000) - lastAccess
+				if(lastAccess <= 180)then(
+					tries++
+					if (tries > 2) then(
+						TheactAuthenticated.rnctAuthenticated@post.capReq = true
+					)else
+						true
+					endif
+				)else(
+					tries = 1
+				)endif
+			)endif}
 		}
 		
 		operation: actAuthenticated.outactAuthenticated.oeLogout():ptBoolean{
@@ -183,19 +183,27 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			self.rnActor.rnSystem = TheSystem
 			and self.rnActor = TheactAuthenticated
 			/* PostP01 */
-			if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
-				and TheactAuthenticated.rnctAuthenticated.login = AdtLogin)
-			then
-				(TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true
-				and TheactAuthenticated.rnctAuthenticated@post.tries = 0
-				and TheactAuthenticated.rnctAuthenticated@post.lastAccess = -181)
+			String theCaptcha and
+			int* tries = TheactAuthenticated.rnctAuthenticated@post.tries and
+			int* lastAccess = TheactAuthenticated.rnctAuthenticated@post.lastAccess and
+			boolean* capReq = TheactAuthenticated.rnctAuthenticated@post.capReq
+			if(ACaptcha = theCaptcha) then
+				(if(TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword and
+				TheactAuthenticated.rnctAuthenticated.login = AdtLogin) then(
+					tries = 0 and
+					lastAccess = -181 and
+					capReq = false and
+					vpIsLogged = true
+				)else(
+					lastAccess = ((int)System.currentTimeMillis()/1000) - lastAccess
+					(if(lastAccess <= 180)then(
+						tries++
+					)else(
+						tries = 1
+					)endif)
+				)endif)
 			else 
-				(TheactAuthenticated.rnctAuthenticated@post.tries++
-				and TheactAuthenticated.rnctAuthenticated@post.lastAccess = ((int)System.currentTimeMillis()/1000)
-			)endif
-			if (tries > 2)
-			then (TheactAuthenticated.rnctAuthenticated@post.capReq = true)
-			else true
+				(false)
 			endif}
 		}
 	}
