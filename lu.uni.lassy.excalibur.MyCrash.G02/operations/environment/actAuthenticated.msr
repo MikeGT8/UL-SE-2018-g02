@@ -206,5 +206,58 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				(false)
 			endif}
 		}
+		operation: actAuthenticated.outactAuthenticated.oeResetPassword(ALogin:dtLogin):ptBoolean{
+			/* Pre Protocol:*/
+			preP{let TheSystem: ctState in
+			let TheActor:actAuthenticated in
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheActor
+			
+			/* PreP01 */
+			and TheSystem.vpStarted = true
+			/* PreP02 */
+			and TheActor.rnctAuthenticated.vpIsLogged = false}
+			
+			/* Pre Functional:*/
+			preF{/* PreF01 */
+			true}
+			
+			/* Post Functional:*/
+			postF{let TheSystem: ctState in
+			let TheactAuthenticated:actAuthenticated in
+			
+			let AptStringMessageForTheactAuthenticated: ptString in
+			let AptStringMessageForTheactAdministrator:ptString in
+			
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheactAuthenticated
+			
+			and /* PostF01 */
+				if (TheactAuthenticated.rnctAuthenticated.login
+					= AdtLogin
+					)
+				then (AptStringMessageForTheactAuthenticated.eq('User found, resetting password ...')
+					and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+					)
+				else (AptStringMessageForTheactAuthenticated
+					.eq('Wrong username information ! Please try again ...')
+					and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+					)
+				endif}
+			
+			/* Post Protocol:*/
+			postP{ let TheSystem: ctState in
+			let TheactAuthenticated:actAuthenticated in
+			
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheactAuthenticated
+			/* PostP01 */
+			if(TheactAuthenticated.rnctAuthenticated.login = AdtLogin) then(
+				TheactAuthenticated.rnctAuthenticated@post.pwd = new String(random())
+				// new string shows on screen
+			)else(
+				false
+			)endif}
+		}
 	}
 }
