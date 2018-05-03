@@ -69,16 +69,23 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			self.rnActor.rnSystem = TheSystem
 			and self.rnActor = TheactAuthenticated
 			/* PostP01 */
+			int* tries = TheactAuthenticated.rnctAuthenticated@post.tries
+			int* lastAccess = TheactAuthenticated.rnctAuthenticated@post.lastAccess
 			if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
 				and TheactAuthenticated.rnctAuthenticated.login = AdtLogin)
 			then
 				(TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true
-				and TheactAuthenticated.rnctAuthenticated@post.tries = 0
-				and TheactAuthenticated.rnctAuthenticated@post.lastAccess = -181)
+				and tries = 0
+				and lastAccess = -181)
 			else 
-				(TheactAuthenticated.rnctAuthenticated@post.tries++
-				and TheactAuthenticated.rnctAuthenticated@post.lastAccess = ((int)System.currentTimeMillis()/1000)
-			)endif
+				(lastAccess = ((int)System.currentTimeMillis()/1000) - lastAccess)
+			endif
+			if(lastAccess <= 180)
+			then
+				(tries++)
+			else
+				(tries = 0)
+			endif
 			if (tries > 2)
 			then (TheactAuthenticated.rnctAuthenticated@post.capReq = true)
 			else true
@@ -122,6 +129,74 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			and self.rnActor = TheactAuthenticated.asSet
 			/* PostP01 */
 			TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = false}
+		}
+		operation: actAuthenticated.outactAuthenticated.oeLoginWithCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha):ptBoolean{
+			/* Pre Protocol:*/
+			preP{let TheSystem: ctState in
+			let TheActor:actAuthenticated in
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheActor
+			
+			/* PreP01 */
+			and TheSystem.vpStarted = true
+			/* PreP02 */
+			and TheActor.rnctAuthenticated.vpIsLogged = false
+			/* PreP03 */
+			and TheActor.rnctAuthenticated.capReq = true}
+			
+			/* Pre Functional:*/
+			preF{/* PreF01 */
+			true}
+			
+			/* Post Functional:*/
+			postF{let TheSystem: ctState in
+			let TheactAuthenticated:actAuthenticated in
+			
+			let AptStringMessageForTheactAuthenticated: ptString in
+			let AptStringMessageForTheactAdministrator:ptString in
+			
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheactAuthenticated
+			
+			and /* PostF01 */
+				if (TheactAuthenticated.rnctAuthenticated.pwd
+					= AdtPassword
+					and TheactAuthenticated.rnctAuthenticated.login
+					= AdtLogin
+					)
+				then (AptStringMessageForTheactAuthenticated.eq('You are logged ! Welcome ...')
+					and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+					)
+				else (AptStringMessageForTheactAuthenticated
+					.eq('Wrong identification information ! Please try again ...')
+					and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+					and AptStringMessageForTheactAdministrator.eq('Intrusion tentative !')
+					and TheSystem.rnactAdministrator
+					.rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
+					)
+				endif}
+			
+			/* Post Protocol:*/
+			postP{ let TheSystem: ctState in
+			let TheactAuthenticated:actAuthenticated in
+			
+			self.rnActor.rnSystem = TheSystem
+			and self.rnActor = TheactAuthenticated
+			/* PostP01 */
+			if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+				and TheactAuthenticated.rnctAuthenticated.login = AdtLogin)
+			then
+				(TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true
+				and TheactAuthenticated.rnctAuthenticated@post.tries = 0
+				and TheactAuthenticated.rnctAuthenticated@post.lastAccess = -181)
+			else 
+				(TheactAuthenticated.rnctAuthenticated@post.tries++
+				and TheactAuthenticated.rnctAuthenticated@post.lastAccess = ((int)System.currentTimeMillis()/1000)
+			)endif
+			if (tries > 2)
+			then (TheactAuthenticated.rnctAuthenticated@post.capReq = true)
+			else true
+			endif}
 		}
 	}
 }
