@@ -48,7 +48,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				and ColctPI->IsEmpty() = true
 				
 				/* PreF02 */
-				and TheSystem.rnctRequest->select(id.eq(APIID)/*, status.eq("solved") */) = ColctRequest
+				and TheSystem.rnctRequest->select(id.eq(APIID) status.eq("solved")) = ColctRequest
 				and ColctRequest->IsEmpty() = false
 			}
 			
