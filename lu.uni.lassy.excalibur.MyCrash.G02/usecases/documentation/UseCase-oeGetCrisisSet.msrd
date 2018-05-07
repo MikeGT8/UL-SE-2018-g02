@@ -7,7 +7,6 @@
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetCrisisSet
 @description "goal is to request a list with every existing crisis in the system matching the given parameters"
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetCrisisSet.AetCrisisStatus ""
-@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetCrisisSet.AdtCrisisType ""
 @endParameters
 @protocolCondition
 "1
