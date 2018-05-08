@@ -332,6 +332,9 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				/* Pre P02 */
 				TheActor.rnctAuthenticated.vpIsLogged = true
+				
+				/* Pre P03 */
+				/* Coordinators access rights are equal to or lower than the crisis type.*/
 			}
 			
 			/* Pre Functional */
@@ -372,6 +375,9 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				/* Pre P02 */
 				TheActor.rnctAuthenticated.vpIsLogged = true
+				
+				/* Pre P03 */
+				/* Coordinators access rights are equal to or lower than the crisis type.*/
 			}
 			
 			/* PreFunctional */
@@ -419,6 +425,9 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				/* Pre P02 */
 				TheActor.rnctAuthenticated.vpIsLogged = true
+				
+				/* Pre P03 */
+				/* Coordinators access rights are equal to or lower than the crisis type.*/
 			}
 			
 			/* PreFunctional */
@@ -466,6 +475,9 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				/* Pre P02 */
 				TheActor.rnctAuthenticated.vpIsLogged = true
+				
+				/* Pre P03 */
+				/* Coordinators access rights are equal to or lower than the crisis type.*/
 			}
 			
 			/* PreFunctional */
@@ -519,6 +531,9 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				/* Pre P02 */
 				TheActor.rnctAuthenticated.vpIsLogged = true
+				
+				/* Pre P03 */
+				/* Coordinators access rights are equal to or lower than the crisis type.*/
 			}
 			
 			/* PreFunctional */
@@ -566,6 +581,9 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				/* Pre P02 */
 				TheActor.rnctAuthenticated.vpIsLogged = true
+				
+				/* Pre P03 */
+				/* Coordinators access rights are equal to or lower than the crisis type.*/
 			}
 			
 			/* Pre Functional */
