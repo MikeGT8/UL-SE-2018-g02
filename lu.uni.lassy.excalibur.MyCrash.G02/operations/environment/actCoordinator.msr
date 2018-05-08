@@ -207,7 +207,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Pre F01 */
 				TheSystem.rnctAlert->select(id.eq(AdtAlertID)) = ColctAlert
 				and ColctAlert->size.eq(1)
 			}
@@ -219,7 +219,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Post F01 */
 				TheSystem.rnctAlert->select(id.eq(AdtAlerID)) = ThectAlert
 				and ThectAlert.status.eq("valid")
 				and TheActor.rnInterfaceIN^ieMessage("Alert validated!")
@@ -254,7 +254,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Pre F01 */
 				TheSystem.rnctAlert->select(id.eq(AdtAlertID)) = ColctAlert
 				and ColctAlert->size.eq(1)
 			}
@@ -266,7 +266,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Post F01 */
 				TheSystem.rnctAlert->select(id.eq(AdtAlerID)) = ThectAlert
 				and ThectAlert.status.eq("closed")
 				and TheActor.rnInterfaceIN^ieMessage("Alert invalidated!")
@@ -300,8 +300,16 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			}
 			
 			/* Post Functional */
-			postF {
-				true
+			postF{
+				let TheSystem: ctState in
+				let ThectAlert:ctAlert in
+				
+				self.rnActor.rnSystem = TheSystem
+				
+				/* Post F01 */
+				TheSystem.rnctAlert->select(status.eq(AetAlertStatus)) = ThectAlert
+				and ThectAlert.rnctAlert->forAll(isSentToCoordinator)
+				and ThectAlert.msrIsSentToCoordinator
 			}
 			
 			/* Post Protocol */
@@ -332,8 +340,16 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			}
 			
 			/* Post Functional */
-			postF {
-				true
+			postF{
+				let TheSystem: ctState in
+				let ThectCrisis:ctCrisis in
+				
+				self.rnActor.rnSystem = TheSystem
+				
+				/* Post F01 */
+				TheSystem.rnctCrisis->select(status.eq(AetCrisisStatus)) = ThectCrisis
+				and ThectCrisis.rnctCrisis->forAll(isSentToCoordinator)
+				and ThectCrisis.msrIsSentToCoordinator
 			}
 			
 			/* Post Protocol */
@@ -365,7 +381,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Pre F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ColctCrisis
 				and ColctCrisis->size.eq(1)
 			}
@@ -377,7 +393,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Post F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ThectCrisis
 				and ThectCrisis.AetCrisisType.eq(AdtCrisisType)
 				and TheActor.rnInterfaceIN^ieMessage("Crisis type set to " + AdtCrisisType)
@@ -412,7 +428,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Pre F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ColctCrisis
 				and ColctCrisis->size.eq(1)
 			}
@@ -424,7 +440,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Post F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ThectCrisis
 				and ThectCrisis.AetCrisisStatus.eq(AdtCrisisStatus)
 				and TheActor.rnInterfaceIN^ieMessage("Crisis status set to " + AdtCrisisStatus)
@@ -459,7 +475,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Pre F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ColctCrisis
 				and ColctCrisis->size.eq(1)
 			}
@@ -470,6 +486,17 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				let ThectCrisis:ctCrisis in
 			
 				self.rnActor.rnSystem = TheSystem
+				
+				/* Post F01 */
+				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ThectCrisis
+				and ThectCrisis.AetCrisisStatus.eq("handled")
+				and TheActor.rnInterfaceIN^ieMessage("Handler of the crisis " + AdtCrisisID + " is being handled by coordinator with id " + self.id)
+				
+				/* Post F02 */
+				
+				/* Post F03 */
+				
+				/* Post F04 */
 			}
 			
 			/* Post Protocol */
@@ -501,7 +528,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Pre F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ColctCrisis
 				and ColctCrisis->size.eq(1)
 			}
@@ -513,7 +540,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Post F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ThectCrisis
 				and ThectCrisis.AdtComment.eq(AdtComment)
 				and TheActor.rnInterfaceIN^ieMessage("Added comment to the crisis")
@@ -548,7 +575,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Pre F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ColctCrisis
 				and ColctCrisis->size.eq(1)
 			}
@@ -560,7 +587,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 				self.rnActor.rnSystem = TheSystem
 			
-				/* PreF01 */
+				/* Post F01 */
 				TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ThectCrisis
 				and ThectCrisis.AetCrisisStatus.eq("closed")
 				and TheActor.rnInterfaceIN^ieMessage("Crisis closed")
