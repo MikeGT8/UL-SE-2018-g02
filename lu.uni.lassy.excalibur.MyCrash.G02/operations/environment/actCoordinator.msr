@@ -505,10 +505,16 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				and TheActor.rnInterfaceIN^ieMessage("Handler of the crisis " + AdtCrisisID + " is being handled by coordinator with id " + self.id)
 				
 				/* Post F02 */
-				
+				/*All the alerts related to this crisis are sent to the actor such that he can 
+				decide how to handle them.*/
 				/* Post F03 */
-				
+				/*if the crisis was already handled at pre-sate then the associated handler actor is 
+				notified about the change of handler for one of his crisis 
+				(n.b. it might be the same even if not relevant).*/
 				/* Post F04 */
+				/*a message is sent to the communication company for any human related to an alert 
+				associated to the crisis. A human will receive as many messages as alerts he sent despite 
+				the fact that they might relate to the same crisis (i.e. one alert, one acknoledgement).*/
 			}
 			
 			/* Post Protocol */
