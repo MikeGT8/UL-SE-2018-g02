@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Wed May 09 21:58:37 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtID
+@description "A string used to identify points of interest and requests."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtID.is
+"used to determine which strings are considered as valid points of interest and request identifiers."
+@endOperations

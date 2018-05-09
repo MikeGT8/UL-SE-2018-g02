@@ -9,13 +9,10 @@
 of potential crisis, but also perform requests for new potential points of interest."
 @attribute
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.id
-"the person's unique identification information."
+"the person's unique identification information of type dtPhoneNumber."
 @attribute
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.personType
 "the person type."
-@attribute
-lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.phoneNumber
-"the number of the communication device used to send an alert to iCrash system."
 @endAttributes
 @operation
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPerson.init

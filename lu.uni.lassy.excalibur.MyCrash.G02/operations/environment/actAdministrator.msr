@@ -16,7 +16,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 
 	Operation Model {
 		
-		operation: actAdministrator.outactAdministrator.oeAddPI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean {
+		operation: actAdministrator.outactAdministrator.oeAddPI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {
@@ -78,7 +78,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			}
 		}
 		
-		operation: actAdministrator.outactAdministrator.oeUpdatePI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean {
+		operation: actAdministrator.outactAdministrator.oeUpdatePI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {
@@ -135,7 +135,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			}
 		}
 		
-		operation: actAdministrator.outactAdministrator.oeDeletePI(APIID:dtPIID):ptBoolean {
+		operation: actAdministrator.outactAdministrator.oeDeletePI(APIID:dtID):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {
@@ -240,7 +240,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			}
 		}
 		
-		operation: actAdministrator.outactAdministrator.oeTreatRequest(ARequestID:dtRequestID):ptBoolean {
+		operation: actAdministrator.outactAdministrator.oeTreatRequest(ARequestID:dtID):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {
@@ -293,7 +293,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			}
 		}
 		
-		operation: actAdministrator.outactAdministrator.oeSolveRequest(ARequestID:dtRequestID):ptBoolean {
+		operation: actAdministrator.outactAdministrator.oeSolveRequest(ARequestID:dtID):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {

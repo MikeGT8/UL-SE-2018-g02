@@ -58,35 +58,34 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			
 			class ctPerson role rnctPerson cardinality[0 .. *] extends ctAuthenticated {
 				
-				attribute id:dtPersonID
+				attribute id:dtPhoneNumber
 				attribute personType:etPersonType
-				attribute phoneNumber:dtPhoneNumber
 				
-				operation init(Aid:dtPersonID, Alogin:dtLogin, Apwd:dtPassword, ApersonType:etPersonType, AphoneNumber:dtPhoneNumber):ptBoolean
+				operation init(Aid:dtPhoneNumber, Alogin:dtLogin, Apwd:dtPassword, ApersonType:etPersonType):ptBoolean
 			}
 			
 			class ctRequest role rnctRequest cardinality[0 .. *] {
 				
-				attribute id:dtRequestID
+				attribute id:dtID
 				attribute name:dtName
 				attribute city:dtCity
 				attribute category:etCategory
 				attribute status:etRequestStatus
 				attribute ignored:dtIgnored
 				
-				operation init(Aid:dtRequestID, Aname:dtName, Acity:dtCity, Astatus:etRequestStatus, Aignored:dtIgnored):ptBoolean
+				operation init(Aid:dtID, Aname:dtName, Acity:dtCity, Acategory:etCategory, Astatus:etRequestStatus, Aignored:dtIgnored):ptBoolean
 			}
 			
 			class ctPI role rnctPI cardinality[0 .. *] {
 				
-				attribute id:dtPIID
+				attribute id:dtID
 				attribute name:dtName
 				attribute city:dtCity
 				attribute category:etCategory
 				attribute location:dtGPSLocation
 				attribute description:dtDescription
 				
-				operation init(Aid:dtRequestID, Aname:dtName, Acity:dtCity, Astatus:etRequestStatus, Aignored:dtIgnored):ptBoolean
+				operation init(Aid:dtID, Aname:dtName, Acity:dtCity, Acategory:etCategory, Alocation:dtGPSLocation, Adescription:dtDescription):ptBoolean
 			
 			}
 			

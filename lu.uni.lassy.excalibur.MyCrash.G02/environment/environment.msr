@@ -76,12 +76,12 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				
 				// PI variant
 				operation oeGetAllRequestsFromCoordinator():ptBoolean
-				operation oeTreatRequest(ARequestID:dtRequestID):ptBoolean
-				operation oeSolveRequest(ARequestID:dtRequestID):ptBoolean
+				operation oeTreatRequest(ARequestID:dtID):ptBoolean
+				operation oeSolveRequest(ARequestID:dtID):ptBoolean
 				
-				operation oeAddPI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
-				operation oeUpdatePI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
-				operation oeDeletePI(APIID:dtPIID):ptBoolean
+				operation oeAddPI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
+				operation oeUpdatePI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
+				operation oeDeletePI(APIID:dtID):ptBoolean
 				
 				//Access rights
 				operation oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:etCrisisType):ptBoolean
@@ -111,7 +111,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				//PI variant
 				operation oeGetAllRequests():ptBoolean
 				operation oeCheckAvailability(ARequestName:dtName, ARequestCity:dtCity, ARequestCategory:etCategory):ptBoolean
-				operation oeDeliverRequest(ARequestID:dtRequestID):ptBoolean
+				operation oeDeliverRequest(ARequestID:dtID):ptBoolean
 				
 				//Access rights variant
 				operation oeInvalidateAlert(AdtAlertID:dtAlertID):ptBoolean
@@ -143,8 +143,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				operation oeSearchPI(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean
 				operation oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean
 				
-				operation oeGetGPSLocation(APIID:dtPIID):ptBoolean
-				operation oeGetDescription(APIID:dtPIID):ptBoolean
+				operation oeGetGPSLocation(APIID:dtID):ptBoolean
+				operation oeGetDescription(APIID:dtID):ptBoolean
 			}
 		}
 		

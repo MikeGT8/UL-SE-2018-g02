@@ -13,13 +13,8 @@ import lu.uni.lassy.messir.libraries.string
 	Concept Model {
 	
 		Primary Types {
-	   
-			datatype dtPIID extends dtString {
-			
-				operation is():ptBoolean
-			}
-			
-			datatype dtRequestID extends dtString {
+	   			
+			datatype dtID extends dtString {
 			
 				operation is():ptBoolean
 			}
@@ -30,11 +25,6 @@ import lu.uni.lassy.messir.libraries.string
 			}
 			
 			datatype dtCoordinatorID extends dtString {
-			
-				operation is():ptBoolean
-			}
-			
-			datatype dtPersonID extends dtString {
 			
 				operation is():ptBoolean
 			}

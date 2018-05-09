@@ -62,13 +62,13 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeTreatRequest(ARequestID:dtRequestID) {
+		use case system subfunction oeTreatRequest(ARequestID:dtID) {
 		
 			actor actAdministrator[primary, active]
 			actor actPerson[secondary, passive]
 		}
 		
-		use case system subfunction oeSolveRequest(ARequestID:dtRequestID) {
+		use case system subfunction oeSolveRequest(ARequestID:dtID) {
 		
 			actor actAdministrator[primary, active]
 			actor actPerson[secondary, passive]
@@ -79,7 +79,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeAddPI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
+		use case system subfunction oeAddPI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
 		
 			actor actAdministrator[primary, active]
 			actor actPerson[secondary, passive]
@@ -91,7 +91,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeUpdatePI(APIID:dtPIID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
+		use case system subfunction oeUpdatePI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory) {
 		
 			actor actAdministrator[primary, active]
 			
@@ -101,7 +101,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeDeletePI(APIID:dtPIID) {
+		use case system subfunction oeDeletePI(APIID:dtID) {
 		
 			actor actAdministrator[primary, active]
 			
@@ -133,7 +133,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeDeliverRequest(ARequestID:dtRequestID) {
+		use case system subfunction oeDeliverRequest(ARequestID:dtID) {
 		
 			actor actCoordinator[primary, active]
 			actor actPerson[secondary, passive]
@@ -167,7 +167,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeGetGPSLocation(APIID:dtPIID) {
+		use case system subfunction oeGetGPSLocation(APIID:dtID) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]
@@ -178,7 +178,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeGetDescription(APIID:dtPIID) {
+		use case system subfunction oeGetDescription(APIID:dtID) {
 		
 			actor actPerson[primary, active]
 			actor actAdministrator[secondary, passive]

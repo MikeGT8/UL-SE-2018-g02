@@ -113,7 +113,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			}
 		}
 		
-		operation: actPerson.outactPerson.oeGetGPSLocation(APIID:dtPIID):ptBoolean {
+		operation: actPerson.outactPerson.oeGetGPSLocation(APIID:dtID):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {
@@ -162,7 +162,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			}
 		}
 		
-		operation: actPerson.outactPerson.oeGetDescription(APIID:dtPIID):ptBoolean {
+		operation: actPerson.outactPerson.oeGetDescription(APIID:dtID):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {

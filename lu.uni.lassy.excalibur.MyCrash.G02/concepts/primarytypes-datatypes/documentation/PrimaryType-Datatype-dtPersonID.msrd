@@ -2,11 +2,3 @@
 @author ribby
 @date Mon Apr 30 10:50:04 CEST 2018
 */
-
-
-@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtPersonID
-@description "A string used to identify people."
-@operation
-lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtPersonID.is
-"used to determine which strings are considered as valid people identifiers."
-@endOperations
