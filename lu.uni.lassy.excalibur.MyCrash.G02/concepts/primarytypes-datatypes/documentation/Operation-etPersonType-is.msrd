@@ -1,0 +1,15 @@
+/*
+@author ribby
+@date Fri May 11 17:18:20 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.etPersonType.is
+@description "Checks if it matches a valid value of etPersonType."
+//postFunctional descriptions
+@postF 
+"returns true if it matches a valid value of etPersonType."
+@endPostF
+//example
+@example" "

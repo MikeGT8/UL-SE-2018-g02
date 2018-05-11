@@ -1,0 +1,37 @@
+/*
+@author ribby
+@date Fri May 11 16:30:49 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init.Aid
+"the id initialised for a new PI."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init.Aname
+"the name initialised for a new PI."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init.Acity
+"the city initialised for a new PI."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init.Acategory
+"the category initialised for a new PI."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init.Alocation
+"the location initialised for a new PI."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctPI.init.Adescription
+"the description initialised for a new PI."
+@endParameters
+
+@description "
+used to initialise the current object as a new instance of the ctPI type."
+//postFunctional descriptions
+@postF 
+"true iff the system poststate includes the current object as a new ctPI instance having its attributes equal to the ones provided as parameters. "
+@endPostF
+//example
+@example" "

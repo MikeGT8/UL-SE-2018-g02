@@ -1,0 +1,15 @@
+/*
+@author ribby
+@date Fri May 11 17:17:51 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtLongitude.is
+@description "Checks if it matches a valid dtLongitude."
+//postFunctional descriptions
+@postF 
+"returns true if it matches a valid dtLongitude."
+@endPostF
+//example
+@example" "

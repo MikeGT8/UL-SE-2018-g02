@@ -1,0 +1,15 @@
+/*
+@author ribby
+@date Fri May 11 17:17:34 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCoordinatorID.is
+@description "Checks if it matches a valid dtCoordinatorID."
+//postFunctional descriptions
+@postF 
+"returns true if it matches a valid dtCoordinatorID."
+@endPostF
+//example
+@example" "

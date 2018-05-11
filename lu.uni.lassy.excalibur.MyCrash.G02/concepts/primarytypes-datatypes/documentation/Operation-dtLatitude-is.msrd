@@ -1,0 +1,15 @@
+/*
+@author ribby
+@date Fri May 11 17:17:49 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtLatitude.is
+@description "Checks if it matches a valid dtLatitude."
+//postFunctional descriptions
+@postF 
+"returns true if it matches a valid dtLatitude."
+@endPostF
+//example
+@example" "
