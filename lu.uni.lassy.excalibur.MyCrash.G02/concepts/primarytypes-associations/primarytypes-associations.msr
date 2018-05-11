@@ -56,7 +56,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			// Actors' associations
 			
 			association assctPersonactComCompany
- 				ctPerson(rnctPerson)[0..*]
+ 				ctPerson(rnctHuman)[0..*]
  				actComCompany(rnactComCompany)[1..1]
  			
  			association assctPersonactPerson

@@ -77,7 +77,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			preF {
 				let TheSystem:ctState in
 				let TheActor:actPerson in
-				let ColctPI:Bag(ctPI) in
+				let ColctPI:Set(ctPI) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
@@ -134,7 +134,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			preF {
 				let TheSystem:ctState in
 				let TheActor:actPerson in
-				let ColctPI:Bag(ctPI) in
+				let ColctPI:Set(ctPI) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
@@ -183,7 +183,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			preF {
 				let TheSystem:ctState in
 				let TheActor:actPerson in
-				let ColctPI:Bag(ctPI) in
+				let ColctPI:Set(ctPI) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor

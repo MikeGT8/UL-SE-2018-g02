@@ -42,7 +42,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			postF {
 				let TheSystem:ctState in
 				let TheActor:actCoordinator in
-				let ColctRequest:Bag(ctRequest) in
+				let ColctRequest:Set(ctRequest) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
@@ -88,8 +88,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			preF {
 				let TheSystem:ctState in
 				let TheActor:actCoordinator in
-				let ColctPI:Bag(ctPI) in
-				let ColctRequest:Bag(ctRequest) in
+				let ColctPI:Set(ctPI) in
+				let ColctRequest:Set(ctRequest) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
@@ -152,7 +152,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			preF {
 				let TheSystem:ctState in
 				let TheActor:actCoordinator in
-				let ColctRequest:Bag(ctRequest) in
+				let ColctRequest:Set(ctRequest) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
