@@ -1,0 +1,12 @@
+/*
+@author ribby
+@date Sun May 13 11:16:13 CEST 2018
+*/
+
+
+@@view EGV-01
+@model Environment 
+@level Global
+@number 4
+@description "presents the actors in relation to the ctState."
+@caption "Environment global view 01"

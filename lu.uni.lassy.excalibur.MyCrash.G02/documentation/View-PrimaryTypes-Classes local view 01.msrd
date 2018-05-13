@@ -8,5 +8,5 @@
 @level Local
 @sublevel Primary Class
 @number 1
-@description "here goes the description of the view"
-@caption "this text appears"
+@description "presents the relations between all the classes."
+@caption "PrimaryTypes Classes local view 01"
