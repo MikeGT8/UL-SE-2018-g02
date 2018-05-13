@@ -571,8 +571,8 @@
     <semanticResources>usecases/documentation/UseCaseInstance-uciugLoginWithCaptcha.msrd</semanticResources>
     <semanticResources>concepts/primarytypes-associations/documentation/PrimaryType-Association-assctAuthenticatedactAuthenticated.msrd</semanticResources>
     <semanticResources>concepts/primarytypes-associations/documentation/PrimaryType-Association-assctCoordinatoractCoordinator.msrd</semanticResources>
-    <semanticResources>documentation/View-ELV-01.msrd</semanticResources>
     <semanticResources>documentation/View-EGV-01.msrd</semanticResources>
+    <semanticResources>operations/operations.msr</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_T1JlcCkHEeioBqQh-5IRZQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/lu.uni.lassy.excalibur.ui.viewer/description/excalibur_models.odesign#//@ownedViewpoints[name='msr-viewpoint']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_HZkqsDG8EeijabPupqXTFQ" name="uc-ugSecurelyUseSystem" repPath="#_HZWoQDG8EeijabPupqXTFQ">
