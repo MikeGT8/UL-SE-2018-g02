@@ -49,14 +49,15 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				TheSystem.rnctRequest->select(status.eq("")) = ColctRequest
 				
-				if (ColctRequest->IsEmpty() = false)
+				and if (ColctRequest->IsEmpty() = false)
 				then (
 					/* PostF01 */
-					TheActor.rnInterfaceIN^ieRequestListToCheck()
+					and TheActor.rnInterfaceIN^ieRequestListToCheck()
 				)
 				else (
 					/* PostF02 */
-					TheActor.rnInterfaceIN^ieMessage()
+					and AMessage.eq('No requests to check!')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
 				)
 				endif
 			}
@@ -110,19 +111,20 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
 				
-				if (ColctPI.IsEmpty() = false)
+				and if (ColctPI.IsEmpty() = false)
 				then (
 					/* PostF01 */
-					ThectRequest.rnctRequest.ignored = true
+					and ThectRequest.rnctRequest.ignored = true
+					and AMessage.eq('The PI is already in the system.')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
 				)
 				else (
 					/* PostF02 */
-					ThectRequest.rnctRequest.ignored = false
+					and ThectRequest.rnctRequest.ignored = false
+					and AMessage.eq('The PI is NOT in the system. How to proceed?')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
 				)
 				endif
-				
-				/* PostF03 */
-				and TheActor.rnInterfaceIN^ieMessage()
 			}
 			
 			/* Post Protocol:*/

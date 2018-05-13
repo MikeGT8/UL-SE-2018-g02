@@ -1,0 +1,52 @@
+/*
+@author ribby
+@date Sat May 12 16:44:44 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI.APIID
+"used to initialise the id field"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI.APIName
+"used to initialise the name field"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI.APICity
+"used to initialise the city field"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI.APIGPSLocation
+"used to initialise the gps location field"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI.APIDescription
+"used to initialise the description field"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeAddPI.APICategory
+"used to initialise the category field"
+@endParameters
+
+@description "sent to add a new point of interest in the system’s post state."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"it is supposed that there exist one ctRequest instance with the same id attribute than the one the administrator wants to create.
+it is supposed that there does NOT exist one ctPI instance with the same id attribute than the one the administrator wants to create."
+@endPreF
+//postFunctional descriptions
+@postF 
+"the new PI is added to the system.
+the administrator actor is informed about the satisfaction of its request.
+the person actor is informed about the satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"none"
+@endPostP
+//example
+@example" "

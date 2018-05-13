@@ -1,0 +1,41 @@
+/*
+@author ribby
+@date Sun May 13 09:56:34 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSearchPI
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSearchPI.APIName
+"name used for ctPI instance retrieval"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSearchPI.APICategory
+"category used for ctPI instance retrieval"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSearchPI.APICity
+"city used for ctPI instance retrieval"
+@endParameters
+
+@description "sent to search for a specific PI in the system."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"none"
+@endPreF
+//postFunctional descriptions
+@postF 
+"the actor ActPerson gets a response from the system if the PI has been found or not.
+following the response, the person actor is informed about the appropriated response of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"none"
+@endPostP
+//example
+@example" "

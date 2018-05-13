@@ -1,0 +1,29 @@
+/*
+@author ribby
+@date Sat May 12 17:03:42 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeGetAllRequestsFromCoordinator
+@description "sent to get all the requests checked by the actor ActCoordinator in the system’s post state."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"none"
+@endPreF
+//postFunctional descriptions
+@postF 
+"the actor ActAdministrator gets a list of requests to handle if there are pending requests.
+the administrator actor is also informed about the non-satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"none"
+@endPostP
+//example
+@example" "

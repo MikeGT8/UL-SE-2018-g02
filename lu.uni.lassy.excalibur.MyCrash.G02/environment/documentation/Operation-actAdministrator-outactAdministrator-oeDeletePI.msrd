@@ -1,0 +1,35 @@
+/*
+@author ribby
+@date Sat May 12 16:47:56 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeDeletePI
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeDeletePI.APIID
+"used for ctPI instance retrieval"
+@endParameters
+
+@description "sent to delete an existing point of interest in the system’s post state."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"it is supposed that there exists one ctPI instance with the same id attribute than the one the administrator wants to update."
+@endPreF
+//postFunctional descriptions
+@postF 
+"the PI attributes are updated in the system.
+the administrator actor is informed about the satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"none"
+@endPostP
+//example
+@example" "

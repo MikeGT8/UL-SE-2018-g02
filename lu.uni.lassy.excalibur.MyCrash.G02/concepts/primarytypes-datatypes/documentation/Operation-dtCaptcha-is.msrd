@@ -1,0 +1,16 @@
+/*
+@author ribby
+@date Sun May 13 10:25:57 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtCaptcha.is
+@description "Checks if it matches a valid dtCaptcha.
+ "
+//postFunctional descriptions
+@postF 
+"returns true if it matches a valid dtCaptcha."
+@endPostF
+//example
+@example" "

@@ -1,0 +1,29 @@
+/*
+@author ribby
+@date Sun May 13 09:36:53 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeGetAllRequests
+@description "sent to get a list of requested PIs."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"none"
+@endPreF
+//postFunctional descriptions
+@postF 
+"the actor ActCoordinator gets a list of requests to handle if there are unhandled requests (no status).
+the coordinator actor is also informed about the non-satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"non"
+@endPostP
+//example
+@example" "

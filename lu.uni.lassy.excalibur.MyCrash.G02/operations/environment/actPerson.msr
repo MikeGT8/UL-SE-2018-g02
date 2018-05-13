@@ -42,12 +42,23 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			postF {
 				let TheSystem:ctState in
 				let TheActor:actPerson in
+				let ColctPI:Set(ctPI) in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				TheActor.rnInterfaceIN^ieMessage()
+				TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
+				and if (ColctPI->size().eq(1))
+				then (
+					and AMessage.eq('PI found. How to proceed?')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
+				)
+				else (
+					and AMessage.eq('PI NOT found. How to proceed?')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
+				)
+				endif
 			}
 			
 			/* Post Protocol:*/
@@ -83,11 +94,11 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				and self.rnActor = TheActor
 				
 				/* PreF01 */
-				TheSystem.rnctPI->select(name.eq(APIName)/*, category.eq(APICategory), city.eq(APICity)*/) = ColctPI
+				TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
 				and ColctPI->IsEmpty() = true
 				
 				/* PreF02 */
-				and TheSystem.rnctRequest->select(name.eq(APIName)/*, category.eq(APICategory), city.eq(APICity)*/) = ColctRequest
+				and TheSystem.rnctRequest->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctRequest
 				and ColctRequest->IsEmpty() = true
 			}
 			
@@ -104,7 +115,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				ThectRequest.init(APIName, APICategory, APICity)
 				
 				/* PostF02 */
-				and TheActor.rnInterfaceIN^ieMessage()
+				and AMessage.eq('Request sent!')
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
 			}
 			
 			/* Post Protocol:*/
@@ -153,7 +165,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				TheActor.rnInterfaceIN^ieMessage()
+				AMessage.eq('Here, the GPS Location: 55.9797/56.9898')
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
 			}
 			
 			/* Post Protocol:*/
@@ -202,7 +215,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				TheActor.rnInterfaceIN^ieMessage()
+				AMessage.eq('Cactus Bascharage is a huge supermarket situated in the south of Luxembourg.')
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
 			}
 			
 			/* Post Protocol:*/

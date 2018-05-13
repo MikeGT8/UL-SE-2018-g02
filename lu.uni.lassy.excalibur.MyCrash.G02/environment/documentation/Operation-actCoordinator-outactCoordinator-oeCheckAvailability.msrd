@@ -1,0 +1,42 @@
+/*
+@author ribby
+@date Sun May 13 09:37:28 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability.ARequestName
+"name used for ctRequest instance retrieval"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability.ARequestCity
+"city used for ctRequest instance retrieval"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability.ARequestCategory
+"category used for ctRequest instance retrieval"
+@endParameters
+
+@description "sent to check if the requested PI is in the system."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"it is supposed that there exists one ctRequest instance with the same name, city and category attributes than the one the coordinator wants to compare to."
+@endPreF
+//postFunctional descriptions
+@postF 
+"the request's ignored is updated to 'false' in the system if the requested PI is NOT in the system.
+the request's ignored is updated to 'true' in the system if the requested PI is in the system.
+the coordinator actor is informed about the satisfaction or non-satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"none"
+@endPostP
+//example
+@example" "

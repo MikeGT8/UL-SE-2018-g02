@@ -1,0 +1,35 @@
+/*
+@author ribby
+@date Sat May 12 17:03:57 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeTreatRequest
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeTreatRequest.ARequestID
+"id used for ctRequest instance retrieval"
+@endParameters
+
+@description "sent to treat the requested PI in the system’s post state."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"it is supposed that there exists one ctRequest instance with the same id attribute and the status 'pending' than the one the administrator wants to treat."
+@endPreF
+//postFunctional descriptions
+@postF 
+"the request's status is updated to 'treated' in the system.
+the administrator actor is informed about the satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"none"
+@endPostP
+//example
+@example" "

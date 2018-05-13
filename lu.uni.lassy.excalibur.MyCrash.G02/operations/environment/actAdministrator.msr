@@ -222,14 +222,15 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				
 				TheSystem.rnctRequest->select(status.eq("pending")) = ColctRequest
 				
-				if (ColctRequest->IsEmpty() = false)
+				and if (ColctRequest->IsEmpty() = false)
 				then (
 					/* PostF01 */
-					TheActor.rnInterfaceIN^ieRequestList()
+					and TheActor.rnInterfaceIN^ieRequestList()
 				)
 				else (
 					/* PostF02 */
-					TheActor.rnInterfaceIN^ieMessage()
+					and AMessage.eq('No requested points of interest!')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
 				)
 				endif
 			}
@@ -267,7 +268,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				and self.rnActor = TheActor
 				
 				/* PreF01 */
-				TheSystem.rnctRequest->select(ignored.eq(false)) = ColctRequest
+				TheSystem.rnctRequest->select(status.eq("pending")) = ColctRequest
 				and ColctRequest->IsEmpty() = false
 			}
 			

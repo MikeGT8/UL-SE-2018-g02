@@ -1,0 +1,35 @@
+/*
+@author ribby
+@date Sun May 13 09:37:05 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeDeliverRequest
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeDeliverRequest.ARequestID
+"id used for ctRequest instance retrieval"
+@endParameters
+
+@description "sent to change the status of a requested PI in the system’s post state."
+//preProtocol descriptions
+@preP
+"the system is started.
+the actor logged previously and did not log out!"
+@endPreP
+//preFunctional descriptions
+@preF
+"it is supposed that there exists one ctRequest instance with the same id attribute than the one the coordinator wants to change the status."
+@endPreF
+//postFunctional descriptions
+@postF 
+"the request's status is updated to 'pending' in the system's post state.
+the coordinator actor is informed about the satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"none"
+@endPostP
+//example
+@example" "
