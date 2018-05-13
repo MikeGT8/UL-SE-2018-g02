@@ -45,11 +45,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			and self.rnActor = TheactAuthenticated
 			
 			and /* PostF01 */
-				if (TheactAuthenticated.rnctAuthenticated.pwd
-					= AdtPassword
-					and TheactAuthenticated.rnctAuthenticated.login
-					= AdtLogin
-					)
+				if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+					and TheactAuthenticated.rnctAuthenticated.login = AdtLogin )
 				then (AptStringMessageForTheactAuthenticated.eq('You are logged ! Welcome ...')
 					and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
 					)
@@ -68,26 +65,23 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			
 			self.rnActor.rnSystem = TheSystem
 			and self.rnActor = TheactAuthenticated
-			/* PostP01 */
-			int* tries = TheactAuthenticated.rnctAuthenticated@post.tries
-			int* lastAccess = TheactAuthenticated.rnctAuthenticated@post.lastAccess
-			
+			/* PostP01 */			
 			if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword and
 			TheactAuthenticated.rnctAuthenticated.login = AdtLogin) then(
 				TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true and
-				tries = 0 and
-				lastAccess = -181
+				TheactAuthenticated.rnctAuthenticated@post.tries = 0 and
+				TheactAuthenticated.rnctAuthenticated@post.lastAccess = -181
 			)else(
-				lastAccess = ((int)System.currentTimeMillis()/1000) - lastAccess
-				if(lastAccess <= 180)then(
-					tries++
-					if (tries > 2) then(
+				TheactAuthenticated.rnctAuthenticated@post.lastAccess = ((int)System.currentTimeMillis()/1000) - TheactAuthenticated.rnctAuthenticated.lastAccess
+				if(TheactAuthenticated.rnctAuthenticated@post.lastAccess <= 180)then(
+					TheactAuthenticated.rnctAuthenticated@post.tries = TheactAuthenticated.rnctAuthenticated@post.tries + 1
+					if (TheactAuthenticated.rnctAuthenticated@post.tries > 2) then(
 						TheactAuthenticated.rnctAuthenticated@post.capReq = true
 					)else
 						true
 					endif
 				)else(
-					tries = 1
+					TheactAuthenticated.rnctAuthenticated@post.tries = 1
 				)endif
 			)endif}
 		}
@@ -152,17 +146,16 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			postF{let TheSystem: ctState in
 			let TheactAuthenticated:actAuthenticated in
 			
-			let AptStringMessageForTheactAuthenticated: ptString in
+			let AptStringMessageForTheactAuthenticated:ptString in
 			let AptStringMessageForTheactAdministrator:ptString in
 			
 			self.rnActor.rnSystem = TheSystem
 			and self.rnActor = TheactAuthenticated
 			
 			and /* PostF01 */
-				if (TheactAuthenticated.rnctAuthenticated.pwd
-					= AdtPassword
-					and TheactAuthenticated.rnctAuthenticated.login
-					= AdtLogin
+			if(ACaptcha = theCaptcha) then
+				if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+					and TheactAuthenticated.rnctAuthenticated.login = AdtLogin
 					)
 				then (AptStringMessageForTheactAuthenticated.eq('You are logged ! Welcome ...')
 					and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
@@ -174,7 +167,10 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 					and TheSystem.rnactAdministrator
 					.rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
 					)
-				endif}
+				endif
+			else
+				true
+			endif}
 			
 			/* Post Protocol:*/
 			postP{ let TheSystem: ctState in
@@ -183,23 +179,19 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			self.rnActor.rnSystem = TheSystem
 			and self.rnActor = TheactAuthenticated
 			/* PostP01 */
-			String theCaptcha and
-			int* tries = TheactAuthenticated.rnctAuthenticated@post.tries and
-			int* lastAccess = TheactAuthenticated.rnctAuthenticated@post.lastAccess and
-			boolean* capReq = TheactAuthenticated.rnctAuthenticated@post.capReq
 			if(ACaptcha = theCaptcha) then
 				(if(TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword and
 				TheactAuthenticated.rnctAuthenticated.login = AdtLogin) then(
-					tries = 0 and
-					lastAccess = -181 and
-					capReq = false and
-					vpIsLogged = true
+					TheactAuthenticated.rnctAuthenticated@post.tries = 0 and
+					TheactAuthenticated.rnctAuthenticated@post.lastAccess = -181 and
+					TheactAuthenticated.rnctAuthenticated@post.capReq = false and
+					TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true
 				)else(
-					lastAccess = ((int)System.currentTimeMillis()/1000) - lastAccess
-					(if(lastAccess <= 180)then(
-						tries++
+					TheactAuthenticated.rnctAuthenticated@post.lastAccess = ((int)System.currentTimeMillis()/1000) - TheactAuthenticated.rnctAuthenticated.lastAccess
+					(if(TheactAuthenticated.rnctAuthenticated@post.lastAccess <= 180)then(
+						TheactAuthenticated.rnctAuthenticated@post.tries = TheactAuthenticated.rnctAuthenticated.tries + 1
 					)else(
-						tries = 1
+						TheactAuthenticated.rnctAuthenticated@post.tries = 1
 					)endif)
 				)endif)
 			else 
@@ -233,10 +225,10 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			and self.rnActor = TheactAuthenticated
 			
 			and /* PostF01 */
-				if (TheactAuthenticated.rnctAuthenticated.login
-					= AdtLogin
+				if (TheactAuthenticated.rnctAuthenticated.login = AdtLogin
 					)
-				then (AptStringMessageForTheactAuthenticated.eq('User found, resetting password ...')
+				then (TheactAuthenticated.rnctAuthenticated@post.pwd = new dtPassword( random() )
+					and AptStringMessageForTheactAuthenticated.eq('User found, resetting password ... new password = ' + TheactAuthenticated.rnctAuthenticated@post.pwd)
 					and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
 					)
 				else (AptStringMessageForTheactAuthenticated
@@ -246,18 +238,8 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				endif}
 			
 			/* Post Protocol:*/
-			postP{ let TheSystem: ctState in
-			let TheactAuthenticated:actAuthenticated in
-			
-			self.rnActor.rnSystem = TheSystem
-			and self.rnActor = TheactAuthenticated
-			/* PostP01 */
-			if(TheactAuthenticated.rnctAuthenticated.login = AdtLogin) then(
-				TheactAuthenticated.rnctAuthenticated@post.pwd = new String(random())
-				// new string shows on screen
-			)else(
-				false
-			)endif}
+			postP{
+			}
 		}
 	}
 }
