@@ -1,0 +1,9 @@
+/*
+@author mikel
+@date Tue May 15 15:22:14 CEST 2018
+*/
+
+
+@@Primary Type Association lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations.assctAlertctPerson
+@description "alerts are notified by person through the communication company. We need to keep an internal
+representation of those person to allow for communication of alert handling."

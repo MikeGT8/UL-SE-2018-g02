@@ -1,0 +1,52 @@
+/*
+@author mikel
+@date Tue May 15 15:10:54 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actMsrCreator.outactMsrCreator.oeCreateSystemAndEnvironment
+@description "
+ sent to request the initialization of the system’s class instances and the environment actors instances."
+//preProtocol descriptions
+@preP
+"PreP 1 none "
+@endPreP
+//preFunctional descriptions
+@preF
+"PreF 1 none "
+@endPreF
+//postFunctional descriptions
+@postF 
+"
+PostF 1 the ctState instance is initialized with the integer 1 for the crisis and alert counters used for
+their identifications, a value for the clock corresponding to a default inital time (i.e. January
+1st, 1970) the crisis reminder period is set to 300 seconds, the maximum crisis reminder
+period is fixed to 1200 seconds (i.e. 20 minutes), an initial value for the automatic reminder
+period equal to the current date and time and the system is considered in a started state.
+Those predicates must be satisfied first since all the other depend on the existence
+of a ctState instance !
+PostF 2 the actMsrCreator actor instance is initiated (remember that since the
+oeCreateSystemAndEnvironment is a special event it role is to make consistent the
+post state thus creating the actor and its interfaces is required even though the sending of
+this message logically would need the actor and its interfaces to already exist ...).
+PostF 3 the environment for communication company actors, in the post state, is made of
+AqtyComCompanies instances allowing for receiving and sending messages to humans.
+PostF 4 the environment for administrator actors, in the post state, is made of one instance.
+PostF 5 the environment for activator actors, in the post state, is made of one instance allowing for
+automatic message sending based on current system’s and environment state’.
+continues in next page . . .
+5.6. ENVIRONMENT - OUT INTERFACE OPERATION SCHEME FOR ACTMSRCREATOR 73
+. . .Operation table continuation
+PostF 6 the set of ctAdministrator instances at post is made of one instance initialized with
+’icrashadmin’ (resp. ’7WXC1359’) for login (resp. password) values.
+PostF 7 the association between ctAdministrator and actAdministrator is made of one couple made
+of the conjointly specified instances. "
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 none is given since the only protocol variable to be modified in the post state is the one
+initialized with the ctState instance (i.e. vpStarted). "
+@endPostP
+//example
+@example" "

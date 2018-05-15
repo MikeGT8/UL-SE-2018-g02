@@ -1,0 +1,73 @@
+/*
+@author mikel
+@date Tue May 15 14:46:43 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert.APersonType
+"the kind of human informing of an alert."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert.APIName
+"the name of the point of interest referred in the alert"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert.APIGPSLocation
+"the GPS location of the point of interest referred in the alert"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert.AdtDate
+"the date of the alert"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert.AdtTime
+"the time of the alert"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert.AProblemDescription
+"a free text message sent by the human providing information on the alert that he wants to
+declare"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert.PhoneNumber
+"the phone number of the human sending the alert SMS message"
+@endParameters
+
+@description "
+ Any human having a phone able to connect to the communication companies using the iCrash system
+can send his company an sms message with structured information in order to declare an alert."
+//preProtocol descriptions
+@preP
+"PreP 1 the system is supposed to be created and initialized. "
+@endPreP
+//preFunctional descriptions
+@preF
+"PreF 1 the date and time the alert is declared is supposed to be in the past with respect to the
+current time known by the system. "
+@endPreF
+//postFunctional descriptions
+@postF 
+"
+PostF 1 the ctState attribute for the next value for alert IDs is incremented by one at post.
+PostF 2 a new alert instance exists in the post state with status pending, instant information (resp.
+GPS location and comment) based on date and time provided (resp. position and comment);
+and with alert ID being a string conversion of the dtInteger value available in the pre state
+in the ctState instance.
+PostF 3 if there exist no already registered alert near to the alert currently declared then a new crisis
+is added in the post state and initialized with: its ID being the one provided by the ctState
+instance (which is incremented by one in the post state), its type considered as small, its
+status being pending, its declared time being the same than the alert and a default comment
+indicating that a report will come later on. else the crisis to which the new alert must be
+related to is the one related to any alert nearby in the pre-state.
+PostF 4 the post state relates the new alert to the previously characterized crisis.
+PostF 5 if there is no ctHuman instance having same phone number and same kind in the prestate
+then a new one is added in the post-state with given phone number and kind and is
+associated to the communication company actor used to declare the alert. else the pre-state
+one is chosen
+PostF 6 and this specified ctHuman is related to the new alert thus indicating he has signled the
+alert. "
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 none "
+@endPostP
+//example
+@example" "

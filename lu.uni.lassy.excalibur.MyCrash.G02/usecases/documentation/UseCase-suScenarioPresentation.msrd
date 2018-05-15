@@ -5,7 +5,7 @@
 
 
 @@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.suScenarioPresentation
-@description ""
+@description "scenario shown in a presentation"
 @protocolCondition
 "
 "

@@ -1,0 +1,42 @@
+/*
+@author mikel
+@date Tue May 15 14:31:25 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeDeleteCoordinator.AdtCoordinatorID
+"used for ctCoordinator instance retrieval"
+@endParameters
+
+@description "
+ sent to delete an existing coordinator in the system’s post state and environment’s post state."
+//preProtocol descriptions
+@preP
+"
+PreP 1 the system is started
+PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctAdministrator instance
+is considered logged) "
+@endPreP
+//preFunctional descriptions
+@preF
+" 
+PreF 1 it is supposed that there exist one ctCoordinator instance with the same id attribute than
+the one the administrator wants to delete."
+@endPreF
+//postFunctional descriptions
+@postF 
+"
+PostF 1 the ctCoordinator class instance having the required id do not belong anymore to the post
+state as well as its related actCoordinator actor instance.
+PostF 2 the administrator actor is informed about the satisfaction of its request."
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 none"
+@endPostP
+//example
+@example" "

@@ -1,0 +1,39 @@
+/*
+@author mikel
+@date Tue May 15 15:08:53 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeValidateAlert
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeValidateAlert.AdtAlertID
+"the identification information used to determine the alert instance"
+@endParameters
+
+@description "
+ sent to indicate that a specific alert is not a fake."
+//preProtocol descriptions
+@preP
+"
+PreP 1 the system is started
+PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+is considered logged) "
+@endPreP
+//preFunctional descriptions
+@preF
+"PreF 1 it is supposed that there exist one ctAlert instance with the same id attribute value as the
+one provided by the coordinator actor who wants to validate. "
+@endPreF
+//postFunctional descriptions
+@postF 
+"PostF 1 the ctAlert class instance having the provided id is considered as valid in the post state and
+the coordinator actor is informed about the satisfaction of its request. "
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 none "
+@endPostP
+//example
+@example" "

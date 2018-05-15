@@ -1,0 +1,34 @@
+/*
+@author mikel
+@date Tue May 15 14:17:03 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.init
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.init.Aid
+"unique identifier for an alert"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.init.Astatus
+"current alert status"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.init.Alocation
+"location from which alert was sent"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.init.Ainstant
+"current alert instant"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.init.Acomment
+"comment describing the alert"
+@endParameters
+
+@description "
+used to initialize the current object as a new instance of the ctAlert type. "
+//postFunctional descriptions
+@postF 
+"true iff the system poststate includes the current object as a new ctAlert instance having its attributes equal to the ones provided as parameters. "
+@endPostF
+//example
+@example" "

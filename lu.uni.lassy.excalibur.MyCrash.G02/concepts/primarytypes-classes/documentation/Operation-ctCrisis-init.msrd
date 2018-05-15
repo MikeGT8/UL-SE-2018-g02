@@ -1,0 +1,37 @@
+/*
+@author mikel
+@date Tue May 15 14:18:13 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init.Aid
+"unique identifier for a crisis"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init.Atype
+"current crisis type"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init.Astatus
+"current crisis status"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init.Alocation
+"location where crisis is occurring/occurred"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init.Ainstant
+"current crisis instant"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctCrisis.init.Acomment
+"comment describing the crisis"
+@endParameters
+
+@description "
+used to initialize the current object as a new instance of the ctCrisis type. "
+//postFunctional descriptions
+@postF 
+"true iff the system poststate includes the current object as a new ctCrisis instance having its attributes equal to the ones provided as parameters. "
+@endPostF
+//example
+@example" "

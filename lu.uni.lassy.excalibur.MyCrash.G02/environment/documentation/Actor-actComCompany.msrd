@@ -1,0 +1,21 @@
+/*
+@author mikel
+@date Tue May 15 14:00:40 CEST 2018
+*/
+
+
+@@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany
+@description "represents the communication company stakeholder ensuring the input/output of textual messages with
+humans having communication devices."
+//input events
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.inactComCompany.ieSmsSend
+"The input event ieSmsSend returns a confirmation to the person who sent an alert."
+
+@endInputEvents
+//output events
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actComCompany.outactComCompany.oeAlert
+"The input event oeAlert redirects an alert received from a person to the coordinators."
+
+@endOutputEvents

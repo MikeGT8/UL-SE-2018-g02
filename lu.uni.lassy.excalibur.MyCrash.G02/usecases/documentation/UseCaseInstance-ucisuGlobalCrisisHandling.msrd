@@ -1,0 +1,8 @@
+/*
+@author mikel
+@date Tue May 15 14:38:25 CEST 2018
+*/
+
+
+@@Instance Use Case usecases.ucisuGlobalCrisisHandling.ucisuGlobalCrisisHandling
+@description "shows how the coordinator handles crisis"

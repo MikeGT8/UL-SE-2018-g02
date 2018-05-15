@@ -1,0 +1,9 @@
+/*
+@author mikel
+@date Tue May 15 15:25:43 CEST 2018
+*/
+
+
+@@Primary Type Association lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations.assctPersonactComCompany
+@description "in order to communicate with person who informed about potential crisis, we need to record the
+communication company to use to send them messages."

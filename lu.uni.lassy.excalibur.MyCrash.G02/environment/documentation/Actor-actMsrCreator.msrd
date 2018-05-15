@@ -1,0 +1,21 @@
+/*
+@author mikel
+@date Tue May 15 14:03:43 CEST 2018
+*/
+
+
+@@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actMsrCreator
+@description "Represents the creator stakeholder in charge of state and environment initialization."
+//input events
+@inputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actMsrCreator.inactMsrCreator.ieSystemCreated
+"confirmation message that the system was successfully created."
+
+@endInputEvents
+//output events
+@outputEvent
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actMsrCreator.outactMsrCreator.oeCreateSystemAndEnvironment
+"sent to request the initialization of the system’s class instances and the environment actors
+instances."
+
+@endOutputEvents

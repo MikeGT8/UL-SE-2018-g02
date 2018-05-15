@@ -1,0 +1,45 @@
+/*
+@author mikel
+@date Tue May 15 14:42:44 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogin
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogin.ALogin
+"first information used to determine accessibility rights for the actual actor."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLogin.APassword
+"second information used to determine accessibility rights for the actual actor."
+@endParameters
+
+@description "
+ sent to request authorization to request access secured system operations."
+//preProtocol descriptions
+@preP
+"
+PreP 1 the system is started
+PreP 2 the actor is not already logged in ! (i.e. the associated ctAuthenticated instance is not
+considered logged) "
+@endPreP
+//preFunctional descriptions
+@preF
+"PreF 1 none "
+@endPreF
+//postFunctional descriptions
+@postF 
+"PostF 1 if the login and password provided by the actor correspond to the ones that belong to the
+ctAuthenticated instance he is related to then a welcome message is sent to the actor (n.b.
+the logged status is changed as a post-protocol condition); else the actor is notified that he
+gave incorrect data and all the administrator actors existing in the environment are notified
+of an intrusion attempt. "
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 if the authentication information is correct then the actor is known to be logged in ! (i.e.
+the associated ctAuthenticated instance with given login and password is considered logged) "
+@endPostP
+//example
+@example" "

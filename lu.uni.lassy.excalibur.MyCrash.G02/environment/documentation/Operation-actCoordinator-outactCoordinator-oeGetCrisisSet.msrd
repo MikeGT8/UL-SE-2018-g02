@@ -9,26 +9,32 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.
 //parameters
 @parameter
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeGetCrisisSet.AetCrisisStatus
-""
+"the status information used to determine the crisis to send back to the actor"
 @endParameters
 
 @description "
- "
+ sent to request all the ctCrisis instances having a specific status."
 //preProtocol descriptions
 @preP
-" "
+"
+PreP 1 the system is started
+PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+is considered logged) "
 @endPreP
 //preFunctional descriptions
 @preF
-" "
+"PreF 1 none "
 @endPreF
 //postFunctional descriptions
 @postF 
-" "
+"PostF 1 the post state is the one obtained by satisfying the isSentToCoordinator predicate
+for each crisis having the provided status and for the actor sending the message
+ieSendACrisis. (cf. specification of isSentToCoordinator predicate given for the
+ctCrisis type. "
 @endPostF
 //postProtocol descriptions
 @postP 
-" "
+"PostP 1 none "
 @endPostP
 //example
 @example" "

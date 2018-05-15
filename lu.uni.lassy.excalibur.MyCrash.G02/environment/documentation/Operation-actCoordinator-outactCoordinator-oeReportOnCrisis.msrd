@@ -1,0 +1,41 @@
+/*
+@author mikel
+@date Tue May 15 15:00:58 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeReportOnCrisis
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeReportOnCrisis.AdtCrisisID
+"the identification information used to determine the crisis to report on"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeReportOnCrisis.AdtComment
+"the textual information commenting the crisis"
+@endParameters
+
+@description "
+ sent to update the textual information available for a specific handled crisis."
+//preProtocol descriptions
+@preP
+"
+PreP 1 the system is started
+PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+is considered logged) "
+@endPreP
+//preFunctional descriptions
+@preF
+"PreF 1 it is supposed that there exist one crisis in the pre state having the given id. "
+@endPreF
+//postFunctional descriptions
+@postF 
+"PostF 1 the comment attribute of the crisis instance having the given id is replaced by the given one
+and the requesting actor is notified of this update. "
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 none "
+@endPostP
+//example
+@example" "

@@ -1,0 +1,8 @@
+/*
+@author mikel
+@date Tue May 15 15:23:17 CEST 2018
+*/
+
+
+@@Primary Type Association lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations.assctCrisisctCoordinator
+@description "at any point in time we need to know if a coordinator is handling existing crisis or not."

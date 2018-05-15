@@ -1,0 +1,8 @@
+/*
+@author mikel
+@date Tue May 15 15:35:02 CEST 2018
+*/
+
+
+@@Primary Type Association lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations.assctPIctAdministrator
+@description "one administrator is charge of handling various point of interest"

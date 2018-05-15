@@ -1,0 +1,22 @@
+/*
+@author mikel
+@date Tue May 15 14:21:19 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.isSentToCoordinator
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.isSentToCoordinator.AactCoordinator
+"Coordinator receiving an alert"
+@endParameters
+
+@description "
+ confirmation message that the alert was sent to the coordinator"
+//postFunctional descriptions
+@postF 
+"the receiving coordinator successfully received a notification about the alert and has access to it"
+@endPostF
+//example
+@example" "

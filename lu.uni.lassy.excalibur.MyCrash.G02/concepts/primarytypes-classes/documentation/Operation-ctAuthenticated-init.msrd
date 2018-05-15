@@ -1,0 +1,25 @@
+/*
+@author mikel
+@date Tue May 15 14:15:52 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.init
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.init.Alogin
+"username used to login"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.init.Apwd
+"password used to login"
+@endParameters
+
+@description "
+used to initialize the current object as a new instance of the ctAuthenticated type. "
+//postFunctional descriptions
+@postF 
+"true if the system poststate includes the current object as a new ctAuthenticated instance having its attributes equal to the ones provided as parameters. "
+@endPostF
+//example
+@example" "

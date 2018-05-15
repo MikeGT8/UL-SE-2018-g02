@@ -1,0 +1,39 @@
+/*
+@author mikel
+@date Tue May 15 14:55:06 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeGetAlertSet
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeGetAlertSet.AetAlertStatus
+"the criteria used to select the alerts to send back to the actor"
+@endParameters
+
+@description "
+ sent to request all the ctAlert instances having a specific status."
+//preProtocol descriptions
+@preP
+"
+PreP 1 the system is started
+PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+is considered logged) "
+@endPreP
+//preFunctional descriptions
+@preF
+"PreF 1 none "
+@endPreF
+//postFunctional descriptions
+@postF 
+"PostF 1 the post state is the one obtained by satisfying the isSentToCoordinator predicate for
+each alert having the provided status and for the actor sending the message. (cf. specification
+of isSentToCoordinator predicate given for the ctAlert type. "
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 none "
+@endPostP
+//example
+@example" "

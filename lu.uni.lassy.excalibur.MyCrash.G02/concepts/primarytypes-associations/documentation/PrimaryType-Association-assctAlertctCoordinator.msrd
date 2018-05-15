@@ -1,0 +1,8 @@
+/*
+@author mikel
+@date Tue May 15 15:33:44 CEST 2018
+*/
+
+
+@@Primary Type Association lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations.assctAlertctCoordinator
+@description "alerts need to be sent to coordinator in order to be validated or invalidated"

@@ -1,0 +1,37 @@
+/*
+@author mikel
+@date Tue May 15 14:16:33 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init.Aid
+""
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init.Aname
+""
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init.Acity
+""
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init.Acategory
+""
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init.Astatus
+""
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctRequest.init.Aignored
+""
+@endParameters
+
+@description "
+used to initialize the current object as a new instance of the ctRequest type. "
+//postFunctional descriptions
+@postF 
+"true iff the system poststate includes the current object as a new ctRequest instance having its attributes equal to the ones provided as parameters. "
+@endPostF
+//example
+@example" "

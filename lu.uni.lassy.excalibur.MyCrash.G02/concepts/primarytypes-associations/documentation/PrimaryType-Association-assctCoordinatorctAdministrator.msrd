@@ -1,0 +1,8 @@
+/*
+@author mikel
+@date Tue May 15 15:34:17 CEST 2018
+*/
+
+
+@@Primary Type Association lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations.assctCoordinatorctAdministrator
+@description "one administrator manages more coordinators"

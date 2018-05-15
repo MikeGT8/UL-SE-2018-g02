@@ -1,0 +1,40 @@
+/*
+@author mikel
+@date Tue May 15 14:07:52 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init.AnextValueForAlertID
+"id given to the next alert"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init.AnextValueForCrisisID
+"id given to the next crisis"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init.Aclock
+"current time"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init.AcrisisReminderPeriod
+"time period in which a reminder is sent to the coordinator to sollicitate crisis handling"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init.AmaxCrisisReminderPeriod
+"maximum amount of time that can elapse between reminders"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init.AvpLastReminder
+"when last reminder was sent"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctState.init.AvpStarted
+"is system started or not"
+@endParameters
+
+@description "
+used to initialize the current object as a new instance of the ctState type. "
+//postFunctional descriptions
+@postF 
+"true iff the system poststate includes the current object as a new ctState instance having its attributes equal to the ones provided as parameters. "
+@endPostF
+//example
+@example" "

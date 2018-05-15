@@ -1,0 +1,44 @@
+/*
+@author mikel
+@date Tue May 15 14:33:46 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeUpdateCoordinatorAccessRights
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeUpdateCoordinatorAccessRights.AdtCoordinatorID
+"used for ctCoordinator instance retrieval"
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeUpdateCoordinatorAccessRights.CoordinatorAccessRights
+"used to update access rights field"
+@endParameters
+
+@description "
+ sent to update an existing coordinator's access rights in the system’s post state and environment’s post state."
+//preProtocol descriptions
+@preP
+"
+PreP 1 the system is started
+PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctAdministrator instance
+is considered logged) "
+@endPreP
+//preFunctional descriptions
+@preF
+"it is supposed that there exist one ctCoordinator instance with the same id attribute than
+the one the administrator wants to update."
+@endPreF
+//postFunctional descriptions
+@postF 
+"
+PostF 1 the ctCoordinator class instance having the required id has its access rights updated in the post
+state as well as its related actCoordinator actor instance.
+PostF 2 the administrator actor is informed about the satisfaction of its request. "
+@endPostF
+//postProtocol descriptions
+@postP 
+"PostP 1 none "
+@endPostP
+//example
+@example" "

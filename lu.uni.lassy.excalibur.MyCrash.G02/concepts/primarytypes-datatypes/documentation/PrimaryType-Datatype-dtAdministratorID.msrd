@@ -1,0 +1,12 @@
+/*
+@author mikel
+@date Tue May 15 14:05:05 CEST 2018
+*/
+
+
+@@Primary Type Datatype lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtAdministratorID
+@description "A string used to identify the administrator."
+@operation
+lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes.dtAdministratorID.is
+"used to determine which strings are considered as valid administrator identifiers."
+@endOperations
