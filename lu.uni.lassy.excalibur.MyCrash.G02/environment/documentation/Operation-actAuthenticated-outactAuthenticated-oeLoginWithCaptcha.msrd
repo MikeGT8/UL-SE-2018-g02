@@ -1,0 +1,41 @@
+/*
+@author excalibur
+@date Tue May 15 21:47:45 CEST 2018
+*/
+
+
+@@Operation
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLoginWithCaptcha
+//parameters
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLoginWithCaptcha.ALogin
+"The username of the actor."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLoginWithCaptcha.APassword
+"The key to login of the actor."
+@parameter
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.outactAuthenticated.oeLoginWithCaptcha.ACaptcha
+"The captcha the actor sent to the system to compare to the captcha to solve."
+@endParameters
+
+@description "This operation can and must only be done when capReq boolean value is true. Used to authenticate the
+user and to also authenticate the the user is not a robot.
+ "
+//preProtocol descriptions
+@preP
+" "
+@endPreP
+//preFunctional descriptions
+@preF
+" "
+@endPreF
+//postFunctional descriptions
+@postF 
+" "
+@endPostF
+//postProtocol descriptions
+@postP 
+" "
+@endPostP
+//example
+@example" "
