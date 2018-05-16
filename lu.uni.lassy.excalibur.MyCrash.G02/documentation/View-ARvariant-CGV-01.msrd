@@ -1,0 +1,13 @@
+/*
+@author mikel
+@date Wed May 16 15:38:25 CEST 2018
+*/
+
+
+@@view ARvariant-CGV-01
+@model Concept 
+@level Global
+@sublevel Primary Class
+@number 6
+@description "Represents class and actor relation for Access Rights variant."
+@caption "ARvariant-CGV-01 concept global view 01"

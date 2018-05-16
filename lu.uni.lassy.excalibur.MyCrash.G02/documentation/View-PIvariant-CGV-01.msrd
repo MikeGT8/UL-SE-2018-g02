@@ -1,0 +1,13 @@
+/*
+@author mikel
+@date Wed May 16 15:16:55 CEST 2018
+*/
+
+
+@@view PIvariant-CGV-01
+@model Concept 
+@level Global
+@sublevel Primary Class
+@number 5
+@description "Represents class-actor relation for the PI variant"
+@caption "PIvariant-CGV-01 concept global view 01"
