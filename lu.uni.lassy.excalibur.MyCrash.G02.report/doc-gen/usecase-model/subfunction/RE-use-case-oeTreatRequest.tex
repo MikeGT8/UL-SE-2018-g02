@@ -1,0 +1,51 @@
+\subsubsection{subfunction-oeTreatRequest}
+
+\label{RE-use-case-oeTreatRequest}
+
+
+The administrator's goal is to treat a pending request.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeTreatRequest}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+\addrowheading{Parameters}
+\addnumberedsinglerow{ARequestID: dtID}{}
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[active]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actPerson[passive]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The administrator's goal is to treat a pending request.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+a pending request must exist in the system.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+the request status is changed to treated.
+a message request being treated is sent to the administrator.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

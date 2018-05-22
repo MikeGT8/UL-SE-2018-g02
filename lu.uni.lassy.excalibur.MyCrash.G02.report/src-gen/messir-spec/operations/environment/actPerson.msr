@@ -1,0 +1,228 @@
+/*
+* @author mikel
+* @date Fri Mar 16 11:46:38 CET 2018
+*/
+
+package lu.uni.lassy.excalibur.MyCrash.G02.operations.environment.actPerson {
+
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.string
+
+import lu.uni.lassy.excalibur.MyCrash.G02.environment
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
+
+	Operation Model {
+		
+		operation: actPerson.outactPerson.oeSearchPI(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				true
+			}
+			
+			/* Post Functional: */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				let ColctPI:Set(ctPI) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
+				and if (ColctPI->size().eq(1))
+				then (
+					and AMessage.eq('PI found. How to proceed?')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
+				)
+				else (
+					and AMessage.eq('PI NOT found. How to proceed?')
+					and TheActor.rnInterfaceIN^ieMessage(AMessage)
+				)
+				endif
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actPerson.outactPerson.oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				let ColctPI:Set(ctPI) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
+				and ColctPI->IsEmpty() = true
+				
+				/* PreF02 */
+				and TheSystem.rnctRequest->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctRequest
+				and ColctRequest->IsEmpty() = true
+			}
+			
+			/* Post Functional: */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				let ThectRequest:ctRequest in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				ThectRequest.init(APIName, APICategory, APICity)
+				
+				/* PostF02 */
+				and AMessage.eq('Request sent!')
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actPerson.outactPerson.oeGetGPSLocation(APIID:dtID):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				let ColctPI:Set(ctPI) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctPI->select(id.eq(APIID)) = ColctPI
+				and ColctPI->IsEmpty() = false
+			}
+			
+			/* Post Functional: */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				AMessage.eq('Here, the GPS Location: 55.9797/56.9898')
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+		
+		operation: actPerson.outactPerson.oeGetDescription(APIID:dtID):ptBoolean {
+			
+			/* Pre Protocol: */
+			preP {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				TheSystem.vpStarted = true
+				
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = true
+			}
+			
+			/* Pre Functional: */
+			preF {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				let ColctPI:Set(ctPI) in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreF01 */
+				TheSystem.rnctPI->select(id.eq(APIID)) = ColctPI
+				and ColctPI->IsEmpty() = false
+			}
+			
+			/* Post Functional: */
+			postF {
+				let TheSystem:ctState in
+				let TheActor:actPerson in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PostF01 */
+				AMessage.eq('Cactus Bascharage is a huge supermarket situated in the south of Luxembourg.')
+				and TheActor.rnInterfaceIN^ieMessage(AMessage)
+			}
+			
+			/* Post Protocol:*/
+			postP {
+				true
+			}
+		}
+	}
+}

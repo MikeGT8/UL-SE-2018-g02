@@ -1,0 +1,59 @@
+\subsubsection{summary-suGlobalCrisisHandling}
+
+\label{RE-use-case-suGlobalCrisisHandling}
+
+
+the actCoordinator’s goal is to monitor the alerts received and the corresponding crisis in order to act
+as necessary to handle the crisis.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{suGlobalCrisisHandling}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{summary}
+  
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actCoordinator[active]}}
+
+
+
+\addrowheading{Goal(s) description}
+\addsinglerow{the actCoordinator’s goal is to monitor the alerts received and the corresponding crisis in order to act
+as necessary to handle the crisis.}
+
+\addrowheading{Reuse}
+\addnumberedsinglerow{}{\msrucname{ugSecurelyUseSystem }}
+\addnumberedsinglerow{}{\msrucname{ugManageCrisis }}
+\addnumberedsinglerow{}{\msrucname{ugMonitor }}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{1 the iCrash system has been deployed
+2 the coordinator actor involved in the use case has been declared by the actor
+actAdministrator
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{modifications have been made by the coordinator on existing alerts or crisis OR the
+coordinator requested an updated status on existing alerts or crisis.
+}
+
+\addrowheading{Main Steps}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugSecurelyUseSystem} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugManageCrisis} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugMonitor} use case}
+\addrowheading{Steps Ordering Constraints}
+\addnumberedsinglerow{}{Step a must be executed before executing all other steps}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

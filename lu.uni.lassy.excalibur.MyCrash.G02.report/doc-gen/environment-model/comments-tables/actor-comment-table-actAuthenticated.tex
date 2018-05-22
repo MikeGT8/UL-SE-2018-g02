@@ -1,0 +1,40 @@
+\subsection{\msrcode{actAuthenticated} Actor}
+
+
+\begin{actortable}
+	\addheading{Actor}
+	
+	\adddoublerow{actAuthenticated}{Authentication variant: The abstract actor authenticated is getting implemented by multiple other actors.
+					It is needed to perform simple task, like login/logout. You can also request to reset your password.}
+	
+	
+	
+	
+
+	\addrowheading{OutputInterfaces}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAuthenticated.outactAuthenticated.oeLogin}
+			{\msrcode{oeLogin(ALogin:dtLogin, APassword:dtPassword):ptBoolean}}}
+			{The output event oeLogin sends the username and password to the system, used to authenticate the user trying to login.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAuthenticated.outactAuthenticated.oeLogout}
+			{\msrcode{oeLogout():ptBoolean}}}
+			{The output event oeLogout sends a logout request, from the currently logged in user, to the system.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAuthenticated.outactAuthenticated.oeLoginWithCaptcha}
+			{\msrcode{oeLoginWithCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha):ptBoolean}}}
+			{The output event oeLoginWithCaptcha sends the username, password and captcha to the system, used to authenticate the user and
+			to confirm that the user is not a robot.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAuthenticated.outactAuthenticated.oeResetPassword}
+			{\msrcode{oeResetPassword(ALogin:dtLogin):ptBoolean}}}
+			{The output event oeResetPassword requests a password request of any given user.}
+	
+	\addrowheading{InputInterfaces}
+	\addnumbereddoublerow{IN}{\msrcode{ieLogin(AMessage:dtMessage):ptBoolean}}
+							 {The returned message from a positive or negative login. This input field is used when a use tries to login in any form.
+							 (Captcha or normal login)}
+	\addnumbereddoublerow{IN}{\msrcode{ieLoggedOut(AMessage:dtMessage):ptBoolean}}
+							 {The input event ieLoggedOut confirms that the logout has been completed.}
+	\addnumbereddoublerow{IN}{\msrcode{ieMessage(AMessage:dtMessage):ptBoolean}}
+							 {The input event ieMessage returns a message from the system that tells you useful things.}
+	\addnumbereddoublerow{IN}{\msrcode{ieResetPassword():ptBoolean}}
+							 {The input event ieResetPassword specifies that the request is being treated. Also tells you what you need to provide next.}
+	
+\end{actortable}

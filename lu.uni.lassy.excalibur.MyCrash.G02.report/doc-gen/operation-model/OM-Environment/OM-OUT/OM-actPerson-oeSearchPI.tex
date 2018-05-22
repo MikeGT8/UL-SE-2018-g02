@@ -1,0 +1,97 @@
+\subsection{Operation Model for oeSearchPI}
+
+\label{OM-oeSearchPI}
+
+
+The \msrcode{oeSearchPI} operation has the following properties:
+
+	\begin{operationmodel}
+	\addheading{Operation}
+	\adddoublerow{oeSearchPI}{sent to search for a specific PI in the system.}
+
+	\addrowheading{Parameters}
+	\addnumbereddoublerow{}{APIName: dtName}{name used for ctPI instance retrieval} 
+	\addnumbereddoublerow{}{APICategory: etCategory}{category used for ctPI instance retrieval} 
+	\addnumbereddoublerow{}{APICity: dtCity}{city used for ctPI instance retrieval} 
+
+	\addrowheading{Return type}
+	\addsinglerow{ptBoolean}
+
+	\addrowheading{Pre-Condition (protocol)}
+	\addnumberedsinglerow{PreP}{the system is started.
+	the actor logged previously and did not log out!}
+		
+	\addrowheading{Pre-Condition (functional)}
+	\addnumberedsinglerow{PreF}{none}
+
+	\addrowheading{Post-Condition (functional)}
+	\addnumberedsinglerow{PostF}{the actor ActPerson gets a response from the system if the PI has been found or not.
+	following the response, the person actor is informed about the appropriated response of its request.}
+
+	\addrowheading{Post-Condition (protocol)}
+	\addnumberedsinglerow{PostP}{none}
+	\end{operationmodel}
+
+
+
+	% ------------------------------------------
+	% MCL Listing
+	% ------------------------------------------
+	\vspace{1cm}
+	The listing~\ref{OM-actPerson-oeSearchPI-MCL-LST} provides the \msrmessir (MCL-oriented) specification of the operation.
+	
+	\scriptsize
+	\vspace{0.5cm}
+	\begin{lstlisting}[style=MessirStyle,firstnumber=auto,captionpos=b,caption={\msrmessir (MCL-oriented) specification of the operation \emph{oeSearchPI}.},label=OM-actPerson-oeSearchPI-MCL-LST]
+
+	/* Pre Protocol:*/ 
+	preP{let TheSystem:ctState in
+					let TheActor:actPerson in
+					
+					self.rnActor.rnSystem = TheSystem
+					and self.rnActor = TheActor
+					
+					/* PreP01 */
+					TheSystem.vpStarted = true
+					
+					/* PreP02 */
+					and TheActor.rnctAuthenticated.vpIsLogged = true}
+	
+	/* Pre Functional:*/
+	preF{true}
+	
+	/* Post Functional:*/ 
+	postF{let TheSystem:ctState in
+					let TheActor:actPerson in
+					let ColctPI:Set(ctPI) in
+					
+					self.rnActor.rnSystem = TheSystem
+					and self.rnActor = TheActor
+					
+					/* PostF01 */
+					TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
+					and if (ColctPI->size().eq(1))
+					then (
+						and AMessage.eq('PI found. How to proceed?')
+						and TheActor.rnInterfaceIN^ieMessage(AMessage)
+					)
+					else (
+						and AMessage.eq('PI NOT found. How to proceed?')
+						and TheActor.rnInterfaceIN^ieMessage(AMessage)
+					)
+					endif}
+	
+	/* Post Protocol:*/ 
+	postP{ true}
+	
+	\end{lstlisting}
+	\normalsize 
+	
+	
+	
+	
+
+
+
+
+

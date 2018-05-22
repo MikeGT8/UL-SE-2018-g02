@@ -1,0 +1,53 @@
+\subsubsection{subfunction-oeSearchPI}
+
+\label{RE-use-case-oeSearchPI}
+
+
+The person's goal is to get a match by searching for a point of 
+interest.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeSearchPI}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+\addrowheading{Parameters}
+\addnumberedsinglerow{APIName: dtName}{}
+\addnumberedsinglerow{APICategory: etCategory}{}
+\addnumberedsinglerow{APICity: dtCity}{}
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actPerson[active]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[passive]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The person's goal is to get a match by searching for a point of 
+interest.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+a message is returned to the person that the PI has been found, or not.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

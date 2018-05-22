@@ -1,0 +1,84 @@
+\subsubsection{summary-suAddNewPI}
+
+\label{RE-use-case-suAddNewPI}
+
+
+The goal is the check the requested point of interest 
+from the actor Person, treat the request and add the new PI to the 
+system.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{suAddNewPI}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{summary}
+  
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actPerson[active]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actMsrCreator[active]}}
+\addnumberedsinglerow{}{\msrcode{actCoordinator[proactive]}}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[proactive]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The goal is the check the requested point of interest 
+from the actor Person, treat the request and add the new PI to the 
+system.}
+
+\addrowheading{Reuse}
+\addnumberedsinglerow{}{\msrucname{oeCreateSystemAndEnvironment [1..1]}}
+\addnumberedsinglerow{}{\msrucname{ugSecurelyUseSystem [1..1]}}
+\addnumberedsinglerow{}{\msrucname{oeSearchPI [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeSendNewRequest [1..*]}}
+\addnumberedsinglerow{}{\msrucname{ugCheckRequest [1..*]}}
+\addnumberedsinglerow{}{\msrucname{ugManageRequest [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeAddPI [1..*]}}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has never been deployed
+the coordinator actor involved in the use case has been declared by the actor
+actAdministrator
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+modifications have been made by the coordinator on existing requests (ignored attribute)
+the administrator has modified the status of the requests
+message solved request has been sent to the administrator
+the administrator added the new PI
+message added PI has been sent to the administrator and the person
+
+}
+
+\addrowheading{Main Steps}
+\addalphanumberedsinglerow{}{the actor \msrcode{actMsrCreator} executes the \msrucname{oeCreateSystemAndEnvironment} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{ugSecurelyUseSystem} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeSearchPI} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeSendNewRequest} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugSecurelyUseSystem} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugCheckRequest} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugSecurelyUseSystem} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{ugManageRequest} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{oeAddPI} use case}
+\addrowheading{Steps Ordering Constraints}
+\addnumberedsinglerow{}{step (a) is the first step to perform.}
+\addnumberedsinglerow{}{step (b), (d) and (f) must always be performed before (c), (e) and (g).}
+\addnumberedsinglerow{}{Subsequently, all the steps follow after step (a) is performed.}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

@@ -1,0 +1,90 @@
+\subsection{Primary types - Class types descriptions}
+
+
+
+
+The table below is providing comments on the graphical views given for the class types of the primary types. Type logical operations are precisely specified in the operation model.
+
+\begin{datadictionary}
+\addheading{Classes}
+
+\adddoublerow{ctAdministrator}{used to caracterize internally the entity that is responsible of administrating the iCrash system.}
+\addsingletwocolumnrow{extends}{lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Alogin:dtLogin, Apwd:dtPassword):ptBoolean}}{used to initialize the current object as a new instance of the ctAdministrator type.}
+\adddoublerow{ctAlert}{Used to model crisis alerts sent by any human having communication capability using communication
+companies belonging to the system’s environment}
+\adddoubletwocolumnrow{attribute}{\msrcode{comment: dtComment}}{a textual description providing unstructured information on the alert.}
+\adddoubletwocolumnrow{attribute}{\msrcode{id: dtAlertID}}{the alert unique identification information.}
+\adddoubletwocolumnrow{attribute}{\msrcode{instant: dtDateAndTime}}{the date and time at which the alert notification has been sent.}
+\adddoubletwocolumnrow{attribute}{\msrcode{location: dtGPSLocation}}{the position of the alert provided by the space-based satellite navigation system used
+by the human using the communication company to inform the iCrash system of a
+crisis.}
+\adddoubletwocolumnrow{attribute}{\msrcode{status: etAlertStatus}}{the alert validation status}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtAlertID, Astatus:etAlertStatus, Alocation:dtGPSLocation, Ainstant:dtDateAndTime, Acomment:dtComment):ptBoolean}}{used to initialize the current object as a new instance of the ctAlert type.}
+\adddoubletwocolumnrow{operation}{\msrcode{isSentToCoordinator(AactCoordinator:ctCoordinator):ptBoolean}}{used to provide a given coordinator with current alert information.}
+\adddoublerow{ctAuthenticated}{used to model system’s representation about actors that need to authenticate to access some specific
+functionalities.}
+\adddoubletwocolumnrow{attribute}{\msrcode{capReq: ptBoolean}}{used to determine if the actor needs to solve a captcha.}
+\adddoubletwocolumnrow{attribute}{\msrcode{lastAccess: dtInteger}}{used to determine the last time the actor tried to login.}
+\adddoubletwocolumnrow{attribute}{\msrcode{login: dtLogin}}{an identifier for authentication.}
+\adddoubletwocolumnrow{attribute}{\msrcode{pwd: dtPassword}}{a key for authentication.}
+\adddoubletwocolumnrow{attribute}{\msrcode{tries: dtInteger}}{used to determine how many tries the actor tried to login.}
+\adddoubletwocolumnrow{attribute}{\msrcode{vpIsLogged: ptBoolean}}{used to determine the access status.}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Alogin:dtLogin, Apwd:dtPassword):ptBoolean}}{used to initialize the current object as a new instance of the ctAuthenticated type.}
+\adddoublerow{ctCoordinator}{used to model system’s representation about the actors that have the responsibility to handle alerts
+and crisis.}
+\addsingletwocolumnrow{extends}{lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated}
+\adddoubletwocolumnrow{attribute}{\msrcode{id: dtCoordinatorID}}{a unique identification information.}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtCoordinatorID, Alogin:dtLogin, Apwd:dtPassword, Aaccessrights:etCrisisType):ptBoolean}}{used to initialize the current object as a new instance of the ctCoordinator type.}
+\adddoublerow{ctCrisis}{Used to model crisis that are infered from the reception of at least one alert message. Crisis aer entities
+that are handled by the iCrash system.}
+\adddoubletwocolumnrow{attribute}{\msrcode{comment: dtComment}}{a textual description providing unstructured information on the crisis handling.}
+\adddoubletwocolumnrow{attribute}{\msrcode{id: dtCrisisID}}{the crisis unique identification information.}
+\adddoubletwocolumnrow{attribute}{\msrcode{instant: dtDateAndTime}}{the date and time at which the first related alert notification has been sent.}
+\adddoubletwocolumnrow{attribute}{\msrcode{location: dtGPSLocation}}{the position of the crisis equal by the one of the first alert received and associated to
+the crisis.}
+\adddoubletwocolumnrow{attribute}{\msrcode{status: etCrisisStatus}}{the crisis handling status.}
+\adddoubletwocolumnrow{attribute}{\msrcode{type: etCrisisType}}{an indication of the gravity of the crisis.}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtCrisisID, Atype:etCrisisType, Astatus:etCrisisStatus, Alocation:dtGPSLocation, Ainstant:dtDateAndTime, Acomment:dtComment):ptBoolean}}{used to initialize the current object as a new instance of the ctAlert type.}
+\adddoublerow{ctPerson}{Used to model system’s representation about the indirect actors that has alerted 
+of potential crisis, but also perform requests for new potential points of interest.}
+\addsingletwocolumnrow{extends}{lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated}
+\adddoubletwocolumnrow{attribute}{\msrcode{id: dtPhoneNumber}}{the person's unique identification information of type dtPhoneNumber.}
+\adddoubletwocolumnrow{attribute}{\msrcode{personType: etPersonType}}{the person type.}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtPhoneNumber, Alogin:dtLogin, Apwd:dtPassword, ApersonType:etPersonType):ptBoolean}}{used to initialise the current object as a new instance of the ctPerson type.}
+\adddoublerow{ctPI}{Used to model points of interest that are introduced from the reception of at 
+least one request. PIs are handled by the actor Administrator.}
+\adddoubletwocolumnrow{attribute}{\msrcode{category: etCategory}}{classifies the PI in a sort of groups.}
+\adddoubletwocolumnrow{attribute}{\msrcode{city: dtCity}}{represents the location at the specific point of interest.}
+\adddoubletwocolumnrow{attribute}{\msrcode{description: dtDescription}}{a textual description providing information of the point of interest.}
+\adddoubletwocolumnrow{attribute}{\msrcode{id: dtID}}{the PIs unique identification information.}
+\adddoubletwocolumnrow{attribute}{\msrcode{location: dtGPSLocation}}{represents the location of the PI as GPS coordinates.}
+\adddoubletwocolumnrow{attribute}{\msrcode{name: dtName}}{represents the name of a point of interest.}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtID, Aname:dtName, Acity:dtCity, Acategory:etCategory, Alocation:dtGPSLocation, Adescription:dtDescription):ptBoolean}}{used to initialise the current object as a new instance of the ctPI type.}
+\adddoublerow{ctRequest}{Used to model requests that are introduced from the actor Person as a new potential 
+point of interest.}
+\adddoubletwocolumnrow{attribute}{\msrcode{category: etCategory}}{classifies the new potential PI in a sort of groups.}
+\adddoubletwocolumnrow{attribute}{\msrcode{city: dtCity}}{represents the location at the new potential point of interest.}
+\adddoubletwocolumnrow{attribute}{\msrcode{id: dtID}}{the request's unique identification information.}
+\adddoubletwocolumnrow{attribute}{\msrcode{ignored: dtIgnored}}{represents the fact that the new to add point of interest already exists or not. 
+Shall be ignored if yes.}
+\adddoubletwocolumnrow{attribute}{\msrcode{name: dtName}}{represents the potential name of the new point of interest.}
+\adddoubletwocolumnrow{attribute}{\msrcode{status: etRequestStatus}}{the request handling status.}
+\adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtID, Aname:dtName, Acity:dtCity, Acategory:etCategory, Astatus:etRequestStatus, Aignored:dtIgnored):ptBoolean}}{used to initialise the current object as a new instance of the ctRequest type.}
+\adddoublerow{ctState}{used to model the system. Each system specified using Messir must include a ctState class for
+which there is only one instance at any state of the abstract machine after creation.}
+\adddoubletwocolumnrow{attribute}{\msrcode{clock: dtDateAndTime}}{used to represent the system local time.}
+\adddoubletwocolumnrow{attribute}{\msrcode{crisisReminderPeriod: dtSecond}}{used to define the delay between two reminders after which a reminder must be sent
+to the administrator and to the known coordinators to encourage them to handle the
+crisis.}
+\adddoubletwocolumnrow{attribute}{\msrcode{maxCrisisReminderPeriod: dtSecond}}{used to define the maximum delay after which the crisis is ramdomly allocated to a
+coordinator if any or an alert message is sent to the administrator in order to encourage
+him to add coordinators.}
+\adddoubletwocolumnrow{attribute}{\msrcode{nextValueForAlertID: dtInteger}}{nextValueForAlertID: dtInteger: used to associate each alert declared with
+a unique idenitification value.}
+\adddoubletwocolumnrow{attribute}{\msrcode{nextValueForCrisisID: dtInteger}}{used to associate each crisis declared with a unique idenitification value.}
+\adddoubletwocolumnrow{attribute}{\msrcode{vpLastReminder: dtDateAndTime}}{date and time of the last reminder.}
+\adddoubletwocolumnrow{attribute}{\msrcode{vpStarted: ptBoolean}}{used to avoid reacting to an actor message if the system is not started (i.e.
+oeCreateSystemAndEnvironment not executed).}
+\adddoubletwocolumnrow{operation}{\msrcode{init(AnextValueForAlertID:dtInteger, AnextValueForCrisisID:dtInteger, Aclock:dtDateAndTime, AcrisisReminderPeriod:dtSecond, AmaxCrisisReminderPeriod:dtSecond, AvpLastReminder:dtDateAndTime, AvpStarted:ptBoolean):ptBoolean}}{used to initialize the current object as a new instance of the ctState type.}
+\end{datadictionary}

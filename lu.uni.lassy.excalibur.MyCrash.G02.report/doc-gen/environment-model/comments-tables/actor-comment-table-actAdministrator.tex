@@ -1,0 +1,71 @@
+\subsection{\msrcode{actAdministrator} Actor}
+
+
+\begin{actortable}
+	\addheading{Actor}
+	
+	\adddoublerow{actAdministrator}{PI variant: The actor Administrator is in charge of treating requested points of interests and 
+				adding, updating or deleting points of interests. The Administrator receives a request to add a 
+				new PI from a Person which the actor Coordinator checks before delivering them to the actor 
+				Administrator.
+				Access Rights variant: The actor Administrator is in charge of managing coordinators. This includes creating
+				and deleting them and updating their access rights.}
+	
+	\addrowheading{Extends}
+	\addsinglerow{lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated}
+	
+	
+	
+	
+
+	\addrowheading{OutputInterfaces}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeGetAllRequestsFromCoordinator}
+			{\msrcode{oeGetAllRequestsFromCoordinator():ptBoolean}}}
+			{The output event oeGetAllRequestsFromCoordinator retrieves a list of requests which the actor Coordinator checked.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeTreatRequest}
+			{\msrcode{oeTreatRequest(ARequestID:dtID):ptBoolean}}}
+			{The output event oeTreatRequest modifies the request status to treated.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeSolveRequest}
+			{\msrcode{oeSolveRequest(ARequestID:dtID):ptBoolean}}}
+			{The output event oeTreatRequest modifies the request status to solved.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeAddPI}
+			{\msrcode{oeAddPI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean}}}
+			{The output event oeAddPI adds a new point of interest requested by the actor Person.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeUpdatePI}
+			{\msrcode{oeUpdatePI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean}}}
+			{The output event oeUpdatePI updates a point of interest.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeDeletePI}
+			{\msrcode{oeDeletePI(APIID:dtID):ptBoolean}}}
+			{The output event oeDeletePI deletes a point of interest.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeAddCoordinator}
+			{\msrcode{oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:etCrisisType):ptBoolean}}}
+			{The output event oeAddCoordinator creates a new coordinator in the system.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeDeleteCoordinator}
+			{\msrcode{oeDeleteCoordinator(AdtCoordinatorID:dtCoordinatorID):ptBoolean}}}
+			{The output event oeDeleteCoordinator deletes a coordinator in the system.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actAdministrator.outactAdministrator.oeUpdateCoordinatorAccessRights}
+			{\msrcode{oeUpdateCoordinatorAccessRights(AdtCoordinatorID:dtCoordinatorID, CoordinatorAccessRights:etCrisisType):ptBoolean}}}
+			{The output event oeUpdateCoordinatorAccessRights updates a coordinator's access rights in the system.}
+	
+	\addrowheading{InputInterfaces}
+	\addnumbereddoublerow{IN}{\msrcode{ieRequestList():ptBoolean}}
+							 {The input event ieRequestList returns a list of checked requests from the actor Coordinator 
+							 to the actor Administrator.}
+	\addnumbereddoublerow{IN}{\msrcode{ieRequestBeingTreated():ptBoolean}}
+							 {The input event ieRequestBeingTreated specifies that the request is being treated.}
+	\addnumbereddoublerow{IN}{\msrcode{ieRequestSolved():ptBoolean}}
+							 {The input event ieRequestSolved confirms that the request was solved.}
+	\addnumbereddoublerow{IN}{\msrcode{iePIAdded():ptBoolean}}
+							 {The input event iePIAdded confirms that the requested point of interest has been added.}
+	\addnumbereddoublerow{IN}{\msrcode{iePIUpToDate():ptBoolean}}
+							 {The input event iePIUpToDate confirms that the requested point of interest has been updated.}
+	\addnumbereddoublerow{IN}{\msrcode{iePIDeleted():ptBoolean}}
+							 {The input event iePIDeleted confirms that the requested point of interest has been deleted.}
+	\addnumbereddoublerow{IN}{\msrcode{ieCoordinatorAdded():ptBoolean}}
+							 {The input event ieCoordinatorAdded confirms if a coordinator was successfully added to the system.}
+	\addnumbereddoublerow{IN}{\msrcode{ieCoordinatorDeleted():ptBoolean}}
+							 {The input event ieCoordinatorDeleted confirms if a coordinator was successfully deleted in the system.}
+	\addnumbereddoublerow{IN}{\msrcode{ieCoordinatorUpdated():ptBoolean}}
+							 {The input event ieCoordinatorUpdated confirms if a coordinator's access rights were successfully updated in the system.}
+	
+\end{actortable}

@@ -1,0 +1,58 @@
+package usecaseinstances.uci {
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+
+	Use Case Model {
+
+		use case instance ucisuGenerateNewAlert : suGenerateNewAlert {
+			
+			actors {
+				
+				theCreator:actMsrCreator
+				patrick:actPerson
+				orange:actComCompany
+			}
+			
+			use case steps {
+			
+				theCreator
+				executed instanceof subfunction oeCreateSystemAndEnvironment() {
+					
+					ieSystemCreated() returned to theCreator
+				}
+				
+				patrick
+				executed instanceof subfunction oeLogin("014092450D", "6543210") {
+					
+					ieLoggedIn("You are logged in, 014092450D") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeSearchPI("Cactus", "Supermarket", "Esch/Alzette") {
+					
+					ieMessage("The point of interest is in the system. How to proceed?") returned to patrick
+				}
+				
+				patrick
+				executed instanceof subfunction oeGetGPSLocation("1001") {
+					
+					ieMessage("The GPS location of the PI is: 56.8989/46.7878.") returned to patrick
+					ieMessage("Your Sms has been sent to your communication operator.") returned to patrick
+					ieSmsSend("Cactus", "Supermarket", "Esch/Alzette", "661777777", "Supermarket on fire!") returned to orange
+				}
+				
+				patrick
+				executed instanceof subfunction oeLogout() {
+					
+					ieLoggedOut("You are logged out!") returned to patrick
+				}
+				
+				orange
+				executed instanceof subfunction oeAlert("Witness", "Cactus", "Esch/Alzette", "27/03/2018", "10:00", "Supermarket on fire!", "661777777", "High") {
+					
+					ieMessage("Alert has been sent. It will be handled!") returned to orange
+				}
+			}
+		}
+	}
+}

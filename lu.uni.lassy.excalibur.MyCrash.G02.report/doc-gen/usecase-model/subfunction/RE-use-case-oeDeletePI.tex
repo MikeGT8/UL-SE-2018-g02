@@ -1,0 +1,49 @@
+\subsubsection{subfunction-oeDeletePI}
+
+\label{RE-use-case-oeDeletePI}
+
+
+The administrator's goal is to delete an existing point of interest.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeDeletePI}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+\addrowheading{Parameters}
+\addnumberedsinglerow{APIID: dtID}{}
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[active]}}
+
+
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The administrator's goal is to delete an existing point of interest.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+the to be deleted point of interest exists in the system.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+the point of interest is deleted.
+a message is returned to the administrator that the PI was successfully deleted.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

@@ -1,0 +1,52 @@
+\subsubsection{subfunction-oeGetDescription}
+
+\label{RE-use-case-oeGetDescription}
+
+
+The person's goal is to get an exact description of the selected point 
+of interest.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeGetDescription}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+\addrowheading{Parameters}
+\addnumberedsinglerow{APIID: dtID}{}
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actPerson[active]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[passive]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The person's goal is to get an exact description of the selected point 
+of interest.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+the point of interest must figure between the PIs in the system.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+a message with the exact description of the PI is sent to the person.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

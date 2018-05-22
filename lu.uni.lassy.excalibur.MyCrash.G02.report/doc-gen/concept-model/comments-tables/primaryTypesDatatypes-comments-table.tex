@@ -1,0 +1,95 @@
+\subsection{Primary types - Datatypes types descriptions}
+
+
+
+
+
+The table below is providing comments on the graphical views given for the datatype types of the primary types.
+
+
+\begin{datadictionary}
+\addheading{Datatypes}
+
+\adddoublerow{dtAdministratorID}{A string used to identify the administrator.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid administrator identifiers.}
+\adddoublerow{dtAlertID}{A string used to identify alerts.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid alert identifiers.}
+\adddoublerow{dtCaptcha}{A string used to store the Captcha information after the iCrash user failed to log in 
+three times.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtCaptcha.}
+\adddoublerow{dtCity}{A string used to store the name of the city in which the point of interest is situated.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtCity.}
+\adddoublerow{dtComment}{A datatype made of a string value used to receive, store and send textual information 
+about crisis and alerts.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid comments.}
+\adddoublerow{dtCoordinatorID}{A string used to identify coordinators.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid coordinators identifiers.}
+\adddoublerow{dtCrisisID}{A string used to identify crisis.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid crisis identifiers.}
+\adddoublerow{dtDescription}{A datatype made of a string value used to receive, store and send textual information about 
+a point of interest.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid descriptions.}
+\adddoublerow{dtGPSLocation}{Used to define coordinates of geographical positions on earth. It is defined a couple made of a latitude
+and a longitude.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{attribute}{\msrcode{latitude: dtLatitude}}{for the latitude part of the coordinate.}
+\adddoubletwocolumnrow{attribute}{\msrcode{longitude: dtLongitude}}{for the longitude part of the coordinate.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which couples are considered as valid dtGPSLocation values.}
+\adddoublerow{dtID}{A string used to identify points of interest and requests.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid points of interest and request identifiers.}
+\adddoublerow{dtIgnored}{A boolean used to store the value considering if the request should be ignored or not.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which boolean values are considered as valid dtIgnored.}
+\adddoublerow{dtLatitude}{Used to define a latitude value of a geographical positions on earth.}
+\addsingletwocolumnrow{extends}{dtReal}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtLatitude.}
+\adddoublerow{dtLogin}{A login string used to authentify an iCrash user.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtLogin.}
+\adddoublerow{dtLongitude}{Used to define a longitude value of a geographical positions on earth.}
+\addsingletwocolumnrow{extends}{dtReal}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtLongitude.}
+\adddoublerow{dtMessage}{A string used to store the information that will be sent as input event to the actors.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtMessage.}
+\adddoublerow{dtName}{A string used to store the names of the points of interest.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid names.}
+\adddoublerow{dtPassword}{A password string used to authentify an iCrash user.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtPassword.}
+\adddoublerow{dtPhoneNumber}{A string used to store the phone number from the person declaring the crisis or the alert.}
+\addsingletwocolumnrow{extends}{dtString}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which strings are considered as valid dtPhoneNumber.}
+\end{datadictionary}
+
+
+\begin{datadictionary}
+\addheading{Enumerations}
+
+\adddoublerow{etAlertStatus}{This type is used to indicate the different validation status of an alert.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which literal belongs to the enumeration.}
+\adddoublerow{etCategory}{This type is used to indicate the different categories of a point of interest.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which literal belongs to the enumeration.}
+\adddoublerow{etCrisisStatus}{This type is used to indicate the different handling status of a crisis.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which literal belongs to the enumeration.}
+\adddoublerow{etCrisisType}{This type is used to indicate the different types of a crisis.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which literal belongs to the enumeration.}
+\adddoublerow{etPersonType}{This type is used to indicate the type of person that informs about a car crash crisis.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which literal belongs to the enumeration.}
+\adddoublerow{etRequestStatus}{This type is used to indicate the different status of the request made for a point of interest.}
+\adddoubletwocolumnrow{operation}{\msrcode{is():ptBoolean}}{used to determine which literal belongs to the enumeration.}
+\end{datadictionary}
+
+
+
+
+

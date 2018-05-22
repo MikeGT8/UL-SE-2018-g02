@@ -1,0 +1,94 @@
+\subsection{Operation Model for oeGetAllRequestsFromCoordinator}
+
+\label{OM-oeGetAllRequestsFromCoordinator}
+
+
+The \msrcode{oeGetAllRequestsFromCoordinator} operation has the following properties:
+
+	\begin{operationmodel}
+	\addheading{Operation}
+	\adddoublerow{oeGetAllRequestsFromCoordinator}{sent to get all the requests checked by the actor ActCoordinator in the system’s post state.}
+
+
+	\addrowheading{Return type}
+	\addsinglerow{ptBoolean}
+
+	\addrowheading{Pre-Condition (protocol)}
+	\addnumberedsinglerow{PreP}{the system is started.
+	the actor logged previously and did not log out!}
+		
+	\addrowheading{Pre-Condition (functional)}
+	\addnumberedsinglerow{PreF}{none}
+
+	\addrowheading{Post-Condition (functional)}
+	\addnumberedsinglerow{PostF}{the actor ActAdministrator gets a list of requests to handle if there are pending requests.
+	the administrator actor is also informed about the non-satisfaction of its request.}
+
+	\addrowheading{Post-Condition (protocol)}
+	\addnumberedsinglerow{PostP}{none}
+	\end{operationmodel}
+
+
+
+	% ------------------------------------------
+	% MCL Listing
+	% ------------------------------------------
+	\vspace{1cm}
+	The listing~\ref{OM-actAdministrator-oeGetAllRequestsFromCoordinator-MCL-LST} provides the \msrmessir (MCL-oriented) specification of the operation.
+	
+	\scriptsize
+	\vspace{0.5cm}
+	\begin{lstlisting}[style=MessirStyle,firstnumber=auto,captionpos=b,caption={\msrmessir (MCL-oriented) specification of the operation \emph{oeGetAllRequestsFromCoordinator}.},label=OM-actAdministrator-oeGetAllRequestsFromCoordinator-MCL-LST]
+
+	/* Pre Protocol:*/ 
+	preP{let TheSystem:ctState in
+					let TheActor:actAdministrator in
+					
+					self.rnActor.rnSystem = TheSystem
+					and self.rnActor = TheActor
+					
+					/* PreP01 */
+					TheSystem.vpStarted = true
+					
+					/* PreP02 */
+					and TheActor.rnctAuthenticated.vpIsLogged = true}
+	
+	/* Pre Functional:*/
+	preF{true}
+	
+	/* Post Functional:*/ 
+	postF{let TheSystem:ctState in
+					let TheActor:actAdministrator in
+					let ColctRequest:Set(ctRequest) in
+					
+					self.rnActor.rnSystem = TheSystem
+					and self.rnActor = TheActor
+					
+					TheSystem.rnctRequest->select(status.eq("pending")) = ColctRequest
+					
+					and if (ColctRequest->IsEmpty() = false)
+					then (
+						/* PostF01 */
+						and TheActor.rnInterfaceIN^ieRequestList()
+					)
+					else (
+						/* PostF02 */
+						and AMessage.eq('No requested points of interest!')
+						and TheActor.rnInterfaceIN^ieMessage(AMessage)
+					)
+					endif}
+	
+	/* Post Protocol:*/ 
+	postP{ true}
+	
+	\end{lstlisting}
+	\normalsize 
+	
+	
+	
+	
+
+
+
+
+

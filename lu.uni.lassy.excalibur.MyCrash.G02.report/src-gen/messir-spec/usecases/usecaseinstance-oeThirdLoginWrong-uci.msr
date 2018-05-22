@@ -1,0 +1,8 @@
+package usecases.uci {
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+
+	Use Case Model {
+
+	}
+}

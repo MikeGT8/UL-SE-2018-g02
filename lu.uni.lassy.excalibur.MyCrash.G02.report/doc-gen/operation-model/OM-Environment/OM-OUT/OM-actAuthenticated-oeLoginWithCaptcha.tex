@@ -1,0 +1,134 @@
+\subsection{Operation Model for oeLoginWithCaptcha}
+
+\label{OM-oeLoginWithCaptcha}
+
+
+The \msrcode{oeLoginWithCaptcha} operation has the following properties:
+
+	\begin{operationmodel}
+	\addheading{Operation}
+	\adddoublerow{oeLoginWithCaptcha}{This operation can and must only be done when capReq boolean value is true. Used to authenticate the
+	user and to also authenticate the the user is not a robot.
+	 }
+
+	\addrowheading{Parameters}
+	\addnumbereddoublerow{}{ALogin: dtLogin}{The username of the actor.} 
+	\addnumbereddoublerow{}{APassword: dtPassword}{The key to login of the actor.} 
+	\addnumbereddoublerow{}{ACaptcha: dtCaptcha}{The captcha the actor sent to the system to compare to the captcha to solve.} 
+
+	\addrowheading{Return type}
+	\addsinglerow{ptBoolean}
+
+	\addrowheading{Pre-Condition (protocol)}
+	\addnumberedsinglerow{PreP}{ }
+		
+	\addrowheading{Pre-Condition (functional)}
+	\addnumberedsinglerow{PreF}{ }
+
+	\addrowheading{Post-Condition (functional)}
+	\addnumberedsinglerow{PostF}{ }
+
+	\addrowheading{Post-Condition (protocol)}
+	\addnumberedsinglerow{PostP}{ }
+	\end{operationmodel}
+
+
+
+	% ------------------------------------------
+	% MCL Listing
+	% ------------------------------------------
+	\vspace{1cm}
+	The listing~\ref{OM-actAuthenticated-oeLoginWithCaptcha-MCL-LST} provides the \msrmessir (MCL-oriented) specification of the operation.
+	
+	\scriptsize
+	\vspace{0.5cm}
+	\begin{lstlisting}[style=MessirStyle,firstnumber=auto,captionpos=b,caption={\msrmessir (MCL-oriented) specification of the operation \emph{oeLoginWithCaptcha}.},label=OM-actAuthenticated-oeLoginWithCaptcha-MCL-LST]
+
+	/* Pre Protocol:*/ 
+	preP{let TheSystem: ctState in
+				let TheActor:actAuthenticated in
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheActor
+				
+				/* PreP01 */
+				and TheSystem.vpStarted = true
+				/* PreP02 */
+				and TheActor.rnctAuthenticated.vpIsLogged = false
+				/* PreP03 */
+				and TheActor.rnctAuthenticated.capReq = true}
+	
+	/* Pre Functional:*/
+	preF{/* PreF01 */
+				true}
+	
+	/* Post Functional:*/ 
+	postF{let TheSystem: ctState in
+				let TheactAuthenticated:actAuthenticated in
+				
+				let AptStringMessageForTheactAuthenticated:ptString in
+				let AptStringMessageForTheactAdministrator:ptString in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheactAuthenticated
+				
+				and /* PostF01 */
+				if(ACaptcha = TheactAuthenticated.rnctAuthenticated.cap2Solve) then
+					if (TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword
+						and TheactAuthenticated.rnctAuthenticated.login = AdtLogin
+						)
+					then (AptStringMessageForTheactAuthenticated.eq('You are logged ! Welcome ...')
+						and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+						)
+					else (AptStringMessageForTheactAuthenticated
+						.eq('Wrong identification information ! Please try again ...')
+						and TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+						and AptStringMessageForTheactAdministrator.eq('Intrusion tentative !')
+						and TheSystem.rnactAdministrator
+						.rnInterfaceIN^ieMessage(AptStringMessageForTheactAdministrator)
+						)
+					endif
+				else
+					(TheactAuthenticated.rnctAuthenticated@post.cap2Solve = random() and
+						AptStringMessageForTheactAuthenticated.eq('Wrong Captcha information ! Captcha: ' +
+							TheactAuthenticated.rnctAuthenticated@post.cap2Solve) and
+						TheactAuthenticated.rnInterfaceIN^ieMessage(AptStringMessageForTheactAuthenticated)
+					)
+				endif}
+	
+	/* Post Protocol:*/ 
+	postP{ let TheSystem: ctState in
+				let TheactAuthenticated:actAuthenticated in
+				
+				self.rnActor.rnSystem = TheSystem
+				and self.rnActor = TheactAuthenticated
+				/* PostP01 */
+				if(ACaptcha = TheactAuthenticated.rnctAuthenticated.cap2Solve) then
+					(if(TheactAuthenticated.rnctAuthenticated.pwd = AdtPassword and
+					TheactAuthenticated.rnctAuthenticated.login = AdtLogin) then(
+						TheactAuthenticated.rnctAuthenticated@post.tries = 0 and
+						TheactAuthenticated.rnctAuthenticated@post.lastAccess = -181 and
+						TheactAuthenticated.rnctAuthenticated@post.capReq = false and
+						TheactAuthenticated.rnctAuthenticated@post.vpIsLogged = true
+					)else(
+						TheactAuthenticated.rnctAuthenticated@post.lastAccess = ((int)System.currentTimeMillis()/1000) - TheactAuthenticated.rnctAuthenticated.lastAccess
+						(if(TheactAuthenticated.rnctAuthenticated@post.lastAccess <= 180)then(
+							TheactAuthenticated.rnctAuthenticated@post.tries = TheactAuthenticated.rnctAuthenticated.tries + 1
+						)else(
+							TheactAuthenticated.rnctAuthenticated@post.tries = 1
+						)endif)
+					)endif)
+				else 
+					(false)
+				endif}
+	
+	\end{lstlisting}
+	\normalsize 
+	
+	
+	
+	
+
+
+
+
+

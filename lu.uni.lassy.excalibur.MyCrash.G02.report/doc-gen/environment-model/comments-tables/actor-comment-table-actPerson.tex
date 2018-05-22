@@ -1,0 +1,39 @@
+\subsection{\msrcode{actPerson} Actor}
+
+
+\begin{actortable}
+	\addheading{Actor}
+	
+	\adddoublerow{actPerson}{PI variant: The actor Person is in charge of searching for a point 
+				of interest, get the exact GPS location and send a Sms to the communication 
+				company with a specific problem description. If the the PI is not available, 
+				the actor Person has the possibility to send a request to the system to add 
+				a new PI.}
+	
+	\addrowheading{Extends}
+	\addsinglerow{lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated}
+	
+	
+	
+	
+
+	\addrowheading{OutputInterfaces}
+	\addnumbereddoublerow{OUT}{\hypertarget{actPerson.outactPerson.oeSearchPI}
+			{\msrcode{oeSearchPI(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean}}}
+			{The output event oeSearchPI returns a point of interest.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actPerson.outactPerson.oeSendNewRequest}
+			{\msrcode{oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean}}}
+			{The output event oeSendNewRequest adds a new requested PI to the system.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actPerson.outactPerson.oeGetGPSLocation}
+			{\msrcode{oeGetGPSLocation(APIID:dtID):ptBoolean}}}
+			{The output event oeGetGPSLocation retrieves the exact GPS location of a searched PI.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actPerson.outactPerson.oeGetDescription}
+			{\msrcode{oeGetDescription(APIID:dtID):ptBoolean}}}
+			{The output event oeGetDescription retrieves a description of a searched PI.}
+	
+	\addrowheading{InputInterfaces}
+	\addnumbereddoublerow{IN}{\msrcode{iePIAdded():ptBoolean}}
+							 {The input event iePIAdded confirms that the requested point of interest has been added 
+							 to the system.}
+	
+\end{actortable}

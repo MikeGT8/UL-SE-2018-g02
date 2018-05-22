@@ -1,0 +1,54 @@
+\subsubsection{subfunction-oeDeliverRequest}
+
+\label{RE-use-case-oeDeliverRequest}
+
+
+The coordinator's goal is to change the status of the request an hand 
+it over to the administrator.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeDeliverRequest}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+\addrowheading{Parameters}
+\addnumberedsinglerow{ARequestID: dtID}{}
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actCoordinator[active]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actPerson[passive]}}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[passive]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The coordinator's goal is to change the status of the request an hand 
+it over to the administrator.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+a request must exist in the system.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+the request status is changed to pending.
+the coordinator gets a message that the request has been delivered to the administrator.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

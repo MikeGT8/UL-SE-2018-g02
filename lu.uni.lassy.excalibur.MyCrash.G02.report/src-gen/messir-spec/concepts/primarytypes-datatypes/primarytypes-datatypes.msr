@@ -1,0 +1,146 @@
+/*
+* @author mikel
+* @date Fri Mar 16 11:46:38 CET 2018
+*/
+
+package lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes {
+
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.string
+
+	Concept Model {
+	
+		Primary Types {
+	   			
+			datatype dtID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtAdministratorID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtCoordinatorID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtAlertID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtCrisisID extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtLogin extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtPassword extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtCaptcha extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtName extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtCity extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtLatitude extends dtReal {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtLongitude extends dtReal {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtGPSLocation extends dtString {
+			
+				attribute latitude:dtLatitude
+				attribute longitude:dtLongitude
+				
+				operation is():ptBoolean
+			}
+			
+			datatype dtDescription extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtComment extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtPhoneNumber extends dtString {
+			
+				operation is():ptBoolean
+			}
+			
+			datatype dtMessage extends dtString {
+				
+				operation is():ptBoolean
+			}
+			
+			datatype dtIgnored  {
+				attribute attValue:ptBoolean
+				operation is():ptBoolean
+			}
+			
+			enum etCategory {
+				
+				constants["supermarket", "market", "hobby", "petrolstation", "building", "university", "school", "hospital"]
+				operation is():ptBoolean
+			}
+			
+			enum etPersonType {
+				
+				constants["witness", "victim", "anonymous"]
+				operation is():ptBoolean
+			}
+			
+			enum etRequestStatus {
+				
+				constants["pending", "treated", "solved"]
+				operation is():ptBoolean
+			}	
+			
+			enum etAlertStatus {
+				
+				constants["pending", "valid", "invalid"]
+				operation is():ptBoolean
+			}	
+			
+			enum etCrisisType {
+				
+				constants["low", "medium", "high"]
+				operation is():ptBoolean
+			}
+			
+			enum etCrisisStatus {
+				constants["pending", "handled", "solved", "closed"]
+				operation is():ptBoolean
+			}	
+		}
+	}
+}

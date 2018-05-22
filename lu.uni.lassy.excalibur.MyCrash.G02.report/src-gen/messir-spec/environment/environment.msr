@@ -1,136 +1,174 @@
-/*  
-* @author nicolas.guelfi
-* @date Mon May 06 18:10:54 CEST 2013
+/*
+* @author mikel
+* @date Fri Mar 16 11:46:38 CET 2018
 */
 
-package icrash.environment{
-	
-import icrash.concepts.primarytypes.datatypes
-import icrash.concepts.primarytypes.classes
-import icrash.concepts.secondarytypes.datatypes
-import lu.uni.lassy.messir.libraries.primitives
-import lu.uni.lassy.messir.libraries.math
+package lu.uni.lassy.excalibur.MyCrash.G02.environment {
+
 import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.string
 
-	Environment Model { 
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 
-		actor actMsrCreator role rnactMsrCreator cardinality [1..1] {
-		  
-		 operation init():ptBoolean
-		  
-		 input interface inactMsrCreator {
-		 }
-			output interface outactMsrCreator {
-				operation oeCreateSystemAndEnvironment(AqtyComCompanies:ptInteger ):ptBoolean
-			}
-		}
-
-		actor actAdministrator 
-						role rnactAdministrator 
-						cardinality [1..1] 
-						extends actAuthenticated {
-
+	Environment Model {
+			
+		actor actMsrCreator role rnactMsrCreator cardinality[1 .. 1] {
+	
 			operation init():ptBoolean
-
-			output interface outactAdministrator{
+	
+			input interface inactMsrCreator {
 				
-				operation oeAddCoordinator(
-											AdtCoordinatorID:dtCoordinatorID ,
-											AdtLogin:dtLogin , 
-											AdtPassword:dtPassword ):ptBoolean
-											
-				operation oeDeleteCoordinator(
-											AdtCoordinatorID:dtCoordinatorID ):ptBoolean
+				operation ieSystemCreated():ptBoolean
 			}
 			
-			input interface inactAdministrator{
+			output interface outactMsrCreator {
 				
+				operation oeCreateSystemAndEnvironment():ptBoolean
+			}
+		}
+		
+		actor actAuthenticated role rnactAuthenticated cardinality[1 .. *] {
+			
+			operation init():ptBoolean
+			
+			input interface inactAuthenticated {
+				
+				operation ieLogin(AMessage:dtMessage):ptBoolean
+				operation ieLoggedOut(AMessage:dtMessage):ptBoolean
+				operation ieMessage(AMessage:dtMessage):ptBoolean
+				operation ieResetPassword():ptBoolean
+			}
+			
+			output interface outactAuthenticated {
+				
+				operation oeLogin(ALogin:dtLogin, APassword:dtPassword):ptBoolean
+				operation oeLogout():ptBoolean
+				operation oeLoginWithCaptcha(ALogin:dtLogin, APassword:dtPassword, ACaptcha:dtCaptcha):ptBoolean
+				operation oeResetPassword(ALogin:dtLogin):ptBoolean
+			}
+		}
+		
+		actor actAdministrator role rnactAdministrator cardinality[1 .. 1] extends actAuthenticated {
+			
+			operation init():ptBoolean
+			
+			input interface inactAdministrator {
+				
+				//PI variant
+				operation ieRequestList():ptBoolean
+				operation ieRequestBeingTreated():ptBoolean
+				operation ieRequestSolved():ptBoolean
+				
+				operation iePIAdded():ptBoolean
+				operation iePIUpToDate():ptBoolean
+				operation iePIDeleted():ptBoolean
+				
+				//Access rights variant
 				operation ieCoordinatorAdded():ptBoolean
 				operation ieCoordinatorDeleted():ptBoolean
-	 		}
+				operation ieCoordinatorUpdated():ptBoolean
+			}
+			
+			output interface outactAdministrator {
+				
+				// PI variant
+				operation oeGetAllRequestsFromCoordinator():ptBoolean
+				operation oeTreatRequest(ARequestID:dtID):ptBoolean
+				operation oeSolveRequest(ARequestID:dtID):ptBoolean
+				
+				operation oeAddPI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
+				operation oeUpdatePI(APIID:dtID, APIName:dtName, APICity:dtCity, APIGPSLocation:dtGPSLocation, APIDescription:dtDescription, APICategory:etCategory):ptBoolean
+				operation oeDeletePI(APIID:dtID):ptBoolean
+				
+				//Access rights
+				operation oeAddCoordinator(AdtCoordinatorID:dtCoordinatorID, AdtLogin:dtLogin, AdtPassword:dtPassword, CoordinatorAccessRights:etCrisisType):ptBoolean
+				operation oeDeleteCoordinator(AdtCoordinatorID:dtCoordinatorID):ptBoolean
+				operation oeUpdateCoordinatorAccessRights(AdtCoordinatorID:dtCoordinatorID, CoordinatorAccessRights:etCrisisType):ptBoolean
+				
+			}
 		}
 		
-		actor actCoordinator 
-						role rnactCoordinator 
-						cardinality [0..*] 
-						extends actAuthenticated{
-
+		actor actCoordinator role rnactCoordinator cardinality[1 .. *] extends actAuthenticated {
+			
 			operation init():ptBoolean
-
-			output interface outactCoordinator{
-				operation oeInvalidateAlert(AdtAlertID:dtAlertID ):ptBoolean
-				operation oeCloseCrisis(AdtCrisisID:dtCrisisID ):ptBoolean
-				operation oeGetAlertsSet(AetAlertStatus:etAlertStatus ):ptBoolean
-				operation oeGetCrisisSet(AetCrisisStatus:etCrisisStatus ):ptBoolean
-				operation oeSetCrisisHandler(AdtCrisisID:dtCrisisID ):ptBoolean
-				operation oeReportOnCrisis(
-											AdtCrisisID:dtCrisisID ,
-											AdtComment:dtComment 
-											):ptBoolean
-				operation oeSetCrisisStatus(
-											AdtCrisisID:dtCrisisID ,
-											AetCrisisStatus:etCrisisStatus 
-											):ptBoolean
-        operation oeSetCrisisType(
-                      AdtCrisisID:dtCrisisID ,
-                      AetCrisisType:etCrisisType 
-                      ):ptBoolean
-				operation oeValidateAlert(AdtAlertID:dtAlertID ):ptBoolean
+			
+			input interface inactCoordinator {
+				
+				//PI variant
+				operation ieRequestListToCheck():ptBoolean
+				operation ieRequestDelivered():ptBoolean
+				
+				//Access rights variant
+				operation ieCrisisSet():ptBoolean
+				operation ieAlertSet():ptBoolean
 			}
 			
-			input interface inactCoordinator{
-				operation ieSendAnAlert(ActAlert:ctAlert ):ptBoolean
-				operation ieSendACrisis(ActCrisis:ctCrisis ):ptBoolean
-	 		}
+			output interface outactCoordinator {
+				
+				//PI variant
+				operation oeGetAllRequests():ptBoolean
+				operation oeCheckAvailability(ARequestName:dtName, ARequestCity:dtCity, ARequestCategory:etCategory):ptBoolean
+				operation oeDeliverRequest(ARequestID:dtID):ptBoolean
+				
+				//Access rights variant
+				operation oeInvalidateAlert(AdtAlertID:dtAlertID):ptBoolean
+				operation oeValidateAlert(AdtAlertID:dtAlertID):ptBoolean
+				operation oeGetAlertSet(AetAlertStatus:etAlertStatus):ptBoolean
+				
+				operation oeCloseCrisis(AdtCrisisID:dtCrisisID):ptBoolean
+				operation oeGetCrisisSet(AetCrisisStatus:etCrisisStatus):ptBoolean
+				operation oeSetCrisisHandler(AdtCrisisID:dtCrisisID):ptBoolean
+				operation oeReportOnCrisis(AdtCrisisID:dtCrisisID, AdtComment:dtComment):ptBoolean
+				operation oeSetCrisisStatus(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus):ptBoolean
+				operation oeSetCrisisType(AdtCrisisID:dtCrisisID, AetCrisisType:etCrisisType):ptBoolean
+			}
 		}
 		
-		actor actComCompany role rnactComCompany cardinality [0..*]{
-
+		actor actPerson role rnactPerson cardinality[1 .. *] extends actAuthenticated {
+			
 			operation init():ptBoolean
-
-			output interface outactComCompany{
-				operation oeAlert(
-										AetHumanKind:etHumanKind , 
-										AdtDate:dtDate , 
-										AdtTime:dtTime , 
-										AdtPhoneNumber:dtPhoneNumber ,
-										AdtGPSLocation:dtGPSLocation , 
-										AdtComment:dtComment 
-										):ptBoolean
+			
+			input interface inactPerson {
+				
+				//PI variant
+				operation iePIAdded():ptBoolean
 			}
 			
-			input interface inactComCompany{
-				operation ieSmsSend(AdtPhoneNumber:dtPhoneNumber , 
-														AdtSMS:dtSMS 
-														):ptBoolean
-	 		}
-		}
-
-		actor actAuthenticated role rnactAuthenticated cardinality [0..*]{
-
-			operation init():ptBoolean
-
-			output interface outactAuthenticated{
-				operation oeLogin(AdtLogin:dtLogin , AdtPassword:dtPassword ):ptBoolean
-				operation oeLogout():ptBoolean
+			output interface outactPerson {
+				
+				//PI variant
+				operation oeSearchPI(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean
+				operation oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean
+				
+				operation oeGetGPSLocation(APIID:dtID):ptBoolean
+				operation oeGetDescription(APIID:dtID):ptBoolean
 			}
-			
-			input interface inactAuthenticated{
-				operation ieMessage(AMessage:ptString):ptBoolean
-	 		}
 		}
-
-		actor actActivator[proactive] role rnactActivator cardinality [1..1]{
-
-			operation init():ptBoolean
-
-			output interface outactActivator{
+		
+		actor actComCompany role rnactComCompany cardinality[1 .. *] {
+			input interface inactComCompany {
+				
+				//Access rights variant
+				operation ieSmsSend(APIName:dtName, APICategory:etCategory, ACity:dtCity, AdtPhoneNumber:dtPhoneNumber, AdtSMS:dtSMS):ptBoolean
+			}
+			output interface outactComCompany {
+				
+				//Access rights variant
+				operation oeAlert(APersonType:etPersonType, APIName:dtName, APIGPSLocation:dtGPSLocation, AdtDate:dtDate, AdtTime:dtTime, AProblemDescription:dtDescription, PhoneNumber:dtPhoneNumber):ptBoolean
+			}
+		}
+		
+	actor actActivator role rnactActivator cardinality[1 .. 1] {
+			input interface inactActivator {
+			}
+			output interface outactActivator {
+				
 				operation oeSollicitateCrisisHandling():ptBoolean
-				operation oeSetClock(AcurrentClock:dtDateAndTime ):ptBoolean
+				operation oeSetClock(AcurrentTime:dtDateAndTime):ptBoolean
 			}
-			
-			input interface inactActivator{
-	 		}
 		}
 	}
 }

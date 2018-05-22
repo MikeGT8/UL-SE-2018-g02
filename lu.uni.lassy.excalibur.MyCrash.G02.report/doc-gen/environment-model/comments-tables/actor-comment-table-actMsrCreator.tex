@@ -1,0 +1,23 @@
+\subsection{\msrcode{actMsrCreator} Actor}
+
+
+\begin{actortable}
+	\addheading{Actor}
+	
+	\adddoublerow{actMsrCreator}{Represents the creator stakeholder in charge of state and environment initialization.}
+	
+	
+	
+	
+
+	\addrowheading{OutputInterfaces}
+	\addnumbereddoublerow{OUT}{\hypertarget{actMsrCreator.outactMsrCreator.oeCreateSystemAndEnvironment}
+			{\msrcode{oeCreateSystemAndEnvironment():ptBoolean}}}
+			{sent to request the initialization of the system’s class instances and the environment actors
+			instances.}
+	
+	\addrowheading{InputInterfaces}
+	\addnumbereddoublerow{IN}{\msrcode{ieSystemCreated():ptBoolean}}
+							 {confirmation message that the system was successfully created.}
+	
+\end{actortable}

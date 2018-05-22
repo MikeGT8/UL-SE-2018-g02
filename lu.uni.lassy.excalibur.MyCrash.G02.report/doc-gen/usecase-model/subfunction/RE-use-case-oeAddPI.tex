@@ -1,0 +1,58 @@
+\subsubsection{subfunction-oeAddPI}
+
+\label{RE-use-case-oeAddPI}
+
+
+The administrator's goal is to add a new requested point of 
+interest.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeAddPI}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+\addrowheading{Parameters}
+\addnumberedsinglerow{APIName: dtName}{}
+\addnumberedsinglerow{APICity: dtCity}{}
+\addnumberedsinglerow{APIGPSLocation: dtGPSLocation}{}
+\addnumberedsinglerow{APIDescription: dtDescription}{}
+\addnumberedsinglerow{APICategory: etCategory}{}
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[active]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actPerson[passive]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The administrator's goal is to add a new requested point of 
+interest.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+the requested PI exists among the requests.
+the requested PI must have the status as solved.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+the requested PI is successfully added.
+a message is returned to the administrator and the person that the PI has been added.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

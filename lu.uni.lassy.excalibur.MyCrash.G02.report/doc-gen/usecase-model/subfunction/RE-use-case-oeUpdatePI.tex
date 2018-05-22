@@ -1,0 +1,56 @@
+\subsubsection{subfunction-oeUpdatePI}
+
+\label{RE-use-case-oeUpdatePI}
+
+
+The administrator's goal is to update the existing point of interest 
+information.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeUpdatePI}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+\addrowheading{Parameters}
+\addnumberedsinglerow{APIID: dtID}{}
+\addnumberedsinglerow{APIName: dtName}{}
+\addnumberedsinglerow{APICity: dtCity}{}
+\addnumberedsinglerow{APIGPSLocation: dtGPSLocation}{}
+\addnumberedsinglerow{APIDescription: dtDescription}{}
+\addnumberedsinglerow{APICategory: etCategory}{}
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[active]}}
+
+
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The administrator's goal is to update the existing point of interest 
+information.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+there exists already the point of interest which has to be updated.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+the point of interest has its new values.
+a message is returned to the administrator that the PI is up to date.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

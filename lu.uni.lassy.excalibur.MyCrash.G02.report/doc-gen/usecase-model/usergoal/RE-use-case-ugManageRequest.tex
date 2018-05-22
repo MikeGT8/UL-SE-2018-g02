@@ -1,0 +1,77 @@
+\subsubsection{usergoal-ugManageRequest}
+
+\label{RE-use-case-ugManageRequest}
+
+
+The goal is to do an action that makes the handling of a 
+request progress.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{ugManageRequest}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{usergoal}
+  
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[active]}}
+
+
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The goal is to do an action that makes the handling of a 
+request progress.}
+
+\addrowheading{Reuse}
+\addnumberedsinglerow{}{\msrucname{ugSecurelyUseSystem [1..1]}}
+\addnumberedsinglerow{}{\msrucname{oeGetAllRequestsFromCoordinator [1..1]}}
+\addnumberedsinglerow{}{\msrucname{oeTreatRequest [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeSolveRequest [1..*]}}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+there exist one request whose related information has been changed.
+}
+
+\addrowheading{Main Steps}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{ugSecurelyUseSystem} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{oeGetAllRequestsFromCoordinator} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{oeTreatRequest} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{oeSolveRequest} use case}
+\addrowheading{Steps Ordering Constraints}
+\addnumberedsinglerow{}{step (a) must always be performed before all the other steps.}
+\addnumberedsinglerow{}{Subsequently, all the steps follow after step (a) is performed.}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+
+
+Figure \ref{fig:lu.uni.lassy.excalibur.MyCrash.G02-RE-UCD-uc-ugManageRequest}
+The administrator's role is to get all the pending requests to add a new PI, treat it and solve the specific PIs.
+
+\begin{figure}[htbp]
+\begin{center}
+
+\includegraphics[
+angle=0
+]{./images-report-gen/usecase-model/usergoal/uc-ugManageRequest.eps}
+\end{center}
+\caption[lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugManageRequest]{ugManageRequest user goal use case}
+\label{fig:lu.uni.lassy.excalibur.MyCrash.G02-RE-UCD-uc-ugManageRequest}
+\end{figure}
+\vspace{0.5cm}

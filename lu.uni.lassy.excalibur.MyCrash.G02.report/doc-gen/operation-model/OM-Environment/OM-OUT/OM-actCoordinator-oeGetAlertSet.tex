@@ -1,0 +1,89 @@
+\subsection{Operation Model for oeGetAlertSet}
+
+\label{OM-oeGetAlertSet}
+
+
+The \msrcode{oeGetAlertSet} operation has the following properties:
+
+	\begin{operationmodel}
+	\addheading{Operation}
+	\adddoublerow{oeGetAlertSet}{
+	 sent to request all the ctAlert instances having a specific status.}
+
+	\addrowheading{Parameters}
+	\addnumbereddoublerow{}{AetAlertStatus: etAlertStatus}{the criteria used to select the alerts to send back to the actor} 
+
+	\addrowheading{Return type}
+	\addsinglerow{ptBoolean}
+
+	\addrowheading{Pre-Condition (protocol)}
+	\addnumberedsinglerow{PreP}{
+	PreP 1 the system is started
+	PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+	is considered logged) }
+		
+	\addrowheading{Pre-Condition (functional)}
+	\addnumberedsinglerow{PreF}{PreF 1 none }
+
+	\addrowheading{Post-Condition (functional)}
+	\addnumberedsinglerow{PostF}{PostF 1 the post state is the one obtained by satisfying the isSentToCoordinator predicate for
+	each alert having the provided status and for the actor sending the message. (cf. specification
+	of isSentToCoordinator predicate given for the ctAlert type. }
+
+	\addrowheading{Post-Condition (protocol)}
+	\addnumberedsinglerow{PostP}{PostP 1 none }
+	\end{operationmodel}
+
+
+
+	% ------------------------------------------
+	% MCL Listing
+	% ------------------------------------------
+	\vspace{1cm}
+	The listing~\ref{OM-actCoordinator-oeGetAlertSet-MCL-LST} provides the \msrmessir (MCL-oriented) specification of the operation.
+	
+	\scriptsize
+	\vspace{0.5cm}
+	\begin{lstlisting}[style=MessirStyle,firstnumber=auto,captionpos=b,caption={\msrmessir (MCL-oriented) specification of the operation \emph{oeGetAlertSet}.},label=OM-actCoordinator-oeGetAlertSet-MCL-LST]
+
+	/* Pre Protocol:*/ 
+	preP{let TheSystem:ctState in
+					let TheActor:actCoordinator in
+					
+					self.rnActor.rnSystem = TheSystem
+					and self.rnActor = The Actor
+					
+					/* Pre P01 */
+					TheSystem.vpStarted = true
+					
+					/* Pre P02 */
+					TheActor.rnctAuthenticated.vpIsLogged = true}
+	
+	/* Pre Functional:*/
+	preF{true}
+	
+	/* Post Functional:*/ 
+	postF{let TheSystem: ctState in
+					let ThectAlert:ctAlert in
+					
+					self.rnActor.rnSystem = TheSystem
+					
+					/* Post F01 */
+					TheSystem.rnctAlert->select(status.eq(AetAlertStatus)) = ThectAlert
+					and ThectAlert.rnctAlert->forAll(isSentToCoordinator)
+					and ThectAlert.msrIsSentToCoordinator}
+	
+	/* Post Protocol:*/ 
+	postP{ true}
+	
+	\end{lstlisting}
+	\normalsize 
+	
+	
+	
+	
+
+
+
+
+

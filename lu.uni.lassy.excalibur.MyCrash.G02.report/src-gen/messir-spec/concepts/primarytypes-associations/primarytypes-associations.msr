@@ -1,0 +1,79 @@
+/*
+* @author mikel
+* @date Fri Mar 16 11:46:38 CET 2018
+*/
+
+package lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.associations {
+
+import lu.uni.lassy.messir.libraries.calendar
+import lu.uni.lassy.messir.libraries.math
+import lu.uni.lassy.messir.libraries.primitives
+import lu.uni.lassy.messir.libraries.string
+
+import lu.uni.lassy.excalibur.MyCrash.G02.environment
+import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
+
+	Concept Model {
+		
+		Primary Types {
+			
+			association assctAlertctCrisis
+				ctAlert(rnAlerts)[1..*]
+				ctCrisis(rnTheCrisis)[1..1]
+				
+			association assctAlertctPerson
+				ctAlert(rnSignaled)[0..*]
+ 				ctPerson(rnSignaler)[1..1]
+ 				
+ 			association assctCoordinatorctAdministrator
+				ctCoordinator(rnCreated)[0..*]
+				ctAdministrator(rnCreator)[1..1]
+ 				
+ 			association assctAlertctCoordinator
+				ctAlert(rnValidated)[0..*]
+				ctCoordinator(rnValidator)[0..1]
+ 				
+ 			association assctCrisisctCoordinator
+				ctCrisis(rnHandled)[0..*]
+				ctCoordinator(rnHandler)[0..1]
+				
+			association assctRequestctCoordinator
+				ctRequest(rnChecked)[0..*]
+				ctCoordinator(rnChecker)[0..1]
+				
+			association assctRequestctAdministrator
+				ctRequest(rnBeingTreated)[0..*]
+				ctAdministrator(rnTreater)[0..1]
+				
+			association assctPIctAdministrator
+				ctPI(rnManaged)[0..*]
+				ctAdministrator(rnManager)[0..1]
+			
+			association assctPIctPerson
+				ctPI(rnRequested)[0..*]
+				ctPerson(rnRequester)[1..1]
+			
+			// Actors' associations
+			
+			association assctPersonactComCompany
+ 				ctPerson(rnctHuman)[0..*]
+ 				actComCompany(rnactComCompany)[1..1]
+ 			
+ 			association assctPersonactPerson
+ 				ctPerson(rnctPerson)[1..1]
+ 				actPerson(rnactPerson)[1..1]
+ 			
+ 			association assctAuthenticatedactAuthenticated
+ 				ctAuthenticated(rnctAuthenticated)[1..1]
+ 				actAuthenticated(rnactAuthenticated)[1..1]
+ 				
+ 			association assctCoordinatoractCoordinator
+ 				ctCoordinator(rnctCoordinator)[1..1]
+ 				actCoordinator(rnactCoordinator)[1..1]
+ 			
+ 			association assctAdministratoractAdministrator
+ 				ctAdministrator(rnctAdministrator)[1..1]
+ 				actAdministrator(rnactAdministrator)[1..1]
+		}
+	}
+}

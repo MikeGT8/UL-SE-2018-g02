@@ -1,0 +1,96 @@
+\subsection{Operation Model for oeSetCrisisStatus}
+
+\label{OM-oeSetCrisisStatus}
+
+
+The \msrcode{oeSetCrisisStatus} operation has the following properties:
+
+	\begin{operationmodel}
+	\addheading{Operation}
+	\adddoublerow{oeSetCrisisStatus}{
+	 sent to define the handling status of a specific crisis.}
+
+	\addrowheading{Parameters}
+	\addnumbereddoublerow{}{AdtCrisisID: dtCrisisID}{the identification information used to determine the crisis} 
+	\addnumbereddoublerow{}{AetCrisisStatus: etCrisisStatus}{the new status value} 
+
+	\addrowheading{Return type}
+	\addsinglerow{ptBoolean}
+
+	\addrowheading{Pre-Condition (protocol)}
+	\addnumberedsinglerow{PreP}{
+	PreP 1 the system is started
+	PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+	is considered logged) }
+		
+	\addrowheading{Pre-Condition (functional)}
+	\addnumberedsinglerow{PreF}{PreF 1 it is supposed that there exist one crisis in the pre state having the given id. }
+
+	\addrowheading{Post-Condition (functional)}
+	\addnumberedsinglerow{PostF}{PostF 1 the crisis status attribute of the crisis instance having the given id is replaced by the given
+	one and the requesting actor is notified of this update. }
+
+	\addrowheading{Post-Condition (protocol)}
+	\addnumberedsinglerow{PostP}{PostP 1 none }
+	\end{operationmodel}
+
+
+
+	% ------------------------------------------
+	% MCL Listing
+	% ------------------------------------------
+	\vspace{1cm}
+	The listing~\ref{OM-actCoordinator-oeSetCrisisStatus-MCL-LST} provides the \msrmessir (MCL-oriented) specification of the operation.
+	
+	\scriptsize
+	\vspace{0.5cm}
+	\begin{lstlisting}[style=MessirStyle,firstnumber=auto,captionpos=b,caption={\msrmessir (MCL-oriented) specification of the operation \emph{oeSetCrisisStatus}.},label=OM-actCoordinator-oeSetCrisisStatus-MCL-LST]
+
+	/* Pre Protocol:*/ 
+	preP{let TheSystem:ctState in
+					let TheActor:actCoordinator in
+					
+					self.rnActor.rnSystem = TheSystem
+					and self.rnActor = The Actor
+					
+					/* Pre P01 */
+					TheSystem.vpStarted = true
+					
+					/* Pre P02 */
+					TheActor.rnctAuthenticated.vpIsLogged = true}
+	
+	/* Pre Functional:*/
+	preF{let TheSystem:ctState in
+					let ColctCrisis:Bag(ctCrisis) in
+				
+					self.rnActor.rnSystem = TheSystem
+				
+					/* Pre F01 */
+					TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ColctCrisis
+					and ColctCrisis->size.eq(1)}
+	
+	/* Post Functional:*/ 
+	postF{let TheSystem:ctState in
+					let ThectCrisis:ctCrisis in
+				
+					self.rnActor.rnSystem = TheSystem
+				
+					/* Post F01 */
+					TheSystem.rnctCrisis->select(id.eq(AdtCrisisID)) = ThectCrisis
+					and ThectCrisis.AetCrisisStatus.eq(AdtCrisisStatus)
+					and TheActor.rnInterfaceIN^ieMessage("Crisis status set to " + AdtCrisisStatus)}
+	
+	/* Post Protocol:*/ 
+	postP{ true}
+	
+	\end{lstlisting}
+	\normalsize 
+	
+	
+	
+	
+
+
+
+
+

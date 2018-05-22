@@ -1,0 +1,37 @@
+package usecases.uciugLoginWithCaptcha {
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+
+	Use Case Model {
+
+		use case instance uciugLoginWithCaptcha : ugLoginWithCaptcha{
+			actors {
+				bob:actAuthenticated
+			}
+			use case steps {
+				
+				bob
+				executed instanceof subfunction oeLogin("bob", "qwertz") {
+					ieLogin("Wrong Password, try again.") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeLogin("bob", "idontknowanymore") {
+					ieLogin("Wrong Password, try again.") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeLogin("bob", "なんでもない") {
+					ieLogin("Wrong Password, try again.") returned to bob
+					ieLogin("Login with captcha required.") returned to bob
+					//ieLoginWrongSendCaptcha("C4p7cha") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeLoginWithCaptcha("bob", "sendhelp", "C4p7cha") {
+					ieLogin("Welcome bob.") returned to bob
+				}
+			}
+		}
+	}
+}

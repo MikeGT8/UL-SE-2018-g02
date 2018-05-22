@@ -1,0 +1,74 @@
+\subsubsection{summary-suGenerateNewAlert}
+
+\label{RE-use-case-suGenerateNewAlert}
+
+
+The goal is that the person searches for a point of interest, 
+retrieves the GPS location and sends an Sms to the communication company with 
+the needed information.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{suGenerateNewAlert}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{summary}
+  
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actPerson[active, multiple]}}
+\addnumberedsinglerow{}{\msrcode{actComCompany[active, multiple]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actMsrCreator[active]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The goal is that the person searches for a point of interest, 
+retrieves the GPS location and sends an Sms to the communication company with 
+the needed information.}
+
+\addrowheading{Reuse}
+\addnumberedsinglerow{}{\msrucname{oeCreateSystemAndEnvironment [1..1]}}
+\addnumberedsinglerow{}{\msrucname{ugSecurelyUseSystem [1..1]}}
+\addnumberedsinglerow{}{\msrucname{oeSearchPI [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeGetGPSLocation [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeAlert [1..*]}}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has never been deployed
+the point of interest already exists
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+the actor person gets a match after searching for a PI
+the person gets a message with the GPS location of the PI
+a message that the Sms has been sent, is sent to the person
+the communication company gets a message with the detailed information of a potential crisis
+}
+
+\addrowheading{Main Steps}
+\addalphanumberedsinglerow{}{the actor \msrcode{actMsrCreator} executes the \msrucname{oeCreateSystemAndEnvironment} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{ugSecurelyUseSystem} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeSearchPI} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeGetGPSLocation} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actComCompany} executes the \msrucname{oeAlert} use case}
+\addrowheading{Steps Ordering Constraints}
+\addnumberedsinglerow{}{step (a) and (b) must always be performed before all the other steps.}
+\addnumberedsinglerow{}{step (a) is the first step to perform.}
+\addnumberedsinglerow{}{Subsequently, all the steps follow after step (a) is performed.}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

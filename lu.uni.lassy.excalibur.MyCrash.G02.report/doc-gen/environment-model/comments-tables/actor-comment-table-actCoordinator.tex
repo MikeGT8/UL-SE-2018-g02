@@ -1,0 +1,73 @@
+\subsection{\msrcode{actCoordinator} Actor}
+
+
+\begin{actortable}
+	\addheading{Actor}
+	
+	\adddoublerow{actCoordinator}{PI variant: The actor Coordinator is in charge of checking the requested points of
+				 interest of their existence in the system and to deliver the non-existing requested
+				 points of interest to the actor Administrator.
+				 Access Rights variant: The actor Coordinator is in charge of managing and monitoring alerts and crisis.
+				 This means he has the overview of over all alerts and crisis. He decides weather a alert should be validated
+				 or not. All the crisis managed by him, which means he is the only actor interacting and handling crisis.}
+	
+	\addrowheading{Extends}
+	\addsinglerow{lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated}
+	
+	
+	
+	
+
+	\addrowheading{OutputInterfaces}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeGetAllRequests}
+			{\msrcode{oeGetAllRequests():ptBoolean}}}
+			{The output event oeGetAllRequests retrieves a list of requests sent by the actor Person.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeCheckAvailability}
+			{\msrcode{oeCheckAvailability(ARequestName:dtName, ARequestCity:dtCity, ARequestCategory:etCategory):ptBoolean}}}
+			{The output event oeCheckAvailability confirms that a requested point of interest sent by the actor 
+			Person exists already in the system or not and sets the request ignored attribute to the 
+			corresponding value.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeDeliverRequest}
+			{\msrcode{oeDeliverRequest(ARequestID:dtID):ptBoolean}}}
+			{The output event oeDeliverRequest sends a checked request sent by the actor Person to the actor Administrator.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeInvalidateAlert}
+			{\msrcode{oeInvalidateAlert(AdtAlertID:dtAlertID):ptBoolean}}}
+			{The output event oeInvalidateAlert puts the status of an alert to invalid.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeValidateAlert}
+			{\msrcode{oeValidateAlert(AdtAlertID:dtAlertID):ptBoolean}}}
+			{The output event oeValidateAlert puts the status of an alert to valid.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeGetAlertSet}
+			{\msrcode{oeGetAlertSet(AetAlertStatus:etAlertStatus):ptBoolean}}}
+			{The output event oeGetAlertSet requests a list with every existing alert in the system matching the given parameters.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeCloseCrisis}
+			{\msrcode{oeCloseCrisis(AdtCrisisID:dtCrisisID):ptBoolean}}}
+			{The output event oeCloseCrisis puts the status of a crisis to closed.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeGetCrisisSet}
+			{\msrcode{oeGetCrisisSet(AetCrisisStatus:etCrisisStatus):ptBoolean}}}
+			{The output event oeGetCrisisSet requests a list with every existing crisis in the system matching the given parameters.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeSetCrisisHandler}
+			{\msrcode{oeSetCrisisHandler(AdtCrisisID:dtCrisisID):ptBoolean}}}
+			{The output event oeSetCrisisHandler sets a coordinator as handler of a crisis.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeReportOnCrisis}
+			{\msrcode{oeReportOnCrisis(AdtCrisisID:dtCrisisID, AdtComment:dtComment):ptBoolean}}}
+			{The output event oeReportOnCrisis adds a report to a crisis.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeSetCrisisStatus}
+			{\msrcode{oeSetCrisisStatus(AdtCrisisID:dtCrisisID, AetCrisisStatus:etCrisisStatus):ptBoolean}}}
+			{The output event oeSetCrisisStatus changes the status of a crisis.}
+	\addnumbereddoublerow{OUT}{\hypertarget{actCoordinator.outactCoordinator.oeSetCrisisType}
+			{\msrcode{oeSetCrisisType(AdtCrisisID:dtCrisisID, AetCrisisType:etCrisisType):ptBoolean}}}
+			{The output event oeSetCrisisType changes the type of a crisis.}
+	
+	\addrowheading{InputInterfaces}
+	\addnumbereddoublerow{IN}{\msrcode{ieRequestListToCheck():ptBoolean}}
+							 {The input event ieRequestListToCheck returns a list of requests which have to be checked from the 
+							 actor Person to the actor Coordinator.}
+	\addnumbereddoublerow{IN}{\msrcode{ieRequestDelivered():ptBoolean}}
+							 {The input event ieRequestDelivered specifies that the request has been delivered to the actor 
+							 Coordinator.}
+	\addnumbereddoublerow{IN}{\msrcode{ieCrisisSet():ptBoolean}}
+							 {The input event ieCrisisSet returns a list with every existing crises in the system matching the given parameters.}
+	\addnumbereddoublerow{IN}{\msrcode{ieAlertSet():ptBoolean}}
+							 {The input event ieAlertSet returns a list with every existing alert in the system matching the given parameters.}
+	
+\end{actortable}

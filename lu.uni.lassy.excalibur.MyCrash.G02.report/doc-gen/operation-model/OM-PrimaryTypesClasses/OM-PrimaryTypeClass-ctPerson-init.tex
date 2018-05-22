@@ -1,0 +1,73 @@
+\subsection{Operation Model for init}
+
+\label{OM-init}
+
+
+The \msrcode{init} operation has the following properties:
+
+	\begin{operationmodel}
+	\addheading{Operation}
+	\adddoublerow{init}{
+	used to initialise the current object as a new instance of the ctPerson type. }
+
+	\addrowheading{Parameters}
+	\addnumbereddoublerow{}{Aid: dtPhoneNumber}{the id initialised for a new person.} 
+	\addnumbereddoublerow{}{Alogin: dtLogin}{the login initialised for a new PI.} 
+	\addnumbereddoublerow{}{Apwd: dtPassword}{the password initialised for a new PI.} 
+	\addnumbereddoublerow{}{ApersonType: etPersonType}{the person type initialised for a new PI.} 
+
+	\addrowheading{Return type}
+	\addsinglerow{ptBoolean}
+
+		
+
+	\addrowheading{Post-Condition (functional)}
+	\addnumberedsinglerow{PostF}{true iff the system poststate includes the current object as a new ctPerson instance having its attributes equal to the ones provided as parameters. }
+
+	\end{operationmodel}
+
+
+
+	% ------------------------------------------
+	% MCL Listing
+	% ------------------------------------------
+	\vspace{1cm}
+	The listing~\ref{OM-ctPerson-init-MCL-LST} provides the \msrmessir (MCL-oriented) specification of the operation.
+	
+	\scriptsize
+	\vspace{0.5cm}
+	\begin{lstlisting}[style=MessirStyle,firstnumber=auto,captionpos=b,caption={\msrmessir (MCL-oriented) specification of the operation \emph{init}.},label=OM-ctPerson-init-MCL-LST]
+
+	
+	
+	/* Post Functional:*/ 
+	postF{if (
+						let Self:ctPerson in
+						
+						/* Post F01 */
+						
+						Self.id = Aid
+						and Self.login = Alogin
+						and Self.pwd = Apwd
+						and Self.type = Atype
+						and Self.phoneNumber = AphoneNumber
+				
+				 		/* Post F02 */
+				 		and (Self.oclIsNew and self = Self)
+				 	)
+				 	then (result = true)
+				 	else (result = false)
+				   	endif}
+	
+	
+	\end{lstlisting}
+	\normalsize 
+	
+	
+	
+	
+
+
+
+
+

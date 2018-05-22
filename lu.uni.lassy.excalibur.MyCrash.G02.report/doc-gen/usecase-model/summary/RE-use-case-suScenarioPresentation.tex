@@ -1,0 +1,77 @@
+\subsubsection{summary-suScenarioPresentation}
+
+\label{RE-use-case-suScenarioPresentation}
+
+
+scenario shown in a presentation		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{suScenarioPresentation}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{summary}
+  
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actMsrCreator[active]}}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[active]}}
+\addnumberedsinglerow{}{\msrcode{actCoordinator[active]}}
+\addnumberedsinglerow{}{\msrcode{actPerson[active]}}
+\addnumberedsinglerow{}{\msrcode{actComCompany[active]}}
+
+
+
+\addrowheading{Goal(s) description}
+\addsinglerow{scenario shown in a presentation}
+
+\addrowheading{Reuse}
+\addnumberedsinglerow{}{\msrucname{oeCreateSystemAndEnvironment [1..1]}}
+\addnumberedsinglerow{}{\msrucname{oeLoginWithCaptcha [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeSearchPI [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeSendNewRequest [1..*]}}
+\addnumberedsinglerow{}{\msrucname{ugCheckRequest [1..*]}}
+\addnumberedsinglerow{}{\msrucname{ugManageRequest [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeSearchPI [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeGetGPSLocation [1..*]}}
+\addnumberedsinglerow{}{\msrucname{oeAlert [1..*]}}
+\addnumberedsinglerow{}{\msrucname{ugAdministrateTheSystem [1..*]}}
+\addnumberedsinglerow{}{\msrucname{ugMonitor [1..*]}}
+\addnumberedsinglerow{}{\msrucname{ugManageCrisis [1..*]}}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+}
+
+\addrowheading{Main Steps}
+\addalphanumberedsinglerow{}{the actor \msrcode{actMsrCreator} executes the \msrucname{oeCreateSystemAndEnvironment} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{ugAdministrateTheSystem} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{oeLoginWithCaptcha} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeSearchPI} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeSendNewRequest} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugCheckRequest} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actAdministrator} executes the \msrucname{ugManageRequest} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeSearchPI} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actPerson} executes the \msrucname{oeGetGPSLocation} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actComCompany} executes the \msrucname{oeAlert} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugMonitor} use case}
+\addalphanumberedsinglerow{}{the actor \msrcode{actCoordinator} executes the \msrucname{ugManageCrisis} use case}
+\addrowheading{Steps Ordering Constraints}
+\addnumberedsinglerow{}{Step a must be executed before executing all other steps}
+\addnumberedsinglerow{}{Step b must follow step a}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

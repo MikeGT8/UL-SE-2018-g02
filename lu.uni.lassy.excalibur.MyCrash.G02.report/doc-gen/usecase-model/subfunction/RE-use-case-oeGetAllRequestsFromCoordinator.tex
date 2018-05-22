@@ -1,0 +1,48 @@
+\subsubsection{subfunction-oeGetAllRequestsFromCoordinator}
+
+\label{RE-use-case-oeGetAllRequestsFromCoordinator}
+
+
+The administrator's goal is to retrieve pending requests.		  
+
+
+\begin{usecase}
+  \addheading{Use-Case Description}
+  \addsingletwocolumnrow{Name}{oeGetAllRequestsFromCoordinator}
+  \addsingletwocolumnrow{Scope}{system}
+  \addsingletwocolumnrow{Level}{subfunction}
+  
+
+\addrowheading{Primary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actAdministrator[active]}}
+
+
+\addrowheading{Secondary actor(s)}
+\addnumberedsinglerow{}{\msrcode{actCoordinator[passive]}}
+\addnumberedsinglerow{}{\msrcode{actPerson[multiple]}}
+
+\addrowheading{Goal(s) description}
+\addsinglerow{The administrator's goal is to retrieve pending requests.}
+
+\addrowheading{Protocol condition(s)}
+\addnumberedsinglerow{}{
+the iCrash system has been deployed.
+}
+
+\addrowheading{Pre-condition(s)}
+\addnumberedsinglerow{}{
+none
+}
+
+\addrowheading{Main post-condition(s)}
+\addnumberedsinglerow{}{
+the administrator gets a list of pending requests.
+}
+
+\addrowheading{Additional Information}
+\addsinglerow{
+none
+}
+
+\end{usecase} 
+

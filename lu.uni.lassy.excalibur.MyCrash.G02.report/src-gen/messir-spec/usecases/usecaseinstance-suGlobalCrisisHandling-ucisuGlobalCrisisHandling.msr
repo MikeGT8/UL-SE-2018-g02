@@ -1,0 +1,121 @@
+package usecases.ucisuGlobalCrisisHandling {
+	import lu.uni.lassy.excalibur.MyCrash.G02.usecases
+	import lu.uni.lassy.excalibur.MyCrash.G02.environment
+
+	Use Case Model {
+
+		use case instance ucisuGlobalCrisisHandling : suGlobalCrisisHandling{
+			actors {
+				bob:actCoordinator
+				steve:actCoordinator
+			}
+			use case steps {
+				
+				bob
+				executed instanceof subfunction oeLogin("bob", "password") {
+					ieLogin("You successfully logged in!") returned to bob
+				}
+				
+				steve
+				executed instanceof subfunction oeLogin("steve", "password") {
+					ieLogin("You successfully logged in!") returned to steve
+				}
+				
+				bob
+				executed instanceof subfunction oeGetAlertSet("pending", "2") {
+					ieMessage("AlertSet") returned to bob
+				}
+				
+				bob 
+				executed instanceof subfunction oeValidateAlert("1") {
+					ieMessage("Permission denied! Your access rights are to low to validate this alert!") returned to bob
+				}
+				
+				steve
+				executed instanceof subfunction oeGetAlertSet("pending", "2") {
+					ieMessage("AlertSet") returned to steve
+				}
+				
+				steve
+				executed instanceof subfunction oeValidateAlert("1") {
+					ieMessage("Alert validated") returned to steve
+				}
+				
+				bob
+				executed instanceof subfunction oeGetCrisisSet("pending", "2") {
+					ieMessage("CrisisSet") returned to bob
+				}
+				
+				bob 
+				executed instanceof subfunction oeSetCrisisHandler("1") {
+					ieMessage("Permission denied! Your access rights are to low to handle this crisis!") returned to bob
+				}
+				
+				steve
+				executed instanceof subfunction oeGetCrisisSet("pending", "1") {
+					ieMessage("CrisisSet") returned to steve
+				}
+				
+				steve
+				executed instanceof subfunction oeSetCrisisHandler("1") {
+					ieMessage("Crisis handler set to steve") returned to steve
+				}
+				
+				steve
+				executed instanceof subfunction oeSetCrisisStatus("1", "in progression") {
+					ieMessage("Crisis status set to in progression") returned to steve
+				}
+				
+				steve
+				executed instanceof subfunction oeReportOnCrisis("1", "Crisis handled") {
+					ieMessage("Report added to the crisis") returned to steve
+				}
+				
+				steve
+				executed instanceof subfunction oeCloseCrisis("1") {
+					ieMessage("Crisis closed") returned to steve
+				}
+				
+				steve
+				executed instanceof subfunction oeSetCrisisType("2", "1") {
+					ieMessage("Crisis type set to 1") returned to steve
+				}
+				
+				bob
+				executed instanceof subfunction oeGetCrisisSet("pending", "1") {
+					ieMessage("CrisisSet") returned to bob
+				}
+				
+				bob 
+				executed instanceof subfunction oeSetCrisisHandler("2") {
+					ieMessage("Crisis handler set to bob") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeSetCrisisStatus("2", "in progression") {
+					ieMessage("Crisis status set to in progression") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeReportOnCrisis("2", "Crisis handled") {
+					ieMessage("Report added to the crisis") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeCloseCrisis("2") {
+					ieMessage("Crisis closed") returned to bob
+				}
+				
+				bob
+				executed instanceof subfunction oeLogout() {
+					ieLogout("You successfully logged out!") returned to bob
+				}
+				
+				steve
+				executed instanceof subfunction oeLogout() {
+					ieLogout("You successfully logged out!") returned to steve
+				}
+			}
+		}
+	}
+}

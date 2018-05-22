@@ -1,0 +1,124 @@
+\chapter{Operation Model}
+\label{chap:lu.uni.lassy.excalibur.MyCrash.G02-OM}
+
+This section contains the operation schemes of each operation defined in either an actor, its output interface, in a primary or secondary type (class, datatype or enumeration types). 
+The \msrmessir OCL code listing is joined to the comment table.
+
+\lstset{
+float,
+basicstyle=\scriptsize,
+language=Messir,
+breakatwhitespace=false,
+tabsize=2,
+breaklines=true,
+numbers=left,
+emptylines=1,
+numbersep=5pt,
+showspaces=false,
+showstringspaces=false,
+showtabs=false
+} 
+
+
+%% ***************************************************************
+%% operations for: Environment-Out Interface Operation Schemes
+
+		
+\section{Environment - Out Interface Operation Scheme for actAdministrator}
+\label{OM-EM-OutInterface-OS-actAdministrator}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeAddPI.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeUpdatePI.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeDeletePI.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeGetAllRequestsFromCoordinator.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeTreatRequest.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeSolveRequest.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeAddCoordinator.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeDeleteCoordinator.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAdministrator-oeUpdateCoordinatorAccessRights.tex}
+\section{Environment - Out Interface Operation Scheme for actAuthenticated}
+\label{OM-EM-OutInterface-OS-actAuthenticated}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAuthenticated-oeLogin.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAuthenticated-oeLogout.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAuthenticated-oeLoginWithCaptcha.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actAuthenticated-oeResetPassword.tex}
+\section{Environment - Out Interface Operation Scheme for actCoordinator}
+\label{OM-EM-OutInterface-OS-actCoordinator}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeGetAllRequests.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeCheckAvailability.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeDeliverRequest.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeValidateAlert.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeInvalidateAlert.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeGetAlertSet.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeGetCrisisSet.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeSetCrisisType.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeSetCrisisStatus.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeSetCrisisHandler.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeReportOnCrisis.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actCoordinator-oeCloseCrisis.tex}
+\section{Environment - Out Interface Operation Scheme for actPerson}
+\label{OM-EM-OutInterface-OS-actPerson}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actPerson-oeSearchPI.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actPerson-oeSendNewRequest.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actPerson-oeGetGPSLocation.tex}
+\input{./doc-gen/operation-model/OM-Environment/OM-OUT/OM-actPerson-oeGetDescription.tex}
+
+%% ***************************************************************
+%% operations for: Environment-Actor Operation Schemes
+
+\section{Environment - Actor Operation Schemes}
+There are no elements in this category in the system analysed.
+		
+
+%% ***************************************************************
+%% operations for primary type classes
+
+
+\section{Primary Types - Operation Schemes for Class ctAdministrator} 
+\label{OM-CM-PTClass-ctAdministrator}
+\input{./doc-gen/operation-model/OM-PrimaryTypesClasses/OM-PrimaryTypeClass-ctAdministrator-init.tex}
+\section{Primary Types - Operation Schemes for Class ctCoordinator} 
+\label{OM-CM-PTClass-ctCoordinator}
+\input{./doc-gen/operation-model/OM-PrimaryTypesClasses/OM-PrimaryTypeClass-ctCoordinator-init.tex}
+\section{Primary Types - Operation Schemes for Class ctPerson} 
+\label{OM-CM-PTClass-ctPerson}
+\input{./doc-gen/operation-model/OM-PrimaryTypesClasses/OM-PrimaryTypeClass-ctPerson-init.tex}
+
+
+%% ***************************************************************
+%% operations for primary type datatypes and enumerations
+
+\section{Primary Types - Operation Schemes for Datatypes}
+There are no elements in this category in the system analysed.
+
+
+
+
+\section{Primary Types - Operation Schemes for Enumerations}
+There are no elements in this category in the system analysed.
+
+
+
+
+
+%% ***************************************************************
+%% operations for secondary type classes
+
+
+\section{Secondary Types - Operation Schemes for Classes}
+There are no elements in this category in the system analysed.
+
+
+
+
+%% ***************************************************************
+%% operations for secondary type datatypes and enumerations
+
+\section{Secondary Types - Operation Schemes for Datatypes}
+There are no elements in this category in the system analysed.
+
+
+
+\section{Secondary Types - Operation Schemes for Enumerations}
+There are no elements in this category in the system analysed.
+
+
