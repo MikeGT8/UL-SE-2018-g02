@@ -6,5 +6,5 @@
 
 @@view uci-ucisuGlobalCrisisHandling
 @instance Use-Case usecases.ucisuGlobalCrisisHandling.ucisuGlobalCrisisHandling 
-@description ""
+@description "an example of how crisis are handled globally"
 @caption ""
