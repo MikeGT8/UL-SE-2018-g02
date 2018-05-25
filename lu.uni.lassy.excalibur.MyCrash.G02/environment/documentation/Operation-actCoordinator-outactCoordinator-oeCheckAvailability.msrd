@@ -8,14 +8,8 @@
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability
 //parameters
 @parameter
-lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability.ARequestName
-"name used for ctRequest instance retrieval"
-@parameter
-lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability.ARequestCity
-"city used for ctRequest instance retrieval"
-@parameter
-lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability.ARequestCategory
-"category used for ctRequest instance retrieval"
+lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.oeCheckAvailability.ARequestID
+"id used for ctRequest instance retrieval"
 @endParameters
 
 @description "sent to check if the requested PI is in the system."

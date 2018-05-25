@@ -68,7 +68,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			}
 		}
 		
-		operation: actCoordinator.outactCoordinator.oeCheckAvailability(ARequestName:dtName, ARequestCity:dtCity, ARequestCategory:etCategory):ptBoolean {
+		operation: actCoordinator.outactCoordinator.oeCheckAvailability(ARequestID:dtID):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {
@@ -96,7 +96,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				and self.rnActor = TheActor
 				
 				/* PreF01 */
-				TheSystem.rnctRequest->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctRequest
+				TheSystem.rnctRequest->select(name.eq(ARequestID)) = ColctRequest
 				and ColctRequest->size().eq(1)
 			}
 			
@@ -109,7 +109,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = TheActor
 				
-				TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
+				TheSystem.rnctPI->select(name.eq(ARequestID)) = ColctPI
 				
 				and if (ColctPI.IsEmpty() = false)
 				then (

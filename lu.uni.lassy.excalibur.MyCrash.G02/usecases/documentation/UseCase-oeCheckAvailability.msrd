@@ -6,9 +6,7 @@
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability
 @description "The coordinator's goal is to check whether the requested PI exists already."
-@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability.ARequestName ""
-@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability.ARequestCity ""
-@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability.ARequestCategory ""
+@parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeCheckAvailability.ARequestID ""
 @endParameters
 @protocolCondition
 "
