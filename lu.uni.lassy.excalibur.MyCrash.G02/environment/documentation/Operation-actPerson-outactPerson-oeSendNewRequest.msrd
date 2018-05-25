@@ -21,18 +21,21 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSendNewR
 @description "sent to add a new request to the system’s post state."
 //preProtocol descriptions
 @preP
-"the system is started.
-the actor logged previously and did not log out!"
+"PreP01 the system is started."
+@preP
+"PreP02 the actor logged previously and did not log out!"
 @endPreP
 //preFunctional descriptions
 @preF
-"it is supposed that there does NOT exists one ctRequest instance with the same name, category and city attributes than the one the person wants to add a new request.
-it is supposed that there does NOT exists one ctPI instance with the same name, category and city attributes than the one the person wants to add a new request."
+"PreF01 it is supposed that there does NOT exists one ctRequest instance with the same name, category and city attributes than the one the person wants to add a new request."
+@preF
+"PreF02 it is supposed that there does NOT exists one ctPI instance with the same name, category and city attributes than the one the person wants to add a new request."
 @endPreF
 //postFunctional descriptions
 @postF 
-"the new requested PI is added in the system's post state.
-the person actor is informed about the satisfaction of its request."
+"PostF01 the new requested PI is added in the system's post state."
+@postF 
+"PostF02 the person actor is informed about the satisfaction of its request."
 @endPostF
 //postProtocol descriptions
 @postP 

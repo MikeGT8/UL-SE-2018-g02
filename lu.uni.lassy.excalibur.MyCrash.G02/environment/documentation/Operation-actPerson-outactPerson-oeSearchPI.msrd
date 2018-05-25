@@ -21,8 +21,9 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSearchPI
 @description "sent to search for a specific PI in the system."
 //preProtocol descriptions
 @preP
-"the system is started.
-the actor logged previously and did not log out!"
+"PreP01 the system is started."
+@preP
+"PreP02 the actor logged previously and did not log out!"
 @endPreP
 //preFunctional descriptions
 @preF
@@ -30,8 +31,9 @@ the actor logged previously and did not log out!"
 @endPreF
 //postFunctional descriptions
 @postF 
-"the actor ActPerson gets a response from the system if the PI has been found or not.
-following the response, the person actor is informed about the appropriated response of its request."
+"PostF01 the actor ActPerson gets a response from the system if the PI has been found or not."
+@postF 
+"PostF02 following the response, the person actor is informed about the appropriated response of its request."
 @endPostF
 //postProtocol descriptions
 @postP 

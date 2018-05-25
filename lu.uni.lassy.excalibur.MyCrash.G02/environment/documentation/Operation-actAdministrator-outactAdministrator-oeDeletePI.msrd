@@ -15,17 +15,19 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministra
 @description "sent to delete an existing point of interest in the system’s post state."
 //preProtocol descriptions
 @preP
-"the system is started.
-the actor logged previously and did not log out!"
+"PreP01 the system is started."
+@preP
+"PreP02 the actor logged previously and did not log out!"
 @endPreP
 //preFunctional descriptions
 @preF
-"it is supposed that there exists one ctPI instance with the same id attribute than the one the administrator wants to update."
+"PreF01 it is supposed that there exists one ctPI instance with the same id attribute than the one the administrator wants to update."
 @endPreF
 //postFunctional descriptions
 @postF 
-"the PI attributes are updated in the system.
-the administrator actor is informed about the satisfaction of its request."
+"PostF01 the PI attributes are updated in the system."
+@postF
+"PostF02 the administrator actor is informed about the satisfaction of its request."
 @endPostF
 //postProtocol descriptions
 @postP 
