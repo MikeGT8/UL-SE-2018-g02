@@ -11,3 +11,4 @@
 @number 5
 @description "Represents class-actor relation for the PI variant"
 @caption "PIvariant-CGV-01 concept global view 01"
+@scale MaxWidth

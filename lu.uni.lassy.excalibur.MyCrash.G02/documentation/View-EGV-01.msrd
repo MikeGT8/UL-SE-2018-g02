@@ -10,3 +10,4 @@
 @number 4
 @description "presents the actors in relation to the ctState."
 @caption "Environment global view 01"
+@scale MaxWidth

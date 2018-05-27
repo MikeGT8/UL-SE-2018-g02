@@ -8,3 +8,4 @@
 @model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugMonitor 
 @description "shows how coordinators monitor crisis"
 @caption "ugMonitor view"
+@scale MaxWidth

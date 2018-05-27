@@ -8,3 +8,4 @@
 @model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugManageCrisis
 @description "shows how crisis are managed."
 @caption "user goal Manage Crisis"
+@scale MaxWidth

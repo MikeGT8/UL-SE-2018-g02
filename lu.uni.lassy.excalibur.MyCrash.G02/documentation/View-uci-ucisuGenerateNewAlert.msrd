@@ -8,3 +8,4 @@
 @instance Use-Case usecaseinstances.uci.ucisuGenerateNewAlert 
 @description "The person sends a Sms to the communication company about a possible alert to handle."
 @caption "suGenerateNewAlert summary use case instance"
+@scale MaxWidth

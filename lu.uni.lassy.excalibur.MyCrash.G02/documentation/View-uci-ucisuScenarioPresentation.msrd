@@ -8,3 +8,4 @@
 @instance Use-Case usecases.ucisuScenarioPresentation.ucisuScenarioPresentation 
 @description "Present the collaboration of the three variants."
 @caption "uci-suScenarioPresentation-uciSceanrioPresentation use case instance sequence diagram"
+@scale MaxWidth

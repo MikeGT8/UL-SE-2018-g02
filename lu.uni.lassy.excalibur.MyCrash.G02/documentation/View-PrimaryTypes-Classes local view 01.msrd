@@ -10,3 +10,4 @@
 @number 1
 @description "presents the relations between all the classes."
 @caption "PrimaryTypes Classes local view 01"
+@scale MaxWidth

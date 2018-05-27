@@ -11,3 +11,4 @@
 @number 6
 @description "Represents class and actor relation for Access Rights variant."
 @caption "ARvariant-CGV-01 concept global view 01"
+@scale MaxWidth

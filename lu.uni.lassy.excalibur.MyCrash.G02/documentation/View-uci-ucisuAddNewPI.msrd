@@ -10,3 +10,4 @@
 The coordinator checks if the problem is really true and sends it to the administrator. 
 The administrator treats the request and adds the new PI to the system."
 @caption "suAddNewPI summary use case instance"
+@scale MaxWidth
