@@ -8,4 +8,4 @@
 @instance Use-Case usecases.ucisuGlobalCrisisHandling.ucisuGlobalCrisisHandling 
 @description "an example of how crisis are handled globally"
 @caption ""
-@scale MaxWidth
+@scale MaxHeight
