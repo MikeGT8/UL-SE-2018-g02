@@ -122,7 +122,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeCheckAvailability(ARequestName:dtName, ARequestCity:dtCity, ARequestCategory:etCategory) {
+		use case system subfunction oeCheckAvailability(ARequestID:dtID) {
 		
 			actor actCoordinator[primary, active]
 			actor actPerson[secondary, passive]

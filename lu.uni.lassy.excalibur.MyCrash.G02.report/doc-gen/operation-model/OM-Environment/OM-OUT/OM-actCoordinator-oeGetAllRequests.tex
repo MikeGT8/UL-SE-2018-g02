@@ -14,15 +14,15 @@ The \msrcode{oeGetAllRequests} operation has the following properties:
 	\addsinglerow{ptBoolean}
 
 	\addrowheading{Pre-Condition (protocol)}
-	\addnumberedsinglerow{PreP}{the system is started.
-	the actor logged previously and did not log out!}
+	\addnumberedsinglerow{PreP}{PreP01 the system is started.}
+	\addnumberedsinglerow{PreP}{PreP02 the actor logged previously and did not log out!}
 		
 	\addrowheading{Pre-Condition (functional)}
 	\addnumberedsinglerow{PreF}{none}
 
 	\addrowheading{Post-Condition (functional)}
-	\addnumberedsinglerow{PostF}{the actor ActCoordinator gets a list of requests to handle if there are unhandled requests (no status).
-	the coordinator actor is also informed about the non-satisfaction of its request.}
+	\addnumberedsinglerow{PostF}{PostF01 the actor ActCoordinator gets a list of requests to handle if there are unhandled requests (no status).}
+	\addnumberedsinglerow{PostF}{PostF02 the coordinator actor is also informed about the non-satisfaction of its request.}
 
 	\addrowheading{Post-Condition (protocol)}
 	\addnumberedsinglerow{PostP}{non}

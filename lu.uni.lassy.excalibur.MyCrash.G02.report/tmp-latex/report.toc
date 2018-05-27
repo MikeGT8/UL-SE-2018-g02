@@ -32,10 +32,10 @@
 \contentsline {subsubsection}{\numberline {2.3.1.20}subfunction-oeDeliverRequest}{27}{subsubsection.2.3.1.20}
 \contentsline {subsubsection}{\numberline {2.3.1.21}subfunction-oeGetAlertSet}{28}{subsubsection.2.3.1.21}
 \contentsline {subsubsection}{\numberline {2.3.1.22}subfunction-oeGetAllRequests}{28}{subsubsection.2.3.1.22}
-\contentsline {subsubsection}{\numberline {2.3.1.23}subfunction-oeGetAllRequestsFromCoordinator}{32}{subsubsection.2.3.1.23}
-\contentsline {subsubsection}{\numberline {2.3.1.24}subfunction-oeGetCrisisSet}{32}{subsubsection.2.3.1.24}
-\contentsline {subsubsection}{\numberline {2.3.1.25}subfunction-oeGetDescription}{33}{subsubsection.2.3.1.25}
-\contentsline {subsubsection}{\numberline {2.3.1.26}subfunction-oeGetGPSLocation}{34}{subsubsection.2.3.1.26}
+\contentsline {subsubsection}{\numberline {2.3.1.23}subfunction-oeGetAllRequestsFromCoordinator}{29}{subsubsection.2.3.1.23}
+\contentsline {subsubsection}{\numberline {2.3.1.24}subfunction-oeGetCrisisSet}{29}{subsubsection.2.3.1.24}
+\contentsline {subsubsection}{\numberline {2.3.1.25}subfunction-oeGetDescription}{30}{subsubsection.2.3.1.25}
+\contentsline {subsubsection}{\numberline {2.3.1.26}subfunction-oeGetGPSLocation}{30}{subsubsection.2.3.1.26}
 \contentsline {subsubsection}{\numberline {2.3.1.27}subfunction-oeInvalidateAlert}{34}{subsubsection.2.3.1.27}
 \contentsline {subsubsection}{\numberline {2.3.1.28}subfunction-oeLogin}{35}{subsubsection.2.3.1.28}
 \contentsline {subsubsection}{\numberline {2.3.1.29}subfunction-oeLoginWithCaptcha}{35}{subsubsection.2.3.1.29}
@@ -93,21 +93,21 @@
 \contentsline {subsection}{\numberline {5.1.2}Operation Model for oeUpdatePI}{75}{subsection.5.1.2}
 \contentsline {subsection}{\numberline {5.1.3}Operation Model for oeDeletePI}{76}{subsection.5.1.3}
 \contentsline {subsection}{\numberline {5.1.4}Operation Model for oeGetAllRequestsFromCoordinator}{77}{subsection.5.1.4}
-\contentsline {subsection}{\numberline {5.1.5}Operation Model for oeTreatRequest}{78}{subsection.5.1.5}
+\contentsline {subsection}{\numberline {5.1.5}Operation Model for oeTreatRequest}{79}{subsection.5.1.5}
 \contentsline {subsection}{\numberline {5.1.6}Operation Model for oeSolveRequest}{80}{subsection.5.1.6}
 \contentsline {subsection}{\numberline {5.1.7}Operation Model for oeAddCoordinator}{81}{subsection.5.1.7}
 \contentsline {subsection}{\numberline {5.1.8}Operation Model for oeDeleteCoordinator}{83}{subsection.5.1.8}
 \contentsline {subsection}{\numberline {5.1.9}Operation Model for oeUpdateCoordinatorAccessRights}{84}{subsection.5.1.9}
-\contentsline {section}{\numberline {5.2}Environment - Out Interface Operation Scheme for actAuthenticated}{85}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Operation Model for oeLogin}{85}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.2}Environment - Out Interface Operation Scheme for actAuthenticated}{86}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Operation Model for oeLogin}{86}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Operation Model for oeLogout}{87}{subsection.5.2.2}
 \contentsline {subsection}{\numberline {5.2.3}Operation Model for oeLoginWithCaptcha}{88}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Operation Model for oeResetPassword}{90}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Environment - Out Interface Operation Scheme for actCoordinator}{91}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Operation Model for oeGetAllRequests}{91}{subsection.5.3.1}
+\contentsline {section}{\numberline {5.3}Environment - Out Interface Operation Scheme for actCoordinator}{92}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Operation Model for oeGetAllRequests}{92}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Operation Model for oeCheckAvailability}{93}{subsection.5.3.2}
 \contentsline {subsection}{\numberline {5.3.3}Operation Model for oeDeliverRequest}{94}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Operation Model for oeValidateAlert}{95}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.4}Operation Model for oeValidateAlert}{96}{subsection.5.3.4}
 \contentsline {subsection}{\numberline {5.3.5}Operation Model for oeInvalidateAlert}{97}{subsection.5.3.5}
 \contentsline {subsection}{\numberline {5.3.6}Operation Model for oeGetAlertSet}{98}{subsection.5.3.6}
 \contentsline {subsection}{\numberline {5.3.7}Operation Model for oeGetCrisisSet}{99}{subsection.5.3.7}
@@ -135,33 +135,31 @@
 \contentsline {section}{\numberline {5.13}Secondary Types - Operation Schemes for Enumerations}{114}{section.5.13}
 \contentsline {chapter}{\numberline {6}Test Model(s)}{115}{chapter.6}
 \contentsline {chapter}{\numberline {7}Additional Constraints}{117}{chapter.7}
-\contentsline {chapter}{\numberline {A}Undocumented Messir Specification Elements}{119}{appendix.A}
-\contentsline {section}{\numberline {A.1}Undocumented Environment Model Views}{119}{section.A.1}
-\contentsline {chapter}{\numberline {B}Messir Specification Files Listing}{121}{appendix.B}
-\contentsline {section}{\numberline {B.1}File /src-gen/messir-spec/.views.msr}{121}{section.B.1}
-\contentsline {section}{\numberline {B.2}File /src-gen/messir-spec/operations/environment/actAdministrator.msr}{121}{section.B.2}
-\contentsline {section}{\numberline {B.3}File /src-gen/messir-spec/operations/environment/actAuthenticated.msr}{129}{section.B.3}
-\contentsline {section}{\numberline {B.4}File /src-gen/messir-spec/operations/environment/actComCompany.msr}{132}{section.B.4}
-\contentsline {section}{\numberline {B.5}File /src-gen/messir-spec/operations/environment/actCoordinator.msr}{133}{section.B.5}
-\contentsline {section}{\numberline {B.6}File /src-gen/messir-spec/operations/environment/actMsrCreator.msr}{142}{section.B.6}
-\contentsline {section}{\numberline {B.7}File /src-gen/messir-spec/operations/environment/actPerson.msr}{142}{section.B.7}
-\contentsline {section}{\numberline {B.8}File /src-gen/messir-spec/operations/concepts.../ctAdministrator.msr}{146}{section.B.8}
-\contentsline {section}{\numberline {B.9}File /src-gen/messir-spec/operations/concepts.../ctCoordinator.msr}{146}{section.B.9}
-\contentsline {section}{\numberline {B.10}File /src-gen/messir-spec/operations/concepts/primarytypes-classes/ctPerson.msr}{147}{section.B.10}
-\contentsline {section}{\numberline {B.11}File /src-gen/messir-spec/environment/environment.msr}{148}{section.B.11}
-\contentsline {section}{\numberline {B.12}File /src-gen/messir-spec/operations/operations.msr}{150}{section.B.12}
-\contentsline {section}{\numberline {B.13}File /src-gen/messir-spec/concepts.../primarytypes-associations.msr}{151}{section.B.13}
-\contentsline {section}{\numberline {B.14}File /src-gen/messir-spec/concepts/primarytypes-classes/primarytypes-classes.msr}{152}{section.B.14}
-\contentsline {section}{\numberline {B.15}File /src-gen/messir-spec/concepts.../primarytypes-datatypes.msr}{154}{section.B.15}
-\contentsline {section}{\numberline {B.16}File /src-gen/messir-spec/concepts.../secondarytypes-associations.msr}{156}{section.B.16}
-\contentsline {section}{\numberline {B.17}File /src-gen/messir-spec/concepts.../secondarytypes-classes.msr}{157}{section.B.17}
-\contentsline {section}{\numberline {B.18}File /src-gen/messir-spec/concepts.../secondarytypes-datatypes.msr}{157}{section.B.18}
-\contentsline {section}{\numberline {B.19}File /src-gen/messir-spec/tests/tests.msr}{157}{section.B.19}
-\contentsline {section}{\numberline {B.20}File /src-gen/messir-spec/usecases/usecaseinstance-oeThirdLoginWrong-uci.msr}{158}{section.B.20}
-\contentsline {section}{\numberline {B.21}File /src-gen/messir-spec/usecases/usecaseinstance-suAddNewPI-ucisuAddNewPI.msr}{158}{section.B.21}
-\contentsline {section}{\numberline {B.22}File /src-gen.../usecaseinstance-suGenerateNewAlert-ucisuGenerateNewAlert.msr}{160}{section.B.22}
-\contentsline {section}{\numberline {B.23}File /.../usecaseinstance-suGlobalCrisisHandling-ucisuGlobalCrisisHandling.msr}{161}{section.B.23}
-\contentsline {section}{\numberline {B.24}File /.../usecaseinstance-suScenarioPresentation-ucisuScenarioPresentation.msr}{163}{section.B.24}
-\contentsline {section}{\numberline {B.25}File /.../usecaseinstance-ugAdministrateTheSystem-uciugAdministrateTheSystem.msr}{166}{section.B.25}
-\contentsline {section}{\numberline {B.26}File /src-gen.../usecaseinstance-ugLoginWithCaptcha-uciugLoginWithCaptcha.msr}{167}{section.B.26}
-\contentsline {section}{\numberline {B.27}File /src-gen/messir-spec/usecases/usecases.msr}{167}{section.B.27}
+\contentsline {chapter}{\numberline {A}Messir Specification Files Listing}{119}{appendix.A}
+\contentsline {section}{\numberline {A.1}File /src-gen/messir-spec/.views.msr}{119}{section.A.1}
+\contentsline {section}{\numberline {A.2}File /src-gen/messir-spec/operations/environment/actAdministrator.msr}{119}{section.A.2}
+\contentsline {section}{\numberline {A.3}File /src-gen/messir-spec/operations/environment/actAuthenticated.msr}{127}{section.A.3}
+\contentsline {section}{\numberline {A.4}File /src-gen/messir-spec/operations/environment/actComCompany.msr}{130}{section.A.4}
+\contentsline {section}{\numberline {A.5}File /src-gen/messir-spec/operations/environment/actCoordinator.msr}{131}{section.A.5}
+\contentsline {section}{\numberline {A.6}File /src-gen/messir-spec/operations/environment/actMsrCreator.msr}{140}{section.A.6}
+\contentsline {section}{\numberline {A.7}File /src-gen/messir-spec/operations/environment/actPerson.msr}{140}{section.A.7}
+\contentsline {section}{\numberline {A.8}File /src-gen/messir-spec/operations/concepts.../ctAdministrator.msr}{144}{section.A.8}
+\contentsline {section}{\numberline {A.9}File /src-gen/messir-spec/operations/concepts.../ctCoordinator.msr}{144}{section.A.9}
+\contentsline {section}{\numberline {A.10}File /src-gen/messir-spec/operations/concepts/primarytypes-classes/ctPerson.msr}{145}{section.A.10}
+\contentsline {section}{\numberline {A.11}File /src-gen/messir-spec/environment/environment.msr}{146}{section.A.11}
+\contentsline {section}{\numberline {A.12}File /src-gen/messir-spec/operations/operations.msr}{148}{section.A.12}
+\contentsline {section}{\numberline {A.13}File /src-gen/messir-spec/concepts.../primarytypes-associations.msr}{149}{section.A.13}
+\contentsline {section}{\numberline {A.14}File /src-gen/messir-spec/concepts/primarytypes-classes/primarytypes-classes.msr}{150}{section.A.14}
+\contentsline {section}{\numberline {A.15}File /src-gen/messir-spec/concepts.../primarytypes-datatypes.msr}{152}{section.A.15}
+\contentsline {section}{\numberline {A.16}File /src-gen/messir-spec/concepts.../secondarytypes-associations.msr}{154}{section.A.16}
+\contentsline {section}{\numberline {A.17}File /src-gen/messir-spec/concepts.../secondarytypes-classes.msr}{154}{section.A.17}
+\contentsline {section}{\numberline {A.18}File /src-gen/messir-spec/concepts.../secondarytypes-datatypes.msr}{155}{section.A.18}
+\contentsline {section}{\numberline {A.19}File /src-gen/messir-spec/tests/tests.msr}{155}{section.A.19}
+\contentsline {section}{\numberline {A.20}File /src-gen/messir-spec/usecases/usecaseinstance-oeThirdLoginWrong-uci.msr}{156}{section.A.20}
+\contentsline {section}{\numberline {A.21}File /src-gen/messir-spec/usecases/usecaseinstance-suAddNewPI-ucisuAddNewPI.msr}{156}{section.A.21}
+\contentsline {section}{\numberline {A.22}File /src-gen.../usecaseinstance-suGenerateNewAlert-ucisuGenerateNewAlert.msr}{158}{section.A.22}
+\contentsline {section}{\numberline {A.23}File /.../usecaseinstance-suGlobalCrisisHandling-ucisuGlobalCrisisHandling.msr}{159}{section.A.23}
+\contentsline {section}{\numberline {A.24}File /.../usecaseinstance-suScenarioPresentation-ucisuScenarioPresentation.msr}{160}{section.A.24}
+\contentsline {section}{\numberline {A.25}File /.../usecaseinstance-ugAdministrateTheSystem-uciugAdministrateTheSystem.msr}{164}{section.A.25}
+\contentsline {section}{\numberline {A.26}File /src-gen.../usecaseinstance-ugLoginWithCaptcha-uciugLoginWithCaptcha.msr}{164}{section.A.26}
+\contentsline {section}{\numberline {A.27}File /src-gen/messir-spec/usecases/usecases.msr}{165}{section.A.27}

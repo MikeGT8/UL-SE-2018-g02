@@ -10,24 +10,22 @@ The \msrcode{oeCheckAvailability} operation has the following properties:
 	\adddoublerow{oeCheckAvailability}{sent to check if the requested PI is in the system.}
 
 	\addrowheading{Parameters}
-	\addnumbereddoublerow{}{ARequestName: dtName}{name used for ctRequest instance retrieval} 
-	\addnumbereddoublerow{}{ARequestCity: dtCity}{city used for ctRequest instance retrieval} 
-	\addnumbereddoublerow{}{ARequestCategory: etCategory}{category used for ctRequest instance retrieval} 
+	\addnumbereddoublerow{}{ARequestID: dtID}{id used for ctRequest instance retrieval} 
 
 	\addrowheading{Return type}
 	\addsinglerow{ptBoolean}
 
 	\addrowheading{Pre-Condition (protocol)}
-	\addnumberedsinglerow{PreP}{the system is started.
-	the actor logged previously and did not log out!}
+	\addnumberedsinglerow{PreP}{PreP01 the system is started.}
+	\addnumberedsinglerow{PreP}{PreP02 the actor logged previously and did not log out!}
 		
 	\addrowheading{Pre-Condition (functional)}
-	\addnumberedsinglerow{PreF}{it is supposed that there exists one ctRequest instance with the same name, city and category attributes than the one the coordinator wants to compare to.}
+	\addnumberedsinglerow{PreF}{PreF01 it is supposed that there exists one ctRequest instance with the same name, city and category attributes than the one the coordinator wants to compare to.}
 
 	\addrowheading{Post-Condition (functional)}
-	\addnumberedsinglerow{PostF}{the request's ignored is updated to 'false' in the system if the requested PI is NOT in the system.
-	the request's ignored is updated to 'true' in the system if the requested PI is in the system.
-	the coordinator actor is informed about the satisfaction or non-satisfaction of its request.}
+	\addnumberedsinglerow{PostF}{PostF01 the request's ignored is updated to 'false' in the system if the requested PI is NOT in the system.}
+	\addnumberedsinglerow{PostF}{PostF02 the request's ignored is updated to 'true' in the system if the requested PI is in the system.}
+	\addnumberedsinglerow{PostF}{PostF03 the coordinator actor is informed about the satisfaction or non-satisfaction of its request.}
 
 	\addrowheading{Post-Condition (protocol)}
 	\addnumberedsinglerow{PostP}{none}
@@ -68,7 +66,7 @@ The \msrcode{oeCheckAvailability} operation has the following properties:
 					and self.rnActor = TheActor
 					
 					/* PreF01 */
-					TheSystem.rnctRequest->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctRequest
+					TheSystem.rnctRequest->select(name.eq(ARequestID)) = ColctRequest
 					and ColctRequest->size().eq(1)}
 	
 	/* Post Functional:*/ 
@@ -79,7 +77,7 @@ The \msrcode{oeCheckAvailability} operation has the following properties:
 					self.rnActor.rnSystem = TheSystem
 					and self.rnActor = TheActor
 					
-					TheSystem.rnctPI->select(name.eq(APIName) category.eq(APICategory) city.eq(APICity)) = ColctPI
+					TheSystem.rnctPI->select(name.eq(ARequestID)) = ColctPI
 					
 					and if (ColctPI.IsEmpty() = false)
 					then (

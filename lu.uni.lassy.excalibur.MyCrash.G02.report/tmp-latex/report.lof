@@ -4,10 +4,10 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{General Description}{11}{chapter.2}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugCheckRequest}}{18}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugManageCrisis}}{29}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugManageRequest}}{30}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugMonitor}}{31}{figure.2.4}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugSecurelyUseSystem}}{31}{figure.2.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugManageCrisis}}{31}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugManageRequest}}{32}{figure.2.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugMonitor}}{33}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Use Case Diagram: uc-ugSecurelyUseSystem}}{33}{figure.2.5}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Sequence Diagram: uci-ucisuAddNewPI}}{47}{figure.2.6}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Sequence Diagram: uci-ucisuGenerateNewAlert}}{48}{figure.2.7}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces lu.uni.lassy.excalibur.MyCrash.G02 Sequence Diagram: uci-ucisuGlobalCrisisHandling}}{49}{figure.2.8}
@@ -29,6 +29,4 @@
 \addvspace {10\p@ }
 \contentsline {xchapter}{Additional Constraints}{117}{chapter.7}
 \addvspace {10\p@ }
-\contentsline {xchapter}{Undocumented Messir Specification Elements}{119}{appendix.A}
-\addvspace {10\p@ }
-\contentsline {xchapter}{Messir Specification Files Listing}{121}{appendix.B}
+\contentsline {xchapter}{Messir Specification Files Listing}{119}{appendix.A}

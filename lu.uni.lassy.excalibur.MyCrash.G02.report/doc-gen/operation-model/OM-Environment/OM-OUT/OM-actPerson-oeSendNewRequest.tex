@@ -18,16 +18,16 @@ The \msrcode{oeSendNewRequest} operation has the following properties:
 	\addsinglerow{ptBoolean}
 
 	\addrowheading{Pre-Condition (protocol)}
-	\addnumberedsinglerow{PreP}{the system is started.
-	the actor logged previously and did not log out!}
+	\addnumberedsinglerow{PreP}{PreP01 the system is started.}
+	\addnumberedsinglerow{PreP}{PreP02 the actor logged previously and did not log out!}
 		
 	\addrowheading{Pre-Condition (functional)}
-	\addnumberedsinglerow{PreF}{it is supposed that there does NOT exists one ctRequest instance with the same name, category and city attributes than the one the person wants to add a new request.
-	it is supposed that there does NOT exists one ctPI instance with the same name, category and city attributes than the one the person wants to add a new request.}
+	\addnumberedsinglerow{PreF}{PreF01 it is supposed that there does NOT exists one ctRequest instance with the same name, category and city attributes than the one the person wants to add a new request.}
+	\addnumberedsinglerow{PreF}{PreF02 it is supposed that there does NOT exists one ctPI instance with the same name, category and city attributes than the one the person wants to add a new request.}
 
 	\addrowheading{Post-Condition (functional)}
-	\addnumberedsinglerow{PostF}{the new requested PI is added in the system's post state.
-	the person actor is informed about the satisfaction of its request.}
+	\addnumberedsinglerow{PostF}{PostF01 the new requested PI is added in the system's post state.}
+	\addnumberedsinglerow{PostF}{PostF02 the person actor is informed about the satisfaction of its request.}
 
 	\addrowheading{Post-Condition (protocol)}
 	\addnumberedsinglerow{PostP}{none}

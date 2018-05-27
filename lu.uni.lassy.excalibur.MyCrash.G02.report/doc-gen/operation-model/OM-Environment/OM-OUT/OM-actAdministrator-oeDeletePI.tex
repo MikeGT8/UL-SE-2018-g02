@@ -16,15 +16,15 @@ The \msrcode{oeDeletePI} operation has the following properties:
 	\addsinglerow{ptBoolean}
 
 	\addrowheading{Pre-Condition (protocol)}
-	\addnumberedsinglerow{PreP}{the system is started.
-	the actor logged previously and did not log out!}
+	\addnumberedsinglerow{PreP}{PreP01 the system is started.}
+	\addnumberedsinglerow{PreP}{PreP02 the actor logged previously and did not log out!}
 		
 	\addrowheading{Pre-Condition (functional)}
-	\addnumberedsinglerow{PreF}{it is supposed that there exists one ctPI instance with the same id attribute than the one the administrator wants to update.}
+	\addnumberedsinglerow{PreF}{PreF01 it is supposed that there exists one ctPI instance with the same id attribute than the one the administrator wants to update.}
 
 	\addrowheading{Post-Condition (functional)}
-	\addnumberedsinglerow{PostF}{the PI attributes are updated in the system.
-	the administrator actor is informed about the satisfaction of its request.}
+	\addnumberedsinglerow{PostF}{PostF01 the PI attributes are updated in the system.}
+	\addnumberedsinglerow{PostF}{PostF02 the administrator actor is informed about the satisfaction of its request.}
 
 	\addrowheading{Post-Condition (protocol)}
 	\addnumberedsinglerow{PostP}{none}
