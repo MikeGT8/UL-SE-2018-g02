@@ -5,7 +5,7 @@
 
 
 @@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated
-@description "used to model system’s representation about actors that need to authenticate to access some specific
+@description "used to model systems representation about actors that need to authenticate to access some specific
 functionalities."
 @attribute
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated.login

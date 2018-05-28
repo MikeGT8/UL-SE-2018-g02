@@ -6,7 +6,7 @@
 
 @@Operation
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministrator.oeGetAllRequestsFromCoordinator
-@description "sent to get all the requests checked by the actor ActCoordinator in the system’s post state."
+@description "sent to get all the requests checked by the actor ActCoordinator in the systems post state."
 //preProtocol descriptions
 @preP
 "PreP01 the system is started."

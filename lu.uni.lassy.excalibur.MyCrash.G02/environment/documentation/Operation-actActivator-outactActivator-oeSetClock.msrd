@@ -13,7 +13,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actActivator.outactActivator.oeSe
 @endParameters
 
 @description "
- An active message used to statically set the date and time information in the system’s state."
+ An active message used to statically set the date and time information in the systems state."
 //preProtocol descriptions
 @preP
 "PreP 1 the system is supposed to be created and initialized and the provided date and time value

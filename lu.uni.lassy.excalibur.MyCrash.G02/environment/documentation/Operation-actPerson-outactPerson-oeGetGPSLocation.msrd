@@ -12,7 +12,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeGetGPSLo
 "id used for ctPI instance retrieval"
 @endParameters
 
-@description "sent to get the GPS location of a PI in the system’s post state."
+@description "sent to get the GPS location of a PI in the systems post state."
 //preProtocol descriptions
 @preP
 "PreP01 the system is started."

@@ -12,7 +12,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministra
 "used for ctPI instance retrieval"
 @endParameters
 
-@description "sent to delete an existing point of interest in the system’s post state."
+@description "sent to delete an existing point of interest in the systems post state."
 //preProtocol descriptions
 @preP
 "PreP01 the system is started."

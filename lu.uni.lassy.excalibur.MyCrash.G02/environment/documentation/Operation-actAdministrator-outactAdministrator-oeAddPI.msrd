@@ -27,7 +27,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministra
 "used to initialise the category field"
 @endParameters
 
-@description "sent to add a new point of interest in the system’s post state."
+@description "sent to add a new point of interest in the systems post state."
 //preProtocol descriptions
 @preP
 "PreP01 the system is started."

@@ -6,7 +6,7 @@
 
 @@Primary Type Class lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert
 @description "Used to model crisis alerts sent by any human having communication capability using communication
-companies belonging to the system’s environment"
+companies belonging to the systems environment"
 @attribute
 lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAlert.id
 "the alert unique identification information."

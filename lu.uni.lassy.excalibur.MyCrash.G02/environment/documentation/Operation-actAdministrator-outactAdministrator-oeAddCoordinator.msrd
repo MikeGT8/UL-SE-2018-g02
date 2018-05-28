@@ -22,30 +22,33 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministra
 @endParameters
 
 @description "
- sent to add a new coordinator in the system’s post state and environment’s post state."
+ sent to add a new coordinator in the systems post state and environments post state."
 //preProtocol descriptions
 @preP
-"
-PreP 1 the system is started
-PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctAdministrator instance
+"PreP 1 the system is started"
+@preP
+"PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctAdministrator instance
 is considered logged) "
 @endPreP
 //preFunctional descriptions
 @preF
-"
-PreF 1 it is supposed that there cannot exist a ctCoordinator instance with the same id attribute
+"PreF 1 it is supposed that there cannot exist a ctCoordinator instance with the same id attribute
 as the one the administrator wants to delete."
 @endPreF
 //postFunctional descriptions
 @postF 
 "
 PostF 1 the environment has a new instance of coordinator actor allowing for input/output message
-communication with the system.
-PostF 2 the system’s state has a new instance of ctCoordinator initialized with the given values.
-PostF 3 the new actor instance and ctCoordinator instance are related.
-PostF 4 the new actor instance and ctCoordinator instance are related according to the authenticated
-association.
-PostF 5 the administrator actor is informed about the satisfaction of its request. "
+communication with the system."
+@postF 
+"PostF 2 the systems state has a new instance of ctCoordinator initialized with the given values."
+@postF 
+"PostF 3 the new actor instance and ctCoordinator instance are related."
+@postF 
+"PostF 4 the new actor instance and ctCoordinator instance are related according to the authenticated
+association."
+@postF 
+"PostF 5 the administrator actor is informed about the satisfaction of its request. "
 @endPostF
 //postProtocol descriptions
 @postP 

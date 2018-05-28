@@ -16,9 +16,9 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.
  sent to indicate that an alert should be considered as closed."
 //preProtocol descriptions
 @preP
-"
-PreP 1 the system is started
-PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+"PreP 1 the system is started"
+@preP
+"PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
 is considered logged) "
 @endPreP
 //preFunctional descriptions
@@ -28,9 +28,9 @@ one provided by the coordinator actor who wants to close. "
 @endPreF
 //postFunctional descriptions
 @postF 
-"
-PostF 1 the ctAlert class instance having the provided id is considered closed in the post state.
-PostF 2 the coordinator actor is informed about the satisfaction of its request. "
+"PostF 1 the ctAlert class instance having the provided id is considered closed in the post state."
+@postF
+"PostF 2 the coordinator actor is informed about the satisfaction of its request. "
 @endPostF
 //postProtocol descriptions
 @postP 

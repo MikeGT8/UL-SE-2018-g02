@@ -16,7 +16,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAdministrator.outactAdministra
 @endParameters
 
 @description "
- sent to update an existing coordinator's access rights in the system’s post state and environment’s post state."
+ sent to update an existing coordinators access rights in the systems post state and environments post state."
 //preProtocol descriptions
 @preP
 "

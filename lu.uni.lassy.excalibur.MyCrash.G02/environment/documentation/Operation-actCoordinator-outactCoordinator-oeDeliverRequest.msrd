@@ -12,7 +12,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actCoordinator.outactCoordinator.
 "id used for ctRequest instance retrieval"
 @endParameters
 
-@description "sent to change the status of a requested PI in the system’s post state."
+@description "sent to change the status of a requested PI in the systems post state."
 //preProtocol descriptions
 @preP
 "PreP01 the system is started."

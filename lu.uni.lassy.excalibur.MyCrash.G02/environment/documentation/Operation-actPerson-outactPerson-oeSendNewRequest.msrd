@@ -18,7 +18,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actPerson.outactPerson.oeSendNewR
 "used to initialise the city field"
 @endParameters
 
-@description "sent to add a new request to the system’s post state."
+@description "sent to add a new request to the systems post state."
 //preProtocol descriptions
 @preP
 "PreP01 the system is started."
