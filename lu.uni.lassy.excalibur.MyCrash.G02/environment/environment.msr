@@ -141,7 +141,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.secondarytypes.datatypes
 				
 				//PI variant
 				operation oeSearchPI(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean
-				operation oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean
+				operation oeSendNewRequest(APIID:dtID, APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean
 				
 				operation oeGetGPSLocation(APIID:dtID):ptBoolean
 				operation oeGetDescription(APIID:dtID):ptBoolean

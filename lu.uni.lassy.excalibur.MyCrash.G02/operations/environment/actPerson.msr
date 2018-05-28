@@ -67,7 +67,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 			}
 		}
 		
-		operation: actPerson.outactPerson.oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean {
+		operation: actPerson.outactPerson.oeSendNewRequest(APIID:dtID, APIName:dtName, APICategory:etCategory, APICity:dtCity):ptBoolean {
 			
 			/* Pre Protocol: */
 			preP {
@@ -112,7 +112,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes
 				and self.rnActor = TheActor
 				
 				/* PostF01 */
-				ThectRequest.init(APIName, APICategory, APICity)
+				ThectRequest.init(APIID, APIName, APICategory, APICity)
 				
 				/* PostF02 */
 				and AMessage.eq('Request sent!')

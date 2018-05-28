@@ -156,7 +156,7 @@ import lu.uni.lassy.messir.libraries.primitives
 			}
 		}
 		
-		use case system subfunction oeSendNewRequest(APIName:dtName, APICategory:etCategory, APICity:dtCity) {
+		use case system subfunction oeSendNewRequest(APIID:dtID, APIName:dtName, APICategory:etCategory, APICity:dtCity) {
 		
 			actor actPerson[primary, active]
 			actor actCoordinator[secondary, passive]
