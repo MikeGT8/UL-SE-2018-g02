@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=latex 2018.1.17)  27 MAY 2018 18:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=latex 2018.1.17)  28 MAY 2018 12:30
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -3045,8 +3045,13 @@ OS-focused.eps Graphic file (type eps)
 
 <./../lu.uni.lassy.excalibur.standard.report.libraries/logos/Excalibur-no-OS-fo
 cused.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 39--39
+Overfull \hbox (5.68042pt too wide) in paragraph at lines 39--39
 [][]
+ []
+
+
+Overfull \hbox (4.1877pt too wide) in paragraph at lines 39--39
+[] 
  []
 
 
@@ -5605,8 +5610,8 @@ tegory,
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 26--26
-[]|[][][][][] \T1/pcr/b/n/10.95 oe-Send-NewRe-quest(APIName:dtName, API-Cat-e-g
-ory:etCategory,
+[]|[][][][][] \T1/pcr/b/n/10.95 oe-Send-NewRe-quest(APIID:dtID, AP-IName:dtName
+,
  []
 
 
@@ -7468,10 +7473,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  61062 strings out of 492981
  1330838 string characters out of 6132520
- 1916153 words of memory out of 5000000
+ 1916202 words of memory out of 5000000
  62723 multiletter control sequences out of 15000+600000
  571774 words of font info for 126 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
- 69i,16n,98p,10568b,2056s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,16n,98p,10568b,2054s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on report.dvi (177 pages, 2664052 bytes).
+Output written on report.dvi (177 pages, 2664336 bytes).
