@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSearchPI
-@description "The person's goal is to get a match by searching for a point of 
+@description "The persons goal is to get a match by searching for a point of 
 interest."
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSearchPI.APIName ""
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSearchPI.APICategory ""

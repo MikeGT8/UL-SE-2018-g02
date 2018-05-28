@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI
-@description "The administrator's goal is to update the existing point of interest 
+@description "The administrators goal is to update the existing point of interest 
 information."
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APIID ""
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdatePI.APIName ""

@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI
-@description "The administrator's goal is to add a new requested point of 
+@description "The administrators goal is to add a new requested point of 
 interest."
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APIName ""
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeAddPI.APICity ""

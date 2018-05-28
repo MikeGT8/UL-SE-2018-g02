@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetAllRequests
-@description "The coordinator's goal is to get a list of requests sent by the person."
+@description "The coordinators goal is to get a list of requests sent by the person."
 @protocolCondition
 "
 the iCrash system has been deployed.

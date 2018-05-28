@@ -5,7 +5,7 @@
 
 
 @@Use Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.suGlobalCrisisHandling
-@description "the actCoordinator’s goal is to monitor the alerts received and the corresponding crisis in order to act
+@description "the actCoordinators goal is to monitor the alerts received and the corresponding crisis in order to act
 as necessary to handle the crisis."
 @protocolCondition
 "1 the iCrash system has been deployed

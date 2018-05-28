@@ -15,7 +15,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actMsrCreator.inactMsrCreator.ieS
 //output events
 @outputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actMsrCreator.outactMsrCreator.oeCreateSystemAndEnvironment
-"sent to request the initialization of the system’s class instances and the environment actors
+"sent to request the initialization of the systems class instances and the environment actors
 instances."
 
 @endOutputEvents

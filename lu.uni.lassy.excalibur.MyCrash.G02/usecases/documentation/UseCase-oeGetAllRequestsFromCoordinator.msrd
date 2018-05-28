@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeGetAllRequestsFromCoordinator
-@description "The administrator's goal is to retrieve pending requests."
+@description "The administrators goal is to retrieve pending requests."
 @protocolCondition
 "
 the iCrash system has been deployed.

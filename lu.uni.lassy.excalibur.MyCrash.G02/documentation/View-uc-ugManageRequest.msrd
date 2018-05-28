@@ -6,6 +6,6 @@
 
 @@view uc-ugManageRequest
 @model Use-Case lu.uni.lassy.excalibur.MyCrash.G02.usecases.ugManageRequest 
-@description "The administrator's role is to get all the pending requests to add a new PI, treat it and solve the specific PIs."
+@description "The administrators role is to get all the pending requests to add a new PI, treat it and solve the specific PIs."
 @caption "ugManageRequest user goal use case"
 @scale MaxWidth

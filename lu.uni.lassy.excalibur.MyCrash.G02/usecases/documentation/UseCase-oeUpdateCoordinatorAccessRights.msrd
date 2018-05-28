@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdateCoordinatorAccessRights
-@description "goal is to update a coordinator's access rights in the system"
+@description "goal is to update a coordinators access rights in the system"
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdateCoordinatorAccessRights.AdtCoordinatorID ""
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeUpdateCoordinatorAccessRights.CoordinatorAccessRights ""
 @endParameters

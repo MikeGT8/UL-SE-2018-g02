@@ -5,7 +5,7 @@
 
 
 @@Actor lu.uni.lassy.excalibur.MyCrash.G02.environment.actActivator
-@description "represents a logical actor for time automatic message sending based on system’s or environment status."
+@description "represents a logical actor for time automatic message sending based on systems or environment status."
 //input events
 
 //output events

@@ -5,7 +5,7 @@
 
 
 @@Use Case Subfunction lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSendNewRequest
-@description "The person's goal is to request a new point of interest to be added to 
+@description "The persons goal is to request a new point of interest to be added to 
 the system."
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSendNewRequest.APIName ""
 @parameter lu.uni.lassy.excalibur.MyCrash.G02.usecases.oeSendNewRequest.APICategory ""
