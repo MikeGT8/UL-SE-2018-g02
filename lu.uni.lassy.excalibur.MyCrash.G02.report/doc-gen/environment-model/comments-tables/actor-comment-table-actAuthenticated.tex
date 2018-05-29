@@ -28,13 +28,13 @@
 	
 	\addrowheading{InputInterfaces}
 	\addnumbereddoublerow{IN}{\msrcode{ieLogin(AMessage:dtMessage):ptBoolean}}
-							 {The returned message from a positive or negative login. This input field is used when a use tries to login in any form.
+							 {The returned message from a successful or unsuccessful login. This input field is used when a use tries to login in any form.
 							 (Captcha or normal login)}
 	\addnumbereddoublerow{IN}{\msrcode{ieLoggedOut(AMessage:dtMessage):ptBoolean}}
 							 {The input event ieLoggedOut confirms that the logout has been completed.}
 	\addnumbereddoublerow{IN}{\msrcode{ieMessage(AMessage:dtMessage):ptBoolean}}
 							 {The input event ieMessage returns a message from the system that tells you useful things.}
 	\addnumbereddoublerow{IN}{\msrcode{ieResetPassword():ptBoolean}}
-							 {The input event ieResetPassword specifies that the request is being treated. Also tells you what you need to provide next.}
+							 {The input event ieResetPassword specifies that the request is being treated. Then tells you the new password.}
 	
 \end{actortable}

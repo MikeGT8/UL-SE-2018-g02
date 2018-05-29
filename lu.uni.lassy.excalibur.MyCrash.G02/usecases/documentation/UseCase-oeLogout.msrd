@@ -8,14 +8,19 @@
 @description "Used by any actor that is inherited by actAuthenticated to logout of the system."
 @protocolCondition
 "
+the iCrash system has been deployed.
+the user is logged in.
 "
 @endProtocolConditions
 @preCondition
 "
+none
 "
 @endPreConditions
 @postCondition
 "
+the user logs out successful.
+a message is returned to the administrator that displays the logout info.
 "
 @endPostConditions
 @additionalInformation

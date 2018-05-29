@@ -20,16 +20,24 @@ The \msrcode{oeLoginWithCaptcha} operation has the following properties:
 	\addsinglerow{ptBoolean}
 
 	\addrowheading{Pre-Condition (protocol)}
-	\addnumberedsinglerow{PreP}{ }
+	\addnumberedsinglerow{PreP}{PreP 1 the system is started}
+	\addnumberedsinglerow{PreP}{PreP 2 the actor is currently not logged in.}
+	\addnumberedsinglerow{PreP}{PreP 3 the actor has to also sent a captcha to login.}
 		
 	\addrowheading{Pre-Condition (functional)}
-	\addnumberedsinglerow{PreF}{ }
+	\addnumberedsinglerow{PreF}{PreF 1 none }
 
 	\addrowheading{Post-Condition (functional)}
-	\addnumberedsinglerow{PostF}{ }
+	\addnumberedsinglerow{PostF}{PostF 1 if the login and password provided by the actor correspond to the ones that belong to the
+	ctAuthenticated instance he is related to then the captcha field will also be verified. Upon success,
+	a welcome message is sent to the actor (the logged status is changed as a post-protocol condition);
+	else the actor is notified that he gave incorrect data and all the administrator actors existing in
+	the environment are notified of an intrusion attempt. }
 
 	\addrowheading{Post-Condition (protocol)}
-	\addnumberedsinglerow{PostP}{ }
+	\addnumberedsinglerow{PostP}{PostP 1 if the authentication information is correct (also the captcha matching) then the actor is
+	known to be logged in! (i.e. the associated ctAuthenticated instance with given login and password
+	is considered logged) }
 	\end{operationmodel}
 
 

@@ -26,14 +26,20 @@ Used by any actor that is inherited by actAuthenticated to try and authenticate 
 
 \addrowheading{Protocol condition(s)}
 \addnumberedsinglerow{}{
+the iCrash system has been deployed.
+the user is not yet logged in.
+the user does not need to authenticate with a captcha field.
 }
 
 \addrowheading{Pre-condition(s)}
 \addnumberedsinglerow{}{
+none
 }
 
 \addrowheading{Main post-condition(s)}
 \addnumberedsinglerow{}{
+the user logs successful in if his information was correct.
+a message is returned to the administrator that displays the outcome of oeLogin.
 }
 
 \addrowheading{Additional Information}

@@ -10,7 +10,7 @@
 //input events
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLogin
-"The returned message from a positive or negative login. This input field is used when a use tries to login in any form.
+"The returned message from a successful or unsuccessful login. This input field is used when a use tries to login in any form.
 (Captcha or normal login)"
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieLoggedOut
@@ -20,7 +20,7 @@ lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticat
 "The input event ieMessage returns a message from the system that tells you useful things."
 @inputEvent
 lu.uni.lassy.excalibur.MyCrash.G02.environment.actAuthenticated.inactAuthenticated.ieResetPassword
-"The input event ieResetPassword specifies that the request is being treated. Also tells you what you need to provide next."
+"The input event ieResetPassword specifies that the request is being treated. Then tells you the new password."
 
 @endInputEvents
 //output events

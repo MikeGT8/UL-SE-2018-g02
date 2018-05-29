@@ -19,12 +19,12 @@
 \contentsline {lstlisting}{\numberline {5.19}\msrmessir (MCL-oriented) specification of the operation \emph {oeGetAlertSet}.}{99}{lstlisting.5.19}
 \contentsline {lstlisting}{\numberline {5.20}\msrmessir (MCL-oriented) specification of the operation \emph {oeGetCrisisSet}.}{100}{lstlisting.5.20}
 \contentsline {lstlisting}{\numberline {5.21}\msrmessir (MCL-oriented) specification of the operation \emph {oeSetCrisisType}.}{101}{lstlisting.5.21}
-\contentsline {lstlisting}{\numberline {5.22}\msrmessir (MCL-oriented) specification of the operation \emph {oeSetCrisisStatus}.}{102}{lstlisting.5.22}
+\contentsline {lstlisting}{\numberline {5.22}\msrmessir (MCL-oriented) specification of the operation \emph {oeSetCrisisStatus}.}{103}{lstlisting.5.22}
 \contentsline {lstlisting}{\numberline {5.23}\msrmessir (MCL-oriented) specification of the operation \emph {oeSetCrisisHandler}.}{104}{lstlisting.5.23}
 \contentsline {lstlisting}{\numberline {5.24}\msrmessir (MCL-oriented) specification of the operation \emph {oeReportOnCrisis}.}{105}{lstlisting.5.24}
-\contentsline {lstlisting}{\numberline {5.25}\msrmessir (MCL-oriented) specification of the operation \emph {oeCloseCrisis}.}{106}{lstlisting.5.25}
+\contentsline {lstlisting}{\numberline {5.25}\msrmessir (MCL-oriented) specification of the operation \emph {oeCloseCrisis}.}{107}{lstlisting.5.25}
 \contentsline {lstlisting}{\numberline {5.26}\msrmessir (MCL-oriented) specification of the operation \emph {oeSearchPI}.}{108}{lstlisting.5.26}
-\contentsline {lstlisting}{\numberline {5.27}\msrmessir (MCL-oriented) specification of the operation \emph {oeSendNewRequest}.}{109}{lstlisting.5.27}
+\contentsline {lstlisting}{\numberline {5.27}\msrmessir (MCL-oriented) specification of the operation \emph {oeSendNewRequest}.}{110}{lstlisting.5.27}
 \contentsline {lstlisting}{\numberline {5.28}\msrmessir (MCL-oriented) specification of the operation \emph {oeGetGPSLocation}.}{111}{lstlisting.5.28}
 \contentsline {lstlisting}{\numberline {5.29}\msrmessir (MCL-oriented) specification of the operation \emph {oeGetDescription}.}{112}{lstlisting.5.29}
 \contentsline {lstlisting}{\numberline {5.30}\msrmessir (MCL-oriented) specification of the operation \emph {init}.}{113}{lstlisting.5.30}

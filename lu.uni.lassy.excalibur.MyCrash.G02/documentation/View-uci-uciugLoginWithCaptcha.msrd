@@ -6,5 +6,5 @@
 
 @@view uci-uciugLoginWithCaptcha
 @instance Use-Case usecases.uciugLoginWithCaptcha.uciugLoginWithCaptcha 
-@description "Logging in using the captcha. You first need to fail to login three times in a row."
+@description "Logging in using also the captcha field. You first need to fail to login three times in a row before you need to use this action."
 @caption ""

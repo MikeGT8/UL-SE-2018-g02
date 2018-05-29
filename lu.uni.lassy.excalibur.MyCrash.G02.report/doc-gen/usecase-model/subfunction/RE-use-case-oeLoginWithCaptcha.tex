@@ -27,14 +27,20 @@ To use by any actor that inherits actAuthenticate to authenticate the actor as n
 
 \addrowheading{Protocol condition(s)}
 \addnumberedsinglerow{}{
+the iCrash system has been deployed.
+the user is not yet logged in.
+the user also needs to authenticate with a captcha field.
 }
 
 \addrowheading{Pre-condition(s)}
 \addnumberedsinglerow{}{
+none
 }
 
 \addrowheading{Main post-condition(s)}
 \addnumberedsinglerow{}{
+the user will be logged in if the username and password matched, also the captcha needed to be correct.
+the administrators of the system will be notified of the outcome of this action.
 }
 
 \addrowheading{Additional Information}

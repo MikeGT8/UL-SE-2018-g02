@@ -11,14 +11,20 @@
 @endParameters
 @protocolCondition
 "
+the iCrash system has been deployed.
+the user is not yet logged in.
+the user does not need to authenticate with a captcha field.
 "
 @endProtocolConditions
 @preCondition
 "
+none
 "
 @endPreConditions
 @postCondition
 "
+the user logs successful in if his information was correct.
+a message is returned to the administrator that displays the outcome of oeLogin.
 "
 @endPostConditions
 @additionalInformation
