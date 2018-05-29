@@ -17,25 +17,23 @@ The \msrcode{oeSetCrisisHandler} operation has the following properties:
 	\addsinglerow{ptBoolean}
 
 	\addrowheading{Pre-Condition (protocol)}
-	\addnumberedsinglerow{PreP}{
-	PreP 1 the system is started
-	PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
+	\addnumberedsinglerow{PreP}{PreP 1 the system is started}
+	\addnumberedsinglerow{PreP}{PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctCoordinator instance
 	is considered logged) }
 		
 	\addrowheading{Pre-Condition (functional)}
 	\addnumberedsinglerow{PreF}{PreF 1 there exist one crisis having the given id in the pre-state. }
 
 	\addrowheading{Post-Condition (functional)}
-	\addnumberedsinglerow{PostF}{
-	PostF 1 the ctCrisis instance having the provided id is in handled status at poststate and is associated
+	\addnumberedsinglerow{PostF}{PostF 1 the ctCrisis instance having the provided id is in handled status at poststate and is associated
 	to the actor that sends the message (which himself is notified with a textual message as
-	confirmation).
-	PostF 2 All the alerts related to this crisis are sent to the actor such that he can decide how to handle
-	them.
-	PostF 3 if the crisis was already handled at pre-sate then the associated handler actor is notified
+	confirmation).}
+	\addnumberedsinglerow{PostF}{PostF 2 All the alerts related to this crisis are sent to the actor such that he can decide how to handle
+	them.}
+	\addnumberedsinglerow{PostF}{PostF 3 if the crisis was already handled at pre-sate then the associated handler actor is notified
 	about the change of handler for one of his crisis (n.b. it might be the same even if not
-	relevant).
-	PostF 4 a message is sent to the communication company for any human related to an alert associated
+	relevant).}
+	\addnumberedsinglerow{PostF}{PostF 4 a message is sent to the communication company for any human related to an alert associated
 	to the crisis. A human will receive as many messages as alerts he sent despite the fact that
 	they might relate to the same crisis (i.e. one alert, one acknoledgement). }
 

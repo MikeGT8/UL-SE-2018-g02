@@ -31,6 +31,26 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				
 				/* PreP02 */
 				and TheActor.rnctAuthenticated.vpIsLogged = true
+				
+				/* Pre P03 */
+				if(ctCrisis.type = huge)
+				then(
+					TheActor.accessRights = huge
+				)
+				else(
+					if(ctCrisis.type = medium)
+					then(
+						TheActor.accessRights = huge
+						or TheActor.accessRights = medium
+					)
+					else(
+						TheActor.accessRights = huge
+						or TheActor.accessRights = medium
+						or TheActor.accessRights = small
+					)
+					endif
+				)
+				endif
 			}
 			
 			/* Pre Functional: */
@@ -580,6 +600,7 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 			preP {
 				let TheSystem:ctState in
 				let TheActor:actCoordinator in
+				let TheCrisis:ctCrisis in
 				
 				self.rnActor.rnSystem = TheSystem
 				and self.rnActor = The Actor
@@ -591,7 +612,24 @@ import lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.datatypes
 				TheActor.rnctAuthenticated.vpIsLogged = true
 				
 				/* Pre P03 */
-				/* Coordinators access rights are equal to or lower than the crisis type.*/
+				if(ctCrisis.type = huge)
+				then(
+					TheActor.accessRights = huge
+				)
+				else(
+					if(ctCrisis.type = medium)
+					then(
+						TheActor.accessRights = huge
+						or TheActor.accessRights = medium
+					)
+					else(
+						TheActor.accessRights = huge
+						or TheActor.accessRights = medium
+						or TheActor.accessRights = small
+					)
+					endif
+				)
+				endif
 			}
 			
 			/* Pre Functional */

@@ -12,7 +12,7 @@ The table below is providing comments on the graphical views given for the class
 \addsingletwocolumnrow{extends}{lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated}
 \adddoubletwocolumnrow{operation}{\msrcode{init(Alogin:dtLogin, Apwd:dtPassword):ptBoolean}}{used to initialize the current object as a new instance of the ctAdministrator type.}
 \adddoublerow{ctAlert}{Used to model crisis alerts sent by any human having communication capability using communication
-companies belonging to the system’s environment}
+companies belonging to the systems environment}
 \adddoubletwocolumnrow{attribute}{\msrcode{comment: dtComment}}{a textual description providing unstructured information on the alert.}
 \adddoubletwocolumnrow{attribute}{\msrcode{id: dtAlertID}}{the alert unique identification information.}
 \adddoubletwocolumnrow{attribute}{\msrcode{instant: dtDateAndTime}}{the date and time at which the alert notification has been sent.}
@@ -22,7 +22,7 @@ crisis.}
 \adddoubletwocolumnrow{attribute}{\msrcode{status: etAlertStatus}}{the alert validation status}
 \adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtAlertID, Astatus:etAlertStatus, Alocation:dtGPSLocation, Ainstant:dtDateAndTime, Acomment:dtComment):ptBoolean}}{used to initialize the current object as a new instance of the ctAlert type.}
 \adddoubletwocolumnrow{operation}{\msrcode{isSentToCoordinator(AactCoordinator:ctCoordinator):ptBoolean}}{used to provide a given coordinator with current alert information.}
-\adddoublerow{ctAuthenticated}{used to model system’s representation about actors that need to authenticate to access some specific
+\adddoublerow{ctAuthenticated}{used to model systems representation about actors that need to authenticate to access some specific
 functionalities.}
 \adddoubletwocolumnrow{attribute}{\msrcode{capReq: ptBoolean}}{used to determine if the actor needs to solve a captcha.}
 \adddoubletwocolumnrow{attribute}{\msrcode{lastAccess: dtInteger}}{used to determine the last time the actor tried to login.}
@@ -31,12 +31,12 @@ functionalities.}
 \adddoubletwocolumnrow{attribute}{\msrcode{tries: dtInteger}}{used to determine how many tries the actor tried to login.}
 \adddoubletwocolumnrow{attribute}{\msrcode{vpIsLogged: ptBoolean}}{used to determine the access status.}
 \adddoubletwocolumnrow{operation}{\msrcode{init(Alogin:dtLogin, Apwd:dtPassword):ptBoolean}}{used to initialize the current object as a new instance of the ctAuthenticated type.}
-\adddoublerow{ctCoordinator}{used to model system’s representation about the actors that have the responsibility to handle alerts
+\adddoublerow{ctCoordinator}{used to model systems representation about the actors that have the responsibility to handle alerts
 and crisis.}
 \addsingletwocolumnrow{extends}{lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated}
 \adddoubletwocolumnrow{attribute}{\msrcode{id: dtCoordinatorID}}{a unique identification information.}
 \adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtCoordinatorID, Alogin:dtLogin, Apwd:dtPassword, Aaccessrights:etCrisisType):ptBoolean}}{used to initialize the current object as a new instance of the ctCoordinator type.}
-\adddoublerow{ctCrisis}{Used to model crisis that are infered from the reception of at least one alert message. Crisis aer entities
+\adddoublerow{ctCrisis}{Used to model crisis that are infered from the reception of at least one alert message. Crisis are entities
 that are handled by the iCrash system.}
 \adddoubletwocolumnrow{attribute}{\msrcode{comment: dtComment}}{a textual description providing unstructured information on the crisis handling.}
 \adddoubletwocolumnrow{attribute}{\msrcode{id: dtCrisisID}}{the crisis unique identification information.}
@@ -46,10 +46,10 @@ the crisis.}
 \adddoubletwocolumnrow{attribute}{\msrcode{status: etCrisisStatus}}{the crisis handling status.}
 \adddoubletwocolumnrow{attribute}{\msrcode{type: etCrisisType}}{an indication of the gravity of the crisis.}
 \adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtCrisisID, Atype:etCrisisType, Astatus:etCrisisStatus, Alocation:dtGPSLocation, Ainstant:dtDateAndTime, Acomment:dtComment):ptBoolean}}{used to initialize the current object as a new instance of the ctAlert type.}
-\adddoublerow{ctPerson}{Used to model system’s representation about the indirect actors that has alerted 
+\adddoublerow{ctPerson}{Used to model systems representation about the indirect actors that has alerted 
 of potential crisis, but also perform requests for new potential points of interest.}
 \addsingletwocolumnrow{extends}{lu.uni.lassy.excalibur.MyCrash.G02.concepts.primarytypes.classes.ctAuthenticated}
-\adddoubletwocolumnrow{attribute}{\msrcode{id: dtPhoneNumber}}{the person's unique identification information of type dtPhoneNumber.}
+\adddoubletwocolumnrow{attribute}{\msrcode{id: dtPhoneNumber}}{the persons unique identification information of type dtPhoneNumber.}
 \adddoubletwocolumnrow{attribute}{\msrcode{personType: etPersonType}}{the person type.}
 \adddoubletwocolumnrow{operation}{\msrcode{init(Aid:dtPhoneNumber, Alogin:dtLogin, Apwd:dtPassword, ApersonType:etPersonType):ptBoolean}}{used to initialise the current object as a new instance of the ctPerson type.}
 \adddoublerow{ctPI}{Used to model points of interest that are introduced from the reception of at 

@@ -51,7 +51,27 @@ The \msrcode{oeGetAllRequests} operation has the following properties:
 					TheSystem.vpStarted = true
 					
 					/* PreP02 */
-					and TheActor.rnctAuthenticated.vpIsLogged = true}
+					and TheActor.rnctAuthenticated.vpIsLogged = true
+					
+					/* Pre P03 */
+					if(ctCrisis.type = huge)
+					then(
+						TheActor.accessRights = huge
+					)
+					else(
+						if(ctCrisis.type = medium)
+						then(
+							TheActor.accessRights = huge
+							or TheActor.accessRights = medium
+						)
+						else(
+							TheActor.accessRights = huge
+							or TheActor.accessRights = medium
+							or TheActor.accessRights = small
+						)
+						endif
+					)
+					endif}
 	
 	/* Pre Functional:*/
 	preF{true}

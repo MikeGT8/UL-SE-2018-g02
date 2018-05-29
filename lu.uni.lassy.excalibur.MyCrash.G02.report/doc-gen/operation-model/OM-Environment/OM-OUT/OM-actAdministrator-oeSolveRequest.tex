@@ -7,7 +7,7 @@ The \msrcode{oeSolveRequest} operation has the following properties:
 
 	\begin{operationmodel}
 	\addheading{Operation}
-	\adddoublerow{oeSolveRequest}{sent to solve the requested PI in the system’s post state.}
+	\adddoublerow{oeSolveRequest}{sent to solve the requested PI in the systems post state.}
 
 	\addrowheading{Parameters}
 	\addnumbereddoublerow{}{ARequestID: dtID}{id used for ctRequest instance retrieval} 
@@ -20,10 +20,10 @@ The \msrcode{oeSolveRequest} operation has the following properties:
 	\addnumberedsinglerow{PreP}{PreP02 the actor logged previously and did not log out!}
 		
 	\addrowheading{Pre-Condition (functional)}
-	\addnumberedsinglerow{PreF}{PreF01 it is supposed that there exists one ctRequest instance with the same id attribute and the status 'treated' than the one the administrator wants to solve.}
+	\addnumberedsinglerow{PreF}{PreF01 it is supposed that there exists one ctRequest instance with the same id attribute and the status treated than the one the administrator wants to solve.}
 
 	\addrowheading{Post-Condition (functional)}
-	\addnumberedsinglerow{PostF}{PostF01 the request's status is updated to 'solved' in the system.}
+	\addnumberedsinglerow{PostF}{PostF01 the request's status is updated to solved in the system.}
 	\addnumberedsinglerow{PostF}{PostF02 the administrator actor is informed about the satisfaction of its request.}
 
 	\addrowheading{Post-Condition (protocol)}

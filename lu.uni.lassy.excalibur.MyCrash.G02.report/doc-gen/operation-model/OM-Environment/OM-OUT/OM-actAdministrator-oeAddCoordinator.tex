@@ -8,7 +8,7 @@ The \msrcode{oeAddCoordinator} operation has the following properties:
 	\begin{operationmodel}
 	\addheading{Operation}
 	\adddoublerow{oeAddCoordinator}{
-	 sent to add a new coordinator in the system’s post state and environment’s post state.}
+	 sent to add a new coordinator in the systems post state and environments post state.}
 
 	\addrowheading{Parameters}
 	\addnumbereddoublerow{}{AdtCoordinatorID: dtCoordinatorID}{used to initialize the id field} 
@@ -20,25 +20,23 @@ The \msrcode{oeAddCoordinator} operation has the following properties:
 	\addsinglerow{ptBoolean}
 
 	\addrowheading{Pre-Condition (protocol)}
-	\addnumberedsinglerow{PreP}{
-	PreP 1 the system is started
-	PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctAdministrator instance
+	\addnumberedsinglerow{PreP}{PreP 1 the system is started}
+	\addnumberedsinglerow{PreP}{PreP 2 the actor logged previously and did not log out ! (i.e. the associated ctAdministrator instance
 	is considered logged) }
 		
 	\addrowheading{Pre-Condition (functional)}
-	\addnumberedsinglerow{PreF}{
-	PreF 1 it is supposed that there cannot exist a ctCoordinator instance with the same id attribute
+	\addnumberedsinglerow{PreF}{PreF 1 it is supposed that there cannot exist a ctCoordinator instance with the same id attribute
 	as the one the administrator wants to delete.}
 
 	\addrowheading{Post-Condition (functional)}
 	\addnumberedsinglerow{PostF}{
 	PostF 1 the environment has a new instance of coordinator actor allowing for input/output message
-	communication with the system.
-	PostF 2 the system’s state has a new instance of ctCoordinator initialized with the given values.
-	PostF 3 the new actor instance and ctCoordinator instance are related.
-	PostF 4 the new actor instance and ctCoordinator instance are related according to the authenticated
-	association.
-	PostF 5 the administrator actor is informed about the satisfaction of its request. }
+	communication with the system.}
+	\addnumberedsinglerow{PostF}{PostF 2 the systems state has a new instance of ctCoordinator initialized with the given values.}
+	\addnumberedsinglerow{PostF}{PostF 3 the new actor instance and ctCoordinator instance are related.}
+	\addnumberedsinglerow{PostF}{PostF 4 the new actor instance and ctCoordinator instance are related according to the authenticated
+	association.}
+	\addnumberedsinglerow{PostF}{PostF 5 the administrator actor is informed about the satisfaction of its request. }
 
 	\addrowheading{Post-Condition (protocol)}
 	\addnumberedsinglerow{PostP}{PostP 1 none}
